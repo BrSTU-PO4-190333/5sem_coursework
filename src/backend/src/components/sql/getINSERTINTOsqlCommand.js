@@ -1,5 +1,5 @@
-function GetSQLstring(command, database, table, args, values) {
-    let sql = `${command} \`${database}\`.\`${table}\` (`;
+function getINSERTINTOsqlCommand(database, table, args, values) {
+    let sql = `INSERT INTO \`${database}\`.\`${table}\` (`;
     for (let i = 0; i < args.length - 1; i += 1) {
         sql += `\`${args[i]}\`, `;
     }
@@ -11,4 +11,4 @@ function GetSQLstring(command, database, table, args, values) {
     return sql;
 }
 
-module.exports = GetSQLstring;
+module.exports = getINSERTINTOsqlCommand;

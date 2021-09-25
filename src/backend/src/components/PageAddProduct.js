@@ -1,5 +1,5 @@
 require('dotenv').config();
-const GetSQLstring = require("./GetSQLstring.js");
+const getINSERTINTOsqlCommand = require("./sql/getINSERTINTOsqlCommand.js");
 const Authentication = require("./Authentication.js");
 
 function PageAddProduct(request, response) {
@@ -11,8 +11,7 @@ function PageAddProduct(request, response) {
         let args = JSON.parse(body)
         console.log(args);
 
-        let sql = GetSQLstring(
-            "INSERT INTO",
+        let sql = getINSERTINTOsqlCommand(
             process.env.MySQL_DATABASE,
             "products",
             [
