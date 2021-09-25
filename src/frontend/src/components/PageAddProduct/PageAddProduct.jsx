@@ -13,26 +13,19 @@ function PageAddProduct() {
     const [RedirectHTML, SetRedirectHTML] = useState((<div></div>));
 
     function AddElement() {
-        let args = "";
-        args += `login=${localStorage.getItem("login")}`;
-        args += '&';
-        args += `password=${localStorage.getItem("password")}`;
-        args += '&';
-        args += `Model=${Model}`;
-        args += '&';
-        args += `Name=${Name}`;
-        args += '&';
-        args += `NameRU=${NameRU}`;
-        args += '&';
-        args += `OnBox=${OnBox}`;
-        args += '&';
-        args += `KG=${KG}`;
-        args += '&';
-        args += `M3=${M3}`;
-
-        let url = `${process.env.REACT_APP__API_URL}:${process.env.REACT_APP__API_PORT}/add-product/${args}`;
-
-        axios.get(url)
+        axios.post(
+            `${process.env.REACT_APP__API_URL}:${process.env.REACT_APP__API_PORT}/add-product`,
+            {
+                login: localStorage.getItem("login"),
+                password: localStorage.getItem("password"),
+                Model: Model,
+                Name: Name,
+                NameRU: NameRU,
+                OnBox: OnBox,
+                KG: KG,
+                M3: M3,
+            }
+        )
             .then(data => data["data"])
             .then(data => {
                 if (data === "errLogin" || data === "errPassword") {
