@@ -1,4 +1,5 @@
 require('dotenv').config();
+const GetSQLstring = require("./GetSQLstring.js");
 const Authentication = require("./Authentication.js");
 
 function PageAddProduct(request, response) {
@@ -10,21 +11,20 @@ function PageAddProduct(request, response) {
         let args = JSON.parse(body)
         console.log(args);
 
-        let sql = `INSERT INTO \`${process.env.MySQL_DATABASE}\`.\`products\``;
-        sql += "(`Model`, `Name`, `NameRU`, `OnBox`, `KG`, `M3`) ";
-        sql += `VALUES (`;
-        sql += `'${args["Model"]}'`;
-        sql += `,`;
-        sql += `'${args["Name"]}'`;
-        sql += `,`;
-        sql += `'${args["NameRU"]}'`;
-        sql += `,`;
-        sql += `'${args["OnBox"]}'`;
-        sql += `,`;
-        sql += `'${args["KG"]}'`;
-        sql += `,`;
-        sql += `'${args["M3"]}'`;
-        sql += `);`;
+        let sql = GetSQLstring(
+            "INSERT INTO",
+            process.env.MySQL_DATABASE,
+            "products",
+            [
+                "Model",
+                "Name",
+                "NameRU",
+                "OnBox",
+                "KG",
+                "M3",
+            ],
+            args
+        );
 
         Authentication(args, response, function (response, connnection) {
             connnection.query(sql, function (error, results, fields) {
