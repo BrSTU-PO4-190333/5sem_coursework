@@ -1,5 +1,5 @@
 require('dotenv').config();
-const GetUrlArgs = require("./GetUrlArgs.js");
+const getUPDATEsqlCommand = require("./sql/getUPDATEsqlCommand.js");
 const Authentication = require("./Authentication.js");
 
 function PageUpdateProduct(request, response) {
@@ -11,19 +11,19 @@ function PageUpdateProduct(request, response) {
         let args = JSON.parse(body)
         console.log(args);
 
-        let sql = `UPDATE \`${process.env.MySQL_DATABASE}\`.\`products\``;
-        sql += ` SET \`Model\`='${args["Model"]}'`;
-        sql += `, `;
-        sql += `\`Name\`='${args["Name"]}'`;
-        sql += `, `;
-        sql += `\`NameRU\`='${args["NameRU"]}'`;
-        sql += `, `;
-        sql += `\`OnBox\`='${args["OnBox"]}'`;
-        sql += `, `;
-        sql += `\`KG\`='${args["KG"]}'`;
-        sql += `, `;
-        sql += `\`M3\`='${args["M3"]}'`;
-        sql += ` WHERE products.ID = ${args["ID"]}`;
+        let sql = getUPDATEsqlCommand(
+            process.env.MySQL_DATABASE,
+            "products",
+            [
+                "Model",
+                "Name",
+                "NameRU",
+                "OnBox",
+                "KG",
+                "M3",
+            ],
+            args
+        );
 
         Authentication(args, response, function (response, connnection) {
             connnection.query(sql, function (error, results, fields) {
