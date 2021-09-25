@@ -1,6 +1,6 @@
 require('dotenv').config();
-const GetUrlArgs = require("./GetUrlArgs.js");
-const Authentication = require("./Authentication.js");
+const GetUrlArgs = require("./../GetUrlArgs.js");
+const Authentication = require("./../Authentication.js");
 
 function PageDeleteProduct(req, res) {
     let UrlArgs = GetUrlArgs(req.params.GETargs);

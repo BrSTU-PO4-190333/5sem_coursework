@@ -1,11 +1,12 @@
 require('dotenv').config();
-const GetUrlArgs = require("./GetUrlArgs.js");
-const Authentication = require("./Authentication.js");
+const GetUrlArgs = require("./../GetUrlArgs.js");
+const Authentication = require("./../Authentication.js");
 
-function PageGetProducts(req, res) {
+function PageGetProduct(req, res)
+{
     let UrlArgs = GetUrlArgs(req.params.GETargs);
 
-    let sql = `SELECT * FROM \`${process.env.MySQL_DATABASE}\`.\`products\`;`;
+    let sql = `SELECT * FROM \`${process.env.MySQL_DATABASE}\`.\`products\` WHERE ID=${UrlArgs["id"]};`;
 
     Authentication(UrlArgs, res, function(res, connnection) {    
         connnection.query(sql, function (error, results, fields) {
@@ -20,4 +21,4 @@ function PageGetProducts(req, res) {
     });
 }
 
-module.exports = PageGetProducts;
+module.exports = PageGetProduct;

@@ -1,8 +1,8 @@
 require('dotenv').config();
-const getINSERTINTOsqlCommand = require("./sql/getINSERTINTOsqlCommand.js");
-const Authentication = require("./Authentication.js");
+const getUPDATEsqlCommand = require("./../sql/getUPDATEsqlCommand.js");
+const Authentication = require("./../Authentication.js");
 
-function PageAddProduct(request, response) {
+function PageUpdateProduct(request, response) {
     let body = "";
     request.on("data", chunk => {
         body += chunk.toString();
@@ -11,7 +11,7 @@ function PageAddProduct(request, response) {
         let args = JSON.parse(body)
         console.log(args);
 
-        let sql = getINSERTINTOsqlCommand(
+        let sql = getUPDATEsqlCommand(
             process.env.MySQL_DATABASE,
             "products",
             [
@@ -36,8 +36,7 @@ function PageAddProduct(request, response) {
                 response.sendStatus(200);
             });
         });
-
-    })
+    });
 }
 
-module.exports = PageAddProduct;
+module.exports = PageUpdateProduct;
