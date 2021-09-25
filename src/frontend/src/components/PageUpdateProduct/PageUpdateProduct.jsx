@@ -55,26 +55,20 @@ function PageUpdateProduct() {
     // = = = = = end constructor
 
     function UpdateProduct() {
-        let url = `${process.env.REACT_APP__API_URL}:${process.env.REACT_APP__API_PORT}/update-product/`;
-        url += `login=${localStorage.getItem("login")}`;
-        url += `&`;
-        url += `password=${localStorage.getItem("password")}`;
-        url += `&`;
-        url += `ID=${ID}`;
-        url += `&`;
-        url += `Model=${Model}`;
-        url += `&`;
-        url += `Name=${Name}`;
-        url += `&`;
-        url += `NameRU=${NameRU}`;
-        url += `&`;
-        url += `OnBox=${OnBox}`;
-        url += `&`;
-        url += `KG=${KG}`;
-        url += `&`;
-        url += `M3=${M3}`;
-
-        axios.get(url)
+        axios.post(
+            `${process.env.REACT_APP__API_URL}:${process.env.REACT_APP__API_PORT}/update-product/`,
+            {
+                login: localStorage.getItem("login"),
+                password: localStorage.getItem("password"),
+                ID: ID,
+                Model: Model,
+                Name: Name,
+                NameRU: NameRU,
+                OnBox: OnBox,
+                KG: KG,
+                M3: M3,
+            }
+        )
             .then(data => data["data"])
             .then(data => {
                 if (data === "errLogin" || data === "errPassword") {
@@ -83,8 +77,7 @@ function PageUpdateProduct() {
                 else {
                     SetRedirectHTML((<Redirect to="/view-products" />));
                 }
-            })
-
+            });
     }
 
     return (

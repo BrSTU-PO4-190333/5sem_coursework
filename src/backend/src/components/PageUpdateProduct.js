@@ -2,42 +2,39 @@ require('dotenv').config();
 const GetUrlArgs = require("./GetUrlArgs.js");
 const Authentication = require("./Authentication.js");
 
-function PageUpdateProduct(req, res) {
-    let UrlArgs = GetUrlArgs(req.params.GETargs);
-    Authentication(UrlArgs, res, function (res, connnection) {
-        let object = {
-            "ID": parseInt(UrlArgs["ID"]) ? parseInt(UrlArgs["ID"]) : 0,
-            "Model": UrlArgs["Model"] ? UrlArgs["Model"] : "",
-            "Name": UrlArgs["Name"] ? UrlArgs["Name"] : "",
-            "NameRU": UrlArgs["NameRU"] ? UrlArgs["NameRU"] : "",
-            "OnBox": parseInt(UrlArgs["OnBox"]) ? parseInt(UrlArgs["OnBox"]) : 0,
-            "KG": parseFloat(UrlArgs["KG"]) ? parseFloat(UrlArgs["KG"]) : 0.0,
-            "M3": parseFloat(UrlArgs["M3"]) ? parseFloat(UrlArgs["M3"]) : 0.0,
-        };
+function PageUpdateProduct(request, response) {
+    let body = "";
+    request.on("data", chunk => {
+        body += chunk.toString();
+    });
+    request.on("end", () => {
+        let args = JSON.parse(body)
+        console.log(args);
 
         let sql = `UPDATE \`${process.env.MySQL_DATABASE}\`.\`products\``;
-        sql += ` SET \`Model\`='${object["Model"]}'`;
+        sql += ` SET \`Model\`='${args["Model"]}'`;
         sql += `, `;
-        sql += `\`Name\`='${object["Name"]}'`;
+        sql += `\`Name\`='${args["Name"]}'`;
         sql += `, `;
-        sql += `\`NameRU\`='${object["NameRU"]}'`;
+        sql += `\`NameRU\`='${args["NameRU"]}'`;
         sql += `, `;
-        sql += `\`OnBox\`='${object["OnBox"]}'`;
+        sql += `\`OnBox\`='${args["OnBox"]}'`;
         sql += `, `;
-        sql += `\`KG\`='${object["KG"]}'`;
+        sql += `\`KG\`='${args["KG"]}'`;
         sql += `, `;
-        sql += `\`M3\`='${object["M3"]}'`;
-        sql += ` WHERE products.ID = ${object["ID"]}`;
+        sql += `\`M3\`='${args["M3"]}'`;
+        sql += ` WHERE products.ID = ${args["ID"]}`;
 
-        connnection.query(sql, function (error, results, fields) {
-            connnection.end();
-            if (error) {
+        Authentication(args, response, function (response, connnection) {
+            connnection.query(sql, function (error, results, fields) {
                 connnection.end();
-                console.log(error);
-                return error;
-            }
-
-            res.sendStatus(200);
+                if (error) {
+                    connnection.end();
+                    console.log(error);
+                    return error;
+                }
+                response.sendStatus(200);
+            });
         });
     });
 }

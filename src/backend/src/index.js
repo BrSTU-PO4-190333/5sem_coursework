@@ -19,5 +19,5 @@ app.get("/get-product/:GETargs", (req, res) => PageGetProduct(req, res));
 app.get("/get-products/:GETargs", (req, res) => PageGetProducts(req, res));
 app.post("/add-product", (request, response) => PageAddProduct(request, response));
 app.get("/delete-product/:GETargs", (req, res) => PageDeleteProduct(req, res));
-app.get("/update-product/:GETargs", (req, res) => PageUpdateProduct(req, res));
+app.post("/update-product", (request, response) => PageUpdateProduct(request, response));
 app.get("/sing-in/:GETargs", (req, res) => PageSingIn(req, res));
