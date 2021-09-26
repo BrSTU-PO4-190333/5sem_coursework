@@ -15,7 +15,7 @@ Create table `products`
 ```sql
 CREATE TABLE `database`.`products` (
     `ID` INT NOT NULL AUTO_INCREMENT ,
-    `Model` VARCHAR(16) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL ,
+    `Model` VARCHAR(32) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL ,
     `Name` VARCHAR(64) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL ,
     `NameRU` VARCHAR(64) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL ,
     `OnBox` INT NOT NULL ,
