@@ -1,10 +1,17 @@
 require('dotenv').config();
-const Auth = require("./../Authentication.js");
-const GetUrlArgs = require("./../GetUrlArgs.js");
+const Authentication = require("./../Authentication.js");
 
-function PageGetAdmins(req, res) {
-    let UrlArgs = GetUrlArgs(req.params.GETargs);
-    Auth(UrlArgs, res);
+function PageSingIn(request, response) {
+    let body = "";
+    request.on("data", chunk => {
+        body += chunk.toString();
+    });
+    request.on("end", () => {
+        let args = JSON.parse(body);
+        console.log(args);
+
+        Authentication(args, response);
+    });
 }
 
-module.exports = PageGetAdmins;
+module.exports = PageSingIn;

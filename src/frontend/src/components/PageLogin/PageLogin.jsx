@@ -10,7 +10,13 @@ function PageLogin() {
     const [HTMLredirect, SetHTMLredirect] = useState(<div></div>);
 
     function SingIn() {
-        axios.get(`${process.env.REACT_APP__API_URL}:${process.env.REACT_APP__API_PORT}/sing-in/login=${Login}&password=${Password}`)
+        axios.post(
+            `${process.env.REACT_APP__API_URL}:${process.env.REACT_APP__API_PORT}/sing-in`,
+            {
+                login: Login,
+                password: Password,
+            }
+        )
             .then((data) => {
                 // console.log(data);
                 if (data["data"] === "errLogin") {

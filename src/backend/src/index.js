@@ -20,4 +20,4 @@ app.post("/get-products", (request, response) => PageGetProducts(request, respon
 app.post("/add-product", (request, response) => PageAddProduct(request, response));
 app.post("/delete-product", (request, response) => PageDeleteProduct(request, response));
 app.post("/update-product", (request, response) => PageUpdateProduct(request, response));
-app.get("/sing-in/:GETargs", (req, res) => PageSingIn(req, res));
+app.post("/sing-in", (request, response) => PageSingIn(request, response));
