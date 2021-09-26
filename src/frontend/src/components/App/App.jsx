@@ -1,6 +1,7 @@
 import { Switch, Route } from "react-router";
 import {
     faEye,
+    faFolderOpen,
     faPlus,
     faSignOutAlt,
 } from '@fortawesome/free-solid-svg-icons';
@@ -8,6 +9,7 @@ import {
 import "./App.css";
 import styles from "./App.module.css";
 import Nav from "./../Nav/Nav.jsx";
+import PageOpenFile from "./../PageOpenFile/PageOpenFile.jsx";
 import PageAddProduct from "./../PageAddProduct/PageAddProduct.jsx";
 import PageViewProducts from "./../PageViewProducts/PageViewProducts.jsx";
 import PageUpdateProduct from "./../PageUpdateProduct/PageUpdateProduct.jsx";
@@ -16,6 +18,12 @@ import PageLogout from "./../PageLogout/PageLogout.jsx";
 
 function App() {
     let list = [
+        {
+            "Name": "Open file",
+            "Href": "/open-file",
+            "Icon": faFolderOpen,
+            "Component": <PageOpenFile />,
+        },
         {
             "Name": "Add product",
             "Href": "/add-product",

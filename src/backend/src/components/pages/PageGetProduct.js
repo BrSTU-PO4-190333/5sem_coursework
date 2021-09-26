@@ -1,22 +1,27 @@
 require('dotenv').config();
-const GetUrlArgs = require("./../GetUrlArgs.js");
 const Authentication = require("./../Authentication.js");
 
-function PageGetProduct(req, res)
+function PageGetProduct(request, response)
 {
-    let UrlArgs = GetUrlArgs(req.params.GETargs);
+    let body = "";
+    request.on("data", chunk => {
+        body += chunk.toString();
+    });
+    request.on("end", () => {
+        let args = JSON.parse(body);
+        console.log(args);
 
-    let sql = `SELECT * FROM \`${process.env.MySQL_DATABASE}\`.\`products\` WHERE ID=${UrlArgs["id"]};`;
-
-    Authentication(UrlArgs, res, function(res, connnection) {    
-        connnection.query(sql, function (error, results, fields) {
-            connnection.end();
-            if (error) {
+        let sql = `SELECT * FROM \`${process.env.MySQL_DATABASE}\`.\`products\` WHERE ID=${args["ID"]};`;
+        Authentication(args, response, function (response, connnection) {
+            connnection.query(sql, function (error, results, fields) {
                 connnection.end();
-                console.log(error);
-                return error;
-            }
-            res.send(results);
+                if (error) {
+                    connnection.end();
+                    console.log(error);
+                    return error;
+                }
+                response.send(results);
+            });
         });
     });
 }

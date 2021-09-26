@@ -24,16 +24,14 @@ function PageUpdateProduct() {
         let id = arr[arr.length - 1];
         SetID(id);
 
-        let url = `${process.env.REACT_APP__API_URL}:${process.env.REACT_APP__API_PORT}`;
-        url += `/get-product`;
-        url += `/`;
-        url += `id=${id}`;
-        url += `&`;
-        url += `login=${localStorage.getItem("login")}`;
-        url += `&`;
-        url += `password=${localStorage.getItem("password")}`;
-
-        axios.get(url)
+        axios.post(
+            `${process.env.REACT_APP__API_URL}:${process.env.REACT_APP__API_PORT}/get-product`,
+            {
+                login: localStorage.getItem("login"),
+                password: localStorage.getItem("password"),
+                ID: id,
+            }
+        )
             .then(data => {
                 let arr = data["data"] ? data["data"] : 0;
                 let object = arr[0] ? arr[0] : 0;
@@ -84,6 +82,17 @@ function PageUpdateProduct() {
         <div>
             {RedirectHTML}
             <h2>Update Product page</h2>
+            <div className="mb-3">
+                <label className="form-label">ID</label>
+                <input
+                    className="form-control"
+                    type="text"
+                    placeholder="0"
+                    name="ID"
+                    value={ID}
+                    readOnly
+                />
+            </div>
             <div className="mb-3">
                 <label className="form-label">Model</label>
                 <input

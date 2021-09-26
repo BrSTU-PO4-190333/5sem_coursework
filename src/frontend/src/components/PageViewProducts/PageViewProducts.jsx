@@ -21,14 +21,13 @@ function PageViewProducts() {
         if (constructorHasRun) return;
         setConstructorHasRun(true);
 
-        let url = `${process.env.REACT_APP__API_URL}:${process.env.REACT_APP__API_PORT}`;
-        url += `/get-products`;
-        url += `/`;
-        url += `login=${localStorage.getItem("login")}`;
-        url += `&`;
-        url += `password=${localStorage.getItem("password")}`;
-
-        axios.get(url)
+        axios.post(
+            `${process.env.REACT_APP__API_URL}:${process.env.REACT_APP__API_PORT}/get-products`,
+            {
+                login: localStorage.getItem("login"),
+                password: localStorage.getItem("password"),
+            }
+        )
             .then(data => data['data'])
             .then(result => {
                 if (result === "errLogin" || result === "errPassword") {
@@ -64,7 +63,13 @@ function PageViewProducts() {
     }
 
     function DownloadJSONfile() {
-        axios.get(`${process.env.REACT_APP__API_URL}:${process.env.REACT_APP__API_PORT}/get-products`)
+        axios.post(
+            `${process.env.REACT_APP__API_URL}:${process.env.REACT_APP__API_PORT}/get-products`,
+            {
+                login: localStorage.getItem("login"),
+                password: localStorage.getItem("password"),
+            }
+        )
             .then(data => {
                 let arr = data["data"];
                 let string = JSON.stringify(arr);
@@ -73,24 +78,24 @@ function PageViewProducts() {
     }
 
     function DownloadCSVfile() {
-        axios.get(`${process.env.REACT_APP__API_URL}:${process.env.REACT_APP__API_PORT}/get-products`)
+        axios.post(
+            `${process.env.REACT_APP__API_URL}:${process.env.REACT_APP__API_PORT}/get-products`,
+            {
+                login: localStorage.getItem("login"),
+                password: localStorage.getItem("password"),
+            }
+        )
             .then(data => {
                 let arr = data["data"];
-                let str = '"ID", "Model", "Name", "NameRU", "OnBox", "KG", "M3"\n';
+                let str = '"ID", "Model", "Name", "NameRU", "OnBox", "KG", "M3",\n';
                 arr.forEach((value) => {
-                    str += `${value["ID"]}`;
-                    str += `,`;
-                    str += `${value["Model"]}`;
-                    str += `,`;
-                    str += `${value["Name"]}`;
-                    str += `,`;
-                    str += `${value["NameRU"]}`;
-                    str += `,`;
-                    str += `${value["OnBox"]}`;
-                    str += `,`;
-                    str += `${value["KG"]}`;
-                    str += `,`;
-                    str += `${value["M3"]}`;
+                    str += `${value["ID"]}, `;
+                    str += `"${value["Model"]}", `;
+                    str += `"${value["Name"]}", `;
+                    str += `"${value["NameRU"]}", `;
+                    str += `${value["OnBox"]}, `;
+                    str += `${value["KG"]}, `;
+                    str += `${value["M3"]}, `;
                     str += `\n`;
                 });
                 DownloadFile(str, 'products.csv');
