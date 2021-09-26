@@ -18,6 +18,6 @@ app.get("/", (req, res) => PageHome(req, res));
 app.post("/get-product", (request, response) => PageGetProduct(request, response));
 app.post("/get-products", (request, response) => PageGetProducts(request, response));
 app.post("/add-product", (request, response) => PageAddProduct(request, response));
-app.get("/delete-product/:GETargs", (req, res) => PageDeleteProduct(req, res));
+app.post("/delete-product", (request, response) => PageDeleteProduct(request, response));
 app.post("/update-product", (request, response) => PageUpdateProduct(request, response));
 app.get("/sing-in/:GETargs", (req, res) => PageSingIn(req, res));

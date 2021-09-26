@@ -1,21 +1,26 @@
 require('dotenv').config();
-const GetUrlArgs = require("./../GetUrlArgs.js");
 const Authentication = require("./../Authentication.js");
 
-function PageDeleteProduct(req, res) {
-    let UrlArgs = GetUrlArgs(req.params.GETargs);
+function PageDeleteProduct(request, response) {
+    let body = "";
+    request.on("data", chunk => {
+        body += chunk.toString();
+    });
+    request.on("end", () => {
+        let args = JSON.parse(body);
+        console.log(args);
 
-    let sql = `DELETE FROM \`${process.env.MySQL_DATABASE}\`.\`products\` WHERE ID=${UrlArgs["id"]};`;
-
-    Authentication(UrlArgs, res, function(res, connnection) {
-        connnection.query(sql, function (error, results, fields) {
-            connnection.end();
-            if (error) {
+        let sql = `DELETE FROM \`${process.env.MySQL_DATABASE}\`.\`products\` WHERE ID=${args["ID"]};`;
+        Authentication(args, response, function (response, connnection) {
+            connnection.query(sql, function (error, results, fields) {
                 connnection.end();
-                console.log(error);
-                return error;
-            }
-            res.sendStatus(200);
+                if (error) {
+                    connnection.end();
+                    console.log(error);
+                    return error;
+                }
+                response.sendStatus(200);
+            });
         });
     });
 }

@@ -47,19 +47,27 @@ function PageViewProducts() {
     // = = = = = end constructor
 
     function DeleteProduct(id) {
-        let url = `${process.env.REACT_APP__API_URL}:${process.env.REACT_APP__API_PORT}`;
-        url += `/delete-product`;
-        url += `/`;
-        url += `id=${id}`;
-        url += `&`;
-        url += `login=${localStorage.getItem("login")}`;
-        url += `&`;
-        url += `password=${localStorage.getItem("password")}`;
-
-        axios.get(url);
-        setConstructorHasRun(false);
-        constructor();
-        alert(`Deleted product by id=${id}`);
+        axios.post(
+            `${process.env.REACT_APP__API_URL}:${process.env.REACT_APP__API_PORT}/delete-product`,
+            {
+                login: localStorage.getItem("login"),
+                password: localStorage.getItem("password"),
+                ID: id,
+            }
+        )
+            .then(data => {
+                if (data["status"] === 200) {
+                    setConstructorHasRun(false);
+                    constructor();
+                    setTimeout(
+                        () => {
+                            alert(`Deleted product by id=${id}`);
+                        },
+                        100
+                    );
+                    
+                }
+            });
     }
 
     function DownloadJSONfile() {
