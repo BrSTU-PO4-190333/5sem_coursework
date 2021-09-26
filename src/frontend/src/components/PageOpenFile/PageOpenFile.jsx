@@ -2,6 +2,9 @@ import { useState } from 'react';
 import axios from 'axios';
 // import { Redirect } from 'react-router-dom';
 
+import styles from "./PageOpenFile.module.css";
+import example from './Example.js';
+
 class Product {
     constructor(
         Model = "",
@@ -92,13 +95,11 @@ function PageOpenFile() {
             for (let i = 0; i < obj.length; i += 1) {
                 setTimeout(
                     () => {
-                        console.log(obj[i]);
                         SetProgressNumber((i * 100 / (obj.length - 1)).toFixed(2));
                         SetProgressElementID(i + 1);
 
                         let prd = new Product();
                         prd.set(obj[i]);
-                        console.log(prd.get());
 
                         axios.post(
                             `${process.env.REACT_APP__API_URL}:${process.env.REACT_APP__API_PORT}/add-product`,
@@ -131,6 +132,10 @@ function PageOpenFile() {
                 <div className="progress">
                     <div className="progress-bar progress-bar-striped" style={{ width: `${ProgressNumber}%` }} role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100">{ProgressNumber}%</div>
                 </div>
+            </div>
+            <h3>Example data.json file</h3>
+            <div className="mb-3">
+                <pre className={styles.pre}><code>{example}</code></pre>
             </div>
         </div>
     );
