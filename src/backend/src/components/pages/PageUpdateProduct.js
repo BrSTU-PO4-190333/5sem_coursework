@@ -1,6 +1,6 @@
 require('dotenv').config();
 const getUPDATEsqlCommand = require("./../sql/getUPDATEsqlCommand.js");
-const Authentication = require("./../Authentication.js");
+const Authentication = require("./../sql/Authentication.js");
 
 function PageUpdateProduct(request, response) {
     let body = "";

@@ -1,5 +1,5 @@
 require('dotenv').config();
-const Authentication = require("./../Authentication.js");
+const Authentication = require("./../sql/Authentication.js");
 
 function PageSingIn(request, response) {
     let body = "";

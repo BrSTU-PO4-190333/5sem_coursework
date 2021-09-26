@@ -1,6 +1,6 @@
 require('dotenv').config();
 const getINSERTINTOsqlCommand = require("./../sql/getINSERTINTOsqlCommand.js");
-const Authentication = require("./../Authentication.js");
+const Authentication = require("./../sql/Authentication.js");
 
 function PageAddProduct(request, response) {
     let body = "";
