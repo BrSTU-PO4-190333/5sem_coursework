@@ -1,7 +1,7 @@
 require('dotenv').config();
-const Authentication = require("./../sql/Authentication.js");
+const gpi_authentication = require("./gpi_authentication");
 
-function PageSingIn(request, response) {
+module.exports = function (request, response) {
     let body = "";
     request.on("data", chunk => {
         body += chunk.toString();
@@ -10,8 +10,6 @@ function PageSingIn(request, response) {
         let args = JSON.parse(body);
         console.log(args);
 
-        Authentication(args, response);
+        gpi_authentication(args, response);
     });
 }
-
-module.exports = PageSingIn;

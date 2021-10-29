@@ -1,7 +1,7 @@
 require('dotenv').config();
 const mysql = require('mysql');
 
-function Authentication(UrlArgs, res, func = null) {
+module.exports = function (Args, res, func = null) {
     const connnection = mysql.createConnection({
         host: process.env.MySQL_HOST,
         user: process.env.MySQL_user,
@@ -20,7 +20,7 @@ function Authentication(UrlArgs, res, func = null) {
         let object = null;
         results.forEach(
             (value) => {
-                if (value["login"] == UrlArgs["login"]) {
+                if (value["login"] == Args["login"]) {
                     object = value;
                 }
             }
@@ -33,7 +33,7 @@ function Authentication(UrlArgs, res, func = null) {
             return;
         }
 
-        if (object["password"] != UrlArgs["password"]) {
+        if (object["password"] != Args["password"]) {
             // console.log("errPassword");
             res.send("errPassword");
             func = null;
@@ -51,5 +51,3 @@ function Authentication(UrlArgs, res, func = null) {
         }
     });
 }
-
-module.exports = Authentication;

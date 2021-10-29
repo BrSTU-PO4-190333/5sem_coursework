@@ -1,4 +1,4 @@
-function getINSERTINTOsqlCommand(database, table, args, values) {
+module.exports = function (database, table, args, values) {
     let sql = `INSERT INTO \`${database}\`.\`${table}\` (`;
     for (let i = 0; i < args.length - 1; i += 1) {
         sql += `\`${args[i]}\`, `;
@@ -10,5 +10,3 @@ function getINSERTINTOsqlCommand(database, table, args, values) {
     sql += `'${values[args[args.length - 1]]}');`;
     return sql;
 }
-
-module.exports = getINSERTINTOsqlCommand;

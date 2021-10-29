@@ -1,0 +1,9 @@
+CREATE TABLE `database`.`products` (
+    `ID` INT NOT NULL AUTO_INCREMENT ,
+    `Model` VARCHAR(32) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL ,
+    `Name` VARCHAR(64) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL ,
+    `NameRU` VARCHAR(64) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL ,
+    `OnBox` INT NOT NULL ,
+    `KG` FLOAT UNSIGNED NOT NULL ,
+    `M3` FLOAT UNSIGNED NOT NULL , UNIQUE (`ID`)
+) ENGINE = MyISAM;

@@ -1,7 +1,7 @@
 require('dotenv').config();
-const Authentication = require("./../sql/Authentication.js");
+const gpi_authentication = require("./gpi_authentication");
 
-function PageGetProduct(request, response)
+module.exports = function (request, response)
 {
     let body = "";
     request.on("data", chunk => {
@@ -12,7 +12,7 @@ function PageGetProduct(request, response)
         console.log(args);
 
         let sql = `SELECT * FROM \`${process.env.MySQL_DATABASE}\`.\`products\` WHERE ID=${args["ID"]};`;
-        Authentication(args, response, function (response, connnection) {
+        gpi_authentication(args, response, function (response, connnection) {
             connnection.query(sql, function (error, results, fields) {
                 connnection.end();
                 if (error) {
@@ -25,5 +25,3 @@ function PageGetProduct(request, response)
         });
     });
 }
-
-module.exports = PageGetProduct;

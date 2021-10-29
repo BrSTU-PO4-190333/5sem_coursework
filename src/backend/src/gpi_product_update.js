@@ -1,8 +1,8 @@
 require('dotenv').config();
-const getINSERTINTOsqlCommand = require("./../sql/getINSERTINTOsqlCommand.js");
-const Authentication = require("./../sql/Authentication.js");
+const gpi_sql_update = require("./gpi_sql_update");
+const gpi_authentication = require("./gpi_authentication");
 
-function PageAddProduct(request, response) {
+module.exports = function (request, response) {
     let body = "";
     request.on("data", chunk => {
         body += chunk.toString();
@@ -11,7 +11,7 @@ function PageAddProduct(request, response) {
         let args = JSON.parse(body)
         console.log(args);
 
-        let sql = getINSERTINTOsqlCommand(
+        let sql = gpi_sql_update(
             process.env.MySQL_DATABASE,
             "products",
             [
@@ -25,7 +25,7 @@ function PageAddProduct(request, response) {
             args
         );
 
-        Authentication(args, response, function (response, connnection) {
+        gpi_authentication(args, response, function (response, connnection) {
             connnection.query(sql, function (error, results, fields) {
                 connnection.end();
                 if (error) {
@@ -36,8 +36,5 @@ function PageAddProduct(request, response) {
                 response.sendStatus(200);
             });
         });
-
-    })
+    });
 }
-
-module.exports = PageAddProduct;

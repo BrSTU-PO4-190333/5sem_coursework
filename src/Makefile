@@ -1,14 +1,18 @@
 install:
+	cd mysql; cp copy.env .env
 	cd backend; cp copy.env .env
 	cd frontend; cp copy.env .env
 	cd backend; npm i
 	cd frontend; npm i
 
-bdev:
+run-mysql:
+	cd mysql; make start
+
+restart-mysql:
+	cd mysql; make restart
+
+run-backend:
 	cd backend; npm run start
 
-fdev:
+run-frontend:
 	cd frontend; npm run start
-
-prod:
-	cd frontend; npm run build

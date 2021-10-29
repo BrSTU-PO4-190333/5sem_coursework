@@ -1,4 +1,4 @@
-function getUPDATEsqlCommand(database, table, args, values) {
+module.exports = function (database, table, args, values) {
     let sql = `UPDATE \`${database}\`.\`${table}\` SET `;
     for (let i = 0; i < args.length - 1; i += 1) {
         sql += `\`${args[i]}\`='${values[args[i]]}', `;
@@ -7,5 +7,3 @@ function getUPDATEsqlCommand(database, table, args, values) {
     sql += `WHERE ${table}.ID = ${values["ID"]};`;
     return sql;
 }
-
-module.exports = getUPDATEsqlCommand;
