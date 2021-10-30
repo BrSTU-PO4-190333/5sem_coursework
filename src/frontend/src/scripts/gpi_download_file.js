@@ -1,4 +1,4 @@
-function DownloadFile(text = "[{}]", filename = "data.json") {
+export default function gpi_download_file(text = "[{}]", filename = "data.json") {
     if (filename === "") filename = "data.json";
     let blob = new Blob([text], { type: 'text/plain' });
     let link = document.createElement("a");
@@ -13,4 +13,3 @@ function DownloadFile(text = "[{}]", filename = "data.json") {
     }, 100);
 }
 
-export default DownloadFile;

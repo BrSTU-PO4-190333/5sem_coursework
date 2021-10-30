@@ -1,35 +1,35 @@
 import { Switch, Route } from "react-router";
 import {
     faEye,
-    faFolderOpen,
-    faPlus,
+    // faFolderOpen,
+    // faPlus,
     faSignOutAlt,
 } from '@fortawesome/free-solid-svg-icons';
 
 import "./App.css";
 import styles from "./App.module.css";
-import Nav from "./../Nav/Nav.jsx";
-import PageOpenFile from "./../PageOpenFile/PageOpenFile.jsx";
-import PageAddProduct from "./../PageAddProduct/PageAddProduct.jsx";
-import PageViewProducts from "./../PageViewProducts/PageViewProducts.jsx";
-import PageUpdateProduct from "./../PageUpdateProduct/PageUpdateProduct.jsx";
-import PageLogin from "./../PageLogin/PageLogin.jsx";
-import PageLogout from "./../PageLogout/PageLogout.jsx";
+import Nav from "./components/Nav/Nav.jsx";
+// import PageOpenFile from "./components/PageOpenFile/PageOpenFile.jsx";
+// import PageAddProduct from "./components/PageAddProduct/PageAddProduct.jsx";
+import PageViewProducts from "./components/GetProducts/GetProducts.jsx";
+import PageUpdateProduct from "./components/PageUpdateProduct/PageUpdateProduct.jsx";
+import PageLogin from "./components/SingIn/SingIn.jsx";
+import PageLogout from "./components/PageLogout/PageLogout.jsx";
 
 function App() {
     let list = [
-        {
-            "Name": "Open file",
-            "Href": "/open-file",
-            "Icon": faFolderOpen,
-            "Component": <PageOpenFile />,
-        },
-        {
-            "Name": "Add product",
-            "Href": "/add-product",
-            "Icon": faPlus,
-            "Component": <PageAddProduct />,
-        },
+        // {
+        //     "Name": "Open file",
+        //     "Href": "/open-file",
+        //     "Icon": faFolderOpen,
+        //     "Component": <PageOpenFile />,
+        // },
+        // {
+        //     "Name": "Add product",
+        //     "Href": "/add-product",
+        //     "Icon": faPlus,
+        //     "Component": <PageAddProduct />,
+        // },
         {
             "Name": "View products",
             "Href": "/view-products",

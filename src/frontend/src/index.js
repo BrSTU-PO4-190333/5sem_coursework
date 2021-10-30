@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import {HashRouter as Router} from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import App from "./components/App/App.jsx";
+import App from "./App";
 
 ReactDOM.render(
     (

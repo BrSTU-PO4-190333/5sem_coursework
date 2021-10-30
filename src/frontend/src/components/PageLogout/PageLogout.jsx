@@ -1,25 +1,23 @@
 import { Redirect } from 'react-router-dom';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 function PageLogout() {
-    const [constructorHasRun, setConstructorHasRun] = useState(false);
-    const [HTMLredirect, SetHTMLredirect] = useState(<div></div>);
+    const [gpi_html_redirect, gpi_set_html_redirect] = useState(<div></div>);
 
-    // = = = = = constructor
-    const constructor = () => {
-        if (constructorHasRun) return;
-        setConstructorHasRun(true);
+    // Constructor
+    useEffect(function() {
+        gpi_logout();
+    }, []);
 
+    function gpi_logout() {
         localStorage.removeItem("login");
         localStorage.removeItem("password");
-        SetHTMLredirect(<Redirect to="/" />);
-    };
-    constructor();
-    // = = = = = end constructor
+        gpi_set_html_redirect(<Redirect to="/" />);
+    }
 
     return (
         <div>
-            {HTMLredirect}
+            {gpi_html_redirect}
         </div>
     );
 }
