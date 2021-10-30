@@ -48,6 +48,7 @@ export default function SingIn() {
         }
         catch(err) {
             console.error(err);
+            alert("Error connect to API");
         }
         return;
     }
