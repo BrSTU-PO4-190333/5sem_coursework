@@ -1,0 +1,13 @@
+.products
+{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.products__table
+{
+    width: 100%;
+    display: block;
+    overflow-x: scroll;
+    overflow-y: scroll;
+}

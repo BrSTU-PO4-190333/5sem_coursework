@@ -2,10 +2,8 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 
 import AddProduct from './AddProduct/AddProduct';
-import DownloadJSON from './DownloadJSON/DownloadJSON';
-import DownloadCSV from './DownloadCSV/DownloadCSV';
 import DeleteButton from './DeleteButton/DeleteButton';
-import OpenFile from './OpenFile/OpenFile';
+import styles from "./Products.module.css";
 
 export default function GetProducts() {
     const [gpi_products, gpi_set_products] = useState([]);
@@ -41,16 +39,9 @@ export default function GetProducts() {
     }
 
     return (
-        <div>
-            <OpenFile />
-            <> </>
-            <DownloadJSON gpi_get_products={gpi_get_products}/>
-            <> </>
-            <DownloadCSV gpi_get_products={gpi_get_products}/>
-
+        <div className={`container ${styles.products}`}>
             <AddProduct />
-
-            <table className="table table-striped">
+            <table className={`table table-striped ${styles.products__table}`}>
                 <thead>
                     <tr>
                         <th>ID</th>
@@ -64,7 +55,6 @@ export default function GetProducts() {
                         <th>CostBYN</th>
                         <th>Company</th>
                         <th>Category</th>
-                        {/* <th>Edit</th> */}
                         <th>Delete</th>
                     </tr>
                 </thead>
@@ -84,18 +74,8 @@ export default function GetProducts() {
                             <td>{value.CostBYN}</td>
                             <td>{value.Company}</td>
                             <td>{value.Category}</td>
-                            {/*
                             <td>
-                                <Link
-                                    className="btn btn-outline-success form-control"
-                                    to="/"
-                                >
-                                    <FontAwesomeIcon icon={faEdit} />
-                                </Link>
-                            </td>
-                            */}
-                            <td>
-                                <DeleteButton id={value["ID"]}/>
+                                <DeleteButton id={value["ID"]} />
                             </td>
                         </tr>
                     ))}

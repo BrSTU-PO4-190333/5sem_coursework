@@ -1,39 +1,50 @@
+.Nav
+{
+    border-bottom: 1px solid grey;
+}
+
 .Nav ul
 {
     margin: 0;
     padding: 0;
+    display: flex;
 }
 
 .Nav ul li
 {
     list-style-type: none;
+    position: relative;
 }
 
-.Nav a
+.Nav ul li a,
+.Nav ul li span,
+.Nav ul li label
 {
     text-decoration: none;
-    color: white;
+    display: block;
     padding: 8px;
-    height: 32px;
-    display: flex;
+    color: #06c;
 }
 
-.Nav a:hover
+.Nav ul li a:hover,
+.Nav ul li span:hover,
+.Nav ul li label:hover
 {
-    background-color: rgba(0,0,0,0.1);
+    background-color: #06c;
+    color: white;
 }
 
-.Nav__link_icon
+/* sub menu */
+.Nav ul ul
 {
-    width: 32px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: none;
 }
 
-.Nav__link_title
+.Nav ul li:hover ul 
 {
-    width: 100%;
-    display: flex;
-    align-items: center;
+    display: block;
+    position: absolute;
+    background-color: white;
+    width: 300px;
+    border: 1px solid #06c;
 }

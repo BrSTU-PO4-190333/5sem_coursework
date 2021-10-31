@@ -9,14 +9,6 @@ export default function SingIn() {
     const [gpi_password, gpi_set_password] = useState(localStorage.getItem("password") ? localStorage.getItem("password") : "");
     const [HTMLredirect, SetHTMLredirect] = useState(<div></div>);
 
-    function gpi_genereate_url(gpi_site, gpi_DATA) {
-        let gpi_url = gpi_site + "?";
-        Object.keys(gpi_DATA).forEach(function(val) {
-            gpi_url += `${val}=${gpi_DATA[val]}&`;
-        })
-        return gpi_url;
-    }
-    
     async function SingIn() {
         try {
             const GPI_URL = `${process.env.REACT_APP__API_URL}:${process.env.REACT_APP__API_PORT}/singin`;
@@ -40,7 +32,7 @@ export default function SingIn() {
                     alert("success");
                     localStorage.setItem("login", gpi_login);
                     localStorage.setItem("password", gpi_password);
-                    SetHTMLredirect(<Redirect to="/view-products" />);
+                    SetHTMLredirect(<Redirect to="/products" />);
                     break;
                 default:
                     alert("Err");

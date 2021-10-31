@@ -12,4 +12,3 @@ export default function gpi_download_file(text = "[{}]", filename = "data.json")
         window.URL.revokeObjectURL(link.href);
     }, 100);
 }
-

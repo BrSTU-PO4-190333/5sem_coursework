@@ -4,8 +4,7 @@ import { useEffect, useState } from 'react';
 function PageLogout() {
     const [gpi_html_redirect, gpi_set_html_redirect] = useState(<div></div>);
 
-    // Constructor
-    useEffect(function() {
+    useEffect(function() { // Constructor
         gpi_logout();
     }, []);
 
