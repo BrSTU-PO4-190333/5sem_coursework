@@ -5,6 +5,7 @@ import AddProduct from './AddProduct/AddProduct';
 import DownloadJSON from './DownloadJSON/DownloadJSON';
 import DownloadCSV from './DownloadCSV/DownloadCSV';
 import DeleteButton from './DeleteButton/DeleteButton';
+import OpenFile from './OpenFile/OpenFile';
 
 export default function GetProducts() {
     const [gpi_products, gpi_set_products] = useState([]);
@@ -41,10 +42,12 @@ export default function GetProducts() {
 
     return (
         <div>
+            <OpenFile />
+            <> </>
             <DownloadJSON gpi_get_products={gpi_get_products}/>
             <> </>
             <DownloadCSV gpi_get_products={gpi_get_products}/>
-            
+
             <AddProduct />
 
             <table className="table table-striped">
