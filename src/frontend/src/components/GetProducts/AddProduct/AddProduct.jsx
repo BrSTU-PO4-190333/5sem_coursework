@@ -65,6 +65,8 @@ export default function AddProduct() {
                         <th>KG</th>
                         <th>M3</th>
                         <th>CostBYN</th>
+                        <th>Company</th>
+                        <th>Category</th>
                         <th>Add</th>
                     </tr>
                 </thead>
@@ -132,6 +134,24 @@ export default function AddProduct() {
                                 name="CostBYN"
                                 defaultValue="0.00"
                                 placeholder="0.00"
+                            />
+                        </th>
+                        <th>
+                            <input
+                                className="form-control"
+                                type="text"
+                                name="Company"
+                                defaultValue="de-pa"
+                                placeholder="de-pa"
+                            />
+                        </th>
+                        <th>
+                            <input
+                                className="form-control"
+                                type="text"
+                                name="Category"
+                                defaultValue="accessories"
+                                placeholder="accessories"
                             />
                         </th>
                         <th>

@@ -7,5 +7,7 @@ CREATE TABLE `database`.`products` (
     `OnBox` INT NOT NULL ,
     `KG` DECIMAL(6,3) NOT NULL,
     `M3` DECIMAL(7,4) NOT NULL,
+    `Company` VARCHAR(64) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL ,
+    `Category` VARCHAR(64) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL ,
     UNIQUE (`ID`)
 ) ENGINE = MyISAM;

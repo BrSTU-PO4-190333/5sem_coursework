@@ -59,6 +59,8 @@ export default function GetProducts() {
                         <th>KG</th>
                         <th>M3</th>
                         <th>CostBYN</th>
+                        <th>Company</th>
+                        <th>Category</th>
                         {/* <th>Edit</th> */}
                         <th>Delete</th>
                     </tr>
@@ -77,6 +79,8 @@ export default function GetProducts() {
                             <td>{value.KG}</td>
                             <td>{value.M3}</td>
                             <td>{value.CostBYN}</td>
+                            <td>{value.Company}</td>
+                            <td>{value.Category}</td>
                             {/*
                             <td>
                                 <Link
