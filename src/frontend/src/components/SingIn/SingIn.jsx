@@ -19,15 +19,12 @@ export default function SingIn() {
     
     async function SingIn() {
         try {
-            const GPI_URL = gpi_genereate_url(
-                `${process.env.REACT_APP__API_URL}:${process.env.REACT_APP__API_PORT}/gpi_singin`,
-                {
-                    login: gpi_login,
-                    password: gpi_password,
-                }
-            );
-            console.log(GPI_URL);
-            const res = await axios.get(GPI_URL);
+            const GPI_URL = `${process.env.REACT_APP__API_URL}:${process.env.REACT_APP__API_PORT}/singin`;
+            const GPI_DATA = {
+                login: gpi_login,
+                password: gpi_password,
+            }
+            const res = await axios.post(GPI_URL, GPI_DATA);
             switch(res.data) {
                 case "errLogin":
                     alert("Login not found");
@@ -39,11 +36,14 @@ export default function SingIn() {
                     localStorage.removeItem("login");
                     localStorage.removeItem("password");
                     break;
-                default:
+                case "success":
                     alert("success");
                     localStorage.setItem("login", gpi_login);
                     localStorage.setItem("password", gpi_password);
                     SetHTMLredirect(<Redirect to="/view-products" />);
+                    break;
+                default:
+                    alert("Err");
             }
         }
         catch(err) {

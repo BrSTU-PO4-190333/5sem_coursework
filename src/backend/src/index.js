@@ -13,7 +13,7 @@ app.get("/", function (req, res) {
 });
 
 // Auth
-app.use("/", require("./routes/gpi_singin"));
+app.use("/", require("./routes/singin"));
 
 // Products
 app.use("/", require("./routes/gpi_get_products"));
