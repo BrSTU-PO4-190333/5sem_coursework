@@ -3,7 +3,9 @@ CREATE TABLE `database`.`products` (
     `Model` VARCHAR(32) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL ,
     `Name` VARCHAR(220) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL ,
     `Img` VARCHAR(1000) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL ,
+    `CostBYN` DECIMAL(6,2) NOT NULL,
     `OnBox` INT NOT NULL ,
-    `KG` FLOAT UNSIGNED NOT NULL ,
-    `M3` FLOAT UNSIGNED NOT NULL , UNIQUE (`ID`)
+    `KG` DECIMAL(6,3) NOT NULL,
+    `M3` DECIMAL(7,4) NOT NULL,
+    UNIQUE (`ID`)
 ) ENGINE = MyISAM;

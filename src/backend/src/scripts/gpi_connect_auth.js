@@ -1,14 +1,14 @@
 const mysql = require('mysql2/promise');
 const config = require("../gpi_MySQL_config");
 
-module.exports = async function (req, res, func = function(){}) {
+module.exports = async function (req, res, GPI_ARGS, func = function(){}) {
     try {
         // Connecting to the database
         const conn = await mysql.createConnection(config);
 
         // We get a login and password
         const gpi_SQL = mysql.format("SELECT * FROM `admins` WHERE ?", {
-            login: req.query.login
+            login: GPI_ARGS.login
         });
         const [rows, fields] = await conn.execute(gpi_SQL);
         
@@ -20,7 +20,7 @@ module.exports = async function (req, res, func = function(){}) {
         }
 
         // Password verification
-        if (rows[0].password != req.query.password) {
+        if (rows[0].password != GPI_ARGS.password) {
             conn.end();
             res.send("errPassword");
             return;

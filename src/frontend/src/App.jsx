@@ -10,7 +10,6 @@ import "./App.css";
 import styles from "./App.module.css";
 import Nav from "./components/Nav/Nav.jsx";
 // import PageOpenFile from "./components/PageOpenFile/PageOpenFile.jsx";
-// import PageAddProduct from "./components/PageAddProduct/PageAddProduct.jsx";
 import PageViewProducts from "./components/GetProducts/GetProducts.jsx";
 import PageUpdateProduct from "./components/PageUpdateProduct/PageUpdateProduct.jsx";
 import PageLogin from "./components/SingIn/SingIn.jsx";
@@ -23,12 +22,6 @@ function App() {
         //     "Href": "/open-file",
         //     "Icon": faFolderOpen,
         //     "Component": <PageOpenFile />,
-        // },
-        // {
-        //     "Name": "Add product",
-        //     "Href": "/add-product",
-        //     "Icon": faPlus,
-        //     "Component": <PageAddProduct />,
         // },
         {
             "Name": "View products",
