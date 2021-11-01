@@ -1,11 +1,10 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 
-import AddProduct from './AddProduct/AddProduct';
-import DeleteButton from './DeleteButton/DeleteButton';
-import styles from "./Products.module.css";
+import DeleteButton from './DeleteButton';
+import styles from "./Products__get.module.css";
 
-export default function GetProducts() {
+export default function Products__get() {
     const [gpi_products, gpi_set_products] = useState([]);
 
     useEffect(() => { // Constructor
@@ -39,9 +38,8 @@ export default function GetProducts() {
     }
 
     return (
-        <div className={`container ${styles.products}`}>
-            <AddProduct />
-            <table className={`table table-striped ${styles.products__table}`}>
+        <div className={`${styles.Products__get} container`}>
+            <table className="table table-striped">
                 <thead>
                     <tr>
                         <th>ID</th>

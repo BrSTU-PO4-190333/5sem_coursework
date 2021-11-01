@@ -1,36 +1,29 @@
 import { Link } from 'react-router-dom';
 
 import styles from "./Nav.module.css";
-import Products__open_file from "../Products/Products__open_file";
-import Products__download_json from "../Products/Products__download_json";
-import Products__download_csv from "../Products/Products__download_csv";
 
-function Nav(props) {
+export default function Nav(props) {
     return (
         <nav className={styles.Nav}>
             <div className="container">
                 <ul >
                     <li>
-                        <span>Products</span>
+                        <Link to="/products">Products</Link>
                         <ul>
                             <li>
-                                <input
-                                    style={{display: "none"}}
-                                    type="file"
-                                    id="gpi_products_open_file"
-                                    onChange={event => Products__open_file(event)}
-                                />
-                                <label htmlFor="gpi_products_open_file">Open file</label>
+                                <Link to="/products/open">Open</Link>
                             </li>
                             <li>
-                                <span
-                                    onClick={event => Products__download_json()}
-                                >Download JSON file</span>
+                                <Link to="/products/add">Add</Link>
                             </li>
                             <li>
-                                <span
-                                    onClick={event => Products__download_csv()}
-                                >Download CSV file</span>
+                                <Link to="/products/get">Get</Link>
+                            </li>
+                            <li>
+                                <Link to="/products/download-csv">Download CSV</Link>
+                            </li>
+                            <li>
+                                <Link to="/products/download-json">Download JSON</Link>
                             </li>
                         </ul>
                     </li>
@@ -42,5 +35,3 @@ function Nav(props) {
         </nav>
     );
 }
-
-export default Nav;
