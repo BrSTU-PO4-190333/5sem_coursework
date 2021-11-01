@@ -1,15 +1,17 @@
 import download_file from "../../../scripts/download_file";
-import Products__getArray from "../Products__get/Products__getArray";
+import Product from "../../../scripts/Product";
 
 export default function Products__download_csv() {
     async function Products__download_json() {
-        const res = await Products__getArray();
-        const gpi_str_arr = JSON.stringify(res);
+        const PRD = new Product();
+        const ARR = await PRD.get();
+
+        const STR_ARR = JSON.stringify(ARR);
     
-        const d = new Date();
-        const gpi_file_name = `${d.getFullYear()}-${d.getMonth()}-${d.getDate()}_${d.getHours()}-${d.getMinutes()}_products.json`;
+        const D = new Date();
+        const FILE_NAME = `${D.getFullYear()}-${D.getMonth()}-${D.getDate()}_${D.getHours()}-${D.getMinutes()}_products.json`;
     
-        download_file(gpi_str_arr, gpi_file_name);
+        download_file(STR_ARR, FILE_NAME);
     }
 
     return (

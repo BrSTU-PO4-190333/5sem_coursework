@@ -11,6 +11,7 @@ import Products__add from "./components/Products/Products__add/Products__add";
 import Products__get from "./components/Products/Products__get/Products__get";
 import Products__download_csv from "./components/Products/Products__download_csv/Products__download_csv";
 import Products__download_json from "./components/Products/Products__download_json/Products__download_json";
+import Products__edit from "./components/Products/Products__edit/Products__edit";
 
 export default function App() {
     return (
@@ -26,6 +27,7 @@ export default function App() {
                     <Route path="/products/get" component={Products__get} />
                     <Route path="/products/download-csv" component={Products__download_csv} />
                     <Route path="/products/download-json" component={Products__download_json} />
+                    <Route path="/products/edit/:editID" component={Products__edit} />
                     <Route component={Error404} />
                 </Switch>
             </div>

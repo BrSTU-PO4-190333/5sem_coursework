@@ -1,40 +1,27 @@
-import { useEffect, useState } from 'react';
-import axios from 'axios';
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+    faPen,
+} from '@fortawesome/free-solid-svg-icons';
 
 import DeleteButton from './DeleteButton';
 import styles from "./Products__get.module.css";
+import Product from "../../../scripts/Product";
 
 export default function Products__get() {
-    const [gpi_products, gpi_set_products] = useState([]);
+    const [products, setProducts] = useState([]);
 
     useEffect(() => { // Constructor
-        gpi_set_products_arr()
+        setProductsArray()
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
-    async function gpi_set_products_arr() {
-        const arr = await gpi_get_products();
-        gpi_set_products(arr);
-    }
-
-    async function gpi_get_products() {
-        try {
-            const GPI_URL = `${process.env.REACT_APP__API_URL}:${process.env.REACT_APP__API_PORT}/gpi_get_products`;
-            const res = await axios.get(GPI_URL);
-            console.log(res);
-            if (res.data.err !== undefined) {
-                alert(`Error \nCode: ${res.data.err.code} \nMessage: ${res.data.err.message}`);
-            }
-            if (res.data.length !== undefined) {
-                return res.data;
-            }
-            return [];
-        }
-        catch (err) {
-            console.error(err);
-            alert("API error");
-            return [];
-        }
+    async function setProductsArray() {
+        const PRD = new Product();
+        const ARR = await PRD.get();
+        console.log(ARR);
+        setProducts(ARR);
     }
 
     return (
@@ -53,15 +40,16 @@ export default function Products__get() {
                         <th>CostBYN</th>
                         <th>Company</th>
                         <th>Category</th>
+                        <th>Edit</th>
                         <th>Delete</th>
                     </tr>
                 </thead>
                 <tbody>
-                    {gpi_products.map((value, index) => (
+                    {products.map((value, index) => (
                         <tr key={index}>
-                            <th>{value["ID"]}</th>
+                            <th>{value.ID}</th>
                             <td>
-                                <img src={value["Img"]} alt="" width="64" />
+                                <img src={value.Img} alt="" width="64" />
                             </td>
                             <td>{value.Img}</td>
                             <td>{value.Model}</td>
@@ -72,6 +60,14 @@ export default function Products__get() {
                             <td>{value.CostBYN}</td>
                             <td>{value.Company}</td>
                             <td>{value.Category}</td>
+                            <td>
+                                <Link
+                                    to={`/products/edit/${value.ID}`}
+                                    className="btn btn-outline-success"
+                                >
+                                    <FontAwesomeIcon icon={faPen} />
+                                </Link>
+                            </td>
                             <td>
                                 <DeleteButton id={value["ID"]} />
                             </td>
