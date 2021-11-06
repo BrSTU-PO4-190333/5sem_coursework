@@ -1,0 +1,39 @@
+\documentclass[12pt, a4paper, simple]{eskdtext}
+
+\usepackage{env}
+\usepackage{_sty/gpi_lstlisting}
+\usepackage{hyperref}
+
+% Код
+\def \gpiDocTypeNum {12}
+\def \gpiDocVer {00}
+\def \gpiCode {\gpiLetterI\gpieLetterII\gpiLetterIII.\gpiStudentGroupName\gpiStudentGroupNum.\gpiStudentCard.0\gpiDocNum~\gpiDocTypeNum~\gpiDocVer}
+
+% Графа 1 (наименование изделия/документа)
+\ESKDcolumnI {\ESKDfontIII
+    \gpiTopic \\
+    Текст программы
+}
+
+% Графа 2 (обозначение документа)
+\ESKDsignature {\gpiCode}
+
+% Графа 4 (литералы)
+\ESKDcolumnIVfI {\gpiLetterI}
+\ESKDcolumnIVfII {\gpieLetterII}
+\ESKDcolumnIVfIII {\gpiLetterIII}
+
+% Графа 9 (наименование или различительный индекс предприятия) задает команда
+\ESKDcolumnIX {\gpiDepartment}
+
+% Графа 11 (фамилии лиц, подписывающих документ) задают команды
+\ESKDcolumnXIfI {\gpiStudentSurname}
+\ESKDcolumnXIfII {\gpiTeacherSurname}
+\ESKDcolumnXIfV {\gpiTeacherSurname}
+
+\begin{document}
+    % Титульный лист
+    \input{_tex/gpi_a_titlePage.tex}
+    
+    ...
+\end{document}
