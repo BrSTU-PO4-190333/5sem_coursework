@@ -160,13 +160,11 @@
 
 \begin{figure}[!htp]
     \centering
-    \includegraphics[width=16cm]
+    \includegraphics[width=12cm]
         {_assets/gpi_backend_modules.png}
     \caption{Модули и подмодули для backend}
     \label{fig:gpi_backend_modules}
 \end{figure}
-
-\newpage
 
 \subsection{Проект. Схема данных}
 
@@ -187,6 +185,43 @@
         {_assets/gpi_client_server.png}
     \caption{Схема архитектуры ПО}
     \label{fig:gpi_client_server}
+\end{figure}
+
+\subsection{Проектирование UI (макеты)}
+
+Интерфейс будет содержать шапку сайта, которая в себе содержит навигацию (основные страницы).
+Макет на \textbf{рис. \ref{fig:gpi_ui_menu} (стр. \pageref{fig:gpi_ui_menu})}.
+
+В теле сайта на странице добавления будет находится форма,
+через которую можно добавить поля в базу данных.
+
+В теле сайта на странице вывода будет таблица с элементами из базы данных.
+Макет на \textbf{рис. \ref{fig:gpi_ui_get} (стр. \pageref{fig:gpi_ui_get})}.
+
+В теле сайта на странице редактирования будет находится форма,
+через которую можно изменить поля в базе данных.
+
+В теле сайта на странице открытия файла будет кнопка загрузки файла.
+
+В теле сайта на странице сохранения файла CSV будет кнопка загрузки файла.
+
+В теле сайта на странице сохранения файла JSON будет кнопка загрузки файла.
+
+\begin{figure}[!htb]\centering
+    \begin{minipage}{0.49\textwidth}
+        \centering
+        \includegraphics[width=0.99\linewidth]
+            {_assets/gpi_ui_menu.png}
+        \caption{Макет мeню}
+        \label{fig:gpi_ui_menu}
+    \end{minipage}
+    \begin {minipage}{0.49\textwidth}
+        \centering
+        \includegraphics[width=0.99\linewidth]
+            {_assets/gpi_ui_get.png}
+        \caption{Макет страницы}
+        \label{fig:gpi_ui_get}
+    \end{minipage}
 \end{figure}
 
 \newpage
