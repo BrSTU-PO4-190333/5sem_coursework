@@ -135,7 +135,7 @@
 
 \begin{figure}[!htp]
     \centering
-    \includegraphics[width=12.5cm]
+    \includegraphics[width=13.7cm]
         {_assets/gpi_frontend_modules.png}
     \caption{Модули и подмодули для frontend}
     \label{fig:gpi_frontend_modules}
@@ -164,6 +164,29 @@
         {_assets/gpi_backend_modules.png}
     \caption{Модули и подмодули для backend}
     \label{fig:gpi_backend_modules}
+\end{figure}
+
+\newpage
+
+\subsection{Проект. Схема данных}
+
+Трёхуровневая архитектура - архитектурная модель программного комплекса,
+предполагающая наличие в нём трёх компонентов: клиента, сервера приложений
+(к которому подключено клиентское приложение) и сервера баз данных.
+
+Если мы посмотрим на данную архитектуру с позиции сайта.
+То первый уровень можно считать браузером (frontend), с помощью которого посетитель заходит на сайт,
+второй уровень - это Express server (backend), а третий уровень - это база данных MySQL.
+
+Схема архитуктуры ПО изображена на
+\textbf{рис. \ref{fig:gpi_client_server} (стр. \pageref{fig:gpi_client_server})}.
+
+\begin{figure}[!htp]
+    \centering
+    \includegraphics[width=16cm]
+        {_assets/gpi_client_server.png}
+    \caption{Схема архитектуры ПО}
+    \label{fig:gpi_client_server}
 \end{figure}
 
 \newpage
