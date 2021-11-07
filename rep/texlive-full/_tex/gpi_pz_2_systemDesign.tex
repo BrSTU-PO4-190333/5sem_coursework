@@ -1,59 +1,6 @@
 \newpage
 
-\section{ПОСТАНОВКА ЗАДАЧИ}
-
-% = = = = =
-
-\subsection{Перечень функций}
-
-Достижение цели курсовой работы предполагает необходимость создания приложения
-для работы с локальной базой данных на тему <<Товары>> с использованием пользовательского
-интерфейса и решения следующих конкретных задач:
-
-\begin{enumerate}
-    \item добавление товара в базу данных;
-    \item вывод товаров из базы данных;
-    \item удаление товара из базы данных;
-    \item изменение товара в базу данных;
-    \item сохранение товаров из базы данных в файл JSON;
-    \item сохранение товаров из базы данных в файл CSV;
-    \item открытие файла JSON и добавление товаров в базу данных.
-\end{enumerate}
-
-% = = = = =
-
-\subsection{Требования пользователей}
-
-Пользовательские требования - описание на естественном языке (плюс поясняющие диаграммы) функций,
-выполняемых системой, и ограничений, накладываемых на неё.
-
-Источники: Пользователь
-
-Документ: Пользовательские требования / требования к ПО.
-
-Ответственный: Системный аналитик.
-
-Эти требования должны определять только внешнее поведение системы,
-избегая по возможности определения структурных характеристик системы.
-Пользовательские требования должны быть написаны естественным языком с использованием
-простых таблиц, а также наглядных и понятных диаграмм.
-
-Требования пользователя к информационной системе:
-
-Обязательные:
-
-\begin{enumerate}
-    \item должна быть реализована функция ввода данных в информационную систему;
-    \item должна работать функция удаления записи из информационной системы.
-\end{enumerate}
-
-Желательные:
-
-\begin{enumerate}
-    \item информационная система должна выводить отчеты на печать.
-\end{enumerate}
-
-% = = = = =
+\section{Проектирование системы}
 
 \subsection{Проектирование архитектуры ПО (модули)}
 
@@ -135,7 +82,7 @@
 
 \begin{figure}[!htp]
     \centering
-    \includegraphics[width=13.7cm]
+    \includegraphics[width=16cm]
         {_assets/gpi_frontend_modules.png}
     \caption{Модули и подмодули для frontend}
     \label{fig:gpi_frontend_modules}
@@ -160,11 +107,13 @@
 
 \begin{figure}[!htp]
     \centering
-    \includegraphics[width=12cm]
+    \includegraphics[width=16cm]
         {_assets/gpi_backend_modules.png}
     \caption{Модули и подмодули для backend}
     \label{fig:gpi_backend_modules}
 \end{figure}
+
+\newpage
 
 \subsection{Проект. Схема данных}
 
@@ -187,6 +136,8 @@
     \label{fig:gpi_client_server}
 \end{figure}
 
+\newpage
+
 \subsection{Проектирование UI (макеты)}
 
 Интерфейс будет содержать шапку сайта, которая в себе содержит навигацию (основные страницы).
@@ -207,21 +158,20 @@
 
 В теле сайта на странице сохранения файла JSON будет кнопка загрузки файла.
 
-\begin{figure}[!htb]\centering
-    \begin{minipage}{0.49\textwidth}
-        \centering
-        \includegraphics[width=0.99\linewidth]
-            {_assets/gpi_ui_menu.png}
-        \caption{Макет мeню}
-        \label{fig:gpi_ui_menu}
-    \end{minipage}
-    \begin {minipage}{0.49\textwidth}
-        \centering
-        \includegraphics[width=0.99\linewidth]
-            {_assets/gpi_ui_get.png}
-        \caption{Макет страницы}
-        \label{fig:gpi_ui_get}
-    \end{minipage}
+\begin{figure}[!htp]
+    \centering
+    \includegraphics[width=12cm]
+        {_assets/gpi_ui_menu.png}
+    \caption{Макет мeню}
+    \label{fig:gpi_ui_menu}
+\end{figure}
+
+\begin{figure}[!htp]
+    \centering
+    \includegraphics[width=12cm]
+        {_assets/gpi_ui_get.png}
+    \caption{Макет страницы}
+    \label{fig:gpi_ui_get}
 \end{figure}
 
 \newpage

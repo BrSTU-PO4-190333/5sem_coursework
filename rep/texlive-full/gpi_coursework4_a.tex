@@ -5,15 +5,14 @@
 \usepackage{hyperref}
 
 % Код
-\def \gpiDocTypeNum {12}
+\def \gpiDocTypeNum {90}
 \def \gpiDocVer {00}
 \def \gpiCode {\gpiLetterI\gpieLetterII\gpiLetterIII.\gpiStudentGroupName\gpiStudentGroupNum.\gpiStudentCard.0\gpiDocNum~\gpiDocTypeNum~\gpiDocVer}
 
+\def \gpiDocTopic {СХЕМА ПРОГРАММЫ}
+
 % Графа 1 (наименование изделия/документа)
-\ESKDcolumnI {\ESKDfontIII
-    \gpiTopic \\
-    Текст программы
-}
+\ESKDcolumnI {\ESKDfontIII \gpiTopic \\ \gpiDocTopic}
 
 % Графа 2 (обозначение документа)
 \ESKDsignature {\gpiCode}

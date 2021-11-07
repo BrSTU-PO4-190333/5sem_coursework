@@ -11,11 +11,10 @@
 \def \gpiDocVer {00}
 \def \gpiCode {\gpiLetterI\gpieLetterII\gpiLetterIII.\gpiStudentGroupName\gpiStudentGroupNum.\gpiStudentCard.0\gpiDocNum~\gpiDocTypeNum~\gpiDocVer}
 
+\def \gpiDocTopic {ПОЯСНИТЕЛЬНАЯ ЗАПИСКА}
+
 % Графа 1 (наименование изделия/документа)
-\ESKDcolumnI {\ESKDfontIII
-    \gpiTopic \\
-    Пояснительная записка
-}
+\ESKDcolumnI {\ESKDfontIII \gpiTopic \\ \gpiDocTopic}
 
 % Графа 2 (обозначение документа)
 \ESKDsignature {\gpiCode}
@@ -34,9 +33,13 @@
 \ESKDcolumnXIfV {\gpiTeacherSurname}
 
 \begin{document}
-    \input{_tex/gpi_pz_titlePage.tex}               % Титульный лист
-    \input{_tex/gpi_pz_tableOfContent.tex}          % Содержание
-    \input{_tex/gpi_pz_intro.tex}                   % Введение
-    \input{_tex/gpi_pz_problemStatement.tex}        % Постановка задачи
-    \input{_tex/gpi_pz_literature.tex}              % СПИСОК ИСПОЛЬЗОВАННЫХ ИСТОЧНИКОВ
+    \input{_tex/gpi_pz_titlePage.tex}                           % Титульный лист
+    \input{_tex/gpi_pz_tableOfContent.tex}                      % Содержание
+    \input{_tex/gpi_pz_intro.tex}                               % Введение
+    \input{_tex/gpi_pz_1_systemAnalysisAndProblemStatement.tex} % 1. Системный анализ и постановка задачи
+    \input{_tex/gpi_pz_2_systemDesign.tex}                      % 2. Проектирование системы
+    \input{_tex/gpi_pz_3_implementationOfTheSystem.tex}         % 3. Реализация системы
+    \input{_tex/gpi_pz_4_systemTesting.tex}                     % 4. Тестирование системы
+    \input{_tex/gpi_pz_conclusion.tex}                          % Заключение
+    \input{_tex/gpi_pz_literature.tex}                          % СПИСОК ИСПОЛЬЗОВАННЫХ ИСТОЧНИКОВ
 \end{document}
