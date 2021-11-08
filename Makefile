@@ -25,8 +25,8 @@ gpi-run-backend:
 
 # = = = = = Frontend = = = = =
 
-gpi-run-frontend:
-	cd src/frontend; npm run start
+gpi-run-frontend-adminpanel:
+	cd src/frontend-adminpanel; npm run start
 
 gpi-run-frontend-webstore:
 	cd src/frontend-webstore; npm run start
