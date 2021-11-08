@@ -12,6 +12,8 @@
     height: 120px;
     display: flex;
     justify-content: center;
+    border: 1px solid rgba(0,0,0,0.1);
+    overflow: hidden;
 }
 
 .products__product

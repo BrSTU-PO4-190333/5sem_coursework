@@ -101,7 +101,7 @@ export default function Product() {
                         >
                             <div className="gpi_content">
                                 <div className={styles.products_img}>
-                                    <img src={value.Img} alt="" />
+                                    <img src={value.Img} alt={`no img ${value.Img}`} />
                                 </div>
                                 <div className={styles.products__model}>
                                     {value.Model}
