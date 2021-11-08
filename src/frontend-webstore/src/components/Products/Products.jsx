@@ -112,7 +112,7 @@ export default function Product() {
                             </div>
                             <div className="gpi_footer">
                                 <div className={styles.products__cost}>
-                                    {value.Cost} BYN
+                                    {value.CostBYN} BYN
                                 </div>
                                 <div className={styles.products__more_button}>
                                     <button onClick={() => openWindowAboutProduct(index)}>
