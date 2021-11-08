@@ -46,10 +46,9 @@
     font-weight: bolder;
 }
 
-.products__more_button a
+.products__more_button button
 {
     display: block;
-    text-decoration: none;
     text-align: center;
     width: 100%;
     background-color: #06c;
@@ -59,7 +58,7 @@
     padding: 8px;
 }
 
-.products__more_button a:hover
+.products__more_button button:hover
 {
     background-color: transparent;
     color: #06c;
