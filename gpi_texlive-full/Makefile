@@ -1,19 +1,18 @@
-build:
-	make build-pz
-	make build-a
-	make build-b
-	cp _build/*.pdf ../
+gpi_build-pdf:
+	make gpi_build-pz
+	make gpi_build-a
+	make gpi_build-b
 
-build-a:
-	latexmk -pdf -output-directory=_build gpi_coursework4_a.tex
-
-build-b:
-	latexmk -pdf -output-directory=_build gpi_coursework4_b.tex
-
-build-pz:
+gpi_build-pz:
 	latexmk -pdf -output-directory=_build gpi_coursework4_pz.tex
 
-clean:
+gpi_build-a:
+	latexmk -pdf -output-directory=_build gpi_coursework4_a.tex
+
+gpi_build-b:
+	latexmk -pdf -output-directory=_build gpi_coursework4_b.tex
+
+gpi_clean:
 	rm -rfv ./*/*.aux
 	rm -rfv ./*/*.fdb_latexmk
 	rm -rfv ./*/*.fls

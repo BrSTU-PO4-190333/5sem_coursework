@@ -1,32 +1,41 @@
-gpi-install:
-	make gpi-copy-env
-	cd src/backend; npm i
-	cd src/frontend; npm i
-	cd src/frontend-webstore; npm i
+gpi_install:
+	make gpi_copy-env
+	cd gpi_backend-api; npm i
+	cd gpi_frontend-adminpanel; npm i
+	cd gpi_frontend-webstore; npm i
 
-gpi-copy-env:
-	cd src/mysql; cp copy.env .env
-	cd src/backend; cp copy.env .env
-	cd src/frontend; cp copy.env .env
-	cd src/frontend-webstore; cp copy.env .env
+gpi_copy-env:
+	cd gpi_lamp-mysql; cp copy.env .env
+	cd gpi_backend-api; cp copy.env .env
+	cd gpi_frontend-adminpanel; cp copy.env .env
+	cd gpi_frontend-webstore; cp copy.env .env
 
 # = = = = = MySQL = = = = =
 
-gpi-run-mysql:
-	cd src/mysql; make start
+gpi_run-lamp-mysql:
+	cd gpi_lamp-mysql; make start
 
-gpi-restart-mysql:
-	cd src/mysql; make restart
+gpi_restart-lamp-mysql:
+	cd gpi_lamp-mysql; make restart
 
 # = = = = = Backend = = = = =
 
-gpi-run-backend:
-	cd src/backend; npm run start
+gpi_run-backend-api:
+	cd gpi_backend-api; npm run start
 
 # = = = = = Frontend = = = = =
 
-gpi-run-frontend-adminpanel:
-	cd src/frontend-adminpanel; npm run start
+gpi_run-frontend-adminpanel:
+	cd gpi_frontend-adminpanel; npm run start
 
-gpi-run-frontend-webstore:
-	cd src/frontend-webstore; npm run start
+gpi_run-frontend-webstore:
+	cd gpi_frontend-webstore; npm run start
+
+# = = = = = PDF = = = = =
+
+gpi_run-texlive-docker:
+	cd gpi_texlive-full; docker-compose up
+	cd gpi_texlive-full; docker-compose down
+
+gpi_clean-texlive:
+	cd gpi_texlive-full; make gpi_clean
