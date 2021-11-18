@@ -8,6 +8,7 @@ gpi_build-pz:
 
 gpi_build-a:
 	latexmk -pdf -output-directory=_build gpi_coursework4_a.tex
+	latexmk -pdf -output-directory=_build gpi_coursework4_a_programPlan.tex
 
 gpi_build-b:
 	latexmk -pdf -output-directory=_build gpi_coursework4_b.tex

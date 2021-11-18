@@ -1,0 +1,33 @@
+\documentclass[a3paper, landscape]{eskdgraph}
+
+\usepackage{env}
+
+% Код
+\def \gpiDocTypeNum {90}
+\def \gpiDocVer {00}
+\def \gpiCode {\gpiLetterI\gpieLetterII\gpiLetterIII.\gpiStudentGroupName\gpiStudentGroupNum.\gpiStudentCard.0\gpiDocNum~\gpiDocTypeNum~\gpiDocVer}
+
+\def \gpiDocTopic {СХЕМА ПРОГРАММЫ}
+
+% Графа 1 (наименование изделия/документа)
+\ESKDcolumnI {\ESKDfontIII \gpiTopic \\ \gpiDocTopic}
+
+% Графа 2 (обозначение документа)
+\ESKDsignature {\gpiCode}
+
+% Графа 4 (литералы)
+\ESKDcolumnIVfI {\gpiLetterI}
+\ESKDcolumnIVfII {\gpieLetterII}
+\ESKDcolumnIVfIII {\gpiLetterIII}
+
+% Графа 9 (наименование или различительный индекс предприятия) задает команда
+\ESKDcolumnIX {\gpiDepartment}
+
+% Графа 11 (фамилии лиц, подписывающих документ) задают команды
+\ESKDcolumnXIfI {\gpiStudentSurname}
+\ESKDcolumnXIfII {\gpiTeacherSurname}
+\ESKDcolumnXIfV {\gpiTeacherSurname}
+
+\begin{document}
+    \hspace{0pt}
+\end{document}
