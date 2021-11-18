@@ -15,18 +15,38 @@ make gpi_install
 
 ## Project start
 
-- 1st terminal: `make gpi_run-lamp-mysql` - LAMP MySQL
-    - [localhost:8000](http://localhost:8000) - phpMyAdmin
-    - ~~[localhost:8001](http://localhost:8001) - Apache PHP~~
+### 1st terminal for MySQL (LAMP)
 
-- 2nd terminal: `make gpi_run-backend-api` - Express
-    - [localhost:3001](http:localhost:3001) - NodeJS Express API (backend)
+```bash
+make gpi_run-lamp-mysql
+```
 
-- 3rd terminal: `make gpi_run-frontend-adminpanel` - Frontend admin panel
-    - [localhost:3003](http:localhost:3003) - React JS
+- http://localhost:8000 - phpMyAdmin
+- ~~http://localhost:8001 - Apache PHP~~
 
-- 4th terminal: `make gpi_run-frontend-webstore` - Frontend webstore
-    - [localhost:3002](http:localhost:3002) - React JS
+### 2nd terminal for API (NodeJS Express)
+
+```
+make gpi_run-backend-api
+```
+
+- http://localhost:3001 - Express
+
+### 3rd terminal for admin panel (NodeJS React)
+
+```bash
+make gpi_run-frontend-adminpanel
+```
+
+- http://localhost:3003 - React
+
+### 4th terminal for webstore (NodeJS React)
+
+```bash
+make gpi_run-frontend-webstore
+```
+
+- http://localhost:3002 - React
 
 ## Make PDF
 
