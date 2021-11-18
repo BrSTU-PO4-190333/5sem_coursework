@@ -1,3 +1,12 @@
+## PDF files
+
+- [Пояснительная записка](https://github.com/Pavel-Innokentevich-Galanin/gpi_coursework5/raw/pdf/gpi_coursework4_pz.pdf)
+- [Приложение А](https://github.com/Pavel-Innokentevich-Galanin/gpi_coursework5/raw/pdf/gpi_coursework4_a.pdf)
+- [Приложение А (Схема программы)](https://github.com/Pavel-Innokentevich-Galanin/gpi_coursework5/raw/pdf/gpi_coursework4_a_programPlan.pdf)
+- [Приложение Б](https://github.com/Pavel-Innokentevich-Galanin/gpi_coursework5/raw/pdf/gpi_coursework4_b.pdf)
+
+---
+
 ## Installing packages
 
 ```bash
