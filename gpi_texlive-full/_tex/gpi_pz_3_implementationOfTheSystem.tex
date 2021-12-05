@@ -4,8 +4,6 @@
 
 \subsection{Докеризация}
 
-\subsubsection*{Для чего нужен Docker}
-
 Чтобы использовать MySQL нам нужно устанавливать LAMP (Linux, Apache, MySQL, PHP).
 Это будет не удобно, если нужно будет разварачивать на нескольких компьютерах,
 так как ручной ввод команд будет занимать много времени.
@@ -15,52 +13,318 @@
 но для этого нам нужно иметь эти программы на каждом компьютере. Имея один файл docker-compose
 в проекте убивает проблему установки больших дистрибутивов, таких как OpenServer.
 
-\subsubsection*{Включаем WSL в Windows 10}
-
-Для работы Docker на Windows 10 нам нужен WSL2 (Windows subsystem for Linux version 2).
-
-Заходим в <<Control Panel>>, затем <<Programs>>, затем <<Turn Windows features on or off>>.
-
-В окне <<Windows Features>> выбираем галочкой следующие пункты:
+\subsubsection*{Установка Docker на Windows 10}
 
 \begin{itemize}
-    \item Hyper-V
-    \item Virtual Machine Platform
-    \item Windows Hypervisor Platform
-    \item Windows Subsystem for Linux
+    \item[1.] Заходим на Wikipedia и находим оффициальный сайт Docker. \\
+    \url{https://ru.wikipedia.org/wiki/Docker} \\
+    Находим ссылку <<Сайт docker.com>> - и переходим по ней. \\
+    Скриншот на \textbf{рис.~\ref{fig:gpi_pz_docker_01} (стр. \pageref{fig:gpi_pz_docker_01})}.
+
+    \item[2.] Открываем оффициальный сайт Docker. \\
+    \url{https://www.docker.com/} \\
+    Переходим на страницу загрузки, нажав на кнопку <<Get Started>>. \\
+    \url{https://www.docker.com/get-started} \\
+    Скриншот на \textbf{рис.~\ref{fig:gpi_pz_docker_02} (стр. \pageref{fig:gpi_pz_docker_02})}.
+
+    \item[3.] Выбираем установщик для Windows. \\
+    Скриншот на \textbf{рис.~\ref{fig:gpi_pz_docker_03} (стр. \pageref{fig:gpi_pz_docker_03})}.
+
+    \item[4.] Запускаем установщик Windows. \\
+    Скриншот на \textbf{рис.~\ref{fig:gpi_pz_docker_04} (стр. \pageref{fig:gpi_pz_docker_04})}.
+
+    \item[5.] После установки Docker, установщик просит перезагрузить компьютер.
+    Перезагружаем компьютер нажав на кнопку <<Close and restart>>. \\
+    Скриншот на \textbf{рис.~\ref{fig:gpi_pz_docker_05} (стр. \pageref{fig:gpi_pz_docker_05})}.
+
+    \item[6.] После перезагрузки компюьтера Docker автоматически запустился и просит принять лицензию.
+    Соглашаемся с лицензией поставив галочку.
+    Продолжаем запуск нажав на кнопку <<Accept>>.
+    Скриншот на \textbf{рис.~\ref{fig:gpi_pz_docker_06} (стр. \pageref{fig:gpi_pz_docker_06})}.
+
+    \item[7.] При запуске Docker возникает ошибка.
+    Эта ошибка возникает из-за того, что у нас установлен WSL версии 1. \\
+    Ошибка просит посетить сайт: \url{https://aka.ms/wsl2kernel}. \\
+    Скриншот на \textbf{рис.~\ref{fig:gpi_pz_docker_07} (стр. \pageref{fig:gpi_pz_docker_07})}.
+
+    \item[8.] По переходу по ссылке \url{https://aka.ms/wsl2kernel} происходит перенаправление
+    на страницу с инструкцией об установке обновления WSL2.
+    На это странице находим ссылку на загрузку установщика. \\
+    Скриншот на \textbf{рис.~\ref{fig:gpi_pz_docker_08} (стр. \pageref{fig:gpi_pz_docker_08})}.
+
+    \item[9.] Запускаем установщик. Жмём кнопку <<Next>>. \\
+    Скриншот на \textbf{рис.~\ref{fig:gpi_pz_docker_09} (стр. \pageref{fig:gpi_pz_docker_09})}.
+    
+    \item[10.] Завершаем установку. Жмём кнопку <<Finish>>. \\
+    Скриншот на \textbf{рис.~\ref{fig:gpi_pz_docker_10} (стр. \pageref{fig:gpi_pz_docker_10})}.
+
+    \item[11.] Возврашаемся к инструкции на сайте. Эта инструкция говорит нам поменять WSL1 на WSL2,
+    прописав команду в Power Shell. Копируем команду нажав на кнопку <<Copy>>. \\
+    Скриншот на \textbf{рис.~\ref{fig:gpi_pz_docker_11} (стр. \pageref{fig:gpi_pz_docker_11})}.
+
+    \item[12.] Чтобы открыть Power Shell ищем его в поиске.
+    Чтобы открыть поиск зажимает клавиши <<Win>> + <<Q>>.
+    В поиске прописываем <<powershell>>. Запускаем Power Shell нажав кнопку <<Open>>. \\
+    Скриншот на \textbf{рис.~\ref{fig:gpi_pz_docker_12} (стр. \pageref{fig:gpi_pz_docker_12})}.
+
+    \item[13.] Открывается Power Shell. Вставляем команду. \\
+    Скриншот на \textbf{рис.~\ref{fig:gpi_pz_docker_13} (стр. \pageref{fig:gpi_pz_docker_13})}.
+
+    \item[14.] Перезагружаем компьютер - и теперь Docker запускается без ошибки.
+    Но для того, чтобы мы могли воспользоваться командами <<docker>> и <<docker-compose>>
+    нам нужен какой-нибудь дистрибутив Linux. \\
+    Скриншот на \textbf{рис.~\ref{fig:gpi_pz_docker_14} (стр. \pageref{fig:gpi_pz_docker_14})}.
+
+    \item[15.] Если вернуться к инструкции, то инструкция также рекомендует нам установть
+    какой-нибудь дистрибутив Linux. \\
+    Скриншот на \textbf{рис.~\ref{fig:gpi_pz_docker_15} (стр. \pageref{fig:gpi_pz_docker_15})}.
+
+    \item[16.] Нам нужен магазин приложений. Найдем его через поиск.
+    Чтобы открыть поиск зажимает клавиши <<Win>> + <<Q>>.
+    В поиске пишем <<Store>>.
+    Открываем, нажав клавишу <<Open>>. \\
+    Скриншот на \textbf{рис.~\ref{fig:gpi_pz_docker_16} (стр. \pageref{fig:gpi_pz_docker_16})}.
+
+    \item[17.] В магизине приложении в поиске вводим <<Ubuntu>>.
+    Переходим на стриницу приложения Ubuntu нажав на нужный вариант из предложенных. \\
+    Скриншот на \textbf{рис.~\ref{fig:gpi_pz_docker_17} (стр. \pageref{fig:gpi_pz_docker_17})}.
+
+    \item[18.] На странице загрузки жмём кнопку <<Get>> для того, чтобы установить приложение на компьютер. \\
+    Скриншот на \textbf{рис.~\ref{fig:gpi_pz_docker_18} (стр. \pageref{fig:gpi_pz_docker_18})}.
+
+    \item[19.] Открываем терминал Ubuntu, например, через поиск. Жмём <<Win>> + <<R>>.
+    В поиске вводим <<Ubuntu>>. Жмём <<Open>>.
+    При первом запуске терминала Ubuntu дистрибутив будет устанавлився.
+    При установке просят придумать имя пользователя на английском. Вводим имя пользователя.
+    Просят ввести пароль.
+    Когда мы будет вводим вводить пароль, то символы не будут отображаться - это сделано в целях безопасности.
+    Далее системы будет готова к использованию. \\ 
+    Скриншот на \textbf{рис.~\ref{fig:gpi_pz_docker_19} (стр. \pageref{fig:gpi_pz_docker_19})}.
+    
+    \item[20.] Как уже скачали выбранный дистрибутив (в нашем случае Ubuntu),
+    то в приложении <<Docker Desktop>> нужно включить наш дистрибутив.
+    \begin{itemize}
+        \item[1.] Запускаем <<Docker Desktop>>.
+        \item[2.] Переходим в настройки нажав на шестиренку.
+        \item[3.] Переходим в раздел <<Resources>>.
+        \item[4.] Переходим в подпункт <<WSL INTEGRATION>>.
+        \item[5.] Ставим ползунок к <<Ubuntu>>.
+    \end{itemize}
+    Скриншот на \textbf{рис.~\ref{fig:gpi_pz_docker_20} (стр. \pageref{fig:gpi_pz_docker_20})}.
+
+    \item[21.] Запускаем терминал Ubuntu через поиск. Открываем поиск нажав <<Win>> + <<R>>. \\
+    В поиске вводим <<Ubuntu>>. Жмём кнопку <<Open>>. \\
+    Скриншот на \textbf{рис.~\ref{fig:gpi_pz_docker_21} (стр. \pageref{fig:gpi_pz_docker_21})}.
+
+    \item[22.] В терминале Ubuntu вводим команду <<docker -v>> - и у нас выводится его версия <<Docker version 20.10.11, build dea9396>>,
+    то есть у нас установлен Docker. \\
+    В терминале Ubuntu вводим команду <<docker-compose -v>> - и у нас выводится его версия <<Docker Compose version v2.2.1>>,
+    то есть у нас установлен docker-compose. \\
+    Скриншот на \textbf{рис.~\ref{fig:gpi_pz_docker_22} (стр. \pageref{fig:gpi_pz_docker_22})}.
+
 \end{itemize}
 
-Скриншот <<Windows Features>> на
-\textbf{рис.~\ref{fig:gpi_pz_controlPanelSettings}~(стр.~\pageref{fig:gpi_pz_controlPanelSettings})}.
-
-\begin{figure}[!hp]
+\begin{figure}[!p]
     \centering
-    \includegraphics[width=16cm]
-        {_assets/gpi_pz_controlPanelSettings.png}
-    \caption{Включаем пункты в Панели управления}
-    \label{fig:gpi_pz_controlPanelSettings}
+    \begin{minipage}{0.47\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]
+            {_assets/gpi_pz_docker_01.png}
+        \caption{Находим сайт на Wikipedia}
+        \label{fig:gpi_pz_docker_01}
+    \end{minipage}
+    \begin{minipage}{0.47\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]
+            {_assets/gpi_pz_docker_02.png}
+        \caption{Открываем сайт}
+        \label{fig:gpi_pz_docker_02}
+    \end{minipage}
 \end{figure}
 
-Перезагружаем компьютер - и теперь у нас есть WSL, но только версии 1.
-
-\subsubsection*{Ubuntu в Windows 10}
-
-После того как мы включили функцию WSL мы не имеет никакой операционной системы.
-Ubuntu можно скачать из приложения <<Microsoft Store>> по поиску.
-Скриншот <<Microsoft Store>> на
-\textbf{рис.~\ref{fig:gpi_pz_storeUbuntu}~(стр.~\pageref{fig:gpi_pz_storeUbuntu})}.
-
-\begin{figure}[!hp]
+\begin{figure}[!p]
     \centering
-    \includegraphics[width=16cm]
-        {_assets/gpi_pz_storeUbuntu.png}
-    \caption{Скачиваем Ubuntu из Microsoft Store}
-    \label{fig:gpi_pz_storeUbuntu}
+    \begin{minipage}{0.47\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]
+            {_assets/gpi_pz_docker_03.png}
+        \caption{Выбираем установщик Windows}
+        \label{fig:gpi_pz_docker_03}
+    \end{minipage}
+    \begin{minipage}{0.47\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]
+            {_assets/gpi_pz_docker_04.png}
+        \caption{Запускаем файл и устанавливаем Docker}
+        \label{fig:gpi_pz_docker_04}
+    \end{minipage}
+\end{figure}
+
+\begin{figure}[!p]
+    \centering
+    \begin{minipage}{0.47\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]
+            {_assets/gpi_pz_docker_05.png}
+        \caption{Перезагружаем компьютер}
+        \label{fig:gpi_pz_docker_05}
+    \end{minipage}
+    \begin{minipage}{0.47\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]
+            {_assets/gpi_pz_docker_06.png}
+        \caption{Принимаем лицензию}
+        \label{fig:gpi_pz_docker_06}
+    \end{minipage}
+\end{figure}
+
+\begin{figure}[!p]
+    \centering
+    \begin{minipage}{0.47\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]
+            {_assets/gpi_pz_docker_07.png}
+        \caption{Ошибка (нет WSL2). Переходим на сайт}
+        \label{fig:gpi_pz_docker_07}
+    \end{minipage}
+    \begin{minipage}{0.47\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]
+            {_assets/gpi_pz_docker_08.png}
+        \caption{Качаем WSL2 с сайта}
+        \label{fig:gpi_pz_docker_08}
+    \end{minipage}
+\end{figure}
+
+\begin{figure}[!p]
+    \centering
+    \begin{minipage}{0.47\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]
+            {_assets/gpi_pz_docker_09.png}
+        \caption{Устанавливаем обновление WSL2}
+        \label{fig:gpi_pz_docker_09}
+    \end{minipage}
+    \begin{minipage}{0.47\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]
+            {_assets/gpi_pz_docker_10.png}
+        \caption{Устанавливаем обновление WSL2}
+        \label{fig:gpi_pz_docker_10}
+    \end{minipage}
+\end{figure}
+
+\begin{figure}[!p]
+    \centering
+    \begin{minipage}{0.47\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]
+            {_assets/gpi_pz_docker_11.png}
+        \caption{Копируем команду Power Shell, которая поменяет WSL1 на WSL2}
+        \label{fig:gpi_pz_docker_11}
+    \end{minipage}
+    \begin{minipage}{0.47\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]
+            {_assets/gpi_pz_docker_12.png}
+        \caption{Запускаем поиск, нажав <<Win>> + <<Q>>. Вводим <<powershell>>}
+        \label{fig:gpi_pz_docker_12}
+    \end{minipage}
+\end{figure}
+
+\begin{figure}[!p]
+    \centering
+    \begin{minipage}{0.47\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]
+            {_assets/gpi_pz_docker_13.png}
+        \caption{В Power Shell вставляем скопированную команду. \\ Нажимаем <<Enter>> для выполнения}
+        \label{fig:gpi_pz_docker_13}
+    \end{minipage}
+    \begin{minipage}{0.47\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]
+            {_assets/gpi_pz_docker_14.png}
+        \caption{<<Docker Desktop>> запускается без ошибки \\ (но у нас пока нет дистрибутива)}
+        \label{fig:gpi_pz_docker_14}
+    \end{minipage}
+\end{figure}
+
+\begin{figure}[!p]
+    \centering
+    \begin{minipage}{0.47\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]
+            {_assets/gpi_pz_docker_15.png}
+        \caption{Инструкция говорит скачать дистрибутив Linux}
+        \label{fig:gpi_pz_docker_15}
+    \end{minipage}
+    \begin{minipage}{0.47\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]
+            {_assets/gpi_pz_docker_16.png}
+        \caption{Запускаем поиск, нажав Win + Q, - и вводим <<Store>>}
+        \label{fig:gpi_pz_docker_16}
+    \end{minipage}
+\end{figure}
+
+\begin{figure}[!p]
+    \centering
+    \begin{minipage}{0.47\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]
+            {_assets/gpi_pz_docker_17.png}
+        \caption{Открываем поиск, вводим <<Ubuntu>> и выбираем подходящий вариант}
+        \label{fig:gpi_pz_docker_17}
+    \end{minipage}
+    \begin{minipage}{0.47\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]
+            {_assets/gpi_pz_docker_18.png}
+        \caption{Устанавливаем приложение, нажав на кнопку <<Get>>}
+        \label{fig:gpi_pz_docker_18}
+    \end{minipage}
+\end{figure}
+
+\begin{figure}[!p]
+    \centering
+    \includegraphics[width=12cm]
+        {_assets/gpi_pz_docker_19.png}
+    \caption{При первом запуске устанавливаем имя пользователя и пароль для дистрибутива}
+    \label{fig:gpi_pz_docker_19}
+\end{figure}
+
+\begin{figure}[!p]
+    \centering
+    \begin{minipage}{0.47\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]
+            {_assets/gpi_pz_docker_20.png}
+        \caption{Включаем в приложении работу в дистрибутиве <<Ubuntu>>}
+        \label{fig:gpi_pz_docker_20}
+    \end{minipage}
+    \begin{minipage}{0.47\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]
+            {_assets/gpi_pz_docker_21.png}
+        \caption{Зажимаем <<Win>> + <<Q>> и в поиске вводим <<Ubuntu>>}
+        \label{fig:gpi_pz_docker_21}
+    \end{minipage}
+\end{figure}
+
+\begin{figure}[!p]
+    \centering
+    \includegraphics[width=12cm]
+        {_assets/gpi_pz_docker_22.png}
+    \caption{Убеждаемся в установке Docker, проверив версию Docker и docker-compose}
+    \label{fig:gpi_pz_docker_22}
 \end{figure}
 
 \newpage
 
-\subsection{Скрипты для запуска проектов}
+% = = = = = = = = = = = = = = = =
+
+\section{Скрипты для запуска проектов}
 
 В ходе написания курсовой работы были разработаны следующие проекты:
 
