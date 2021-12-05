@@ -1,10 +1,20 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 
-import styles from "./Products.module.css";
+import styles from "./GPI_Products.module.css";
 
 export default function Product() {
-    const [gpi_productArray, gpi_setProductArray] = useState([]);
+    const [gpi_productArray, gpi_setProductArray] = useState([
+        {
+            Model: "Модель",
+            Img: "",
+            Name: "Наименование",
+            OnBox: 0,
+            CostBYN: 0,
+            KG: 0,
+            M3: 0,
+        }
+    ]);
     const [gpi_productData, gpi_setProductData] = useState({});
     const [gpi_info_window_is_open, gpi_set_info_window_is_open] = useState(false);
 
@@ -18,6 +28,7 @@ export default function Product() {
             const GPI_RESPONSE = await axios.get(GPI_URL);
             console.log(GPI_RESPONSE);
             gpi_setProductArray(GPI_RESPONSE.data);
+            console.log("qq")
         }
         catch(err) {
             console.error(err);
@@ -61,19 +72,23 @@ export default function Product() {
                                 </tr>
                                 <tr>
                                     <td>В коробке</td>
-                                    <td>{gpi_productData.OnBox}</td>
+                                    <td>{gpi_productData.OnBox == 0? "не указано" : gpi_productData.OnBox}</td>
                                 </tr>
                                 <tr>
                                     <td>Цена за одну штуку (BYN)</td>
-                                    <td>{gpi_productData.CostBYN}</td>
+                                    <td>{gpi_productData.CostBYN == 0? "не указано" : gpi_productData.CostBYN}</td>
                                 </tr>
                                 <tr>
                                     <td>Вес (кг)</td>
-                                    <td>{gpi_productData.KG}</td>
+                                    <td>{gpi_productData.KG == 0? "не указано" : gpi_productData.KG}</td>
                                 </tr>
                                 <tr>
                                     <td>Размер коробки (м3)</td>
-                                    <td>{gpi_productData.M3}</td>
+                                    <td>{gpi_productData.M3 == 0? "не указано" : gpi_productData.M3}</td>
+                                </tr>
+                                <tr>
+                                    <td>Компания</td>
+                                    <td>{gpi_productData.Company}</td>
                                 </tr>
                             </tbody>
                         </table>
