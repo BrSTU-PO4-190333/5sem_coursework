@@ -326,6 +326,113 @@
 
 \subsection{Скрипты для запуска (Makefile)}
 
+\subsubsection*{Установка make на Windows 10}
+
+Для установки make в Windows 10 нужен пакетный менеджер <<choco>>. Установим его.
+
+\begin{itemize}
+    \item[1.] Заходим на официальный сайт choco:
+    \url{https://chocolatey.org/} \\
+    Жмём кнопку <<Get Started>>. \\
+    Скриншот на \textbf{рис.~\ref{fig:gpi_pz_choco_1} (стр. \pageref{fig:gpi_pz_choco_1})}.
+
+    \item[2.] Появляемся на странице с инструкцией, на которой есть скрипт Power Shell.
+    Копируем это скрипт. \\
+    Скриншот на \textbf{рис.~\ref{fig:gpi_pz_choco_2} (стр. \pageref{fig:gpi_pz_choco_2})}.
+
+    \item[3.] Откроем Power Shell через поиск.
+    Для открытия поиска жмём <<Win>> + <<R>>.
+    В поиске вводим <<powershell>>.
+    Открывать нужно от имени администратора.
+    Жмём кнопку <<Run as Administrator>>. \\
+    Скриншот на \textbf{рис.~\ref{fig:gpi_pz_choco_3} (стр. \pageref{fig:gpi_pz_choco_3})}.
+
+    \item[4.] В Power Shell вставляем скопированный скрипт. \\
+    Скриншот на \textbf{рис.~\ref{fig:gpi_pz_choco_4} (стр. \pageref{fig:gpi_pz_choco_4})}.
+
+    \item[5.] Откроем Power Shell через поиск.
+    Для открытия поиска жмём <<Win>> + <<R>>.
+    В поиске вводим <<powershell>>.
+    Открывать нужно от имени администратора.
+    Жмём кнопку <<Run as Administrator>>. \\
+    Скриншот на \textbf{рис.~\ref{fig:gpi_pz_choco_5} (стр. \pageref{fig:gpi_pz_choco_5})}.
+
+    \item[6.] В Power Shell прописываем <<choco install make>> - и жмём <<Enter>>.
+    После установки проверяем введя <<make -v>>. \\
+    Скриншот на \textbf{рис.~\ref{fig:gpi_pz_choco_6} (стр. \pageref{fig:gpi_pz_choco_6})}.
+
+\end{itemize}
+
+\begin{figure}[!p]
+    \centering
+    \begin{minipage}{0.47\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]
+            {_assets/gpi_pz_choco_1.png}
+        \caption{На сайте choco жмём <<Get Started>>}
+        \label{fig:gpi_pz_choco_1}
+    \end{minipage}
+    \begin{minipage}{0.47\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]
+            {_assets/gpi_pz_choco_2.png}
+        \caption{На сайте с инструкцией choco копируем скрипт}
+        \label{fig:gpi_pz_choco_2}
+    \end{minipage}
+\end{figure}
+
+\begin{figure}[!p]
+    \centering
+    \begin{minipage}{0.47\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]
+            {_assets/gpi_pz_choco_3.png}
+        \caption{Жмём <<Win>> + <<Q>>. Вводим в поиск <<powershell>>. Открываем от имени администратора}
+        \label{fig:gpi_pz_choco_3}
+    \end{minipage}
+    \begin{minipage}{0.47\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]
+            {_assets/gpi_pz_choco_4.png}
+        \caption{В PowerShell вставляем скопированный скрипт. Жмём <<Enter>>. Жмём установки choco}
+        \label{fig:gpi_pz_choco_4}
+    \end{minipage}
+\end{figure}
+
+\begin{figure}[!p]
+    \centering
+    \begin{minipage}{0.47\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]
+            {_assets/gpi_pz_choco_5.png}
+        \caption{Жмём <<Win>> + <<Q>>. Вводим в поиск <<powershell>>. Открываем от имени администратора}
+        \label{fig:gpi_pz_choco_5}
+    \end{minipage}
+    \begin{minipage}{0.47\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]
+            {_assets/gpi_pz_choco_6.png}
+        \caption{В PowerShell вставляем скрипт <<choho make install>>. Жмём <<Enter>>. Жмём установки make.
+        Проверяем установку введя <<make -v>>}
+        \label{fig:gpi_pz_choco_6}
+    \end{minipage}
+\end{figure}
+
+% = = = = = = = = = = = = = = = =
+
+\subsubsection*{Установка make на Linux}
+
+\begin{itemize}
+    \item[1.] <<sudo apt update>> - обновляем базу пакетов.
+    \item[2.] <<sudo apt install make>> - устанавливаем make.
+\end{itemize}
+
+\newpage
+
+% = = = = = = = = = = = = = = = =
+
+\subsubsection*{Скрипты для запуска проектов}
+
 В ходе написания курсовой работы были разработаны следующие проекты:
 
 \begin{itemize}
