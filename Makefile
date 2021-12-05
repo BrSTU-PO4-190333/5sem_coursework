@@ -1,20 +1,28 @@
 gpi_wi:
-	gpi_install.bat
+	make gpi_wc
+	cd gpi_b & npm i
+	cd gpi_fa & npm i
+	cd gpi_fs & npm i
 
 gpi_wc:
-	gpi_copy_env.bat
+	cd gpi_m & copy copy.env .env
+	cd gpi_b & copy copy.env .env
+	cd gpi_fa & copy copy.env .env
+	cd gpi_fs & copy copy.env .env
 
 gpi_wb:
-	gpi_run_backend.bat
+	cd gpi_b & npm run start
 
 gpi_wfa:
-	gpi_run_frontend_adminpanel.bat
+	cd gpi_fa & npm run start
 
 gpi_wfs:
-	gpi_run_frontend_webstore.bat
+	cd gpi_fs & npm run start
 
 gpi_wm:
-	gpi_run_mysql.bat
+	cd gpi_m & docker-compose up
+	cd gpi_m & docker-compose down
 
 gpi_wt:
-	gpi_run_texlive.bat
+	cd gpi_p & docker-compose up
+	cd gpi_p & docker-compose down
