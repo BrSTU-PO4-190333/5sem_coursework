@@ -441,24 +441,38 @@
 
 \subsubsection*{Скрипты для запуска проектов}
 
-В ходе написания курсовой работы были разработаны следующие проекты:
+Для того чтобы запускать каждый проект нужно входить в каждую папку проекта и запускать скрипт.
+Заходить в каждую папку и прописывать опеределеную команду занимала много времмени.
+Было принято решение записать все команды в файлы (*.bat, *.sh, Makefile).
 
-\begin{itemize}
-    \item Backend для API на Express.
-    \item Frontend для панели администратора на React.
-    \item Frontend для интернет-магазина на React.
-    \item LAMP для MySQL.
-\end{itemize}
+\begin{table}[!h]
+    \centering
+    \caption{Makefile команды}
+    \begin{tabular}{|l|l|}
+        \hline
+        \textbf{Команда}  & \textbf{Описание}                                     \\ \hline
+        \textbf{make gpi\_wi}   & запуск через cmd установки пакетов для проектов       \\ \hline 
+        \textbf{make gpi\_wc}   & запуск через cmd копирования env файлов               \\ \hline  
+        \textbf{make gpi\_wb}   & запуск через cmd запуск бэкэнда                       \\ \hline
+        \textbf{make gpi\_wfa}  & запуск через cmd запуск фронтэнда с админа панелью    \\ \hline
+        \textbf{make gpi\_wfs}  & запуск через cmd запуск фронтэнда с магазином         \\ \hline
+        \textbf{make gpi\_wm}   & запуск через cmd запуск MySQL                         \\ \hline
+        \textbf{make gpi\_wt}   & запуск через cmd компиляция PDF файлов через LaTeX    \\ \hline
+    \end{tabular}
+\end{table}
 
-Для того чтобы запускать каждый проект нужено входить в каждую папку (папку проекта)
-и запускать свой скрипт. Было принято решение записать все команды в один файл - Makefile,
-который находится в корне репозитория.
-
-\lstinputlisting[
-    name=\textbf{Листинг: Makefile},
-    language=make,
-    numbers=none,
-]
-    {../Makefile}
+\begin{table}[!h]
+    \centering
+    \caption{Разрабатываемые проекты}
+    \begin{tabular}{|l|l|}
+        \hline
+        \textbf{Папка проекта}              & \textbf{Описание}         \\ \hline
+        \textbf{gpi\_backend-api}           & Сервер возвращает JSON    \\ \hline 
+        \textbf{gpi\_frontend-adminpanel}   & Сайт админка              \\ \hline  
+        \textbf{gpi\_frontend-webstore}     & Сайт магазин              \\ \hline
+        \textbf{gpi\_lamp-mysql}            & База данных               \\ \hline
+        \textbf{gpi\_texlive-full}          & Создание PDF              \\ \hline
+    \end{tabular}
+\end{table}
 
 \newpage

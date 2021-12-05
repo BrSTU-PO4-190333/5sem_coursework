@@ -1,41 +1,20 @@
-gpi_install:
-	make gpi_copy-env
-	cd gpi_backend-api; npm i
-	cd gpi_frontend-adminpanel; npm i
-	cd gpi_frontend-webstore; npm i
+gpi_wi:
+	gpi_install.bat
 
-gpi_copy-env:
-	cd gpi_lamp-mysql; cp copy.env .env
-	cd gpi_backend-api; cp copy.env .env
-	cd gpi_frontend-adminpanel; cp copy.env .env
-	cd gpi_frontend-webstore; cp copy.env .env
+gpi_wc:
+	gpi_copy_env.bat
 
-# = = = = = MySQL = = = = =
+gpi_wb:
+	gpi_run_backend.bat
 
-gpi_run-lamp-mysql:
-	cd gpi_lamp-mysql; make start
+gpi_wfa:
+	gpi_run_frontend_adminpanel.bat
 
-gpi_restart-lamp-mysql:
-	cd gpi_lamp-mysql; make restart
+gpi_wfs:
+	gpi_run_frontend_webstore.bat
 
-# = = = = = Backend = = = = =
+gpi_wm:
+	gpi_run_mysql.bat
 
-gpi_run-backend-api:
-	cd gpi_backend-api; npm run start
-
-# = = = = = Frontend = = = = =
-
-gpi_run-frontend-adminpanel:
-	cd gpi_frontend-adminpanel; npm run start
-
-gpi_run-frontend-webstore:
-	cd gpi_frontend-webstore; npm run start
-
-# = = = = = PDF = = = = =
-
-gpi_run-texlive-docker:
-	cd gpi_texlive-full; docker-compose up
-	cd gpi_texlive-full; docker-compose down
-
-gpi_clean-texlive:
-	cd gpi_texlive-full; make gpi_clean
+gpi_wt:
+	gpi_run_texlive.bat
