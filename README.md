@@ -8,49 +8,24 @@
 
 ---
 
-## Installing packages
+## Commands
 
-```bash
-make gpi_install
-```
+| Command      | Description                                |
+| ------------ | ------------------------------------------ |
+|`make gpi_wi` | cmd: installing packages                   |
+|`make gpi_wc` | cmd: copying settings files (env)          |
+|`make gpi_wb` | cmd: Starting the server that returns JSON |
+|`make gpi_wfa`| cmd: Launching the admin site              |
+|`make gpi_wfs`| cmd: Launching the store's website         |
+|`make gpi_wm` | cmd: starting the database                 |
+|`make gpi_wt` | cmd: launching a PDF compilation           |
 
-## Project start
+## Links
 
-### 1st terminal for MySQL (LAMP)
-
-```bash
-make gpi_run-lamp-mysql
-```
-
-- http://localhost:8000 - phpMyAdmin
-- ~~http://localhost:8001 - Apache PHP~~
-
-### 2nd terminal for API (NodeJS Express)
-
-```
-make gpi_run-backend-api
-```
-
-- http://localhost:3001 - Express
-
-### 3rd terminal for admin panel (NodeJS React)
-
-```bash
-make gpi_run-frontend-adminpanel
-```
-
-- http://localhost:3003 - React
-
-### 4th terminal for webstore (NodeJS React)
-
-```bash
-make gpi_run-frontend-webstore
-```
-
-- http://localhost:3002 - React
-
-## Make PDF
-
-```bash
-make gpi_run-texlive-docker
-```
+| URL                   | Description                               |
+| --------------------- | ----------------------------------------- |
+| http://localhost:8000 | phpMyAdmin (database)                     |
+| http://localhost:8001 | ~~Apache PHP~~                            |
+| http://localhost:3001 | Express server (server that returns JSON) |
+| http://localhost:8003 | React (admin site)                        |
+| http://localhost:8002 | React (store's website)                   |
