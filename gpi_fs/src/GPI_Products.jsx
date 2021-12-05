@@ -16,7 +16,7 @@ export default function Product() {
         }
     ]);
     const [gpi_productData, gpi_setProductData] = useState({});
-    const [gpi_info_window_is_open, gpi_set_info_window_is_open] = useState(false);
+    const [gpi_isOpenInfoWin, gpi_set_isOpenInfoWin] = useState(false);
 
     useEffect(() => {
         gpi_get_products();
@@ -36,13 +36,13 @@ export default function Product() {
         }
     }
 
-    function openWindowAboutProduct(index) {
+    function gpi_open_window_about_products(index) {
         gpi_setProductData(gpi_productArray[index]);
-        gpi_set_info_window_is_open(true)
+        gpi_set_isOpenInfoWin(true)
     }
 
-    function closeWindowAboutProduct() {
-        gpi_set_info_window_is_open(false)
+    function gpi_close_window_about_products() {
+        gpi_set_isOpenInfoWin(false)
     }
 
     function ProductInfo() {
@@ -50,7 +50,7 @@ export default function Product() {
             <div className={styles.product_info}>
                 <div>
                     <button
-                        onClick={closeWindowAboutProduct}
+                        onClick={gpi_close_window_about_products}
                         className={styles.product_info__close_button}
                     >x</button>
                 </div>
@@ -102,7 +102,7 @@ export default function Product() {
         <div className={`${styles.b_products} container`}>
 
             <div style={{
-                display: gpi_info_window_is_open ? "block" : "none",
+                display: gpi_isOpenInfoWin ? "block" : "none",
             }}>
                 <ProductInfo />
             </div>
@@ -130,7 +130,7 @@ export default function Product() {
                                     {value.CostBYN} BYN
                                 </div>
                                 <div className={styles.products__more_button}>
-                                    <button onClick={() => openWindowAboutProduct(index)}>
+                                    <button onClick={() => gpi_open_window_about_products(index)}>
                                         Подробнее
                                     </button>
                                 </div>
