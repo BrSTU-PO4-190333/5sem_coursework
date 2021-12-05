@@ -1,4 +1,4 @@
-cd gpi_texlive-full
+cd gpi_p
 call docker-compose up
 call docker-compose down
 cd ..

@@ -1,3 +1,3 @@
-cd gpi_frontend-webstore
+cd gpi_fs
 call npm run start
 cd ..

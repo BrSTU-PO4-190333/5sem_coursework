@@ -1,3 +1,3 @@
-cd gpi_frontend-adminpanel
+cd gpi_fa
 call npm run start
 cd ..
