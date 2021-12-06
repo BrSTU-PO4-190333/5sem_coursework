@@ -14,24 +14,24 @@ export default function GPI_Basket() {
     }
 
     function gpi_get_basket() {
-        let gpi_str_basket;                                     // Объект в строке
-        let gpi_basket;                                         // Объект ключ - модель, значение - количество
+        let gpi_str_basket;                     // Объект в строке
+        let gpi_basket;                         // Объект ключ - модель, значение - количество
         // = = = = = = = = = = = = = = = =
 
-        gpi_str_basket = localStorage.getItem("gpi_basket");  // Получаем объект в строке из БД
+        gpi_str_basket = localStorage.getItem("gpi_basket");// Получаем объект в строке из БД
 
-        if (gpi_str_basket == null) {                           // Если в БД нет
-            return {};                                          // Возвращаем пустой объект
+        if (gpi_str_basket == null) {           // Если в БД нет
+            return {};                          // Возвращаем пустой объект
         }
 
-        gpi_basket = JSON.parse(gpi_str_basket);                // Преобразуем объект в строке в объект
+        gpi_basket = JSON.parse(gpi_str_basket);// Преобразуем объект в строке в объект
 
         // Если это не объект
         if (Object.prototype.toString.call(gpi_basket) !== "[object Object]") {
-            return {};                                          // Возвращаем пустой объект
+            return {};                          // Возвращаем пустой объект
         }
 
-        return gpi_basket;                                      // Возвращаем объект
+        return gpi_basket;                      // Возвращаем объект
     }
 
     function gpi_print() {
@@ -39,31 +39,31 @@ export default function GPI_Basket() {
     }
 
     function gpi_download_csv() {
-        let gpi_str = "";                                       // Текст файла
+        let gpi_str = "";                           // Текст файла
     
-        gpi_str += `"", "Товар", "Количество"\n`;               // Добавили CSV заголовок
+        gpi_str += `"", "Товар", "Количество"\n`;   // Добавили CSV заголовок
 
         Object.keys(gpi_Basket).forEach(function (key, index) {
             gpi_str += `"${index + 1}", "${key}", "${gpi_Basket[key]}"\n`; // Добавили CSV тело
         })
       
-        const D = new Date();                                   // Получаем сегодняшнюю дату
+        const D = new Date();                       // Получаем сегодняшнюю дату
         const FILE_NAME = `${D.getFullYear()}-${D.getMonth()}-${D.getDate()}_${D.getHours()}-${D.getMinutes()}_basket.csv`;
     
-        gpi_download_file(gpi_str, FILE_NAME);                  // Вызываем функцию скачивания файла
+        gpi_download_file(gpi_str, FILE_NAME);      // Вызываем функцию скачивания файла
     }
 
     function gpi_delete_basket(model) {
-        let gpi_str_basket;                                     // Объект в строке
-        let gpi_basket;                                         // Объект ключ - модель, значение - количество
+        let gpi_str_basket;                         // Объект в строке
+        let gpi_basket;                             // Объект ключ - модель, значение - количество
         // = = = = = = = = = = = = = = = =
 
-        gpi_basket = gpi_Basket;                                // Записываем объект
-        delete gpi_basket[model];                               // Удаляем из корзины модель
-        gpi_str_basket = JSON.stringify(gpi_basket);            // Преобразуем объект в строку
-        localStorage.setItem("gpi_basket", gpi_str_basket);   // Записываем в БД строку
+        gpi_basket = gpi_Basket;                    // Записываем объект
+        delete gpi_basket[model];                   // Удаляем из корзины модель
+        gpi_str_basket = JSON.stringify(gpi_basket);// Преобразуем объект в строку
+        localStorage.setItem("gpi_basket", gpi_str_basket); // Записываем в БД строку
 
-        gpi_reload_basket();                                    // Обновляем компонент
+        gpi_reload_basket();                        // Обновляем компонент
     }
 
     return (
