@@ -1,3 +1,5 @@
+import gpi_download_file from "./gpi_download_file";
+
 export default function GPI_Basket() {
     const gpi_Basket = gpi_get_busket();
 
@@ -23,7 +25,22 @@ export default function GPI_Basket() {
     }
 
     function gpi_print() {
-        alert("Заглушка печать");
+        gpi_download_csv();
+    }
+
+    async function gpi_download_csv() {
+        let gpi_str = "";
+    
+        gpi_str += `"", "Товар", "Количество"\n`;
+
+        Object.keys(gpi_Basket).forEach(function (key, index) {
+            gpi_str += `"${index + 1}", "${key}", "${gpi_Basket[key]}"\n`;
+        })
+      
+        const D = new Date();
+        const FILE_NAME = `${D.getFullYear()}-${D.getMonth()}-${D.getDate()}_${D.getHours()}-${D.getMinutes()}_basket.csv`;
+    
+        gpi_download_file(gpi_str, FILE_NAME);
     }
 
     return (
