@@ -56,10 +56,10 @@ export default function Product() {
 
             gpi_model = gpi_productData.Model;                      // Записываю модель
             
-            gpi_str_arr = sessionStorage.getItem("gpi_basket");     // Получаю объект в виде строки
+            gpi_str_arr = localStorage.getItem("gpi_basket");     // Получаю объект в виде строки
             if (gpi_str_arr === null) {                             // Если функция вернула null, то
-                sessionStorage.setItem("gpi_basket", "{}");  // Добавляю массив в БД
-                gpi_str_arr = sessionStorage.getItem("gpi_basket"); // Получаю массив в виде строки
+                localStorage.setItem("gpi_basket", "{}");  // Добавляю массив в БД
+                gpi_str_arr = localStorage.getItem("gpi_basket"); // Получаю массив в виде строки
             }
 
             gpi_arr = JSON.parse(gpi_str_arr);                      // Строку в объект
@@ -80,10 +80,10 @@ export default function Product() {
 
             gpi_model = gpi_productData.Model;                      // Записываю модель
             
-            gpi_str_arr = sessionStorage.getItem("gpi_basket");     // Получаю объект в виде строки
+            gpi_str_arr = localStorage.getItem("gpi_basket");     // Получаю объект в виде строки
             if (gpi_str_arr === null) {                             // Если функция вернула null, то
-                sessionStorage.setItem("gpi_basket", "{}");         // Добавляю массив в БД
-                gpi_str_arr = sessionStorage.getItem("gpi_basket"); // Получаю массив в виде строки
+                localStorage.setItem("gpi_basket", "{}");         // Добавляю массив в БД
+                gpi_str_arr = localStorage.getItem("gpi_basket"); // Получаю массив в виде строки
             }
 
             gpi_arr = JSON.parse(gpi_str_arr);                      // Строку в объект
@@ -108,7 +108,7 @@ export default function Product() {
             }
             
             gpi_str_arr = JSON.stringify(gpi_arr);                  // Превращаем объект в строку
-            sessionStorage.setItem("gpi_basket", gpi_str_arr);      // Записываем строку в БД
+            localStorage.setItem("gpi_basket", gpi_str_arr);      // Записываем строку в БД
 
             gpi_setCounter(gpi_number);
         }
@@ -122,10 +122,10 @@ export default function Product() {
 
             gpi_model = gpi_productData.Model;                      // Записываю модель
             
-            gpi_str_arr = sessionStorage.getItem("gpi_basket");     // Получаю объект в виде строки
+            gpi_str_arr = localStorage.getItem("gpi_basket");     // Получаю объект в виде строки
             if (gpi_str_arr === null) {                             // Если функция вернула null, то
-                sessionStorage.setItem("gpi_basket", "{}");         // Добавляю массив в БД
-                gpi_str_arr = sessionStorage.getItem("gpi_basket"); // Получаю массив в виде строки
+                localStorage.setItem("gpi_basket", "{}");         // Добавляю массив в БД
+                gpi_str_arr = localStorage.getItem("gpi_basket"); // Получаю массив в виде строки
             }
 
             gpi_arr = JSON.parse(gpi_str_arr);                      // Строку в объект
@@ -146,7 +146,7 @@ export default function Product() {
             }
 
             gpi_str_arr = JSON.stringify(gpi_arr);                  // Превращаем объект в строку
-            sessionStorage.setItem("gpi_basket", gpi_str_arr);      // Записываем строку в БД
+            localStorage.setItem("gpi_basket", gpi_str_arr);      // Записываем строку в БД
 
             gpi_setCounter(gpi_number);
         }
@@ -160,10 +160,10 @@ export default function Product() {
 
             gpi_model = gpi_productData.Model;                      // Записываю модель
             
-            gpi_str_arr = sessionStorage.getItem("gpi_basket");     // Получаю объект в виде строки
+            gpi_str_arr = localStorage.getItem("gpi_basket");     // Получаю объект в виде строки
             if (gpi_str_arr === null) {                             // Если функция вернула null, то
-                sessionStorage.setItem("gpi_basket", "{}");         // Добавляю массив в БД
-                gpi_str_arr = sessionStorage.getItem("gpi_basket"); // Получаю массив в виде строки
+                localStorage.setItem("gpi_basket", "{}");         // Добавляю массив в БД
+                gpi_str_arr = localStorage.getItem("gpi_basket"); // Получаю массив в виде строки
             }
 
             gpi_arr = JSON.parse(gpi_str_arr);                      // Строку в объект
@@ -179,7 +179,7 @@ export default function Product() {
             }
 
             gpi_str_arr = JSON.stringify(gpi_arr);                  // Превращаем объект в строку
-            sessionStorage.setItem("gpi_basket", gpi_str_arr);      // Записываем строку в БД
+            localStorage.setItem("gpi_basket", gpi_str_arr);      // Записываем строку в БД
 
             gpi_setCounter(gpi_number);
         }

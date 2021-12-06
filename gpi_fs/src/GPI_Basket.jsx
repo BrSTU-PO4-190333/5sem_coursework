@@ -18,7 +18,7 @@ export default function GPI_Basket() {
         let gpi_basket;                                         // Объект ключ - модель, значение - количество
         // = = = = = = = = = = = = = = = =
 
-        gpi_str_basket = sessionStorage.getItem("gpi_basket");  // Получаем объект в строке из БД
+        gpi_str_basket = localStorage.getItem("gpi_basket");  // Получаем объект в строке из БД
 
         if (gpi_str_basket == null) {                           // Если в БД нет
             return {};                                          // Возвращаем пустой объект
@@ -61,7 +61,7 @@ export default function GPI_Basket() {
         gpi_basket = gpi_Basket;                                // Записываем объект
         delete gpi_basket[model];                               // Удаляем из корзины модель
         gpi_str_basket = JSON.stringify(gpi_basket);            // Преобразуем объект в строку
-        sessionStorage.setItem("gpi_basket", gpi_str_basket);   // Записываем в БД строку
+        localStorage.setItem("gpi_basket", gpi_str_basket);   // Записываем в БД строку
 
         gpi_reload_basket();                                    // Обновляем компонент
     }
