@@ -46,6 +46,144 @@ export default function Product() {
     }
 
     function ProductInfo() {
+        const [gpi_counter, gpi_setCounter] = useState(gpi_get_counter());
+
+        function gpi_get_counter() {
+            let gpi_str_arr;    // Ассоциативный массив в строке
+            let gpi_arr;        // Ассоциативный массив
+            let gpi_model;      // Модель товара
+            // = = = = = = = = = = = = = = = =
+
+            gpi_model = gpi_productData.Model;                      // Записываю модель
+            
+            gpi_str_arr = sessionStorage.getItem("gpi_basket");     // Получаю объект в виде строки
+            if (gpi_str_arr === null) {                             // Если функция вернула null, то
+                sessionStorage.setItem("gpi_basket", "{}");  // Добавляю массив в БД
+                gpi_str_arr = sessionStorage.getItem("gpi_basket"); // Получаю массив в виде строки
+            }
+
+            gpi_arr = JSON.parse(gpi_str_arr);                      // Строку в объект
+
+            if (gpi_arr[gpi_model] === undefined) {                 // Если в БД нет такой модели, то
+                return 0;
+            }
+
+            return gpi_arr[gpi_model];
+        }
+
+        function gpi_minus() {
+            let gpi_str_arr;    // Ассоциативный массив в строке
+            let gpi_arr;        // Ассоциативный массив
+            let gpi_model;      // Модель товара
+            let gpi_number;     // Количество товара
+            // = = = = = = = = = = = = = = = =
+
+            gpi_model = gpi_productData.Model;                      // Записываю модель
+            
+            gpi_str_arr = sessionStorage.getItem("gpi_basket");     // Получаю объект в виде строки
+            if (gpi_str_arr === null) {                             // Если функция вернула null, то
+                sessionStorage.setItem("gpi_basket", "{}");         // Добавляю массив в БД
+                gpi_str_arr = sessionStorage.getItem("gpi_basket"); // Получаю массив в виде строки
+            }
+
+            gpi_arr = JSON.parse(gpi_str_arr);                      // Строку в объект
+            
+            gpi_number = Number(gpi_arr[gpi_model]);                // Получаем число
+
+            if (gpi_number == null) {
+                gpi_number = 0;
+            }
+
+            if (isNaN(gpi_number)) {
+                gpi_number = 0;
+            }
+
+            if (gpi_number > 0) {
+                gpi_number -= 1;                                    // Отнимаю 1
+                gpi_arr[gpi_model] = gpi_number;                    // Записываем в объект новое значение
+            }
+            
+            if (gpi_number === 0) {
+                delete gpi_arr[gpi_model];
+            }
+            
+            gpi_str_arr = JSON.stringify(gpi_arr);                  // Превращаем объект в строку
+            sessionStorage.setItem("gpi_basket", gpi_str_arr);      // Записываем строку в БД
+
+            gpi_setCounter(gpi_number);
+        }
+
+        function gpi_plus() {
+            let gpi_str_arr;    // Ассоциативный массив в строке
+            let gpi_arr;        // Ассоциативный массив
+            let gpi_model;      // Модель товара
+            let gpi_number;     // Количество товара
+            // = = = = = = = = = = = = = = = =
+
+            gpi_model = gpi_productData.Model;                      // Записываю модель
+            
+            gpi_str_arr = sessionStorage.getItem("gpi_basket");     // Получаю объект в виде строки
+            if (gpi_str_arr === null) {                             // Если функция вернула null, то
+                sessionStorage.setItem("gpi_basket", "{}");         // Добавляю массив в БД
+                gpi_str_arr = sessionStorage.getItem("gpi_basket"); // Получаю массив в виде строки
+            }
+
+            gpi_arr = JSON.parse(gpi_str_arr);                      // Строку в объект
+
+            gpi_number = Number(gpi_arr[gpi_model]);                // Получаем число
+
+            if (gpi_number == null) {
+                gpi_number = 0;
+            }
+
+            if (isNaN(gpi_number)) {
+                gpi_number = 0;
+            }
+
+            if (gpi_number >= 0) {
+                gpi_number += 1;                                        // Прибавляем 1
+                gpi_arr[gpi_model] = gpi_number;                        // Записываем в объект новое значение
+            }
+
+            gpi_str_arr = JSON.stringify(gpi_arr);                  // Превращаем объект в строку
+            sessionStorage.setItem("gpi_basket", gpi_str_arr);      // Записываем строку в БД
+
+            gpi_setCounter(gpi_number);
+        }
+
+        function gpi_change_counter(num) {
+            let gpi_str_arr;    // Ассоциативный массив в строке
+            let gpi_arr;        // Ассоциативный массив
+            let gpi_model;      // Модель товара
+            let gpi_number;     // Количество товара
+            // = = = = = = = = = = = = = = = =
+
+            gpi_model = gpi_productData.Model;                      // Записываю модель
+            
+            gpi_str_arr = sessionStorage.getItem("gpi_basket");     // Получаю объект в виде строки
+            if (gpi_str_arr === null) {                             // Если функция вернула null, то
+                sessionStorage.setItem("gpi_basket", "{}");         // Добавляю массив в БД
+                gpi_str_arr = sessionStorage.getItem("gpi_basket"); // Получаю массив в виде строки
+            }
+
+            gpi_arr = JSON.parse(gpi_str_arr);                      // Строку в объект
+            
+            gpi_number = Number(num);                               // Получаю число из строки
+
+            if (gpi_number > 0) {
+                gpi_arr[gpi_model] = gpi_number;                    // Записываем в объект новое значение
+            }
+
+            if (gpi_number === 0) {
+                delete gpi_arr[gpi_model];
+            }
+
+            gpi_str_arr = JSON.stringify(gpi_arr);                  // Превращаем объект в строку
+            sessionStorage.setItem("gpi_basket", gpi_str_arr);      // Записываем строку в БД
+
+            gpi_setCounter(gpi_number);
+        }
+
         return (
             <div className={styles.product_info}>
                 <div>
@@ -56,8 +194,29 @@ export default function Product() {
                 </div>
                 <div>
                     <div className="container">
+                        
                         <table className="table table-striped">
                             <tbody>
+                                <tr>
+                                    <td>В корзине</td>
+                                    <td>
+                                        <div className={styles.gpi_products_info__b_counter}>
+                                            <input
+                                                type="number" min="0"
+                                                value={gpi_counter}
+                                                onChange={event => gpi_change_counter(event.target.value)}
+                                            />
+                                            <button
+                                                className="btn btn-danger"
+                                                onClick={gpi_minus}
+                                            >-</button>
+                                            <button
+                                                className="btn btn-success"
+                                                onClick={gpi_plus}
+                                            >+</button>
+                                        </div>
+                                    </td>
+                                </tr>
                                 <tr>
                                     <td>Модель</td>
                                     <td>{gpi_productData.Model}</td>
@@ -72,19 +231,19 @@ export default function Product() {
                                 </tr>
                                 <tr>
                                     <td>В коробке</td>
-                                    <td>{gpi_productData.OnBox == 0? "не указано" : gpi_productData.OnBox}</td>
+                                    <td>{gpi_productData.OnBox === 0? "не указано" : gpi_productData.OnBox}</td>
                                 </tr>
                                 <tr>
                                     <td>Цена за одну штуку (BYN)</td>
-                                    <td>{gpi_productData.CostBYN == 0? "не указано" : gpi_productData.CostBYN}</td>
+                                    <td>{gpi_productData.CostBYN === 0? "не указано" : gpi_productData.CostBYN}</td>
                                 </tr>
                                 <tr>
                                     <td>Вес (кг)</td>
-                                    <td>{gpi_productData.KG == 0? "не указано" : gpi_productData.KG}</td>
+                                    <td>{gpi_productData.KG === 0? "не указано" : gpi_productData.KG}</td>
                                 </tr>
                                 <tr>
                                     <td>Размер коробки (м3)</td>
-                                    <td>{gpi_productData.M3 == 0? "не указано" : gpi_productData.M3}</td>
+                                    <td>{gpi_productData.M3 === 0? "не указано" : gpi_productData.M3}</td>
                                 </tr>
                                 <tr>
                                     <td>Компания</td>
