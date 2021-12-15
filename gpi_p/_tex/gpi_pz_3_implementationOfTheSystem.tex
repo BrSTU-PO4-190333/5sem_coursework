@@ -450,32 +450,34 @@
     \caption{Makefile команды}
     \begin{tabular}{|p{4cm}|p{12cm}|}
 
-                                                                                       \hline
-\multicolumn{1}{|c|}{\textbf{Команда}} & \multicolumn{1}{c|}{\textbf{Описание}}     \\ \hline
-make gpi\_wi    & cmd: установки пакетов для проектов       \\ \hline 
-make gpi\_wc    & cmd: копирования env файлов               \\ \hline  
-make gpi\_wb    & cmd: запуск бэкэнда                       \\ \hline
-make gpi\_wfa   & cmd: запуск фронтэнда с админа панелью    \\ \hline
-make gpi\_wfs   & cmd: запуск фронтэнда с магазином         \\ \hline
-make gpi\_wm    & cmd: запуск MySQL                         \\ \hline
-make gpi\_wt    & cmd: компиляция PDF файлов через LaTeX    \\ \hline
+                                                                                   \hline
+\multicolumn{1}{|c|}{\textbf{Команда}} & \multicolumn{1}{c|}{\textbf{Описание}} \\ \hline
+make gpi\_wi    & cmd: установки пакетов для проектов npm                       \\ \hline 
+make gpi\_wc    & cmd: копирования env файлов                                   \\ \hline  
+make gpi\_wb    & cmd: запуск Express сервера                                   \\ \hline
+make gpi\_wfa   & cmd: запуск React приложения с админа панелью                 \\ \hline
+make gpi\_wfs   & cmd: запуск React приложения с магазином                      \\ \hline
+make gpi\_wm    & cmd: запуск MySQL через Docker                                \\ \hline
+make gpi\_wp    & cmd: компиляция PDF файлов через LaTeX                        \\ \hline
 
     \end{tabular}
 \end{table}
 
+\subsection{Описание проектов}
+
 \begin{table}[!h]
     \centering
     \caption{Разрабатываемые проекты}
-    \begin{tabular}{|p{4cm}|p{12cm}|}
+    \begin{tabular}{|p{4cm}|p{4cm}|p{8cm}|}
 
-                                                                                       \hline
-\multicolumn{1}{|c|}{\textbf{Папка проекта}}& \multicolumn{1}{c|}{\textbf{Описание}}\\ \hline
-gpi\_b  & Backend API, Node JS Express, cервер возвращает JSON                      \\ \hline 
-gpi\_d  & JSON, пример текстового файла для загрузки в БД                           \\ \hline  
-gpi\_fa & Frontend adminpanel, React JS, cайт админка                               \\ \hline  
-gpi\_fs & Frontend webstore, React JS, cайт магазин                                 \\ \hline
-gpi\_m  & MySQL, Docker LAMP, База данных                                           \\ \hline
-gpi\_p  & PDF, docker-compose LaTeX (texlive), cоздание PDF                         \\ \hline
+                                                                                           \hline
+\multicolumn{1}{|c|}{\textbf{Папка проекта}}& \multicolumn{2}{c|}{\textbf{Описание}}    \\ \hline
+gpi\_b  & Backend API           & Node JS Express cервер возвращает JSON                \\ \hline 
+gpi\_d  & JSON object array     & Пример файла для загрузки в БД                        \\ \hline  
+gpi\_fa & Frontend adminpanel   & React JS cайт админка                                 \\ \hline  
+gpi\_fs & Frontend webstore     & React JS cайт магазин                                 \\ \hline
+gpi\_m  & MySQL                 & Docker LAMP база данных                               \\ \hline
+gpi\_p  & PDF documents         & LaTeX для cоздания ЕСКД отчётов                       \\ \hline
 
     \end{tabular}
 \end{table}
