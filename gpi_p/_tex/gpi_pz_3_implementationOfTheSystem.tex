@@ -448,30 +448,35 @@
 \begin{table}[!h]
     \centering
     \caption{Makefile команды}
-    \begin{tabular}{|l|l|}
-        \hline
-        \textbf{Команда}        & \textbf{Описание}                                     \\ \hline
-        \textbf{make gpi\_wi}   & запуск через cmd установки пакетов для проектов       \\ \hline 
-        \textbf{make gpi\_wc}   & запуск через cmd копирования env файлов               \\ \hline  
-        \textbf{make gpi\_wb}   & запуск через cmd запуск бэкэнда                       \\ \hline
-        \textbf{make gpi\_wfa}  & запуск через cmd запуск фронтэнда с админа панелью    \\ \hline
-        \textbf{make gpi\_wfs}  & запуск через cmd запуск фронтэнда с магазином         \\ \hline
-        \textbf{make gpi\_wm}   & запуск через cmd запуск MySQL                         \\ \hline
-        \textbf{make gpi\_wt}   & запуск через cmd компиляция PDF файлов через LaTeX    \\ \hline
+    \begin{tabular}{|p{4cm}|p{12cm}|}
+
+                                                                                       \hline
+\multicolumn{1}{|c|}{\textbf{Команда}} & \multicolumn{1}{c|}{\textbf{Описание}}     \\ \hline
+make gpi\_wi    & cmd: установки пакетов для проектов       \\ \hline 
+make gpi\_wc    & cmd: копирования env файлов               \\ \hline  
+make gpi\_wb    & cmd: запуск бэкэнда                       \\ \hline
+make gpi\_wfa   & cmd: запуск фронтэнда с админа панелью    \\ \hline
+make gpi\_wfs   & cmd: запуск фронтэнда с магазином         \\ \hline
+make gpi\_wm    & cmd: запуск MySQL                         \\ \hline
+make gpi\_wt    & cmd: компиляция PDF файлов через LaTeX    \\ \hline
+
     \end{tabular}
 \end{table}
 
 \begin{table}[!h]
     \centering
     \caption{Разрабатываемые проекты}
-    \begin{tabular}{|l|l|}
-        \hline
-        \textbf{Папка проекта}              & \textbf{Описание}         \\ \hline
-        \textbf{gpi\_backend-api}           & Сервер возвращает JSON    \\ \hline 
-        \textbf{gpi\_frontend-adminpanel}   & Сайт админка              \\ \hline  
-        \textbf{gpi\_frontend-webstore}     & Сайт магазин              \\ \hline
-        \textbf{gpi\_lamp-mysql}            & База данных               \\ \hline
-        \textbf{gpi\_texlive-full}          & Создание PDF              \\ \hline
+    \begin{tabular}{|p{4cm}|p{12cm}|}
+
+                                                                                       \hline
+\multicolumn{1}{|c|}{\textbf{Папка проекта}}& \multicolumn{1}{c|}{\textbf{Описание}}\\ \hline
+gpi\_b  & Backend API, Node JS Express, cервер возвращает JSON                      \\ \hline 
+gpi\_d  & JSON, пример текстового файла для загрузки в БД                           \\ \hline  
+gpi\_fa & Frontend adminpanel, React JS, cайт админка                               \\ \hline  
+gpi\_fs & Frontend webstore, React JS, cайт магазин                                 \\ \hline
+gpi\_m  & MySQL, Docker LAMP, База данных                                           \\ \hline
+gpi\_p  & PDF, docker-compose LaTeX (texlive), cоздание PDF                         \\ \hline
+
     \end{tabular}
 \end{table}
 
