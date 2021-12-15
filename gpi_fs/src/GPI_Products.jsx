@@ -27,8 +27,15 @@ export default function Product() {
             const GPI_URL = `${process.env.REACT_APP_GPI__API_URL}:${process.env.REACT_APP_GPI__API_PORT}/products/get`;
             const GPI_RESPONSE = await axios.get(GPI_URL);
             console.log(GPI_RESPONSE);
-            gpi_setProductArray(GPI_RESPONSE.data);
-            console.log("qq")
+
+            const GPI_ARR = GPI_RESPONSE.data;
+            console.log(GPI_ARR);
+            gpi_setProductArray(GPI_ARR);
+
+            if (GPI_ARR.length === 0)
+            {
+                alert("Нет товаров в таблице!");
+            }
         }
         catch(err) {
             console.error(err);

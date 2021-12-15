@@ -18,10 +18,15 @@ export default function Products__get() {
     }, []);
 
     async function setProductsArray() {
-        const PRD = new Product();
-        const ARR = await PRD.get();
-        console.log(ARR);
-        setProducts(ARR);
+        const GPI_PRD = new Product();
+        const GPI_ARR = await GPI_PRD.get();
+        console.log(GPI_ARR);
+        setProducts(GPI_ARR);
+
+        if (GPI_ARR.length === 0)
+        {
+            alert("Нет товаров в таблице!");
+        }
     }
 
     return (
