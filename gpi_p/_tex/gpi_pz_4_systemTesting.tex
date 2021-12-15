@@ -73,7 +73,29 @@
 
 \textit{Полученный результат}: администратор не аторизовался, браузер сообщил об ошибке.
 
-\textit{Выводы по тесту}: 
+\textit{Выводы по тесту}: \\
+Скриншот сообщения о несуществовании логина на
+\textbf{рис.~\ref{fig:gpi_pz_auth_error_login} (стр.~\pageref{fig:gpi_pz_auth_error_login})}.\\
+Скриншот сообщения о неправильном пароле на
+\textbf{рис.~\ref{fig:gpi_pz_auth_error_password} (стр.~\pageref{fig:gpi_pz_auth_error_password})}.
+
+\begin{figure}[!h]
+    \centering
+    \begin{minipage}{0.47\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]
+            {_assets/gpi_pz_auth_error_login.png}
+        \caption{Сообщение об несуществовании логина}
+        \label{fig:gpi_pz_auth_error_login}
+    \end{minipage}
+    \begin{minipage}{0.47\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]
+            {_assets/gpi_pz_auth_error_password.png}
+        \caption{Сообщение об неверном пароле}
+        \label{fig:gpi_pz_auth_error_password}
+    \end{minipage}
+\end{figure}
 
 % = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 
@@ -84,19 +106,41 @@
 
 \textit{Полученный результат}: администратор авторизовался, браузер перенаправил в админ панель.
 
-\textit{Выводы по тесту}: 
+\textit{Выводы по тесту}:
+Скриншот страницы, на которую перенаправился администратор после успешной авторизации, на
+\textbf{рис.~\ref{fig:gpi_pz_adminpanel} (стр.~\pageref{fig:gpi_pz_adminpanel})}.
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=12cm]
+        {_assets/gpi_pz_not_empty_table.png}
+    \caption{Таблица продуктов после открытия файла}
+    \label{fig:gpi_pz_adminpanel}
+\end{figure}
 
 % = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 
-\subparagraph{Тестируемая задача:} <<Открытие текстового файла без вида массива структур (не JSON)>>
+\subparagraph{Тестируемая задача:} <<Открытие текстового файла не JSON формата>>
 
 \textit{Ожидаемый результат}: файл загрузится в браузер, браузер сообщит об ошибке формата файла.
 
 \textit{Полученный результат}: файл загрузился в браузер, браузер сообщил об ошибке формата файла.
 
 \textit{Выводы по тесту}:
+Скриншот таблицы после открытия файла на
+\textbf{рис.~\ref{fig:gpi_pz_error_open_file} (стр.~\pageref{fig:gpi_pz_error_open_file})}.
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=10cm]
+        {_assets/gpi_pz_error_open_file.png}
+    \caption{Сообщение об не верном текстовом файле (не JSON)}
+    \label{fig:gpi_pz_error_open_file}
+\end{figure}
 
 % = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+
+\newpage
 
 \subparagraph{Тестируемая задача:} <<Открытие текстового файла в виде массива структур (JSON)>>
 
@@ -106,9 +150,43 @@
 \textit{Полученный результат}: файл загрузился в браузер, браузер сообщил об добавленных данных.
 На странице таблицы можно увидеть добавленные данные.
 
-\textit{Выводы по тесту}:
+\textit{Выводы по тесту}:\\
+Скриншот таблицы продуктов до открытия файла на
+\textbf{рис.~\ref{fig:gpi_pz_empty_table} (стр.~\pageref{fig:gpi_pz_empty_table})}.\\
+Скриншот сообщения о добавлении продуктовиз тектового файла на
+\textbf{рис.~\ref{fig:gpi_pz_open_products_json} (стр.~\pageref{fig:gpi_pz_open_products_json})}.\\
+Скриншот таблицы продуктов после открытия файла на
+\textbf{рис.~\ref{fig:gpi_pz_not_empty_table} (стр.~\pageref{fig:gpi_pz_not_empty_table})}.
+
+\begin{figure}[!h]
+    \centering
+    \begin{minipage}{0.47\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]
+            {_assets/gpi_pz_empty_table.png}
+        \caption{Таблица товаров до открытия файла}
+        \label{fig:gpi_pz_empty_table}
+    \end{minipage}
+    \begin{minipage}{0.47\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]
+            {_assets/gpi_pz_not_empty_table.png}
+        \caption{Таблица продуктов после открытия файла}
+        \label{fig:gpi_pz_not_empty_table}
+    \end{minipage}
+\end{figure}
+
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=12cm]
+        {_assets/gpi_pz_open_products_json.png}
+    \caption{Сообщение об добавлении продуктов из текстового файла (JSON)}
+    \label{fig:gpi_pz_open_products_json}
+\end{figure}
 
 % = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+
+\newpage
 
 \subparagraph{Тестируемая задача:} <<Просмотр таблицы продуктов>>
 
@@ -116,7 +194,17 @@
 
 \textit{Полученный результат}: вывелась таблица продуктов.
 
-\textit{Выводы по тесту}: 
+\textit{Выводы по тесту}:
+Скриншот таблицы продуктов на
+\textbf{рис.~\ref{fig:gpi_pz_products_table} (стр.~\pageref{fig:gpi_pz_products_table})}.
+
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=12cm]
+        {_assets/gpi_pz_not_empty_table.png}
+    \caption{Таблица продуктов}
+    \label{fig:gpi_pz_products_table}
+\end{figure}
 
 % = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 
@@ -127,6 +215,16 @@
 \textit{Полученный результат}: получили сообщение о добавлении продукта. В таблице продуктов новые данные.
 
 \textit{Выводы по тесту}: 
+Скриншот соббщения о добавлении продукта на
+\textbf{рис.~\ref{fig:gpi_pz_add_product} (стр.~\pageref{fig:gpi_pz_add_product})}.
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=12cm]
+        {_assets/gpi_pz_add_product.png}
+    \caption{Сообщение о добавлении продукта}
+    \label{fig:gpi_pz_add_product}
+\end{figure}
 
 % = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 
@@ -137,6 +235,16 @@
 \textit{Полученный результат}: продукт удалился с таблицы.
 
 \textit{Выводы по тесту}: 
+Скриншот сообщения об удалении продукта на
+\textbf{рис.~\ref{fig:gpi_pz_delete_product} (стр.~\pageref{fig:gpi_pz_delete_product})}.
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=12cm]
+        {_assets/gpi_pz_delete_product.png}
+    \caption{Сообщение о добавлении продукта}
+    \label{fig:gpi_pz_delete_product}
+\end{figure}
 
 % = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 

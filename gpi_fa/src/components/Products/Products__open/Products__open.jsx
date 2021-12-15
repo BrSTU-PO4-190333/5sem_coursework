@@ -7,14 +7,20 @@ export default function Products__open() {
         reader.readAsText(file);
         reader.onload = async function () {
             const GPI_STR = reader.result;
-            const GPI_OBJ = JSON.parse(GPI_STR);
+            let gpi_obj;
 
-            if (GPI_OBJ.length == null) {
-                alert("File not have JSON array!");
+            try {
+                gpi_obj = JSON.parse(GPI_STR);
+            }
+            catch {
+                alert("Файл не JSON формата");
                 return;
             }
 
-            console.log(GPI_OBJ);
+            if (gpi_obj.length == null) {
+                alert("Файл не имеет массив структур!");
+                return;
+            }
 
             try {
                 const GPI_URL = `${process.env.REACT_APP__API_URL}:${process.env.REACT_APP__API_PORT}/gpi_add_products`;
@@ -25,17 +31,17 @@ export default function Products__open() {
                     VALUES: [],
                 }
 
-                const GPI_KEYS = Object.keys(GPI_OBJ[0]);
+                const GPI_KEYS = Object.keys(gpi_obj[0]);
                 gpi_data["KEYS"] = GPI_KEYS;
                 console.log("KEYS");
                 console.log(gpi_data.KEYS);
 
-                GPI_OBJ.forEach(arrObj => {
+                gpi_obj.forEach(arrObj => {
                     gpi_data.VALUES.push([]);
                     const id = gpi_data.VALUES.length - 1;
 
                     GPI_KEYS.forEach(key => {
-                        gpi_data.VALUES[id].push(GPI_OBJ[id][key]);
+                        gpi_data.VALUES[id].push(gpi_obj[id][key]);
                     })
                 });
                 console.log("VALUES");
@@ -64,9 +70,9 @@ export default function Products__open() {
     return (
         <div className="container">
             <h2>Open products file</h2>
-            <div class="mb-3">
-                <label htmlFor="Products__open" class="form-label">Choose file</label>
-                <input class="form-control"
+            <div className="mb-3">
+                <label htmlFor="Products__open" className="form-label">Choose file</label>
+                <input className="form-control"
                     type="file"
                     id="Products__open"
                     onChange={event => Products__open_file(event)}
