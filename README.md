@@ -34,7 +34,7 @@ tree --charset ascii -I node_module
 |`make gpi_wfa`| cmd: Launching the admin site              |
 |`make gpi_wfs`| cmd: Launching the store's website         |
 |`make gpi_wm` | cmd: starting the database                 |
-|`make gpi_wt` | cmd: launching a PDF compilation           |
+|`make gpi_wp` | cmd: launching a PDF compilation           |
 
 ## Links
 

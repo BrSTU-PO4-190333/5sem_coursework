@@ -23,6 +23,7 @@ gpi_wm:
 	cd gpi_m & docker-compose up
 	cd gpi_m & docker-compose down
 
-gpi_wt:
+gpi_wp:
 	cd gpi_p & docker-compose up
-	cd gpi_p & docker-compose down
+	REM Для закрытия контейнера надо прописать:
+	REM "cd gpi_p & docker-compose down"
