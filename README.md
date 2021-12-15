@@ -8,6 +8,22 @@
 
 ---
 
+## Project tree
+
+```
+tree --charset ascii -I node_module
+```
+
+```
+.
+|-- gpi_b   # Backend API: Node JS Express
+|-- gpi_d   # JSON
+|-- gpi_fa  # Frontend adminpanel: React JS
+|-- gpi_fs  # Frontend webstore: React JS
+|-- gpi_m   # MySQL: Docker, docker-compose, LAMP
+`-- gpi_p   # PDF: docker-compose, LaTeX (texlive)
+```
+
 ## Commands
 
 | Command      | Description                                |
