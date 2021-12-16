@@ -203,16 +203,19 @@
             array[]
         </div>
 
-        <h3 class="field-label">Пример входных данных</h3>
-        <div class="example-data-content-type">Content-Type: application/json</div>
-        <pre class="example"><code>{
-
-}</code></pre>
-
 <h3 class="field-label">Пример выходных данных</h3>
         <div class="example-data-content-type">Content-Type: application/json</div>
-        <pre class="example"><code>{
-
+        <pre class="example"><code>{    
+    "ID": 46,
+    "Model": "40405-ENG",
+    "Name": "Удлинитель английский 4/5м с заземлением С АНГЛИЙСКОЙ ВИЛКОЙ",
+    "Img": "https://ooodepa.github.io/ooodepa-products/de-pa-electric/british-system-series/40400.png",
+    "CostBYN": "30.23",
+    "OnBox": 12,
+    "KG": "7.800",
+    "M3": "0.0292",
+    "Company": "de-pa-electric",
+    "Category": "british-system-series"     
 }</code></pre>
 
         <h3 class="field-label">Ответы сервера</h3>
@@ -231,35 +234,30 @@
     <div class="method">
 
         <div class="method-path">
-            <pre class="get"><code class="huge"><span class="http-method">get</span> /products/get</code></pre>
+            <pre class="get"><code class="huge"><span class="http-method">post</span> /products/edit/</code></pre>
         </div>
 
-        <div class="method-summary">Возвращает JSON продуктов из БД</div>
+        <div class="method-summary">Сервер редактирует запись по id</div>
 
         <h3 class="field-label">Возвращаемый тип</h3>
         <div class="return-type">
-            array[]
+            string
         </div>
 
         <h3 class="field-label">Пример входных данных</h3>
-        <div class="example-data-content-type">Content-Type: application/json</div>
         <pre class="example"><code>{
-
+    "login": "root",
+    "password": "hash",
+    "id": 3
 }</code></pre>
 
 <h3 class="field-label">Пример выходных данных</h3>
         <div class="example-data-content-type">Content-Type: application/json</div>
-        <pre class="example"><code>{
-
-}</code></pre>
+        <pre class="example"><code>"success"</code></pre>
 
         <h3 class="field-label">Ответы сервера</h3>
-        <h4 class="field-label">200 []</h4>
-        сервер достал данные из быза данных успешно
-
-        <h4 class="field-label">200 { err: err }</h4>
-        ошибка сервера
-
+        <h4 class="field-label">200 "success"</h4>
+        сервер успешно изменил данные о продукте
     </div> <!-- method -->
     <hr />
 
@@ -269,31 +267,31 @@
     <div class="method">
 
         <div class="method-path">
-            <pre class="get"><code class="huge"><span class="http-method">get</span> /products/get</code></pre>
+            <pre class="get"><code class="huge"><span class="http-method">post</span> /products/gpi_delete_product_where_id</code></pre>
         </div>
 
-        <div class="method-summary">Возвращает JSON продуктов из БД</div>
+        <div class="method-summary">Сервер удаляет запись из БД</div>
 
         <h3 class="field-label">Возвращаемый тип</h3>
         <div class="return-type">
-            array[]
+            string
         </div>
 
         <h3 class="field-label">Пример входных данных</h3>
         <div class="example-data-content-type">Content-Type: application/json</div>
         <pre class="example"><code>{
-
+    "login": "root",
+    "password": "hash",
+    "id": 3
 }</code></pre>
 
 <h3 class="field-label">Пример выходных данных</h3>
         <div class="example-data-content-type">Content-Type: application/json</div>
-        <pre class="example"><code>{
-
-}</code></pre>
+        <pre class="example"><code>"success"</code></pre>
 
         <h3 class="field-label">Ответы сервера</h3>
-        <h4 class="field-label">200 []</h4>
-        сервер достал данные из быза данных успешно
+        <h4 class="field-label">200 "success"</h4>
+        сервер удалил запись из БД успешно
 
         <h4 class="field-label">200 { err: err }</h4>
         ошибка сервера
