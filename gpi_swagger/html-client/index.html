@@ -1,4 +1,5 @@
-<!DOCTYPE html><html>
+<!DOCTYPE html>
+<html>
 
 <head>
     <meta charset="UTF-8" />
@@ -27,7 +28,7 @@
             array[]
         </div>
 
-<h3 class="field-label">Пример выходных данных</h3>
+        <h3 class="field-label">Пример выходных данных</h3>
         <div class="example-data-content-type">Content-Type: application/json</div>
         <pre class="example"><code>[
     {   
@@ -89,12 +90,18 @@
     "id": 3
 }</code></pre>
 
-<h3 class="field-label">Пример выходных данных</h3>
+        <h3 class="field-label">Пример выходных данных</h3>
         <pre class="example"><code>"success"</code></pre>
 
         <h3 class="field-label">Ответы сервера</h3>
         <h4 class="field-label">200 "success"</h4>
         сервер успешно изменил данные о продукте
+
+        <h4 class="field-label">200 "errLogin"</h4>
+            Сообщение о неверном логине
+
+        <h4 class="field-label">200 "errPassword"</h4>
+        Сообщение о неверном пароле
     </div> <!-- method -->
     <hr />
 
@@ -104,7 +111,8 @@
     <div class="method">
 
         <div class="method-path">
-            <pre class="get"><code class="huge"><span class="http-method">post</span> /products/gpi_delete_product_where_id</code></pre>
+            <pre
+                class="get"><code class="huge"><span class="http-method">post</span> /products/gpi_delete_product_where_id</code></pre>
         </div>
 
         <div class="method-summary">Сервер удаляет запись из БД</div>
@@ -122,7 +130,7 @@
     "id": 3
 }</code></pre>
 
-<h3 class="field-label">Пример выходных данных</h3>
+        <h3 class="field-label">Пример выходных данных</h3>
         <pre class="example"><code>"success"</code></pre>
 
         <h3 class="field-label">Ответы сервера</h3>
@@ -132,9 +140,79 @@
         <h4 class="field-label">200 { err: err }</h4>
         ошибка сервера
 
+        <h4 class="field-label">200 "errLogin"</h4>
+            Сообщение о неверном логине
+
+        <h4 class="field-label">200 "errPassword"</h4>
+        Сообщение о неверном пароле
+
     </div> <!-- method -->
     <hr />
 
+        <!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = -->
+        <hr />
+
+        <div class="method">
+    
+            <div class="method-path">
+                <pre class="get"><code class="huge"><span class="http-method">post</span> /products/add</code></pre>
+            </div>
+    
+            <div class="method-summary">Добавляет данные в БД</div>
+    
+            <h3 class="field-label">Возвращаемый тип</h3>
+            <div class="return-type">
+                string
+            </div>
+    
+            <h3 class="field-label">Пример входных данных</h3>
+            <div class="example-data-content-type">Content-Type: application/json</div>
+            <pre class="example"><code>[
+        {   
+            "Model": "40405-ENG",
+            "Name": "Удлинитель английский 4/5м с заземлением С АНГЛИЙСКОЙ ВИЛКОЙ",
+            "Img": "https://ooodepa.github.io/ooodepa-products/de-pa-electric/british-system-series/40400.png",
+            "CostBYN": "30.23",
+            "OnBox": 12,
+            "KG": "7.800",
+            "M3": "0.0292",
+            "Company": "de-pa-electric",
+            "Category": "british-system-series"
+        },
+        {
+            "Model": "40403-ENG",
+            "Name": "Удлинитель английский 4/3м с заземлением С АНГЛИЙСКОЙ ВИЛКОЙ",
+            "Img": "https://ooodepa.github.io/ooodepa-products/de-pa-electric/british-system-series/40400.png",
+            "CostBYN": "23.88",
+            "OnBox": 12,
+            "KG": "7.800",
+            "M3": "0.0223",
+            "Company": "de-pa-electric",
+            "Category": "british-system-series"
+        }   
+    ]</code></pre>
+
+    <h3 class="field-label">Пример выходных данных</h3>
+            <div class="example-data-content-type">Content-Type: application/json</div>
+            <pre class="example"><code>"success"</code></pre>
+    
+            <h3 class="field-label">Ответы сервера</h3>
+            <h4 class="field-label">200 "success"</h4>
+            сервер успешно добавил продукты
+    
+            <h4 class="field-label">200 { err: err }</h4>
+            ошибка сервера
+
+            <h4 class="field-label">200 "errLogin"</h4>
+            Сообщение о неверном логине
+
+            <h4 class="field-label">200 "errPassword"</h4>
+            Сообщение о неверном пароле
+    
+        </div> <!-- method -->
+        <hr />
+    
+        <!-- = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = -->
 </body>
 
 </html>
