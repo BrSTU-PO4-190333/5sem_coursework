@@ -3,6 +3,7 @@ gpi_wi:
 	cd gpi_b & npm i
 	cd gpi_fa & npm i
 	cd gpi_fs & npm i
+	cd gpi_s & npm i
 
 gpi_wc:
 	cd gpi_m & copy copy.env .env
@@ -27,3 +28,6 @@ gpi_wp:
 	cd gpi_p & docker-compose up
 	REM Для закрытия контейнера надо прописать:
 	REM "cd gpi_p & docker-compose down"
+
+gpi_ws:
+	cd gpi_s & npm run start

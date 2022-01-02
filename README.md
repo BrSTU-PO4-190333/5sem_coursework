@@ -15,8 +15,7 @@
 | [gpi_b](gpi_b)       | `make gpi_wb`   | http://localhost:3001   | Backend: Node JS Express server (server that returns JSON) |
 | [gpi_fa](gpi_fa)     | `make gpi_wfa`  | http://localhost:3003   | Frontend: React JS (adminpanel website)                    |
 | [gpi_fs](gpi_fs)     | `make gpi_wfs`  | http://localhost:3002   | Frontend: React JS (store's website)                       |
-| [gpi_j](gpi_j)       | -               | -                       | JSON: Example JSON files (files that can add to database)  |
 | [gpi_m](gpi_m)       | `make gpi_wm`   | http://localhost:8000   | LAMP: phpMyAdmin (view database)                           |
 | ~~[gpi_m](gpi_m)~~   |~~`make gpi_wm`~~|~~http://localhost:8001~~| ~~LAMP: Apache PHP (for work phpMyAdmin)~~                 |
 | [gpi_p](gpi_p)       | `make gpi_wp`   |                         | Documantation: Compile ESKD PDF file (coursework)          |
-| [gpi_s](gpi_s)       |                 | index.html              | Documentation: swagger (information about API)             |
+| [gpi_s](gpi_s)       | `make gpi_ws`   | http://localhost:8080   | Documentation: swagger (information about API)             |
