@@ -1,8 +1,8 @@
 // gpi_ Подключаем библиотеки
 const gpi_express = require('express');
 const gpi_router = gpi_express.Router();
-const gpi_class_Query = require('./gpi_class_Query');
-const gpi_function_get_POST = require('./gpi_function_get_POST');
+const gpi_class_Query = require('./../scripts/gpi_class_Query');
+const gpi_function_get_POST = require('./../scripts/gpi_function_get_POST');
 
 // gpi_ Роутер
 gpi_router.post("/gpi_auth", async function (gpi_request, gpi_response) {

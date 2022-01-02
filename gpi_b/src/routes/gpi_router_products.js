@@ -1,8 +1,8 @@
 // gpi_ Подключаем библиотеки
 const gpi_express = require('express');
 const gpi_router = gpi_express.Router();
-const gpi_class_QueryProducts = require('./gpi_class_QueryProducts');
-const gpi_function_get_POST = require('./gpi_function_get_POST');
+const gpi_class_QueryProducts = require('./../scripts/gpi_class_QueryProducts');
+const gpi_function_get_POST = require('./../scripts/gpi_function_get_POST');
 
 // gpi_ Роутер, который выводит все продукты
 gpi_router.get("/gpi_get_products", async function (gpi_request, gpi_response) {

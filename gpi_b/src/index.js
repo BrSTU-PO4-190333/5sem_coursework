@@ -1,25 +1,26 @@
-require('dotenv').config();
-const express = require('express');
-const cors = require('cors');
+// gpi_ Library
+const gpi_dotenv = require('dotenv')
+const gpi_express = require('express');
+const gpi_cors = require('cors');
+const gpi_router_auth = require('./routes/gpi_router_auth');
+const gpi_router_products = require('./routes/gpi_router_products');
 
-const app = express();
-app.use(cors());
-app.listen(process.env.NODEJS_LOCALE_PORT);
-console.log(`Open ${process.env.NODEJS_BASEURL}:${process.env.NODEJS_LOCALE_PORT}/`);
+// gpi Init
+gpi_dotenv.config();
+const gpi_app = gpi_express();
+gpi_app.use(gpi_cors());
 
-// Hello, World!
-app.get("/", function (req, res) {
+// gpi_ Start server
+gpi_app.listen(process.env.gpi_nodejs_port);
+console.log(`Open ${process.env.gpi_nodejs_baseurl}:${process.env.gpi_nodejs_port}/`);
+
+// gpi_ Home
+gpi_app.get("/", function (req, res) {
     res.send('Hello, World!');
 });
 
-// Auth
-app.use("/", require("./routes/singin"));
+// gpi_ Auth
+gpi_app.use("/", gpi_router_auth);
 
-// Products
-app.use("/", require("./routes/products/get"));
-// app.use("/", require("./routes/gpi_add_products"));
-app.use("/", require("./routes/gpi_delete_product_where_id"));
-app.use("/", require("./routes/products/edit"));
-
-app.use("/", require("./gpi_router_auth"));
-app.use("/", require("./gpi_router_products"));
+// gpi_ Products
+gpi_app.use("/", gpi_router_products);
