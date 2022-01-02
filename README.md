@@ -6,42 +6,17 @@
 - [ПРИЛОЖЕНИЕ А - СХЕМА ПРОГРАММЫ (A3)](https://github.com/Pavel-Innokentevich-Galanin/gpi_4coursework/raw/pdf/gpi_4coursework_a_programPlan.pdf)
 - [ПРИЛОЖЕНИЕ Б - ТЕКСТ ПРОГРАММЫ](https://github.com/Pavel-Innokentevich-Galanin/gpi_4coursework/raw/pdf/gpi_4coursework_b.pdf)
 
----
+## Documentation
 
-## Project tree
-
-```
-tree --charset ascii -I node_module
-```
-
-```
-.
-|-- gpi_b   # Backend API: Node JS Express
-|-- gpi_d   # JSON
-|-- gpi_fa  # Frontend adminpanel: React JS
-|-- gpi_fs  # Frontend webstore: React JS
-|-- gpi_m   # MySQL: Docker, docker-compose, LAMP
-`-- gpi_p   # PDF: docker-compose, LaTeX (texlive)
-```
-
-## Commands
-
-| Command      | Description                                |
-| ------------ | ------------------------------------------ |
-|`make gpi_wi` | cmd: installing packages                   |
-|`make gpi_wc` | cmd: copying settings files (env)          |
-|`make gpi_wb` | cmd: Starting the server that returns JSON |
-|`make gpi_wfa`| cmd: Launching the admin site              |
-|`make gpi_wfs`| cmd: Launching the store's website         |
-|`make gpi_wm` | cmd: starting the database                 |
-|`make gpi_wp` | cmd: launching a PDF compilation           |
-
-## Links
-
-| URL                   | Description                               |
-| --------------------- | ----------------------------------------- |
-| http://localhost:8000 | phpMyAdmin (database)                     |
-| http://localhost:8001 | ~~Apache PHP~~                            |
-| http://localhost:3001 | Express server (server that returns JSON) |
-| http://localhost:8003 | React (admin site)                        |
-| http://localhost:8002 | React (store's website)                   |
+| Path         | Command         | URL                     | Description                                                |
+| ------------ | --------------- | ----------------------- | ---------------------------------------------------------- |
+| `./Makefile` | `make gpi_wi`   |                         | Init: Copy `.env` files and install all npm packages       |
+| `./Makefile` | `make gpi_wc`   |                         | Init: Copy `.env` files                                    |
+| `./gpi_b/`   | `make gpi_wb`   | http://localhost:3001   | Backend: Node JS Express server (server that returns JSON) |
+| `./gpi_d/`   | -               | -                       | JSON: Example JSON files (files that can add to database)  |
+| `./gpi_fa/`  | `make gpi_wfa`  | http://localhost:3003   | Frontend: React JS (adminpanel website)                    |
+| `./gpi_fs/`  | `make gpi_wfs`  | http://localhost:3002   | Frontend: React JS (store's website)                       |
+| `./gpi_m/`   | `make gpi_wm`   | http://localhost:8000   | LAMP: phpMyAdmin (view database)                           |
+|~~`./gpi_m/`~~|~~`make gpi_wm`~~|~~http://localhost:8001~~| ~~LAMP: Apache PHP (for work phpMyAdmin)~~                 |
+| `./gpi_p/`   | `make gpi_wp`   |                         | Documantation: Compile ESKD PDF file (coursework)          |
+| `./gpi_s/`   |                 | index.html              | Documentation: swagger (information about API)             |
