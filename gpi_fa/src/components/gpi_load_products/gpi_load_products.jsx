@@ -1,4 +1,4 @@
-import axios from "axios";
+import gpi_class_FetchProducts from "./../../scripts/gpi_class_FetchProducts";
 
 function GpiLoadProducts() {
     function gpi_open_file(event) {
@@ -22,27 +22,14 @@ function GpiLoadProducts() {
                 return;
             }
 
-            try {
-                const gpi_url = `http://localhost:3001/gpi_add_products`;
-                const gpi_data = {
-                    gpi_login: localStorage.getItem("login"),
-                    gpi_password: localStorage.getItem("password"),
-                    gpi_array: gpi_obj,
-                }
- 
-                const gpi_res = await axios.post(gpi_url, gpi_data);
-                console.log(gpi_res);
+            const gpi_class_obj = new gpi_class_FetchProducts();
+            const gpi_status = await gpi_class_obj.gpi_add_products(gpi_obj);
 
-                if (gpi_res.data.gpi_code !== "success") {
-                    return;
-                }
-                
-                alert("Added products");
+            if (gpi_status === false) {
+                return;
             }
-            catch (err) {
-                console.error(err);
-                alert("Err connect API")
-            }
+            
+            alert("Added products with success");
         };
     }
 
