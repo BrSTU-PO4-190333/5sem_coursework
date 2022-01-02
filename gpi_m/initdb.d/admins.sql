@@ -3,3 +3,5 @@ CREATE TABLE `database`.`admins` (
     `password` VARCHAR(32) NOT NULL , 
     UNIQUE `login` (`login`)
 ) ENGINE = MyISAM;
+
+INSERT INTO `admins` (`login`, `password`) VALUES ('root','root');

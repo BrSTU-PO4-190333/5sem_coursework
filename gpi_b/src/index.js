@@ -17,6 +17,9 @@ app.use("/", require("./routes/singin"));
 
 // Products
 app.use("/", require("./routes/products/get"));
-app.use("/", require("./routes/gpi_add_products"));
+// app.use("/", require("./routes/gpi_add_products"));
 app.use("/", require("./routes/gpi_delete_product_where_id"));
 app.use("/", require("./routes/products/edit"));
+
+app.use("/", require("./gpi_router_auth"));
+app.use("/", require("./gpi_router_products"));

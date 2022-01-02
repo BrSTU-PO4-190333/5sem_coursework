@@ -1,0 +1,24 @@
+.PageLogin
+{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.PageLogin__form
+{
+    width: 300px;
+    background-color: white;
+    border: 2px solid #ececec;
+    box-shadow: 8px 8px 8px lightgray;
+    border-radius: 8px;
+    padding: 16px;
+    margin: 16px;   
+}
