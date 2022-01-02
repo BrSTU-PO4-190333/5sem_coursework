@@ -1,7 +1,9 @@
-export default function GPI_Prices() {
+function GpiPrices() {
     return (
         <div className="container">
             Страница прайсов
         </div>
     );
 }
+
+export default GpiPrices;

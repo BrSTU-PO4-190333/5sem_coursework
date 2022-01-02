@@ -1,15 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {BrowserRouter as Router} from 'react-router-dom';
+import GpiApp from './components/gpi_app/gpi_app';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
-import App from "./GPI_App";
 
 ReactDOM.render(
     (
         <React.StrictMode>
             <Router>
-                <App />
+                <GpiApp />
             </Router>
         </React.StrictMode>
     ),

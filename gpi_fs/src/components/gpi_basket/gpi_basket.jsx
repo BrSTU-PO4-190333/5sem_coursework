@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
-import gpi_download_file from "./gpi_download_file";
+import gpi_class_download_file from "./../../scripts/gpi_class_download_file";
 
-export default function GPI_Basket() {
+function GpiBasket() {
     const [gpi_Basket, gpi_setBasket] = useState({});
 
     // Конструктор
     useEffect(() => {
         gpi_reload_basket();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     function gpi_reload_basket() {
@@ -34,23 +35,18 @@ export default function GPI_Basket() {
         return gpi_basket;                      // Возвращаем объект
     }
 
-    function gpi_print() {
-        gpi_download_csv();
-    }
-
-    function gpi_download_csv() {
-        let gpi_str = "";                           // Текст файла
-    
-        gpi_str += `"", "Товар", "Количество"\n`;   // Добавили CSV заголовок
-
+    function gpi_download_csv_basket() {
+        // gpi_ Текст файла
+        let gpi_file_content = "";
+        // gpi_ Добавляем CSV заголовок
+        gpi_file_content += `"", "Товар", "Количество"\n`;
+        // gpi_ Добавляю CSV элементы
         Object.keys(gpi_Basket).forEach(function (key, index) {
-            gpi_str += `"${index + 1}", "${key}", "${gpi_Basket[key]}"\n`; // Добавили CSV тело
+            gpi_file_content += `"${index + 1}", "${key}", "${gpi_Basket[key]}"\n`; // Добавили CSV тело
         })
-      
-        const D = new Date();                       // Получаем сегодняшнюю дату
-        const FILE_NAME = `${D.getFullYear()}-${D.getMonth()}-${D.getDate()}_${D.getHours()}-${D.getMinutes()}_basket.csv`;
-    
-        gpi_download_file(gpi_str, FILE_NAME);      // Вызываем функцию скачивания файла
+        // gpi_ Скачиваю файл
+        const gpi_obj = new gpi_class_download_file();
+        gpi_obj.gpi_download_file(gpi_file_content, 'basket.csv');
     }
 
     function gpi_delete_basket(model) {
@@ -71,7 +67,7 @@ export default function GPI_Basket() {
             <div className="mb-3 mt-3">
                 <button
                     className="btn btn-success"
-                    onClick={gpi_print}
+                    onClick={gpi_download_csv_basket}
                 >Печать</button>
             </div>
             <table className="table">
@@ -107,3 +103,5 @@ export default function GPI_Basket() {
         </div>
     );
 }
+
+export default GpiBasket;

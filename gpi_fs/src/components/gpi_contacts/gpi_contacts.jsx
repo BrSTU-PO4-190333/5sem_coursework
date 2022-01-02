@@ -1,7 +1,9 @@
-export default function GPI_Contacts() {
+function GpiContacts() {
     return (
         <div className="container">
             Страница контактов
         </div>
     );
 }
+
+export default GpiContacts;

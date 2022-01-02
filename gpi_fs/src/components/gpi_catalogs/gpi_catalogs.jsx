@@ -1,7 +1,9 @@
-export default function GPI_Catalogs() {
+function GpiCatalogs() {
     return (
         <div className="container">
             Страница каталогов
         </div>
     );
 }
+
+export default GpiCatalogs;
