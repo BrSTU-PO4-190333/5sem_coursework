@@ -46,10 +46,14 @@
                         "schema": {
                             "type": "array",
                             "items": {
-                                "$ref": "#/definitions/gpi_get_products__ApiResponse"
+                                "$ref": "#/definitions/ApiResponse__gpi_get_products"
                             }
                         }
                     }
+                },
+                "externalDocs": {
+                    "description": "Пример ответа с массивом объектов продуктов (gpi_products.json)",
+                    "url": "/gpi_products.json"
                 }
             }
         },
@@ -67,7 +71,7 @@
                         "description": "Массив c объектами продуктов (с объектом продукта) не передается в теле POST",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/gpi_add_products__ApiRequest_without_products_array"
+                            "$ref": "#/definitions/ApiRequest__gpi_add_products__without_products_array"
                         }
                     },
                     {
@@ -76,7 +80,7 @@
                         "description": "Массив c объектами продуктов (с объектом продукта) передается в теле POST",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/gpi_add_products__ApiRequest_with_products_array"
+                            "$ref": "#/definitions/ApiRequest__gpi_add_products__with_products_array"
                         }
                     }
                 ],
@@ -85,7 +89,7 @@
                         "description": "Успешное добавление массива с объектами продуктов (массива с объектом продукта)",
                         "schema": {
                             "type": "object",
-                            "$ref": "#/definitions/gpi_add_products__ApiResponse"
+                            "$ref": "#/definitions/ApiResponse__server_msg"
                         }
                     }
                 }
@@ -117,7 +121,45 @@
                         "description": "Успешное очищение таблицы",
                         "schema": {
                             "type": "object",
-                            "$ref": "#/definitions/gpi_delete_table_products__ApiResponse"
+                            "$ref": "#/definitions/ApiResponse__server_msg"
+                        }
+                    }
+                }
+            }
+        },
+        "/gpi_delete_product": {
+            "post": {
+                "tags": [
+                    "gpi_products"
+                ],
+                "summary": "Удаляем продукт по ид",
+                "description": "Удаляем продукт по ид указанным в параметре gpi_id",
+                "parameters": [
+                    {
+                        "name": "gpi_login",
+                        "description": "Логин администратора",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "gpi_password",
+                        "description": "Пароль администратора",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "gpi_id",
+                        "description": "Ид продукта, который нужно удалить",
+                        "required": true,
+                        "type": "number"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Успешное удаление продукта из базы данных",
+                        "schema": {
+                            "type": "object",
+                            "$ref": "#/definitions/ApiResponse__server_msg"
                         }
                     }
                 }
@@ -125,7 +167,7 @@
         }
     },
     "definitions": {
-        "gpi_get_products__ApiResponse": {
+        "ApiResponse__gpi_get_products": {
             "type": "object",
             "properties": {
                 "gpi_id": {
@@ -141,16 +183,19 @@
                     "type": "string"
                 },
                 "gpi_cost_byn": {
-                    "type": "number"
+                    "type": "number",
+                    "format": "float"
                 },
                 "gpi_on_box": {
                     "type": "number"
                 },
                 "gpi_kg": {
-                    "type": "number"
+                    "type": "number",
+                    "format": "float"
                 },
                 "gpi_m3": {
-                    "type": "number"
+                    "type": "number",
+                    "format": "float"
                 },
                 "gpi_company": {
                     "type": "string"
@@ -160,7 +205,18 @@
                 }
             }
         },
-        "gpi_add_products__ApiRequest_without_products_array": {
+        "ApiResponse__server_msg": {
+            "type": "object",
+            "properties": {
+                "gpi_code": {
+                    "type": "string"
+                },
+                "gpi_msg": {
+                    "type": "string"
+                }
+            }
+        },
+        "ApiRequest__gpi_add_products__without_products_array": {
             "type": "object",
             "properties": {
                 "gpi_login": {
@@ -171,7 +227,7 @@
                 }
             }
         },
-        "gpi_add_products__ApiRequest_with_products_array": {
+        "ApiRequest__gpi_add_products__with_products_array": {
             "type": "object",
             "properties": {
                 "gpi_login": {
@@ -198,16 +254,19 @@
                                 "type": "string"
                             },
                             "gpi_cost_byn": {
-                                "type": "number"
+                                "type": "number",
+                                "format": "float"
                             },
                             "gpi_on_box": {
                                 "type": "number"
                             },
                             "gpi_kg": {
-                                "type": "number"
+                                "type": "number",
+                                "format": "float"
                             },
                             "gpi_m3": {
-                                "type": "number"
+                                "type": "number",
+                                "format": "float"
                             },
                             "gpi_company": {
                                 "type": "string"
@@ -217,28 +276,6 @@
                             }
                         }
                     }
-                }
-            }
-        },
-        "gpi_add_products__ApiResponse": {
-            "type": "object",
-            "properties": {
-                "gpi_code": {
-                    "type": "string"
-                },
-                "gpi_msg": {
-                    "type": "string"
-                }
-            }
-        },
-        "gpi_delete_table_products__ApiResponse": {
-            "type": "object",
-            "properties": {
-                "gpi_code": {
-                    "type": "string"
-                },
-                "gpi_msg": {
-                    "type": "string"
                 }
             }
         }
