@@ -80,7 +80,7 @@
                         "description": "Массив c объектами продуктов (с объектом продукта) передается в теле POST",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/ApiRequest__gpi_add_products__with_products_array"
+                            "$ref": "#/definitions/ApiRequest__gpi_add_products"
                         }
                     }
                 ],
@@ -104,16 +104,13 @@
                 "description": "Очищаем таблицу продуктов, чтобы при добавлении продукта индекс не продолжался инкрементироваться с какого-нибудь 1234, а началось все по новой с 1",
                 "parameters": [
                     {
-                        "name": "gpi_login",
-                        "description": "Логин администратора",
+                        "in": "body",
+                        "name": "body",
+                        "description": "Логин, пароль в теле POST",
                         "required": true,
-                        "type": "string"
-                    },
-                    {
-                        "name": "gpi_password",
-                        "description": "Пароль администратора",
-                        "required": true,
-                        "type": "string"
+                        "schema": {
+                            "$ref": "#/definitions/ApiRequest__gpi_delete_table_products"
+                        }
                     }
                 ],
                 "responses": {
@@ -136,22 +133,42 @@
                 "description": "Удаляем продукт по ид указанным в параметре gpi_id",
                 "parameters": [
                     {
-                        "name": "gpi_login",
-                        "description": "Логин администратора",
+                        "in": "body",
+                        "name": "body",
+                        "description": "Логин, пароль, ид в теле POST",
                         "required": true,
-                        "type": "string"
-                    },
+                        "schema": {
+                            "$ref": "#/definitions/ApiRequest__gpi_update_product"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Успешное удаление продукта из базы данных",
+                        "schema": {
+                            "type": "object",
+                            "$ref": "#/definitions/ApiResponse__server_msg"
+                        }
+                    }
+                }
+            }
+        },
+        "/gpi_update_product": {
+            "post": {
+                "tags": [
+                    "gpi_products"
+                ],
+                "summary": "Обновляем продукт по ид",
+                "description": "Обновляем продукт по ид указанным в параметре gpi_id, данными указанными в параметре gpi_data",
+                "parameters": [
                     {
-                        "name": "gpi_password",
-                        "description": "Пароль администратора",
+                        "in": "body",
+                        "name": "body",
+                        "description": "Логин, пароль, объект продукта, ид в теле POST",
                         "required": true,
-                        "type": "string"
-                    },
-                    {
-                        "name": "gpi_id",
-                        "description": "Ид продукта, который нужно удалить",
-                        "required": true,
-                        "type": "number"
+                        "schema": {
+                            "$ref": "#/definitions/ApiRequest__gpi_update_product"
+                        }
                     }
                 ],
                 "responses": {
@@ -167,55 +184,6 @@
         }
     },
     "definitions": {
-        "ApiResponse__gpi_get_products": {
-            "type": "object",
-            "properties": {
-                "gpi_id": {
-                    "type": "number"
-                },
-                "gpi_model": {
-                    "type": "string"
-                },
-                "gpi_name": {
-                    "type": "string"
-                },
-                "gpi_img_path": {
-                    "type": "string"
-                },
-                "gpi_cost_byn": {
-                    "type": "number",
-                    "format": "float"
-                },
-                "gpi_on_box": {
-                    "type": "number"
-                },
-                "gpi_kg": {
-                    "type": "number",
-                    "format": "float"
-                },
-                "gpi_m3": {
-                    "type": "number",
-                    "format": "float"
-                },
-                "gpi_company": {
-                    "type": "string"
-                },
-                "gpi_category": {
-                    "type": "string"
-                }
-            }
-        },
-        "ApiResponse__server_msg": {
-            "type": "object",
-            "properties": {
-                "gpi_code": {
-                    "type": "string"
-                },
-                "gpi_msg": {
-                    "type": "string"
-                }
-            }
-        },
         "ApiRequest__gpi_add_products__without_products_array": {
             "type": "object",
             "properties": {
@@ -227,7 +195,7 @@
                 }
             }
         },
-        "ApiRequest__gpi_add_products__with_products_array": {
+        "ApiRequest__gpi_add_products": {
             "type": "object",
             "properties": {
                 "gpi_login": {
@@ -276,6 +244,132 @@
                             }
                         }
                     }
+                }
+            }
+        },
+        "ApiRequest__gpi_delete_table_products": {
+            "type": "object",
+            "properties": {
+                "gpi_login": {
+                    "type": "string"
+                },
+                "gpi_password": {
+                    "type": "string"
+                }
+            }
+        },
+        "ApiRequest__gpi_delete_product": {
+            "type": "object",
+            "properties": {
+                "gpi_login": {
+                    "type": "string"
+                },
+                "gpi_password": {
+                    "type": "string"
+                },
+                "gpi_id": {
+                    "type": "number"
+                }
+            }
+        },
+        "ApiRequest__gpi_update_product": {
+            "type": "object",
+            "properties": {
+                "gpi_login": {
+                    "type": "string"
+                },
+                "gpi_password": {
+                    "type": "string"
+                },
+                "gpi_data": {
+                    "type": "object",
+                    "properties": {
+                        "gpi_id": {
+                            "type": "number"
+                        },
+                        "gpi_model": {
+                            "type": "string"
+                        },
+                        "gpi_name": {
+                            "type": "string"
+                        },
+                        "gpi_img_path": {
+                            "type": "string"
+                        },
+                        "gpi_cost_byn": {
+                            "type": "number",
+                            "format": "float"
+                        },
+                        "gpi_on_box": {
+                            "type": "number"
+                        },
+                        "gpi_kg": {
+                            "type": "number",
+                            "format": "float"
+                        },
+                        "gpi_m3": {
+                            "type": "number",
+                            "format": "float"
+                        },
+                        "gpi_company": {
+                            "type": "string"
+                        },
+                        "gpi_category": {
+                            "type": "string"
+                        }
+                    }
+                },
+                "gpi_id": {
+                    "type": "number"
+                }
+            }
+        },
+        "ApiResponse__gpi_get_products": {
+            "type": "object",
+            "properties": {
+                "gpi_id": {
+                    "type": "number"
+                },
+                "gpi_model": {
+                    "type": "string"
+                },
+                "gpi_name": {
+                    "type": "string"
+                },
+                "gpi_img_path": {
+                    "type": "string"
+                },
+                "gpi_cost_byn": {
+                    "type": "number",
+                    "format": "float"
+                },
+                "gpi_on_box": {
+                    "type": "number"
+                },
+                "gpi_kg": {
+                    "type": "number",
+                    "format": "float"
+                },
+                "gpi_m3": {
+                    "type": "number",
+                    "format": "float"
+                },
+                "gpi_company": {
+                    "type": "string"
+                },
+                "gpi_category": {
+                    "type": "string"
+                }
+            }
+        },
+        "ApiResponse__server_msg": {
+            "type": "object",
+            "properties": {
+                "gpi_code": {
+                    "type": "string"
+                },
+                "gpi_msg": {
+                    "type": "string"
                 }
             }
         }
