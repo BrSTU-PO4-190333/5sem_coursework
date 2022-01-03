@@ -4,6 +4,7 @@ gpi_wi:
 	cd gpi_ds & npm i
 	cd gpi_fa & npm i
 	cd gpi_fs & npm i
+	cd gpi_gp & npm i
 
 gpi_wc:
 	cd gpi_ba & copy .env.copy .env
