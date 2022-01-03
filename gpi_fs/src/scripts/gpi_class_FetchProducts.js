@@ -27,11 +27,7 @@ class gpi_class_FetchProducts {
 
             if (gpi_res.data.gpi_code === 500) {
                 alert(gpi_res.data.gpi_error);
-                return [{}];
-            }
-
-            if (gpi_res.data.length === 0) {
-                return [{}];
+                return undefined;
             }
 
             return gpi_res.data;
@@ -41,7 +37,7 @@ class gpi_class_FetchProducts {
                 "gpi_msg": gpi_error,
             });
             alert("Error connect to server");
-            return [];
+            return undefined;
         }
     }
 }

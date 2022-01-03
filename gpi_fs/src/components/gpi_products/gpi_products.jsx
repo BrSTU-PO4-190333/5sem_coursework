@@ -14,6 +14,9 @@ function GpiProducts() {
   async function gpi_get_products() {
     const gpi_obj = new gpi_class_FetchProducts();
     const gpi_res = await gpi_obj.gpi_get_products();
+    if (typeof gpi_res === "undefined") {
+      return;
+    }
 
     setGpiProductsArray(gpi_res);
 
