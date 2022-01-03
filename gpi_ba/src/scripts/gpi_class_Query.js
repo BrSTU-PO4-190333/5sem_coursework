@@ -23,21 +23,22 @@ class gpi_Query {
             // gpi_ Если записи не найдено, то неверный логин или пароль
             if (gpi_rows.length == 0) {
                 return {
-                    "gpi_msg": "Error auth: not found login or password",
                     "gpi_code": "ErrAuth",
+                    "gpi_msg": "Error auth: not found login or password",
                 }
             }
 
             // gpi_ Если успешная авторизация
             return {
                 "gpi_code": "success",
+                "gpi_msg": "User auth with success",
             };
         }
         // gpi_ Если ошибка MySQL
         catch (gpi_error) {
             return {
-                "gpi_error": "" + gpi_error,
                 "gpi_code": 500,
+                "gpi_error": "" + gpi_error,
             };
         }
     }

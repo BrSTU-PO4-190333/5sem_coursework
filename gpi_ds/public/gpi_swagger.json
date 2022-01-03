@@ -19,6 +19,35 @@
         "http"
     ],
     "paths": {
+        "/gpi_auth": {
+            "post": {
+                "tags": [
+                    "gpi_auth"
+                ],
+                "summary": "Проверка авторизации администратора",
+                "description": "Передав параметры gpi_login и gpi_password происходит проверка авторизации",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "Логин, пароль в теле POST",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/ApiRequest__gpi_auth"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Вариант 1) Логин существует и пароль верен - успешная авторизация пользователя \n Вариант 2) Логин не существует или пароль не совпадает - ошибка авторизации",
+                        "schema": {
+                            "type": "object",
+                            "$ref": "#/definitions/ApiResponse__server_msg"
+                        }
+                    }
+                }
+            }
+        },
         "/gpi_get_products": {
             "get": {
                 "tags": [
@@ -184,6 +213,17 @@
         }
     },
     "definitions": {
+        "ApiRequest__gpi_auth": {
+            "type": "object",
+            "properties": {
+                "gpi_login": {
+                    "type": "string"
+                },
+                "gpi_password": {
+                    "type": "string"
+                }
+            }
+        },
         "ApiRequest__gpi_add_products__without_products_array": {
             "type": "object",
             "properties": {
