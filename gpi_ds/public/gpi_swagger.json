@@ -11,8 +11,12 @@
     "host": "localhost:3000/",
     "tags": [
         {
+            "name": "gpi_auth",
+            "description": "Манипуляции с таблицей администраторов (gpi_admins)"
+        },
+        {
             "name": "gpi_products",
-            "description": "Манипуляции с таблицей продуктов"
+            "description": "Манипуляции с таблицей продуктов (gpi_products)"
         }
     ],
     "schemes": [
