@@ -1,9 +1,29 @@
-function GpiApp() {
+import React, { Component } from 'react';
+import SwaggerUI from 'swagger-ui';
+import "swagger-ui/dist/swagger-ui.css";
+
+class GpiApp extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      definitionLink: "http://localhost:3000/gpi_swagger.json",
+    }
+  }
+
+  componentDidMount() {
+    SwaggerUI({
+      domNode: document.getElementById("api-data"),
+      url: this.state.definitionLink
+    })
+  }
+
+  render() {
     return (
-        <div>
-            Hello, World!
-        </div>
+      <div className="App">
+        <div id="api-data" />
+      </div>
     );
+  }
 }
 
 export default GpiApp;

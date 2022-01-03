@@ -1,0 +1,233 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "Документация Node JS Express сервера",
+        "version": "2022.1.3",
+        "title": "Документация API",
+        "contact": {
+            "email": "Pavel.Innokentevich.Galanin@gmail.com"
+        }
+    },
+    "host": "localhost:3001/",
+    "tags": [
+        {
+            "name": "gpi_products",
+            "description": "Манипуляции с таблицей продуктов"
+        }
+    ],
+    "schemes": [
+        "http"
+    ],
+    "paths": {
+        "/gpi_get_products": {
+            "get": {
+                "tags": [
+                    "gpi_products"
+                ],
+                "summary": "Получаем массив продуктов",
+                "description": "Получаем массив продуктов, либо получаем массив продуктов отсортированным по полю gpi_id в обратном порядке, либо получаем продукт по ид.",
+                "parameters": [
+                    {
+                        "name": "gpi_invert",
+                        "description": "Получить ответ отсортированным по полю gpi_id в обратном порядке",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "gpi_id",
+                        "description": "Ид продукта, который хотим получить",
+                        "required": false,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200 (ситуация 1)": {
+                        "description": "Получили массив продуктов",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/gpi_get_products_ApiResponse"
+                            }
+                        }
+                    },
+                    "200 (ситуация 2)": {
+                        "description": "Получили массив продукта отсортированных по ид в обратном порядке",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/gpi_get_products_ApiResponse"
+                            }
+                        }
+                    },
+                    "200 (ситуация 3)": {
+                        "description": "Получили массив c одним продуктом по ид",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/gpi_get_products_ApiResponse"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/gpi_add_products": {
+            "post": {
+                "tags": [
+                    "gpi_products"
+                ],
+                "summary": "Добавляем массив продуктов/продукта",
+                "description": "Добавляем массив продуктов/продукта в базу данных",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "Массив продуктов/продукта не передается",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/gpi_add_products_ApiRequest"
+                        }
+                    },
+                    {
+                        "in": "body",
+                        "name": "body (ситуация 2)",
+                        "description": "Массив продуктов/продукта передается",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/gpi_add_products_ApiRequest2"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Успешное добавление массива продуктов/продукта",
+                        "schema": {
+                            "type": "object",
+                            "$ref": "#/definitions/gpi_add_products_ApiResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/gpi_deleted_table_products": {
+            "post": {
+                "tags": [
+                    "gpi_products"
+                ],
+                "summary": "Очищаем таблицу продуктов",
+                "description": "Очищаем таблицу продуктов, чтобы при добавлении продукта индекс не продолжался инкрементироваться с какого-нибудь 1234, а началось все по новой с 1",
+                "parameters": [
+                    {
+                        "name": "gpi_login",
+                        "description": "Логин администратора",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "gpi_password",
+                        "description": "Пароль администратора",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Успешное очищение таблицы",
+                        "schema": {
+                            "type": "object",
+                            "$ref": "#/definitions/gpi_delete_table_products_ApiResponse"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "gpi_get_products_ApiResponse": {
+            "type": "object",
+            "properties": {
+                "gpi_id": {
+                    "type": "number"
+                },
+                "gpi_model": {
+                    "type": "string"
+                },
+                "gpi_name": {
+                    "type": "string"
+                },
+                "gpi_img_path": {
+                    "type": "string"
+                },
+                "gpi_cost_byn": {
+                    "type": "number"
+                },
+                "gpi_on_box": {
+                    "type": "number"
+                },
+                "gpi_kg": {
+                    "type": "number"
+                },
+                "gpi_m3": {
+                    "type": "number"
+                },
+                "gpi_company": {
+                    "type": "string"
+                },
+                "gpi_category": {
+                    "type": "string"
+                }
+            }
+        },
+        "gpi_add_products_ApiRequest": {
+            "type": "object",
+            "properties": {
+                "gpi_login": {
+                    "type": "string"
+                },
+                "gpi_password": {
+                    "type": "string"
+                }
+            }
+        },
+        "gpi_add_products_ApiRequest2": {
+            "type": "object",
+            "properties": {
+                "gpi_login": {
+                    "type": "string"
+                },
+                "gpi_password": {
+                    "type": "string"
+                },
+                "gpi_array": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "$ref": "#/definitions/gpi_get_products_ApiResponse"
+                    }
+                }
+            }
+        },
+        "gpi_add_products_ApiResponse": {
+            "type": "object",
+            "properties": {
+                "gpi_code": {
+                    "type": "string"
+                },
+                "gpi_msg": {
+                    "type": "string"
+                }
+            }
+        },
+        "gpi_delete_table_products_ApiResponse": {
+            "type": "object",
+            "properties": {
+                "gpi_code": {
+                    "type": "string"
+                },
+                "gpi_msg": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}
