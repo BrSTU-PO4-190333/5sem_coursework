@@ -86,7 +86,7 @@
                 },
                 "externalDocs": {
                     "description": "Пример ответа с массивом объектов продуктов (gpi_products.json)",
-                    "url": "/gpi_products.json"
+                    "url": "https://raw.githubusercontent.com/Pavel-Innokentevich-Galanin/gpi_4coursework/main/gpi_ds/public/gpi_products.json"
                 }
             }
         },

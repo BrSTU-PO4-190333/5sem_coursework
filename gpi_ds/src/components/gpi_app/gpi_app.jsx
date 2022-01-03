@@ -6,8 +6,8 @@ class GpiApp extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      definitionLink: "http://localhost:3001/gpi_swagger.json",
-    }
+      definitionLink: `${process.env.REACT_APP__SWAGGER}`,
+    };
   }
 
   componentDidMount() {

@@ -6,11 +6,12 @@ gpi_wi:
 	cd gpi_fs & npm i
 
 gpi_wc:
-	cd gpi_ba & copy copy.env .env
-	cd gpi_bm & copy copy.env .env
-	cd gpi_ds & copy copy.env .env
-	cd gpi_fa & copy copy.env .env
-	cd gpi_fs & copy copy.env .env
+	cd gpi_ba & copy .env.copy .env
+	cd gpi_bm & copy .env.copy .env
+	cd gpi_ds & copy .env.copy .env
+	cd gpi_ds & copy .env.production.local.copy .env.production.local
+	cd gpi_fa & copy .env.copy .env
+	cd gpi_fs & copy .env.copy .env
 
 gpi_wba:
 	cd gpi_ba & npm run start
