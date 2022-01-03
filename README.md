@@ -4,8 +4,8 @@
     <thead>
         <tr>
             <td>Путь</td>
-            <td>Команда Makefile</td>
-            <td>URL</td>
+            <td width="140">Команда Makefile</td>
+            <td width="200">URL</td>
             <td>Описание</td>
         </tr>
     </thead>
@@ -63,25 +63,25 @@
         <tr>
             <td rowspan="6"><a href="gpi_fs">gpi_gp</a></td>
             <td rowspan="6">make gpi_wgp</td>
-            <td>http://127.0.0.1:8080/gpi_4coursework/gpi_ds/</td>
+            <td>http://localhost:8080/gpi_4coursework/gpi_ds/</td>
             <td rowspan="2">gp - GitHub pages: глянуть модуль gpi_ds онлайн</td>
         </tr>
         <tr>
-            <td>https://pavel-innokentevich-galanin.github.io/gpi_4coursework/gpi_ds/</td>
+            <td>https://Pavel-Innokentevich-Galanin.github.io/gpi_4coursework/gpi_ds/</td>
         </tr>
         <tr>
-            <td>http://127.0.0.1:8080/gpi_4coursework/gpi_fa/</td>
+            <td>http://localhost:8080/gpi_4coursework/gpi_fa/</td>
             <td rowspan="2">gp - GitHub pages: глянуть модуль gpi_fa онлайн (для работы нужен запущенный модуль gpi_ba и gpi_bm, иначе выдаст что сервер не доступен)</td>
         </tr>
         <tr>
-            <td>https://pavel-innokentevich-galanin.github.io/gpi_4coursework/gpi_fa/</td>
+            <td>https://Pavel-Innokentevich-Galanin.github.io/gpi_4coursework/gpi_fa/</td>
         </tr>
         <tr>
-            <td>http://127.0.0.1:8080/gpi_4coursework/gpi_fs/</td>
+            <td>http://localhost:8080/gpi_4coursework/gpi_fs/</td>
             <td rowspan="2">gp - GitHub pages: глянуть модуль gpi_fs онлайн (для работы нужен запущенный модуль gpi_ba и gpi_bm, иначе выдаст что сервер не доступен)</td>
         </tr>
         <tr>
-            <td>https://pavel-innokentevich-galanin.github.io/gpi_4coursework/gpi_fs/</td>
+            <td>https://Pavel-Innokentevich-Galanin.github.io/gpi_4coursework/gpi_fs/</td>
         </tr>
     </tbody>
 </table>
