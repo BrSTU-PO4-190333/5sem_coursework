@@ -6,7 +6,7 @@ class GpiApp extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      definitionLink: "http://localhost:3000/gpi_swagger.json",
+      definitionLink: "http://localhost:3001/gpi_swagger.json",
     }
   }
 

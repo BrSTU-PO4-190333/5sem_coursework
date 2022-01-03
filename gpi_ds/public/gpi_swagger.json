@@ -8,7 +8,7 @@
             "email": "Pavel.Innokentevich.Galanin@gmail.com"
         }
     },
-    "host": "localhost:3001/",
+    "host": "localhost:3000/",
     "tags": [
         {
             "name": "gpi_products",
