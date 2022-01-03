@@ -1,13 +1,14 @@
 gpi_wi:
 	make gpi_wc
-	cd gpi_b & npm i
+	cd gpi_ba & npm i
 	cd gpi_ds & npm i
 	cd gpi_fa & npm i
 	cd gpi_fs & npm i
 
 gpi_wc:
-	cd gpi_m & copy copy.env .env
-	cd gpi_b & copy copy.env .env
+	cd gpi_ba & copy copy.env .env
+	cd gpi_bm & copy copy.env .env
+	cd gpi_ds & copy copy.env .env
 	cd gpi_fa & copy copy.env .env
 	cd gpi_fs & copy copy.env .env
 
