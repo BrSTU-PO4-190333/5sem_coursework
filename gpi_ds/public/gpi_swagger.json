@@ -25,7 +25,7 @@
                     "gpi_products"
                 ],
                 "summary": "Получаем массив продуктов",
-                "description": "Получаем массив продуктов, либо получаем массив продуктов отсортированным по полю gpi_id в обратном порядке, либо получаем продукт по ид.",
+                "description": "Вариант 1) Получаем массив объектов продуктов \n Вариант 2) При указании параметра gpi_invert = true, получаем массив объектов продуктов отсортированных по полю gpi_id в обратном порядке \n Вариант 3) При указании параметра gpi_id, получаем массив одного объекта продукта по ид.",
                 "parameters": [
                     {
                         "name": "gpi_invert",
@@ -41,30 +41,12 @@
                     }
                 ],
                 "responses": {
-                    "200 (ситуация 1)": {
-                        "description": "Получили массив продуктов",
+                    "200": {
+                        "description": "Вариант 1) Получили массив объектов продуктов \n Вариант 2) Получили массив объектов продуктов отсортированных по ид в обратном порядке \n Вариант 3) Получили массив c одним объектом продукта по ид",
                         "schema": {
                             "type": "array",
                             "items": {
-                                "$ref": "#/definitions/gpi_get_products_ApiResponse"
-                            }
-                        }
-                    },
-                    "200 (ситуация 2)": {
-                        "description": "Получили массив продукта отсортированных по ид в обратном порядке",
-                        "schema": {
-                            "type": "array",
-                            "items": {
-                                "$ref": "#/definitions/gpi_get_products_ApiResponse"
-                            }
-                        }
-                    },
-                    "200 (ситуация 3)": {
-                        "description": "Получили массив c одним продуктом по ид",
-                        "schema": {
-                            "type": "array",
-                            "items": {
-                                "$ref": "#/definitions/gpi_get_products_ApiResponse"
+                                "$ref": "#/definitions/gpi_get_products__ApiResponse"
                             }
                         }
                     }
@@ -76,34 +58,34 @@
                 "tags": [
                     "gpi_products"
                 ],
-                "summary": "Добавляем массив продуктов/продукта",
-                "description": "Добавляем массив продуктов/продукта в базу данных",
+                "summary": "Добавляем массив объектов продуктов (массив с объектом продукта)",
+                "description": "Вариант 1) Добавляем массив объекта продукта в базу данных не указав данные \n Вариант 2) Добавляем массив объектов продуктов (добавляем массив объекта продукта) передав данные через тело POST",
                 "parameters": [
                     {
                         "in": "body",
-                        "name": "body",
-                        "description": "Массив продуктов/продукта не передается",
+                        "name": "1) body",
+                        "description": "Массив c объектами продуктов (с объектом продукта) не передается в теле POST",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/gpi_add_products_ApiRequest"
+                            "$ref": "#/definitions/gpi_add_products__ApiRequest_without_products_array"
                         }
                     },
                     {
                         "in": "body",
-                        "name": "body (ситуация 2)",
-                        "description": "Массив продуктов/продукта передается",
+                        "name": "2) body",
+                        "description": "Массив c объектами продуктов (с объектом продукта) передается в теле POST",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/gpi_add_products_ApiRequest2"
+                            "$ref": "#/definitions/gpi_add_products__ApiRequest_with_products_array"
                         }
                     }
                 ],
                 "responses": {
                     "200": {
-                        "description": "Успешное добавление массива продуктов/продукта",
+                        "description": "Успешное добавление массива с объектами продуктов (массива с объектом продукта)",
                         "schema": {
                             "type": "object",
-                            "$ref": "#/definitions/gpi_add_products_ApiResponse"
+                            "$ref": "#/definitions/gpi_add_products__ApiResponse"
                         }
                     }
                 }
@@ -135,7 +117,7 @@
                         "description": "Успешное очищение таблицы",
                         "schema": {
                             "type": "object",
-                            "$ref": "#/definitions/gpi_delete_table_products_ApiResponse"
+                            "$ref": "#/definitions/gpi_delete_table_products__ApiResponse"
                         }
                     }
                 }
@@ -143,7 +125,7 @@
         }
     },
     "definitions": {
-        "gpi_get_products_ApiResponse": {
+        "gpi_get_products__ApiResponse": {
             "type": "object",
             "properties": {
                 "gpi_id": {
@@ -178,7 +160,7 @@
                 }
             }
         },
-        "gpi_add_products_ApiRequest": {
+        "gpi_add_products__ApiRequest_without_products_array": {
             "type": "object",
             "properties": {
                 "gpi_login": {
@@ -189,7 +171,7 @@
                 }
             }
         },
-        "gpi_add_products_ApiRequest2": {
+        "gpi_add_products__ApiRequest_with_products_array": {
             "type": "object",
             "properties": {
                 "gpi_login": {
@@ -202,12 +184,43 @@
                     "type": "array",
                     "items": {
                         "type": "object",
-                        "$ref": "#/definitions/gpi_get_products_ApiResponse"
+                        "properties": {
+                            "gpi_id": {
+                                "type": "number"
+                            },
+                            "gpi_model": {
+                                "type": "string"
+                            },
+                            "gpi_name": {
+                                "type": "string"
+                            },
+                            "gpi_img_path": {
+                                "type": "string"
+                            },
+                            "gpi_cost_byn": {
+                                "type": "number"
+                            },
+                            "gpi_on_box": {
+                                "type": "number"
+                            },
+                            "gpi_kg": {
+                                "type": "number"
+                            },
+                            "gpi_m3": {
+                                "type": "number"
+                            },
+                            "gpi_company": {
+                                "type": "string"
+                            },
+                            "gpi_category": {
+                                "type": "string"
+                            }
+                        }
                     }
                 }
             }
         },
-        "gpi_add_products_ApiResponse": {
+        "gpi_add_products__ApiResponse": {
             "type": "object",
             "properties": {
                 "gpi_code": {
@@ -218,7 +231,7 @@
                 }
             }
         },
-        "gpi_delete_table_products_ApiResponse": {
+        "gpi_delete_table_products__ApiResponse": {
             "type": "object",
             "properties": {
                 "gpi_code": {
