@@ -37,9 +37,12 @@ function GpiSingIn() {
         }
 
         // gpi_ Если авторизация прошла успешно
-        localStorage.setItem("login", gpi_login);
-        localStorage.setItem("password", gpi_password);
-        SetHTMLredirect(<Redirect to="/products" />);
+        if (gpi_auth_status === true) {
+            localStorage.setItem("login", gpi_login);
+            localStorage.setItem("password", gpi_password);
+            SetHTMLredirect(<Redirect to="/products" />);
+            return;
+        }
     }
 
     return (

@@ -2,7 +2,7 @@ import axios from 'axios';
 
 class gpi_class_Fetch {
     constructor(gpi_login, gpi_password) {
-        this.gpi_site = `http://localhost:3001`;
+        this.gpi_site = process.env.REACT_APP__API_URL;
         this.gpi_login = gpi_login;
         this.gpi_password = gpi_password;
     }

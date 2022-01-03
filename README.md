@@ -60,6 +60,29 @@
             <td>http://localhost:3003</td>
             <td>fs - frontend store: React JS (сайт магазин)</td>
         </tr>
+        <tr>
+            <td rowspan="6"><a href="gpi_fs">gpi_gp</a></td>
+            <td rowspan="6">make gpi_wgp</td>
+            <td>http://127.0.0.1:8080/gpi_4coursework/gpi_ds/</td>
+            <td rowspan="2">gp - GitHub pages: глянуть модуль gpi_ds онлайн</td>
+        </tr>
+        <tr>
+            <td>https://pavel-innokentevich-galanin.github.io/gpi_4coursework/gpi_ds/</td>
+        </tr>
+        <tr>
+            <td>http://127.0.0.1:8080/gpi_4coursework/gpi_fa/</td>
+            <td rowspan="2">gp - GitHub pages: глянуть модуль gpi_fa онлайн (для работы нужен запущенный модуль gpi_ba и gpi_bm, иначе выдаст что сервер не доступен)</td>
+        </tr>
+        <tr>
+            <td>https://pavel-innokentevich-galanin.github.io/gpi_4coursework/gpi_fa/</td>
+        </tr>
+        <tr>
+            <td>http://127.0.0.1:8080/gpi_4coursework/gpi_fs/</td>
+            <td rowspan="2">gp - GitHub pages: глянуть модуль gpi_fs онлайн (для работы нужен запущенный модуль gpi_ba и gpi_bm, иначе выдаст что сервер не доступен)</td>
+        </tr>
+        <tr>
+            <td>https://pavel-innokentevich-galanin.github.io/gpi_4coursework/gpi_fs/</td>
+        </tr>
     </tbody>
 </table>
 

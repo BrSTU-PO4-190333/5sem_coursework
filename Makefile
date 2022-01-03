@@ -32,3 +32,9 @@ gpi_wfa:
 
 gpi_wfs:
 	cd gpi_fs & npm run start
+
+gpi_wgp:
+	cd gpi_ds & npm run build
+	cd gpi_fa & npm run build
+	cd gpi_fs & npm run build
+	cd gpi_gp & npm run start
