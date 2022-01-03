@@ -14,6 +14,10 @@ gpi_wc:
 gpi_wba:
 	cd gpi_ba & npm run start
 
+gpi_wbm:
+	cd gpi_bm & docker-compose up
+	cd gpi_bm & docker-compose down
+
 gpi_wds:
 	cd gpi_ds & npm run start
 
@@ -22,10 +26,6 @@ gpi_wfa:
 
 gpi_wfs:
 	cd gpi_fs & npm run start
-
-gpi_wm:
-	cd gpi_m & docker-compose up
-	cd gpi_m & docker-compose down
 
 gpi_wp:
 	cd gpi_p & docker-compose up
