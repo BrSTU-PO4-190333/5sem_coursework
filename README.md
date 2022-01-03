@@ -4,8 +4,8 @@
     <thead>
         <tr>
             <td>Путь</td>
-            <td width="140">Команда Makefile</td>
-            <td width="200">URL</td>
+            <td>Команда Makefile</td>
+            <td>URL</td>
             <td>Описание</td>
         </tr>
     </thead>
@@ -63,30 +63,13 @@
         <tr>
             <td rowspan="6"><a href="gpi_fs">gpi_gp</a></td>
             <td rowspan="6">make gpi_wgp</td>
-            <td>http://localhost:8080/gpi_4coursework/gpi_ds/</td>
-            <td rowspan="2">gp - GitHub pages: глянуть модуль gpi_ds онлайн</td>
-        </tr>
-        <tr>
-            <td>https://Pavel-Innokentevich-Galanin.github.io/gpi_4coursework/gpi_ds/</td>
-        </tr>
-        <tr>
-            <td>http://localhost:8080/gpi_4coursework/gpi_fa/</td>
-            <td rowspan="2">gp - GitHub pages: глянуть модуль gpi_fa онлайн (для работы нужен запущенный модуль gpi_ba и gpi_bm, иначе выдаст что сервер не доступен)</td>
-        </tr>
-        <tr>
-            <td>https://Pavel-Innokentevich-Galanin.github.io/gpi_4coursework/gpi_fa/</td>
-        </tr>
-        <tr>
-            <td>http://localhost:8080/gpi_4coursework/gpi_fs/</td>
-            <td rowspan="2">gp - GitHub pages: глянуть модуль gpi_fs онлайн (для работы нужен запущенный модуль gpi_ba и gpi_bm, иначе выдаст что сервер не доступен)</td>
-        </tr>
-        <tr>
-            <td>https://Pavel-Innokentevich-Galanin.github.io/gpi_4coursework/gpi_fs/</td>
+            <td>http://localhost:8080</td>
+            <td rowspan="2">gp - GitHub pages: npm (для загрузки demo на gh-pages)</td>
         </tr>
     </tbody>
 </table>
 
-## Курсовая работа
+## Глянуть курсовую работу онлайн
 
 <table>
     <thead>
@@ -120,6 +103,29 @@
             <td>ПРИЛОЖЕНИЕ Б - ТЕКСТ ПРОГРАММЫ</td>
             <td>А4 одна сторона</td>
             <td>https://github.com/Pavel-Innokentevich-Galanin/gpi_4coursework/raw/pdf/gpi_4coursework_b.pdf</td>
+        </tr>
+    </tbody>
+</table>
+
+<table>
+    <thead>
+        <tr>
+            <td>Модуль</td>
+            <td>Ссылка</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>gpi_ds</td>
+            <td>https://Pavel-Innokentevich-Galanin.github.io/gpi_4coursework/gpi_ds/</td>
+        </tr>
+        <tr>
+            <td>gpi_fa</td>
+            <td>https://Pavel-Innokentevich-Galanin.github.io/gpi_4coursework/gpi_fa/</td>
+        </tr>
+        <tr>
+            <td>gpi_fs</td>
+            <td>https://Pavel-Innokentevich-Galanin.github.io/gpi_4coursework/gpi_fs/</td>
         </tr>
     </tbody>
 </table>
