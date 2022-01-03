@@ -18,6 +18,11 @@ gpi_wbm:
 	cd gpi_bm & docker-compose up
 	cd gpi_bm & docker-compose down
 
+gpi_wdp:
+	cd gpi_p & docker-compose up
+	REM Для закрытия контейнера надо прописать:
+	REM "cd gpi_p & docker-compose down"
+
 gpi_wds:
 	cd gpi_ds & npm run start
 
@@ -26,8 +31,3 @@ gpi_wfa:
 
 gpi_wfs:
 	cd gpi_fs & npm run start
-
-gpi_wp:
-	cd gpi_p & docker-compose up
-	REM Для закрытия контейнера надо прописать:
-	REM "cd gpi_p & docker-compose down"

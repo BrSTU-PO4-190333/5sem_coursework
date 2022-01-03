@@ -45,6 +45,12 @@
             <td>Backend MySQL: Apache PHP (for work phpMyAdmin)</td>
         </tr>
         <tr>
+            <td><a href="gpi_dp">gpi_dp</a></td>
+            <td>make gpi_wdp</td>
+            <td>-</td>
+            <td>Documantation PDF: Compile ESKD PDF file (coursework)</td>
+        </tr>
+        <tr>
             <td><a href="gpi_ds">gpi_ds</a></td>
             <td>make gpi_wds</td>
             <td>http://localhost:3001</td>
@@ -54,19 +60,13 @@
             <td><a href="gpi_fa">gpi_fa</a></td>
             <td>make gpi_wfa</td>
             <td>http://localhost:3002</td>
-            <td>Frontend: React JS (adminpanel website)</td>
+            <td>Frontend adminpanel: React JS (adminpanel website)</td>
         </tr>
         <tr>
             <td><a href="gpi_fs">gpi_fs</a></td>
             <td>make gpi_wfs</td>
             <td>http://localhost:3003</td>
-            <td>Frontend: React JS (store's website)</td>
-        </tr>
-        <tr>
-            <td><a href="gpi_p">gpi_p</a></td>
-            <td>make gpi_wp</td>
-            <td>http://localhost:3003</td>
-            <td>Documantation: Compile ESKD PDF file (coursework)</td>
+            <td>Frontend store: React JS (store's website)</td>
         </tr>
     </tbody>
 </table>
