@@ -1,7 +1,7 @@
 ## Документация
 
 <table>
-    <caption>Таблица - Описание модулей</caption>
+    <caption><b>Таблица - Описание модулей</b></caption>
     <thead>
         <tr>
             <td>Путь</td>
@@ -73,7 +73,7 @@
 ## Глянуть курсовую работу онлайн
 
 <table>
-    <caption>Таблица - Демонстрация PDF файлов</caption>
+    <caption><b>Таблица - Демонстрация PDF файлов</b></caption>
     <thead>
         <tr>
             <td>Название документа</td>
@@ -109,12 +109,12 @@
     </tbody>
 </table>
 
-На GitHub pages нельзя поднять Node JS сервер и MySQL.
-
-Поэтому, для корректной работы демонстрации на gh-pages нужно запустить у себя модули `gpi_ba` и `gpi_bm`.
+> На GitHub pages нельзя поднять Node JS сервер и MySQL.
+> 
+> Поэтому, для корректной работы демонстрации на gh-pages нужно запустить у себя модули `gpi_ba` и `gpi_bm`.
 
 <table>
-    <caption>Таблица - Демонстрация на GitHub pages</caption>
+    <caption><b>Таблица - Демонстрация на GitHub pages</b></caption>
     <thead>
         <tr>
             <td>Модуль</td>
