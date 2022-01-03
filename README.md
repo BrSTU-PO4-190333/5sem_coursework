@@ -12,7 +12,7 @@
 | -------------------- | --------------- | ----------------------- | ---------------------------------------------------------- |
 | [Makefile](Makefile) | `make gpi_wi`   |                         | Init: Copy `.env` files and install all npm packages       |
 | [Makefile](Makefile) | `make gpi_wc`   |                         | Init: Copy `.env` files                                    |
-| [gpi_b](gpi_b)       | `make gpi_wb`   | http://localhost:3000   | Backend: Node JS Express server (server that returns JSON) |
+| [gpi_ba](gpi_ba)     | `make gpi_wba`  | http://localhost:3000   | Backend: Node JS Express server (server that returns JSON) |
 | [gpi_ds](gpi_ds)     | `make gpi_wds`  | http://localhost:3001   | Documentation: swagger (information about API)             |
 | [gpi_fa](gpi_fa)     | `make gpi_wfa`  | http://localhost:3002   | Frontend: React JS (adminpanel website)                    |
 | [gpi_fs](gpi_fs)     | `make gpi_wfs`  | http://localhost:3003   | Frontend: React JS (store's website)                       |

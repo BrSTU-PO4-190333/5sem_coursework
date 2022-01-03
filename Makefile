@@ -11,8 +11,8 @@ gpi_wc:
 	cd gpi_fa & copy copy.env .env
 	cd gpi_fs & copy copy.env .env
 
-gpi_wb:
-	cd gpi_b & npm run start
+gpi_wba:
+	cd gpi_ba & npm run start
 
 gpi_wds:
 	cd gpi_ds & npm run start
