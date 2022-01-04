@@ -66,7 +66,7 @@ class gpi_QueryProducts extends gpi_class_Query{
                 const gpi_obj = new gpi_class_ObjectProduct(gpi_array[gpi_i]);
                 gpi_product_values.push(gpi_obj.gpi_get_values());
             }
-            // gpi_ Добавляю значения через запятую (одинарный массив), а массив массивов, через скобки
+            // gpi_ Добавляю через запятую (одинарный массив), а массив массивов, через скобки
             gpi_sql += gpi_product_values.map(function(el) {
                 return el.join("', '");
             }).join("'), ('");
