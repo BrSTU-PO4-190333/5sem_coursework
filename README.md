@@ -1,6 +1,70 @@
 ## Документация
 
 <table>
+    <caption>Таблица - Команды запуска в CMD</caption>
+    <thead>
+        <tr>
+            <td>Модуль</td>
+            <td>Команда make</td>
+            <td>URL</td>
+            <td>Что делает</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>depaby_ba</td>
+            <td>make depaby_cba</td>
+            <td>localhost:3000</td>
+            <td>Запускает API сервер</td>
+        </tr>
+        <tr>
+            <td>depaby_bm</td>
+            <td>make depaby_cbm</td>
+            <td>localhost:8000</td>
+            <td>Запускает phpMyAdmin и MySQL</td>
+        </tr>
+        <tr>
+            <td>depaby_dp</td>
+            <td></td>
+            <td></td>
+            <td>Файлы JSON сами открываем в Postman</td>
+        </tr>
+    </tbody>
+</table>
+
+<table>
+    <caption>Таблица - Команды запуска в bash</caption>
+    <thead>
+        <tr>
+            <td>Модуль</td>
+            <td>Команда make</td>
+            <td>URL</td>
+            <td>Что делает</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>depaby_ba</td>
+            <td>make depaby_bba</td>
+            <td>localhost:3000</td>
+            <td>Запускает API сервер</td>
+        </tr>
+        <tr>
+            <td>depaby_bm</td>
+            <td>make depaby_bbm</td>
+            <td>localhost:8000</td>
+            <td>Запускает phpMyAdmin и MySQL</td>
+        </tr>
+        <tr>
+            <td>depaby_dp</td>
+            <td></td>
+            <td></td>
+            <td>Файлы JSON сами открываем в Postman</td>
+        </tr>
+    </tbody>
+</table>
+
+<table>
     <caption><b>Таблица - Описание модулей</b></caption>
     <thead>
         <tr>
