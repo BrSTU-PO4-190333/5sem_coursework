@@ -12,6 +12,18 @@
     </thead>
     <tbody>
         <tr>
+            <td>Makefile</td>
+            <td>make depaby_cmi</td>
+            <td></td>
+            <td>Копирует .env.txt файлы в .env, и устанавливает npm пакеты</td>
+        </tr>
+        <tr>
+            <td>Makefile</td>
+            <td>make depaby_cmc</td>
+            <td></td>
+            <td>Копирует .env.txt файлы в .env</td>
+        </tr>
+        <tr>
             <td>depaby_ba</td>
             <td>make depaby_cba</td>
             <td>localhost:3000</td>
@@ -43,6 +55,18 @@
         </tr>
     </thead>
     <tbody>
+    <tr>
+            <td>Makefile</td>
+            <td>make depaby_bmi</td>
+            <td></td>
+            <td>Копирует .env.txt файлы в .env, и устанавливает npm пакеты</td>
+        </tr>
+        <tr>
+            <td>Makefile</td>
+            <td>make depaby_bmc</td>
+            <td></td>
+            <td>Копирует .env.txt файлы в .env</td>
+        </tr>
         <tr>
             <td>depaby_ba</td>
             <td>make depaby_bba</td>
