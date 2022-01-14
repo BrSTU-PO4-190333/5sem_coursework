@@ -13,25 +13,25 @@
     <tbody>
         <tr>
             <td>Makefile</td>
-            <td>make depaby_cmi</td>
+            <td><code>make depaby_cmi</code></td>
             <td></td>
             <td>Копирует .env.txt файлы в .env, и устанавливает npm пакеты</td>
         </tr>
         <tr>
             <td>Makefile</td>
-            <td>make depaby_cmc</td>
+            <td><code>make depaby_cmc</code></td>
             <td></td>
             <td>Копирует .env.txt файлы в .env</td>
         </tr>
         <tr>
             <td>depaby_ba</td>
-            <td>make depaby_cba</td>
+            <td><code>make depaby_cba</code></td>
             <td>localhost:3000</td>
             <td>Запускает API сервер</td>
         </tr>
         <tr>
             <td>depaby_bm</td>
-            <td>make depaby_cbm</td>
+            <td><code>make depaby_cbm</code></td>
             <td>localhost:8000</td>
             <td>Запускает phpMyAdmin и MySQL</td>
         </tr>
@@ -57,25 +57,25 @@
     <tbody>
     <tr>
             <td>Makefile</td>
-            <td>make depaby_bmi</td>
+            <td><code>make depaby_bmi</code></td>
             <td></td>
             <td>Копирует .env.txt файлы в .env, и устанавливает npm пакеты</td>
         </tr>
         <tr>
             <td>Makefile</td>
-            <td>make depaby_bmc</td>
+            <td><code>make depaby_bmc</code></td>
             <td></td>
             <td>Копирует .env.txt файлы в .env</td>
         </tr>
         <tr>
             <td>depaby_ba</td>
-            <td>make depaby_bba</td>
+            <td><code>make depaby_bba</code></td>
             <td>localhost:3000</td>
             <td>Запускает API сервер</td>
         </tr>
         <tr>
             <td>depaby_bm</td>
-            <td>make depaby_bbm</td>
+            <td><code>make depaby_bbm</code></td>
             <td>localhost:8000</td>
             <td>Запускает phpMyAdmin и MySQL</td>
         </tr>
