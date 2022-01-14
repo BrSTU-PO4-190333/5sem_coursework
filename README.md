@@ -1,92 +1,27 @@
 ## Документация
 
-<table>
-    <caption>Таблица - Команды запуска в CMD</caption>
-    <thead>
-        <tr>
-            <td>Модуль</td>
-            <td>Команда make</td>
-            <td>URL</td>
-            <td>Что делает</td>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>Makefile</td>
-            <td><code>make depaby_cmi</code></td>
-            <td></td>
-            <td>Копирует .env.txt файлы в .env, и устанавливает npm пакеты</td>
-        </tr>
-        <tr>
-            <td>Makefile</td>
-            <td><code>make depaby_cmc</code></td>
-            <td></td>
-            <td>Копирует .env.txt файлы в .env</td>
-        </tr>
-        <tr>
-            <td>depaby_ba</td>
-            <td><code>make depaby_cba</code></td>
-            <td>localhost:3000</td>
-            <td>Запускает API сервер</td>
-        </tr>
-        <tr>
-            <td>depaby_bm</td>
-            <td><code>make depaby_cbm</code></td>
-            <td>localhost:8000</td>
-            <td>Запускает phpMyAdmin и MySQL</td>
-        </tr>
-        <tr>
-            <td>depaby_dp</td>
-            <td></td>
-            <td></td>
-            <td>Файлы JSON сами открываем в Postman</td>
-        </tr>
-    </tbody>
-</table>
+- `ba` - backend api
+- `bm` - backend mysql
+- `dp` - documentation postman
+- `dl` - documentation latex
+- `ds` - documentation swagger
+- `fa` - frontend adminpanel
+- `fs` - frontend store
+- `gp` - github pages
 
-<table>
-    <caption>Таблица - Команды запуска в bash</caption>
-    <thead>
-        <tr>
-            <td>Модуль</td>
-            <td>Команда make</td>
-            <td>URL</td>
-            <td>Что делает</td>
-        </tr>
-    </thead>
-    <tbody>
-    <tr>
-            <td>Makefile</td>
-            <td><code>make depaby_bmi</code></td>
-            <td></td>
-            <td>Копирует .env.txt файлы в .env, и устанавливает npm пакеты</td>
-        </tr>
-        <tr>
-            <td>Makefile</td>
-            <td><code>make depaby_bmc</code></td>
-            <td></td>
-            <td>Копирует .env.txt файлы в .env</td>
-        </tr>
-        <tr>
-            <td>depaby_ba</td>
-            <td><code>make depaby_bba</code></td>
-            <td>localhost:3000</td>
-            <td>Запускает API сервер</td>
-        </tr>
-        <tr>
-            <td>depaby_bm</td>
-            <td><code>make depaby_bbm</code></td>
-            <td>localhost:8000</td>
-            <td>Запускает phpMyAdmin и MySQL</td>
-        </tr>
-        <tr>
-            <td>depaby_dp</td>
-            <td></td>
-            <td></td>
-            <td>Файлы JSON сами открываем в Postman</td>
-        </tr>
-    </tbody>
-</table>
+| Команда cmd       | Команда bash      | Что делает                                                 |
+| ----------------- | ----------------- | ---------------------------------------------------------- |
+| `make depaby_cmi` | `make depaby_bmi` | Копирует .env.txt файлы в .env, и устанавливает npm пакеты |
+| `make depaby_cmc` | `make depaby_bmc` | Копирует .env.txt файлы в .env                             |
+| `make depaby_cba` | `make depaby_bba` | Запускает Node JS server                                   |
+| `make depaby_cbm` | `make depaby_bbm` | Запускает LAMP: phpMyAdmin и MySQL                         |
+|                   |                   | Запускает LAMP: Apache PHP                                 |
+
+| Модуль    | URL                   |
+| --------- | --------------------- |
+| depaby_ba | http://localhost:3000 |
+| depaby_bm | http://localhost:8000 |
+|           | http://localhost:8001 |
 
 <table>
     <caption><b>Таблица - Описание модулей</b></caption>
