@@ -1,0 +1,128 @@
+html
+{
+    width: 100%;
+    height: 100%;
+}
+
+body
+{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        "Roboto",
+        "Oxygen",
+        "Ubuntu",
+        "Cantarell",
+        "Fira Sans",
+        "Droid Sans",
+        "Helvetica Neue",
+        sans-serif;
+}
+
+
+
+#root
+{
+    width: 100%;
+    height: 100%;
+}
+
+.gpi_wrapper
+{
+    display: flex;
+    flex-direction: column;
+}
+
+.gpi_content
+{
+    width: 100%;
+    flex: 1 0 auto;
+}
+
+.gpi_footer
+{
+    width: 100%;
+    flex: 0 0 auto;
+}
+
+
+.gpi_format_text
+{
+    width: 100%;
+}
+
+.gpi_format_text h1,
+.gpi_format_text h2,
+.gpi_format_text h3,
+.gpi_format_text h4,
+.gpi_format_text h5,
+.gpi_format_text h6
+{
+    color: #06c;
+    text-align: center;
+}
+
+@media (min-width: 0px) and (max-width: 959px) {
+    .gpi_format_text img
+    {
+        width: 80%;
+        display: block;
+        margin: 0 auto;
+    }
+}
+
+@media (min-width: 960px) {
+    .gpi_format_text img
+    {
+        float: left;
+        margin: 16px;
+        max-width: 480px;
+    }
+}
+
+.gpi_format_text ul
+{
+    display: block;
+    overflow: hidden;
+    position: relative;
+}
+
+.gpi_format_text ul li
+{
+    line-height: 1.2em;
+}
+
+.container
+{
+    width: calc(100% - 2 * 15px);
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+@media (min-width: 576px) {
+    .container {
+      max-width: 540px;
+    }
+  }
+  
+  @media (min-width: 768px) {
+    .container {
+      max-width: 720px;
+    }
+  }
+  
+  @media (min-width: 992px) {
+    .container {
+      max-width: 960px;
+    }
+  }
+  
+  @media (min-width: 1200px) {
+    .container {
+      max-width: 1140px;
+    }
+  }

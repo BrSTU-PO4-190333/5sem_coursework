@@ -5,7 +5,7 @@ depaby_cmi:
 	cd depaby_ba & npm i
 	cd gpi_ds & npm i
 	cd gpi_fa & npm i
-	cd gpi_fs & npm i
+	cd depaby_fs & npm i
 	cd gpi_gp & npm i
 
 depaby_bmi:
@@ -13,7 +13,7 @@ depaby_bmi:
 	cd depaby_ba; npm i
 	cd gpi_ds; npm i
 	cd gpi_fa; npm i
-	cd gpi_fs; npm i
+	cd depaby_fs; npm i
 	cd gpi_gp; npm i
 
 # = = = = = = = = Copy
@@ -24,7 +24,7 @@ depaby_cmc:
 	cd gpi_ds & copy .env.copy .env
 	cd gpi_ds & copy .env.production.local.copy .env.production.local
 	cd gpi_fa & copy .env.copy .env
-	cd gpi_fs & copy .env.copy .env
+	cd depaby_fs & copy .env.txt .env
 
 depaby_bmc:
 	cd depaby_ba; cp .env.txt .env
@@ -32,7 +32,7 @@ depaby_bmc:
 	cd gpi_ds; cp .env.copy .env
 	cd gpi_ds; cp .env.production.local.copy .env.production.local
 	cd gpi_fa; cp .env.copy .env
-	cd gpi_fs; cp .env.copy .env
+	cd depaby_fs; cp .env.txt .env
 
 # = = = = = = = = backend api
 
@@ -73,8 +73,11 @@ gpi_wfa:
 
 # = = = = = = = = frontend store
 
-gpi_wfs:
-	cd gpi_fs & npm run start
+depaby_cfs:
+	cd depaby_fs & npm run start
+
+depaby_bfs:
+	cd depaby_fs; npm run start
 
 # = = = = = = = = github pages
 
