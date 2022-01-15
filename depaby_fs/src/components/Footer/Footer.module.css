@@ -1,0 +1,11 @@
+.Footer
+{
+  background-color: #212529;
+}
+
+.Footer__section
+{
+  padding: 8px;
+  text-align: center;
+  color: white;
+}
