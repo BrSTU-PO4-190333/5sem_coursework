@@ -4,7 +4,7 @@ const QueryDocuments = require('./../../classes/QueryDocuments');
 
 /**
  * @swagger
- * /api/products:
+ * /api/documents:
  *  get:
  *    tags:
  *      - documents
