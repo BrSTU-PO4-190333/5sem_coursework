@@ -20,6 +20,7 @@ function Certificates() {
 
     return (
         <div className="container">
+            <h1>Сертификаты</h1>
             <div className="depaby_documents">
                 {
                     documentsArray.map(function (value, index) {

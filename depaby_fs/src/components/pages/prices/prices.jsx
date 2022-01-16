@@ -20,6 +20,7 @@ function Prices() {
 
     return (
         <div className="container">
+            <h1>Прайсы</h1>
             <div className="depaby_documents">
                 {
                     documentsArray.map(function (value, index) {

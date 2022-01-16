@@ -20,6 +20,7 @@ function Catalogs() {
 
     return (
         <div className="container">
+            <h1>Каталоги</h1>
             <div className="depaby_documents">
                 {
                     documentsArray.map(function (value, index) {

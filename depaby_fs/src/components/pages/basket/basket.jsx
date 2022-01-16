@@ -64,6 +64,7 @@ function Basket() {
 
     return (
         <div className="container">
+            <h1>Корзина продуктов</h1>
             <div className="mb-3 mt-3">
                 <button
                     className="btn btn-success"

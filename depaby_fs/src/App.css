@@ -38,6 +38,14 @@ body
   --telegram: #27a7e7;
 }
 
+h1,h2,h3,h4,h5,h6
+{
+  color: var(--depaby_color);
+  text-align: center;
+}
+
+
+/* make footer */
 .gpi_wrapper
 {
   width: 100%;
@@ -57,22 +65,13 @@ body
   width: 100%;
   flex: 0 0 auto;
 }
+/* end make footer */
 
 
+/* float image, format ul-li */
 .gpi_format_text
 {
   width: 100%;
-}
-
-.gpi_format_text h1,
-.gpi_format_text h2,
-.gpi_format_text h3,
-.gpi_format_text h4,
-.gpi_format_text h5,
-.gpi_format_text h6
-{
-  color: #06c;
-  text-align: center;
 }
 
 @media (min-width: 0px) and (max-width: 959px) {
@@ -104,7 +103,10 @@ body
 {
   line-height: 1.2em;
 }
+/* end float image, format ul-li */
 
+
+/* container */
 .container
 {
   width: calc(100% - 2 * 15px);
@@ -143,6 +145,8 @@ body
     max-width: 1140px;
   }
 }
+/* end container */
+
 
 /* documents */
 .depaby_documents

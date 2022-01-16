@@ -21,6 +21,7 @@ function Contacts() {
 
     return (
         <div className="container">
+            <h1>Контакты</h1>
             {
                 contactsArray.map(function (value, index) {
                     return (

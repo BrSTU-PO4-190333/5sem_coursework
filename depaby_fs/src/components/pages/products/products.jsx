@@ -243,6 +243,7 @@ function Products() {
 
   return (
     <div className={`${styles.b_products} container`}>
+      <h1>Продукты</h1>
 
       <div style={{
         display: isOpenInfoWin ? "block" : "none",
