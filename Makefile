@@ -61,11 +61,6 @@ gpi_wdp:
 	REM Для закрытия контейнера надо прописать:
 	REM "cd gpi_p & docker-compose down"
 
-# = = = = = = = = documentation swagger
-
-gpi_wds:
-	cd gpi_ds & npm run start
-
 # = = = = = = = = frontend adminpanel
 
 depaby_cfa:
@@ -81,11 +76,3 @@ depaby_cfs:
 
 depaby_bfs:
 	cd depaby_fs; npm run start
-
-# = = = = = = = = github pages
-
-gpi_wgp:
-	cd gpi_ds & npm run build
-	cd gpi_fa & npm run build
-	cd gpi_fs & npm run build
-	cd gpi_gp & npm run start
