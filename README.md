@@ -16,7 +16,6 @@
 | `make depaby_cba` | `make depaby_bba` | Запускает Node JS server                                   |
 |                   |                   | Запускает документацию Swagger                             |
 | `make depaby_cbm` | `make depaby_bbm` | Запускает LAMP: phpMyAdmin                                 |
-|                   |                   | Запускает LAMP: Apache PHP                                 |
 |                   |                   | Запускает LAMP: MySQL                                      |
 | `make depaby_cfa` | `make depaby_bfa` | Запускает React JS админку                                 |
 | `make depaby_cfs` | `make depaby_bfs` | Запускает React JS магазин                                 |
@@ -27,7 +26,6 @@
 | depaby_ba | http://localhost:3000      | Node JS    |
 |           | http://localhost:3000/docs | Swagger    |
 | depaby_bm | http://localhost:3080      | phpMyAdmin |
-|           | http://localhost:3081      | Apache     |
 |           | http://localhost:3306      | MySQL      |
 | depaby_fa | http://localhost:4000      | React JS   |
 | depaby_fs | http://localhost:5000      | React JS   |
