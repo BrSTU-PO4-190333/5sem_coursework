@@ -1,0 +1,103 @@
+.contact__caption
+{
+    text-align: center;
+    color: var(--depaby_color);
+}
+
+.contact__description
+{
+    text-align: center;
+}
+
+.contact__social_button_links,
+.contact__button_links
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.contact__button_links a
+{
+    background-color: var(--depaby_color);
+    border: 1px solid var(--depaby_color);
+    width: 220px;
+    margin: 8px;
+    padding: 8px;
+    display: block;
+    text-decoration: none;
+    color: white;
+    text-align: center;
+    border-radius: 12px;
+}
+
+.contact__button_links a:hover
+{
+    color: var(--depaby_color);
+    background-color: transparent;
+}
+
+.contact__social_button_links a
+{
+    display: flex;
+    width: 48px;
+    height: 48px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+    color: white;
+    font-size: 2em;
+    background-color: var(--depaby_color);
+    border: 1px solid var(--depaby_color);
+    margin: 8px;
+}
+
+.contact__social_button_links a:hover
+{
+    color: var(--depaby_color);
+    background-color: transparent!important;
+}
+
+.viber
+{
+    background-color: var(--viber)!important;
+    border: 1px solid var(--viber)!important;
+}
+
+.viber:hover
+{
+    color: var(--viber)!important;
+}
+
+.whatsapp
+{
+    background-color: var(--whatsapp)!important;
+    border: 1px solid var(--whatsapp)!important;
+}
+
+.whatsapp:hover
+{
+    color: var(--whatsapp)!important;
+}
+
+.skype
+{
+    background-color: var(--skype)!important;
+    border: 1px solid var(--skype)!important;
+}
+
+.skype:hover
+{
+    color: var(--skype)!important;
+}
+
+.telegram
+{
+    background-color: var(--telegram)!important;
+    border: 1px solid var(--telegram)!important;
+}
+
+.telegram:hover
+{
+    color: var(--telegram)!important;
+}

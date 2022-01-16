@@ -23,12 +23,19 @@ body
       sans-serif;
 }
 
-
-
 #root
 {
   width: 100%;
   height: 100%;
+}
+
+:root
+{
+  --depaby_color: #06c;
+  --viber: #574e92;
+  --whatsapp: #4bc959;
+  --skype: #00b9f0;
+  --telegram: #27a7e7;
 }
 
 .gpi_wrapper
