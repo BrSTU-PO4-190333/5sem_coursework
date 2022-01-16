@@ -1,0 +1,35 @@
+.window
+{
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: white;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    text-align: left;
+}
+
+.window_header
+{
+    background-color: #06c;
+    color: white;
+}
+
+.window_header>button
+{
+    padding: 8px;
+    border: none;
+    background-color: transparent;
+    color: white;
+}
+
+.window_header>button:hover
+{
+    background-color: var(--danger);
+}
+
+.window_header>span
+{
+    padding: 8px;
+}

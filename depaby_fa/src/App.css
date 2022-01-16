@@ -1,0 +1,187 @@
+html
+{
+  width: 100%;
+  height: 100%;
+}
+
+body
+{
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+#root
+{
+  width: 100%;
+  height: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6
+{
+  color: #06c;
+  text-align: center;
+  font-size: 2em;
+}
+
+:root {
+  --primary: #007bff;
+  --secondary: #6c757d;
+  --success: #28a745;
+  --info: #17a2b8;
+  --warning: #ffc107;
+  --danger: #dc3545;
+  --light: #f8f9fa;
+  --dark: #343a40;
+  --depaby_toolbar_color: #f3f2f1;
+  --depaby_color: #06c;
+}
+
+
+/* container */
+.container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+/* end container */
+
+
+/* = = = = = = = = Tables */
+/* table */
+.depaby_table
+{
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.depaby_table th {
+  background-color: #e9e7e8;
+  border: 1px solid #ccccce;
+}
+
+.depaby_table tbody
+{
+  background-color: white;
+}
+
+.depaby_table td
+{
+  border: 1px solid #e9e9ea;
+}
+
+.depaby_table td>input
+{
+  width: 100%;
+  border: none!important;
+  padding: 0;
+}
+/* end table */
+
+
+/* edit button field */
+.depaby_table .depaby_editButton
+{
+  text-align: center;
+}
+
+.depaby_table .depaby_editButton>button
+{
+  background-color: #198754;
+  color: white;
+  width: 32px;
+  height: 32px;
+  border-radius: 4px;
+  border: 1px solid #198754;
+}
+
+.depaby_table .depaby_editButton>button:hover
+{
+  color: #198754;
+  background-color: transparent;
+}
+/* end edit button field */
+
+
+/* delete button field */
+.depaby_table .depaby_deleteButton
+{
+  text-align: center;
+}
+
+.depaby_table .depaby_deleteButton>button
+{
+  background-color: #dc3545;
+  color: white;
+  width: 32px;
+  height: 32px;
+  border-radius: 4px;
+  border: 1px solid #dc3545;
+}
+
+.depaby_table .depaby_deleteButton>button:hover
+{
+  color: #dc3545;
+  background-color: transparent;
+}
+/* end delete button field */
+
+
+.depaby_toolbar
+{
+  display: flex;
+  flex-wrap: wrap;
+  background-color: var(--depaby_toolbar_color);
+}
+
+.depaby_toolbar>button
+{
+  font-size: 1.2em;
+  margin: 2px 32px;
+  color: #3a3a38;
+  background-color: var(--depaby_toolbar_color);
+  border: 1px solid var(--depaby_toolbar_color);
+}
+
+.depaby_toolbar>button:hover
+{
+  background-color: transparent;
+  color: var(--depaby_color);
+}
+
+.depaby_toolbar>button>a
+{
+  color: inherit;
+}
+/* = = = = = = = = end tables */

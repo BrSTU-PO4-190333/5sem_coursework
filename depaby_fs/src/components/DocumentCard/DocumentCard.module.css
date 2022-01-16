@@ -1,0 +1,23 @@
+.card_link
+{
+  display: block;
+  padding: 8px;
+  margin: 8px;
+  width: 200px;
+  border: 1px solid lightblue;
+  border-radius: 8px;
+  color: #06c;
+  text-decoration: none;
+  text-align: center;
+}
+
+.card_link:hover
+{
+  background-color: #06c;
+  color: white;
+}
+
+.card_link .icon_b
+{
+  font-size: 3em;
+}
