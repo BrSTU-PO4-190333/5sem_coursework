@@ -22,12 +22,12 @@
 | `make depaby_cfs` | `make depaby_bfs` | Запускает React JS магазин                                 |
 
 ## Порты модулей
-| Модуль    | URL                        |
-| --------- | -------------------------- |
-| depaby_ba | http://localhost:3000      |
-|           | http://localhost:3000/docs |
-| depaby_bm | http://localhost:3080      |
-|           | http://localhost:3081      |
-|           | http://localhost:3306      |
-| depaby_fa | http://localhost:4000      |
-| depaby_fs | http://localhost:5000      |
+| Модуль    | URL                        | Что        |
+| --------- | -------------------------- | ---------- |
+| depaby_ba | http://localhost:3000      | Node JS    |
+|           | http://localhost:3000/docs | Swagger    |
+| depaby_bm | http://localhost:3080      | phpMyAdmin |
+|           | http://localhost:3081      | Apache     |
+|           | http://localhost:3306      | MySQL      |
+| depaby_fa | http://localhost:4000      | React JS   |
+| depaby_fs | http://localhost:5000      | React JS   |
