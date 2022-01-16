@@ -56,10 +56,10 @@ const depaby_swagger_options = {
     "src/routes/products/products_update.js",
     "src/routes/products/products_delete.js",
     "src/routes/documents/documents.js",
-    // "src/routes/documents/documents_create.js",
+    "src/routes/documents/documents_create.js",
     "src/routes/documents/documents_read.js",
-    // "src/routes/documents/documents_update.js",
-    // "src/routes/documents/documents_delete.js",
+    "src/routes/documents/documents_update.js",
+    "src/routes/documents/documents_delete.js",
   ],
 };
 const depaby_swagger_docs = swagger_jsdoc(depaby_swagger_options);
@@ -85,7 +85,7 @@ app.use("/api", require('./routes/products/products_update'));
 app.use("/api", require('./routes/products/products_delete'));
 
 // documents CRUD
-// app.use("/api", require('./routes/documents/documents_create'));
+app.use("/api", require('./routes/documents/documents_create'));
 app.use("/api", require('./routes/documents/documents_read'));
-// app.use("/api", require('./routes/documents/documents_update'));
-// app.use("/api", require('./routes/documents/documents_delete'));
+app.use("/api", require('./routes/documents/documents_update'));
+app.use("/api", require('./routes/documents/documents_delete'));

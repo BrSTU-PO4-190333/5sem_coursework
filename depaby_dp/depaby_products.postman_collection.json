@@ -78,7 +78,7 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:3000/api/products?q=w",
+					"raw": "localhost:3000/api/products",
 					"host": [
 						"localhost"
 					],
@@ -86,12 +86,6 @@
 					"path": [
 						"api",
 						"products"
-					],
-					"query": [
-						{
-							"key": "q",
-							"value": "w"
-						}
 					]
 				}
 			},
