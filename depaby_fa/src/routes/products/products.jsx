@@ -1,7 +1,6 @@
 import { useState } from "react";
 
 import FetchProducts from "./../../scripts/FetchProducts";
-// import ProductEditButton from "../../components/products/ProductEditButton/ProductEditButton";
 import ProductsDeleteButton from "../../components/products/ProductsDeleteButton/ProductsDeleteButton";
 import ProductDeleteButton from "../../components/products/ProductDeleteButton/ProductDeleteButton";
 import ProductsDownloadCsvButton from "../../components/products/ProductsDownloadCsvButton/ProductsDownloadCsvButton";
@@ -85,7 +84,6 @@ function ProductsRead() {
                   setIndexEditProduct(index);
                   setProductFormSignal(productFormSignal + 1);
                 }}>edit</button>
-                {/* <ProductEditButton id={value.depaby_id} /> */}
               </td>
               <td className='depaby_deleteButton'>
                 <ProductDeleteButton
