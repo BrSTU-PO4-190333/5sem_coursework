@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { faViber, faWhatsapp, faSkype, faTelegramPlane } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
+import Map from './../../Map/Map';
 import FetchContacts from './../../../scripts/FetchContacts';
 import styles from "./contacts.module.css";
 
@@ -20,31 +21,34 @@ function Contacts() {
     }
 
     return (
-        <div className="container">
-            <h1>Контакты</h1>
-            {
-                contactsArray.map(function (value, index) {
-                    return (
-                        <div key={index}>
-                            <ContactCaption data={value} />
-                            <ContactDescription data={value} />
-                            <div className={styles.contact__button_links}>
-                                <ContactPhone1 data={value} />
-                                <ContactPhone2 data={value} />
-                                <ContactEmail1 data={value} />
-                                <ContactEmail2 data={value} />
+        <>
+            <Map />
+            <div className="container">
+                <h1>Контакты</h1>
+                {
+                    contactsArray.map(function (value, index) {
+                        return (
+                            <div key={index}>
+                                <ContactCaption data={value} />
+                                <ContactDescription data={value} />
+                                <div className={styles.contact__button_links}>
+                                    <ContactPhone1 data={value} />
+                                    <ContactPhone2 data={value} />
+                                    <ContactEmail1 data={value} />
+                                    <ContactEmail2 data={value} />
+                                </div>
+                                <div className={styles.contact__social_button_links}>
+                                    <ContactViber data={value} />
+                                    <ContactWhatsapp data={value} />
+                                    <ContactSkype data={value} />
+                                    <ContactTelegram data={value} />
+                                </div>
                             </div>
-                            <div className={styles.contact__social_button_links}>
-                                <ContactViber data={value} />
-                                <ContactWhatsapp data={value} />
-                                <ContactSkype data={value} />
-                                <ContactTelegram data={value} />
-                            </div>
-                        </div>
-                    );
-                })
-            }
-        </div>
+                        );
+                    })
+                }
+            </div>
+        </>
     );
 }
 
@@ -81,7 +85,7 @@ function ContactPhone1(props) {
 function ContactPhone2(props) {
     return props.data.depaby_phone2 ? (
         <a href={`tel:${get_no_format_phone(props.data.depaby_phone2)}`}>
-           {props.data.depaby_phone2}
+            {props.data.depaby_phone2}
         </a>
     ) : <></>;
 }
@@ -89,7 +93,7 @@ function ContactPhone2(props) {
 function ContactEmail1(props) {
     return props.data.depaby_email1 ? (
         <a href={`mailto:${props.data.depaby_email1}`}>
-           {props.data.depaby_email1}
+            {props.data.depaby_email1}
         </a>
     ) : <></>;
 }
@@ -97,7 +101,7 @@ function ContactEmail1(props) {
 function ContactEmail2(props) {
     return props.data.depaby_email2 ? (
         <a href={`mailto:${props.data.depaby_email2}`}>
-           {props.data.depaby_email2}
+            {props.data.depaby_email2}
         </a>
     ) : <></>;
 }
@@ -108,7 +112,7 @@ function ContactViber(props) {
             href={`viber://add?number=${get_no_format_phone(props.data.depaby_viber)}`}
             className={styles.viber}
         >
-           <FontAwesomeIcon icon={faViber} />
+            <FontAwesomeIcon icon={faViber} />
         </a>
     ) : <></>;
 }
@@ -119,7 +123,7 @@ function ContactWhatsapp(props) {
             href={`https://api.whatsapp.com/send?phone=${get_no_format_phone(props.data.depaby_whatsapp)}`}
             className={styles.whatsapp}
         >
-           <FontAwesomeIcon icon={faWhatsapp} />
+            <FontAwesomeIcon icon={faWhatsapp} />
         </a>
     ) : <></>;
 }
@@ -130,7 +134,7 @@ function ContactSkype(props) {
             href={`skype:${props.data.depaby_skype}?call`}
             className={styles.skype}
         >
-           <FontAwesomeIcon icon={faSkype} />
+            <FontAwesomeIcon icon={faSkype} />
         </a>
     ) : <></>;
 }
@@ -141,7 +145,7 @@ function ContactTelegram(props) {
             href={`https://t.me/${props.data.depaby_telegram}`}
             className={styles.telegram}
         >
-           <FontAwesomeIcon icon={faTelegramPlane} />
+            <FontAwesomeIcon icon={faTelegramPlane} />
         </a>
     ) : <></>;
 }
