@@ -67,84 +67,84 @@ class ObjectProduct {
 
     set_depaby_caption(depaby_caption) {
         if (typeof depaby_caption != "string") {
-            depaby_caption = "someDocName";
+            depaby_caption = "someContact";
         }
         this.depaby_caption = depaby_caption;
     }
 
     set_depaby_description(depaby_description) {
         if (typeof depaby_description != "string") {
-            depaby_description = "someDocName";
+            depaby_description = "someDescription";
         }
         this.depaby_description = depaby_description;
     }
 
     set_depaby_phone1_format(depaby_phone1_format) {
         if (typeof depaby_phone1_format != "string") {
-            depaby_phone1_format = "someDocName";
+            depaby_phone1_format = "+111 (22) 333-44-55 (BY)";
         }
         this.depaby_phone1_format = depaby_phone1_format;
     }
 
     set_depaby_phone1_noformat(depaby_phone1_noformat) {
         if (typeof depaby_phone1_noformat != "string") {
-            depaby_phone1_noformat = "someDocName";
+            depaby_phone1_noformat = "111223334455";
         }
         this.depaby_phone1_noformat = depaby_phone1_noformat;
     }
 
     set_depaby_phone2_format(depaby_phone2_format) {
         if (typeof depaby_phone2_format != "string") {
-            depaby_phone2_format = "someDocName";
+            depaby_phone2_format = "+111 (22) 333-44-55 (TR)";
         }
         this.depaby_phone2_format = depaby_phone2_format;
     }
 
     set_depaby_phone2_noformat(depaby_phone2_noformat) {
         if (typeof depaby_phone2_noformat != "string") {
-            depaby_phone2_noformat = "someDocName";
+            depaby_phone2_noformat = "111223334455";
         }
         this.depaby_phone2_noformat = depaby_phone2_noformat;
     }
 
     set_depaby_email1(depaby_email1) {
         if (typeof depaby_email1 != "string") {
-            depaby_email1 = "someDocName";
+            depaby_email1 = "user@de-pa.by";
         }
         this.depaby_email1 = depaby_email1;
     }
 
     set_depaby_email2(depaby_email2) {
         if (typeof depaby_email2 != "string") {
-            depaby_email2 = "someDocName";
+            depaby_email2 = "user@de-pa.by";
         }
         this.depaby_email2 = depaby_email2;
     }
 
     set_depaby_viber(depaby_viber) {
         if (typeof depaby_viber != "string") {
-            depaby_viber = "someDocName";
+            depaby_viber = "111223334455";
         }
         this.depaby_viber = depaby_viber;
     }
 
     set_depaby_whatsapp(depaby_whatsapp) {
         if (typeof depaby_whatsapp != "string") {
-            depaby_whatsapp = "someDocName";
+            depaby_whatsapp = "111223334455";
         }
         this.depaby_whatsapp = depaby_whatsapp;
     }
 
     set_depaby_skype(depaby_skype) {
         if (typeof depaby_skype != "string") {
-            depaby_skype = "someDocName";
+            depaby_skype = "live:xxx.xxxxxxxxxxxxxxxx";
         }
         this.depaby_skype = depaby_skype;
     }
 
     set_depaby_telegram(depaby_telegram) {
         if (typeof depaby_telegram != "string") {
-            depaby_telegram = "someDocName";
+            depaby_telegram = "@xxxxxxxx";
         }
         this.depaby_telegram = depaby_telegram;
     }
