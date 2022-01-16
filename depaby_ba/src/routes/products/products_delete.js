@@ -35,7 +35,7 @@ const QueryProducts = require('./../../classes/QueryProducts');
  *              type: integer
  *            message:
  *              type: string
- *      '401':
+ *      '202':
  *        description: Не авторизовался
  *        schema:
  *          type: object
@@ -56,11 +56,12 @@ const QueryProducts = require('./../../classes/QueryProducts');
  */
 
 router.delete("/products", async function (req, res) {
+  console.log(req.body)
   // Создаем экземпляр класса
   const products_object = new QueryProducts(req.body.login, req.body.password);
 
   // Выполняем sql
-  const products_response = await products_object.delete(req.query);
+  const products_response = await products_object.delete(req.body);
 
   // Возвращаем ответ сервера
   res.status(products_response.code).send(products_response);

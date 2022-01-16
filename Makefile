@@ -68,8 +68,11 @@ gpi_wds:
 
 # = = = = = = = = frontend adminpanel
 
-gpi_wfa:
-	cd gpi_fa & npm run start
+depaby_cfa:
+	cd depaby_fa & npm run start
+
+depaby_bfa:
+	cd depaby_fa; npm run start
 
 # = = = = = = = = frontend store
 

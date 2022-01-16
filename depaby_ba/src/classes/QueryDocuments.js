@@ -1,6 +1,6 @@
-const Query = require('./Query');
+const QueryAuth = require('./QueryAuth');
 
-class QueryDocuments extends Query {
+class QueryDocuments extends QueryAuth {
   constructor(login, password) {
     super(login, password);
   }

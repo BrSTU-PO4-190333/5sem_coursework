@@ -1,7 +1,7 @@
-const Query = require('./Query');
+const QueryAuth = require('./QueryAuth');
 const ObjectProduct = require('./ObjectProduct');
 
-class QueryProducts extends Query {
+class QueryProducts extends QueryAuth {
   constructor(login, password) {
     super(login, password);
   }

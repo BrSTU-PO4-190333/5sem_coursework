@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const Query = require('./../../classes/Query');
+const QueryAuth = require('./../../classes/QueryAuth');
 
 /**
  * @swagger
@@ -30,7 +30,7 @@ const Query = require('./../../classes/Query');
  *              type: integer
  *            message:
  *              type: string
- *      '401':
+ *      '202':
  *        description: Не авторизовался
  *        schema:
  *          type: object
@@ -51,7 +51,7 @@ const Query = require('./../../classes/Query');
  */
 
 router.post("/admin_auth", async function (req, res) {
-  const auth_object = new Query(req.body.login, req.body.password);
+  const auth_object = new QueryAuth(req.body.login, req.body.password);
   const auth_response = await auth_object.auth();
   res.status(auth_response.code).send(auth_response);
 });

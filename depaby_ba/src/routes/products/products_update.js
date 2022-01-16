@@ -34,7 +34,7 @@ const QueryProducts = require('./../../classes/QueryProducts');
  *              type: integer
  *            message:
  *              type: string
- *      '401':
+ *      '202':
  *        description: Не авторизовался
  *        schema:
  *          type: object

@@ -34,8 +34,8 @@ const QueryProducts = require('../../classes/QueryProducts');
  *              type: integer
  *            message:
  *              type: string
- *      '400':
- *        description: Ошибка в теле запроса
+ *      '202':
+ *        description: Не авторизовался
  *        schema:
  *          type: object
  *          properties:
@@ -43,8 +43,8 @@ const QueryProducts = require('../../classes/QueryProducts');
  *              type: integer
  *            message:
  *              type: string
- *      '401':
- *        description: Не авторизовался
+ *      '400':
+ *        description: Ошибка в теле запроса
  *        schema:
  *          type: object
  *          properties:
