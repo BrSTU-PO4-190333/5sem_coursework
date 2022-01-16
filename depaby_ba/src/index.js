@@ -60,6 +60,11 @@ const depaby_swagger_options = {
     "src/routes/documents/documents_read.js",
     "src/routes/documents/documents_update.js",
     "src/routes/documents/documents_delete.js",
+    "src/routes/contacts/contacts.js",
+    "src/routes/contacts/contacts_create.js",
+    "src/routes/contacts/contacts_read.js",
+    "src/routes/contacts/contacts_update.js",
+    "src/routes/contacts/contacts_delete.js",
   ],
 };
 const depaby_swagger_docs = swagger_jsdoc(depaby_swagger_options);
@@ -89,3 +94,9 @@ app.use("/api", require('./routes/documents/documents_create'));
 app.use("/api", require('./routes/documents/documents_read'));
 app.use("/api", require('./routes/documents/documents_update'));
 app.use("/api", require('./routes/documents/documents_delete'));
+
+// contacts CRUD
+app.use("/api", require('./routes/contacts/contacts_create'));
+app.use("/api", require('./routes/contacts/contacts_read'));
+app.use("/api", require('./routes/contacts/contacts_update'));
+app.use("/api", require('./routes/contacts/contacts_delete'));
