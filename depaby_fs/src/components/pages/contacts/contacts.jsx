@@ -71,17 +71,17 @@ function get_no_format_phone(format_phone = '') {
 }
 
 function ContactPhone1(props) {
-    return props.data.depaby_phone1_noformat ? (
-        <a href={`tel:${get_no_format_phone(props.data.depaby_phone1_noformat)}`}>
-            {props.data.depaby_phone1_noformat}
+    return props.data.depaby_phone1 ? (
+        <a href={`tel:${get_no_format_phone(props.data.depaby_phone1)}`}>
+            {props.data.depaby_phone1}
         </a>
     ) : <></>;
 }
 
 function ContactPhone2(props) {
-    return props.data.depaby_phone2_noformat ? (
-        <a href={`tel:${get_no_format_phone(props.data.depaby_phone2_noformat)}`}>
-           {props.data.depaby_phone2_noformat}
+    return props.data.depaby_phone2 ? (
+        <a href={`tel:${get_no_format_phone(props.data.depaby_phone2)}`}>
+           {props.data.depaby_phone2}
         </a>
     ) : <></>;
 }

@@ -92,24 +92,14 @@ function ContactCreateForm(props) {
                         <td><ContactDescription contact_data={props.contact_data} /></td>
                     </tr>
                     <tr>
-                        <th>3</th>
-                        <td>depaby_phone1_noformat</td>
-                        <td><ContactPhone1Format contact_data={props.contact_data} /></td>
-                    </tr>
-                    <tr>
                         <th>4</th>
-                        <td>depaby_phone1_format</td>
-                        <td><ContactPhone1NoFormat contact_data={props.contact_data} /></td>
+                        <td>depaby_phone1</td>
+                        <td><ContactPhone1 contact_data={props.contact_data} /></td>
                     </tr>
                     <tr>
                         <th>5</th>
-                        <td>depaby_phone2_format</td>
-                        <td><ContactPhone2Format contact_data={props.contact_data} /></td>
-                    </tr>
-                    <tr>
-                        <th>6</th>
-                        <td>depaby_phone2_noformat</td>
-                        <td><ContactPhone2NoFormat contact_data={props.contact_data} /></td>
+                        <td>depaby_phone2</td>
+                        <td><ContactPhone2 contact_data={props.contact_data} /></td>
                     </tr>
                     <tr>
                         <th>7</th>
@@ -167,42 +157,22 @@ function ContactDescription(props) {
     );
 }
 
-function ContactPhone1Format(props) {
+function ContactPhone1(props) {
     return (
         <input
             type="text"
-            name="depaby_phone1_format"
-            defaultValue={props.contact_data ? props.contact_data.depaby_phone1_format : ''}
+            name="depaby_phone1"
+            defaultValue={props.contact_data ? props.contact_data.depaby_phone1 : ''}
         />
     );
 }
 
-function ContactPhone1NoFormat(props) {
+function ContactPhone2(props) {
     return (
         <input
             type="text"
-            name="depaby_phone1_noformat"
-            defaultValue={props.contact_data ? props.contact_data.depaby_phone1_noformat : ''}
-        />
-    );
-}
-
-function ContactPhone2Format(props) {
-    return (
-        <input
-            type="text"
-            name="depaby_phone2_format"
-            defaultValue={props.contact_data ? props.contact_data.depaby_phone2_format : ''}
-        />
-    );
-}
-
-function ContactPhone2NoFormat(props) {
-    return (
-        <input
-            type="text"
-            name="depaby_phone2_noformat"
-            defaultValue={props.contact_data ? props.contact_data.depaby_phone2_noformat : ''}
+            name="depaby_phone2"
+            defaultValue={props.contact_data ? props.contact_data.depaby_phone2 : ''}
         />
     );
 }

@@ -2,10 +2,8 @@ class ObjectProduct {
     constructor(obj = {}) {
         this.set_depaby_caption         (obj.depaby_caption);
         this.set_depaby_description     (obj.depaby_description);
-        this.set_depaby_phone1_format   (obj.depaby_phone1_format);
-        this.set_depaby_phone1_noformat (obj.depaby_phone1_noformat);
-        this.set_depaby_phone2_format   (obj.depaby_phone2_format);
-        this.set_depaby_phone2_noformat (obj.depaby_phone2_noformat);
+        this.set_depaby_phone1          (obj.depaby_phone1);
+        this.set_depaby_phone2          (obj.depaby_phone2);
         this.set_depaby_email1          (obj.depaby_email1);
         this.set_depaby_email2          (obj.depaby_email2);
         this.set_depaby_viber           (obj.depaby_viber);
@@ -18,10 +16,8 @@ class ObjectProduct {
         return {
             depaby_caption:         this.depaby_caption,
             depaby_description:     this.depaby_description,
-            depaby_phone1_format:   this.depaby_phone1_format,
-            depaby_phone1_noformat: this.depaby_phone1_noformat,
-            depaby_phone2_format:   this.depaby_phone2_format,
-            depaby_phone2_noformat: this.depaby_phone2_noformat,
+            depaby_phone1:          this.depaby_phone1,
+            depaby_phone2:          this.depaby_phone2,
             depaby_email1:          this.depaby_email1,
             depaby_email2:          this.depaby_email2,
             depaby_viber:           this.depaby_viber,
@@ -35,10 +31,8 @@ class ObjectProduct {
         return [
             "depaby_caption",
             "depaby_description",
-            "depaby_phone1_format",
-            "depaby_phone1_noformat",
-            "depaby_phone2_format",
-            "depaby_phone2_noformat",
+            "depaby_phone1",
+            "depaby_phone2",
             "depaby_email1",
             "depaby_email2",
             "depaby_viber",
@@ -52,10 +46,8 @@ class ObjectProduct {
         return [
             this.depaby_caption,
             this.depaby_description,
-            this.depaby_phone1_format,
-            this.depaby_phone1_noformat,
-            this.depaby_phone2_format,
-            this.depaby_phone2_noformat,
+            this.depaby_phone1,
+            this.depaby_phone2,
             this.depaby_email1,
             this.depaby_email2,
             this.depaby_viber,
@@ -79,32 +71,18 @@ class ObjectProduct {
         this.depaby_description = depaby_description;
     }
 
-    set_depaby_phone1_format(depaby_phone1_format) {
-        if (typeof depaby_phone1_format != "string") {
-            depaby_phone1_format = "+111 (22) 333-44-55 (BY)";
+    set_depaby_phone1(depaby_phone1) {
+        if (typeof depaby_phone1 != "string") {
+            depaby_phone1 = "+111 (22) 333-44-55 (BY)";
         }
-        this.depaby_phone1_format = depaby_phone1_format;
+        this.depaby_phone1 = depaby_phone1;
     }
 
-    set_depaby_phone1_noformat(depaby_phone1_noformat) {
-        if (typeof depaby_phone1_noformat != "string") {
-            depaby_phone1_noformat = "111223334455";
+    set_depaby_phone2(depaby_phone2) {
+        if (typeof depaby_phone2 != "string") {
+            depaby_phone2 = "+999 (88) 777-66-55 (TR)";
         }
-        this.depaby_phone1_noformat = depaby_phone1_noformat;
-    }
-
-    set_depaby_phone2_format(depaby_phone2_format) {
-        if (typeof depaby_phone2_format != "string") {
-            depaby_phone2_format = "+111 (22) 333-44-55 (TR)";
-        }
-        this.depaby_phone2_format = depaby_phone2_format;
-    }
-
-    set_depaby_phone2_noformat(depaby_phone2_noformat) {
-        if (typeof depaby_phone2_noformat != "string") {
-            depaby_phone2_noformat = "111223334455";
-        }
-        this.depaby_phone2_noformat = depaby_phone2_noformat;
+        this.depaby_phone2 = depaby_phone2;
     }
 
     set_depaby_email1(depaby_email1) {

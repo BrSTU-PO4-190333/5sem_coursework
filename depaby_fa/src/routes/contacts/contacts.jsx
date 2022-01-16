@@ -50,16 +50,16 @@ function Contacts() {
             <th>id</th>
             <th>caption</th>
             <th>description</th>
-            <th>phone1_format</th>
-            <th>phone1_noformat</th>
-            <th>phone2_format</th>
-            <th>phone2_noformat</th>
+            <th>phone1</th>
+            <th>phone2</th>
             <th>email1</th>
             <th>email2</th>
             <th>viber</th>
             <th>whatsapp</th>
             <th>skype</th>
             <th>telegram</th>
+            <th>edit</th>
+            <th>delete</th>
           </tr>
         </thead>
         <tbody>
@@ -69,10 +69,8 @@ function Contacts() {
               <td>{value.depaby_id}</td>
               <td>{value.depaby_caption}</td>
               <td>{value.depaby_description}</td>
-              <td>{value.depaby_phone1_format}</td>
-              <td>{value.depaby_phone1_noformat}</td>
-              <td>{value.depaby_phone2_format}</td>
-              <td>{value.depaby_phone2_noformat}</td>
+              <td>{value.depaby_phone1}</td>
+              <td>{value.depaby_phone2}</td>
               <td>{value.depaby_email1}</td>
               <td>{value.depaby_email2}</td>
               <td>{value.depaby_viber}</td>
