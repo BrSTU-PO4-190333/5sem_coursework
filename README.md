@@ -1,4 +1,4 @@
-## Документация
+## Расшифровка сокращений модулей
 
 - `ba` - backend api
 - `bm` - backend mysql
@@ -7,6 +7,7 @@
 - `fa` - frontend adminpanel
 - `fs` - frontend store
 
+## Запуск модулей
 | Команда cmd       | Команда bash      | Что делает                                                 |
 | ----------------- | ----------------- | ---------------------------------------------------------- |
 | `make depaby_cmi` | `make depaby_bmi` | Копирует .env.txt файлы в .env, и устанавливает npm пакеты |
@@ -19,6 +20,7 @@
 | `make depaby_cfa` | `make depaby_bfa` | Запускает React JS админку                                 |
 | `make depaby_cfs` | `make depaby_bfs` | Запускает React JS магазин                                 |
 
+## Порты модулей
 | Модуль    | URL                        |
 | --------- | -------------------------- |
 | depaby_ba | http://localhost:3000      |
