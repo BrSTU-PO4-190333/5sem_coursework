@@ -1,0 +1,112 @@
+{
+	"info": {
+		"_postman_id": "a1c96511-6344-4159-bc60-c8d0c20f37b6",
+		"name": "depaby_product_categories",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "productCategories_read",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/api/productCategories",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"productCategories"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "productCategories_create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"login\": \"root\",\r\n    \"password\": \"root\",\r\n    \"data\": [{}]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/api/productCategories",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"productCategories"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "productCategories_delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"login\": \"root\",\r\n    \"password\": \"root\",\r\n    \"id\": 2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/api/productCategories",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"productCategories"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "productCategories_update",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"login\": \"root\",\r\n    \"password\": \"root\",\r\n    \"id\": 2,\r\n    \"data\": {\r\n        \"depaby_caption\": \"111\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/api/productCategories",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"productCategories"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

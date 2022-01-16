@@ -39,6 +39,10 @@ const swagger_data = {
       name: "contacts",
       description: "Манипуляции с таблицей контактов"
     },
+    {
+      name: "productCategories",
+      description: "Манипуляции с таблицей категорий продуктов"
+    },
   ],
   schemes: [
     "http"
@@ -65,6 +69,11 @@ const depaby_swagger_options = {
     "src/routes/contacts/contacts_read.js",
     "src/routes/contacts/contacts_update.js",
     "src/routes/contacts/contacts_delete.js",
+    "src/routes/productCategories/productCategories.js",
+    "src/routes/productCategories/productCategories_create.js",
+    "src/routes/productCategories/productCategories_read.js",
+    "src/routes/productCategories/productCategories_update.js",
+    "src/routes/productCategories/productCategories_delete.js",
   ],
 };
 const depaby_swagger_docs = swagger_jsdoc(depaby_swagger_options);
@@ -100,3 +109,9 @@ app.use("/api", require('./routes/contacts/contacts_create'));
 app.use("/api", require('./routes/contacts/contacts_read'));
 app.use("/api", require('./routes/contacts/contacts_update'));
 app.use("/api", require('./routes/contacts/contacts_delete'));
+
+// contacts CRUD
+app.use("/api", require('./routes/productCategories/productCategories_create'));
+app.use("/api", require('./routes/productCategories/productCategories_read'));
+app.use("/api", require('./routes/productCategories/productCategories_update'));
+app.use("/api", require('./routes/productCategories/productCategories_delete'));
