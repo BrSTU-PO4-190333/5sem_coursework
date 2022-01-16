@@ -1,11 +1,12 @@
 ## Расшифровка сокращений модулей
 
-- `ba` - backend api
-- `bm` - backend mysql
-- `dp` - documentation postman
-- `dl` - documentation latex
-- `fa` - frontend adminpanel
-- `fs` - frontend store
+- `depaby_ba` - backend api (Node JS express сервер, который возвращает JSON и работает с MySQL)
+- `depaby_bm` - backend mysql (База данных MySQL через Docker)
+- `depaby_dj` - documentation json (пример JSON файла для загрузки в админ панель)
+- `depaby_dp` - documentation postman (открыть запросы CRUD через программу Postman)
+- `depaby_fa` - frontend adminpanel (React JS админка)
+- `depaby_fs` - frontend store (React JS сайт клиенту)
+- ~~`gpi_dp`~~ `gpi_dl` - documentation latex (курсовая с рамкой)
 
 ## Запуск модулей
 | Команда cmd       | Команда bash      | Что делает                                                 |
