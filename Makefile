@@ -3,35 +3,27 @@
 depaby_cmi:
 	make depaby_cmc
 	cd depaby_ba & npm i
-	cd gpi_ds & npm i
-	cd gpi_fa & npm i
+	cd depaby_fa & npm i
 	cd depaby_fs & npm i
-	cd gpi_gp & npm i
 
 depaby_bmi:
 	make depaby_bmc
 	cd depaby_ba; npm i
-	cd gpi_ds; npm i
-	cd gpi_fa; npm i
+	cd depaby_fa; npm i
 	cd depaby_fs; npm i
-	cd gpi_gp; npm i
 
 # = = = = = = = = Copy
 
 depaby_cmc:
 	cd depaby_ba & copy .env.txt .env
 	cd depaby_bm & copy .env.txt .env
-	cd gpi_ds & copy .env.copy .env
-	cd gpi_ds & copy .env.production.local.copy .env.production.local
-	cd gpi_fa & copy .env.copy .env
+	cd depaby_fa & copy .env.txt .env
 	cd depaby_fs & copy .env.txt .env
 
 depaby_bmc:
 	cd depaby_ba; cp .env.txt .env
 	cd depaby_bm; cp .env.txt .env
-	cd gpi_ds; cp .env.copy .env
-	cd gpi_ds; cp .env.production.local.copy .env.production.local
-	cd gpi_fa; cp .env.copy .env
+	cd depaby_fa; cp .env.txt .env
 	cd depaby_fs; cp .env.txt .env
 
 # = = = = = = = = backend api
