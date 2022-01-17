@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const QueryProductCategories = require('../../classes/QueryProductCategories');
+const QueryProductCategories = require('../../scripts/AbstractQueryCrud/QueryCrudProductsCategories');
 
 /**
  * @swagger

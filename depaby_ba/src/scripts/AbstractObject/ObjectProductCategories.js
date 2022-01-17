@@ -1,4 +1,4 @@
-class ObjectProduct {
+class ObjectProductCategories {
     constructor(obj = {}) {
         this.set_depaby_caption             (obj.depaby_caption);
         this.set_depaby_product_category    (obj.depaby_product_category);
@@ -51,4 +51,4 @@ class ObjectProduct {
     }
 }
 
-module.exports = ObjectProduct;
+module.exports = ObjectProductCategories;

@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const QueryAuth = require('./../../classes/QueryAuth');
+const QueryAuth = require('./../../scripts/AbstractQueryCrud/AbstractQueryCrud');
 
 /**
  * @swagger
