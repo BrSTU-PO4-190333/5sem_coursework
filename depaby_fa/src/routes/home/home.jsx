@@ -15,6 +15,10 @@ const arrayPages = [
         caption: "КОНТАКТЫ",
         href: "/contacts",
     },
+    {
+        caption: "КАТЕГОРИИ ПРОДУКТОВ",
+        href: "/productCategories",
+    },
 ];
 
 function Home() {
