@@ -2,7 +2,7 @@ import { useState } from "react";
 
 import FetchDocuments from "./../../scripts/FetchDocuments";
 import DocumentFormButton from "../../components/documents/DocumentFormButton/DocumentFormButton";
-import ToolbarHomeButton from "../../components/Toolbar/ToolbarHomeButton/ToolbarHomeButton";
+import HomeButton from "../../components/HomeButton/HomeButton";
 import styles from "./documents.module.css";
 import DeleteButton from "../../components/DeleteButton/DeleteButton";
 import DeleteTableButton from "../../components/DeleteTableButton/DeleteTableButton";
@@ -30,7 +30,7 @@ function Documents() {
   return (
     <div className={styles.window}>
       <div className='depaby_toolbar'>
-        <ToolbarHomeButton />
+        <HomeButton />
         <UploadJsonButton FetchClass={FetchDocuments} />
         <DocumentFormButton
           table_id={indexEditDocument === 'new' ? 'new' : documentsArray[indexEditDocument].depaby_id}

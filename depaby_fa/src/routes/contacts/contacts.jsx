@@ -2,7 +2,7 @@ import { useState } from "react";
 
 import FetchContacts from "./../../scripts/FetchContacts";
 import ContactFormButton from "../../components/contacts/ContactFormButton/ContactFormButton";
-import ToolbarHomeButton from "../../components/Toolbar/ToolbarHomeButton/ToolbarHomeButton";
+import HomeButton from "../../components/HomeButton/HomeButton";
 import styles from "./contacts.module.css";
 import DeleteButton from "../../components/DeleteButton/DeleteButton";
 import DeleteTableButton from "../../components/DeleteTableButton/DeleteTableButton";
@@ -30,7 +30,7 @@ function Contacts() {
   return (
     <div className={styles.window}>
       <div className='depaby_toolbar'>
-        <ToolbarHomeButton />
+        <HomeButton />
         <UploadJsonButton FetchClass={FetchContacts} />
         <ContactFormButton
           table_id={indexEditContact === 'new' ? 'new' : contactsArray[indexEditContact].depaby_id}

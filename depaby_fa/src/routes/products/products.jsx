@@ -2,7 +2,7 @@ import { useState } from "react";
 
 import FetchProducts from "./../../scripts/FetchProducts";
 import ProductFormButton from "../../components/products/ProductFormButton/ProductFormButton";
-import ToolbarHomeButton from "../../components/Toolbar/ToolbarHomeButton/ToolbarHomeButton";
+import HomeButton from "../../components/HomeButton/HomeButton";
 import styles from "./products.module.css";
 import DeleteButton from "../../components/DeleteButton/DeleteButton";
 import DeleteTableButton from "../../components/DeleteTableButton/DeleteTableButton";
@@ -30,7 +30,7 @@ function ProductsRead() {
   return (
     <div className={styles.window}>
       <div className='depaby_toolbar'>
-        <ToolbarHomeButton />
+        <HomeButton />
         <UploadJsonButton FetchClass={FetchProducts} />
         <ProductFormButton
           table_id={indexEditProduct === 'new' ? 'new' : productsArray[indexEditProduct].depaby_id}
