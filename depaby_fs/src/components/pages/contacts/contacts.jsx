@@ -3,7 +3,7 @@ import { faViber, faWhatsapp, faSkype, faTelegramPlane } from "@fortawesome/free
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import Map from './../../Map/Map';
-import FetchContacts from './../../../scripts/FetchContacts';
+import FetchReadContacts from './../../../scripts/AbstractFetchRead/FetchReadContacts';
 import styles from "./contacts.module.css";
 
 function Contacts() {
@@ -14,8 +14,8 @@ function Contacts() {
     }, []);
 
     async function read() {
-        const object = new FetchContacts();
-        const response = await object.read();
+        const class_instance = new FetchReadContacts();
+        const response = await class_instance.read();
         console.log(response);
         setContactsArray(response);
     }

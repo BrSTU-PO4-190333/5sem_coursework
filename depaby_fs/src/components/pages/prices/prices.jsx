@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import FetchDocuments from "../../../scripts/FetchDocuments";
+import FetchReadDocuments from "../../../scripts/AbstractFetchRead/FetchReadDocuments";
 import DocumentCard from "../../DocumentCard/DocumentCard";
 
 function Prices() {
@@ -10,8 +10,8 @@ function Prices() {
     }, []);
 
     async function documents_read() {
-        const documents_object = new FetchDocuments();
-        const repsonse = await documents_object.read({
+        const class_instance = new FetchReadDocuments();
+        const repsonse = await class_instance.read({
             category: 'prices',
         });
 

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import FetchProducts from "./../../../scripts/FetchProducts";
+import FetchReadProducts from "./../../../scripts/AbstractFetchRead/FetchReadProducts";
 import styles from "./products.module.css";
 import ProductBasket from '../../../scripts/ProductBasket';
 
@@ -13,8 +13,8 @@ function Products() {
     }, []);
 
     async function products_read() {
-        const FetchProducts_object = new FetchProducts();
-        const response = await FetchProducts_object.read();
+        const class_istance = new FetchReadProducts();
+        const response = await class_istance.read();
         if (typeof response === "undefined") {
             return;
         }
