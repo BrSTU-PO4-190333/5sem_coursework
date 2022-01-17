@@ -1,24 +1,43 @@
 import { useEffect, useState } from 'react';
+import { useParams } from "react-router-dom";
+
 import FetchReadProducts from "./../../../scripts/AbstractFetchRead/FetchReadProducts";
+import FetchReadProductCategories from "../../../scripts/AbstractFetchRead/FetchReadProductCategories";
 import styles from "./products.module.css";
 import ProductBasket from '../../../scripts/ProductBasket';
 
 function Products() {
+    const { productCategory } = useParams();
+    const [ categoryObject, setCategoryObject ] = useState({});
     const [productsArray, setProductsArray] = useState([{}]);
     const [isOpenProductDataWindow, setIsOpenProductDataWindow] = useState(false);
     const [currentProductIndex, setCurrentProductIndex] = useState(0);
 
     useEffect(() => {
-        products_read();
-    }, []);
+        readCategory();
+        readProducts();
+    }, [productCategory]);
 
-    async function products_read() {
-        const class_istance = new FetchReadProducts();
-        const response = await class_istance.read();
-        if (typeof response === "undefined") {
+    async function readCategory() {
+        const class_istance = new FetchReadProductCategories();
+        const response = await class_istance.read({
+            category: productCategory,
+        });
+
+        if (response[0]) {
+            setCategoryObject(response[0]);
             return;
         }
+       
+        setCategoryObject({});
+    }
 
+    async function readProducts() {
+        const class_istance = new FetchReadProducts();
+        const response = await class_istance.read({
+            category: productCategory,
+        });
+     
         setProductsArray(response);
 
         if (response.length === 0) {
@@ -43,7 +62,7 @@ function Products() {
                 openWindow={openWindow}
                 data={productsArray[currentProductIndex]}
             />
-            <h1>Продукты</h1>
+            <h1>{categoryObject.depaby_caption}</h1>
             <div className={styles.products__block}>
                 {
                     productsArray.map(function (value, index) {

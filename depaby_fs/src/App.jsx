@@ -12,6 +12,7 @@ import Catalogs from './components/pages/catalogs/catalogs';
 import Certificates from './components/pages/certificates/certificates';
 import Contacts from './components/pages/contacts/contacts';
 import Basket from './components/pages/basket/basket';
+import ProductCategories from './components/pages/products/productCategories';
 
 const pagesArray = [
   {
@@ -22,7 +23,7 @@ const pagesArray = [
   {
     href: '/products',
     caption: 'Продукты',
-    component: Products,
+    component: ProductCategories,
   },
   {
     href: '/prices',
@@ -58,6 +59,7 @@ function GpiApp() {
         <Nav pagesArray={pagesArray} />
         <Switch>
           <Route exact path="/" component={Home} />
+          <Route path='/products/:productCategory' component={Products}/>
           {
             pagesArray.map(function (value, index) {
               return (

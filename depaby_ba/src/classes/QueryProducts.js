@@ -69,6 +69,10 @@ class QueryProducts extends QueryAuth {
         sql = `SELECT * FROM \`depaby_products\` WHERE \`depaby_id\` = '${params.id}';`;
       }
 
+      else if (params.category) {
+        sql = `SELECT * FROM \`depaby_products\` WHERE \`depaby_category\` = '${params.category}';`;
+      }
+
       // Получаем массив c сортировкой
       else if (params.sort) {
         switch (params.sort) {

@@ -69,6 +69,10 @@ class QueryProductCategoriess extends QueryAuth {
         sql = `SELECT * FROM \`depaby_product_categories\` WHERE \`depaby_id\` = '${params.id}';`;
       }
 
+      else if (params.category) {
+        sql = `SELECT * FROM \`depaby_product_categories\` WHERE \`depaby_product_category\` = '${params.category}';`;
+      }
+
       // Получаем обычный массив
       else {
         sql = `SELECT * FROM \`depaby_product_categories\`;`;

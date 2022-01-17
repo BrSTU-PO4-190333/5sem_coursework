@@ -1,0 +1,43 @@
+.cards
+{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.card
+{
+    border: 1px solid lightgray;
+    margin: 8px;
+    padding: 8px;
+    width: 220px;
+    border-radius: 8px;
+    display: block;
+    text-decoration: none;
+}
+
+.card:hover
+{
+    box-shadow: 0 0 8px lightgray;
+    background-color: lightgray;
+}
+
+.card__image
+{
+    text-align: center;
+    height: 72px;
+}
+
+.card__image img
+{
+
+    max-width: 220px;
+    max-height: 72px;
+}
+
+.card__caption
+{
+    color: var(--depaby_color);
+    font-weight: bolder;
+    text-align: center;
+}
