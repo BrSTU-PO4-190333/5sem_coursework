@@ -3,13 +3,13 @@ import { useState } from "react";
 import FetchContacts from "./../../scripts/FetchContacts";
 import ContactsDownloadCsvButton from "../../components/contacts/ContactsDownloadCsvButton/ContactsDownloadCsvButton";
 import ContactsDownloadJsonButton from "../../components/contacts/ContactsDownloadJsonButton/ContactsDownloadJsonButton";
-import ContactsUpdateTableButton from "../../components/contacts/ContactsUpdateTableButton/ContactsUpdateTableButton";
 import ContactFormButton from "../../components/contacts/ContactFormButton/ContactFormButton";
 import ContactsLoadButton from "../../components/contacts/ContactsLoadButton/ContactsLoadButton";
 import ToolbarHomeButton from "../../components/Toolbar/ToolbarHomeButton/ToolbarHomeButton";
 import styles from "./contacts.module.css";
 import DeleteButton from "../../components/DeleteButton/DeleteButton";
 import DeleteTableButton from "../../components/DeleteTableButton/DeleteTableButton";
+import LoadTableButton from "../../components/LoadTableButton/LoadTableButton";
 
 function Contacts() {
   const [contactsArray, setContactsArray] = useState([]);
@@ -38,7 +38,7 @@ function Contacts() {
           signal={contactFormSignal}
           destructor={() => {setIndexEditContact('new')}}
         />
-        <ContactsUpdateTableButton contacts_read={contacts_read} />
+        <LoadTableButton read={contacts_read} />
         <ContactsDownloadJsonButton contacts_array={contactsArray} />
         <ContactsDownloadCsvButton contacts_array={contactsArray} />
         <DeleteTableButton read={contacts_read} FetchClass={FetchContacts} />

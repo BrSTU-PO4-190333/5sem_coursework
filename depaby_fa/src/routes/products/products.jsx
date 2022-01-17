@@ -3,13 +3,13 @@ import { useState } from "react";
 import FetchProducts from "./../../scripts/FetchProducts";
 import ProductsDownloadCsvButton from "../../components/products/ProductsDownloadCsvButton/ProductsDownloadCsvButton";
 import ProductsDownloadJsonButton from "../../components/products/ProductsDownloadJsonButton/ProductsDownloadJsonButton";
-import ProductsUpdateTableButton from "../../components/products/ProductsUpdateTableButton/ProductsUpdateTableButton";
 import ProductFormButton from "../../components/products/ProductFormButton/ProductFormButton";
 import ProductsLoadButton from "../../components/products/ProductsLoadButton/ProductsLoadButton";
 import ToolbarHomeButton from "../../components/Toolbar/ToolbarHomeButton/ToolbarHomeButton";
 import styles from "./products.module.css";
 import DeleteButton from "../../components/DeleteButton/DeleteButton";
 import DeleteTableButton from "../../components/DeleteTableButton/DeleteTableButton";
+import LoadTableButton from "../../components/LoadTableButton/LoadTableButton";
 
 function ProductsRead() {
   const [productsArray, setProductsArray] = useState([]);
@@ -38,7 +38,7 @@ function ProductsRead() {
           signal={productFormSignal}
           destructor={() => {setIndexEditProduct('new')}}
         />
-        <ProductsUpdateTableButton products_read={products_read} />
+        <LoadTableButton read={products_read} />
         <ProductsDownloadJsonButton products_array={productsArray} />
         <ProductsDownloadCsvButton products_array={productsArray} />
         <DeleteTableButton read={products_read} FetchClass={FetchProducts} />

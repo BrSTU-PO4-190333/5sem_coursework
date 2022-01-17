@@ -3,13 +3,13 @@ import { useState } from "react";
 import FetchDocuments from "./../../scripts/FetchDocuments";
 import DocumentsDownloadCsvButton from "../../components/documents/DocumentsDownloadCsvButton/DocumentsDownloadCsvButton";
 import DocumentsDownloadJsonButton from "../../components/documents/DocumentsDownloadJsonButton/DocumentsDownloadJsonButton";
-import DocumentsUpdateTableButton from "../../components/documents/DocumentsUpdateTableButton/DocumentsUpdateTableButton";
 import DocumentFormButton from "../../components/documents/DocumentFormButton/DocumentFormButton";
 import DocumentsLoadButton from "../../components/documents/DocumentsLoadButton/DocumentsLoadButton";
 import ToolbarHomeButton from "../../components/Toolbar/ToolbarHomeButton/ToolbarHomeButton";
 import styles from "./documents.module.css";
 import DeleteButton from "../../components/DeleteButton/DeleteButton";
 import DeleteTableButton from "../../components/DeleteTableButton/DeleteTableButton";
+import LoadTableButton from "../../components/LoadTableButton/LoadTableButton";
 
 function Documents() {
   const [documentsArray, setDocumentsArray] = useState([]);
@@ -38,7 +38,7 @@ function Documents() {
           signal={documentFormSignal}
           destructor={() => {setIndexEditDocument('new')}}
         />
-        <DocumentsUpdateTableButton documents_read={documents_read} />
+        <LoadTableButton read={documents_read} />
         <DocumentsDownloadJsonButton documents_array={documentsArray} />
         <DocumentsDownloadCsvButton documents_array={documentsArray} />
         <DeleteTableButton read={documents_read} FetchClass={FetchDocuments} />
