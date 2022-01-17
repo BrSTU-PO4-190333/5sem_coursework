@@ -2,7 +2,6 @@ import { useState } from "react";
 
 import FetchProducts from "./../../scripts/FetchProducts";
 import ProductsDeleteButton from "../../components/products/ProductsDeleteButton/ProductsDeleteButton";
-import ProductDeleteButton from "../../components/products/ProductDeleteButton/ProductDeleteButton";
 import ProductsDownloadCsvButton from "../../components/products/ProductsDownloadCsvButton/ProductsDownloadCsvButton";
 import ProductsDownloadJsonButton from "../../components/products/ProductsDownloadJsonButton/ProductsDownloadJsonButton";
 import ProductsUpdateTableButton from "../../components/products/ProductsUpdateTableButton/ProductsUpdateTableButton";
@@ -10,6 +9,7 @@ import ProductFormButton from "../../components/products/ProductFormButton/Produ
 import ProductsLoadButton from "../../components/products/ProductsLoadButton/ProductsLoadButton";
 import ToolbarHomeButton from "../../components/Toolbar/ToolbarHomeButton/ToolbarHomeButton";
 import styles from "./products.module.css";
+import DeleteButton from "../../components/DeleteButton/DeleteButton";
 
 function ProductsRead() {
   const [productsArray, setProductsArray] = useState([]);
@@ -86,9 +86,10 @@ function ProductsRead() {
                 }}>edit</button>
               </td>
               <td className='depaby_deleteButton'>
-                <ProductDeleteButton
+                <DeleteButton
                   id={value.depaby_id}
-                  products_read={products_read}
+                  read={products_read}
+                  FetchClass={FetchProducts}
                 />
               </td>
             </tr>

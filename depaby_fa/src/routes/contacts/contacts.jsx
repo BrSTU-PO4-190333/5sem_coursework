@@ -2,7 +2,6 @@ import { useState } from "react";
 
 import FetchContacts from "./../../scripts/FetchContacts";
 import ContactsDeleteButton from "../../components/contacts/ContactsDeleteButton/ContactsDeleteButton";
-import ContactDeleteButton from "../../components/contacts/ContactDeleteButton/ContactDeleteButton";
 import ContactsDownloadCsvButton from "../../components/contacts/ContactsDownloadCsvButton/ContactsDownloadCsvButton";
 import ContactsDownloadJsonButton from "../../components/contacts/ContactsDownloadJsonButton/ContactsDownloadJsonButton";
 import ContactsUpdateTableButton from "../../components/contacts/ContactsUpdateTableButton/ContactsUpdateTableButton";
@@ -10,6 +9,7 @@ import ContactFormButton from "../../components/contacts/ContactFormButton/Conta
 import ContactsLoadButton from "../../components/contacts/ContactsLoadButton/ContactsLoadButton";
 import ToolbarHomeButton from "../../components/Toolbar/ToolbarHomeButton/ToolbarHomeButton";
 import styles from "./contacts.module.css";
+import DeleteButton from "../../components/DeleteButton/DeleteButton";
 
 function Contacts() {
   const [contactsArray, setContactsArray] = useState([]);
@@ -84,9 +84,10 @@ function Contacts() {
                 }}>edit</button>
               </td>
               <td className='depaby_deleteButton'>
-                <ContactDeleteButton
-                  id={value.depaby_id}
-                  contacts_read={contacts_read}
+                <DeleteButton
+                  id ={value.depaby_id}
+                  read={contacts_read}
+                  FetchClass={FetchContacts}
                 />
               </td>
             </tr>

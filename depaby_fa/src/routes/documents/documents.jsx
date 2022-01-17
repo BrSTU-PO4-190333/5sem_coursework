@@ -2,7 +2,6 @@ import { useState } from "react";
 
 import FetchDocuments from "./../../scripts/FetchDocuments";
 import DocumentsDeleteButton from "../../components/documents/DocumentsDeleteButton/DocumentsDeleteButton";
-import DocumentDeleteButton from "../../components/documents/DocumentDeleteButton/DocumentDeleteButton";
 import DocumentsDownloadCsvButton from "../../components/documents/DocumentsDownloadCsvButton/DocumentsDownloadCsvButton";
 import DocumentsDownloadJsonButton from "../../components/documents/DocumentsDownloadJsonButton/DocumentsDownloadJsonButton";
 import DocumentsUpdateTableButton from "../../components/documents/DocumentsUpdateTableButton/DocumentsUpdateTableButton";
@@ -10,6 +9,7 @@ import DocumentFormButton from "../../components/documents/DocumentFormButton/Do
 import DocumentsLoadButton from "../../components/documents/DocumentsLoadButton/DocumentsLoadButton";
 import ToolbarHomeButton from "../../components/Toolbar/ToolbarHomeButton/ToolbarHomeButton";
 import styles from "./documents.module.css";
+import DeleteButton from "../../components/DeleteButton/DeleteButton";
 
 function Documents() {
   const [documentsArray, setDocumentsArray] = useState([]);
@@ -70,9 +70,10 @@ function Documents() {
                 }}>edit</button>
               </td>
               <td className='depaby_deleteButton'>
-                <DocumentDeleteButton
+                <DeleteButton
                   id={value.depaby_id}
-                  documents_read={documents_read}
+                  read={documents_read}
+                  FetchClass={FetchDocuments}
                 />
               </td>
             </tr>
