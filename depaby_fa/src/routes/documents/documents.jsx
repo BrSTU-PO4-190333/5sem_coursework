@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import FetchDocuments from "./../../scripts/FetchDocuments";
+import FetchCrudDocuments from "./../../scripts/AbstractFetchCrud/FetchCrudDocuments";
 import HomeButton from "../../components/HomeButton/HomeButton";
 import styles from "./documents.module.css";
 import DeleteButton from "../../components/DeleteButton/DeleteButton";
@@ -18,7 +18,7 @@ function Documents() {
   const [documentFormSignal, setDocumentFormSignal] = useState(0);
 
   async function documents_read() {
-    const documents_object = new FetchDocuments();
+    const documents_object = new FetchCrudDocuments();
     const response = await documents_object.read();
 
     if (response.length === 0) {
@@ -32,19 +32,19 @@ function Documents() {
     <div className={styles.window}>
       <div className='depaby_toolbar'>
         <HomeButton />
-        <UploadJsonButton FetchClass={FetchDocuments} />
+        <UploadJsonButton FetchClass={FetchCrudDocuments} />
         <FormButton
           id_html_table={indexEditDocument === 'new' ? 'new' : documentsArray[indexEditDocument].depaby_id}
           data={documentsArray[indexEditDocument] ? documentsArray[indexEditDocument] : {}}
           signal={documentFormSignal}
           destructor={() => {setIndexEditDocument('new')}}
           FormTable={DocumentForm}
-          FetchClass={FetchDocuments}
+          FetchClass={FetchCrudDocuments}
         />
         <LoadTableButton read={documents_read} />
         <SaveAsJsonButton array={documentsArray} table_name="depaby_documents" />
         <SaveAsCsvButton array={documentsArray} table_name="depaby_documents" />
-        <DeleteTableButton read={documents_read} FetchClass={FetchDocuments} />
+        <DeleteTableButton read={documents_read} FetchClass={FetchCrudDocuments} />
       </div>
       <table className='depaby_table'>
         <thead>
@@ -76,7 +76,7 @@ function Documents() {
                 <DeleteButton
                   id={value.depaby_id}
                   read={documents_read}
-                  FetchClass={FetchDocuments}
+                  FetchClass={FetchCrudDocuments}
                 />
               </td>
             </tr>

@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import FetchContacts from "./../../scripts/FetchContacts";
+import FetchCrudContacts from "./../../scripts/AbstractFetchCrud/FetchCrudContacts";
 import HomeButton from "../../components/HomeButton/HomeButton";
 import styles from "./contacts.module.css";
 import DeleteButton from "../../components/DeleteButton/DeleteButton";
@@ -18,7 +18,7 @@ function Contacts() {
   const [contactFormSignal, setContactFormSignal] = useState(0);
 
   async function contacts_read() {
-    const contacts_object = new FetchContacts();
+    const contacts_object = new FetchCrudContacts();
     const response = await contacts_object.read();
 
     if (response.length === 0) {
@@ -32,19 +32,19 @@ function Contacts() {
     <div className={styles.window}>
       <div className='depaby_toolbar'>
         <HomeButton />
-        <UploadJsonButton FetchClass={FetchContacts} />
+        <UploadJsonButton FetchClass={FetchCrudContacts} />
         <FormButton
           id_html_table={indexEditContact === 'new' ? 'new' : contactsArray[indexEditContact].depaby_id}
           data={contactsArray[indexEditContact] ? contactsArray[indexEditContact] : {}}
           signal={contactFormSignal}
           destructor={() => {setIndexEditContact('new')}}
           FormTable={ContactForm}
-          FetchClass={FetchContacts}
+          FetchClass={FetchCrudContacts}
         />
         <LoadTableButton read={contacts_read} />
         <SaveAsJsonButton array={contactsArray} table_name="depaby_contacts" />
         <SaveAsCsvButton array={contactsArray} table_name="depaby_contacts" />
-        <DeleteTableButton read={contacts_read} FetchClass={FetchContacts} />
+        <DeleteTableButton read={contacts_read} FetchClass={FetchCrudContacts} />
       </div>
       <table className='depaby_table'>
         <thead>
@@ -90,7 +90,7 @@ function Contacts() {
                 <DeleteButton
                   id ={value.depaby_id}
                   read={contacts_read}
-                  FetchClass={FetchContacts}
+                  FetchClass={FetchCrudContacts}
                 />
               </td>
             </tr>

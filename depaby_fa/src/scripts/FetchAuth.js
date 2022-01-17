@@ -5,11 +5,12 @@ class FetchAuth {
         this.api = process.env.REACT_APP_api_url;
         this.login = login;
         this.password = password;
+        this.api += '/api/admin_auth';
     }
 
     async auth() {
         try {
-            const url = `${this.api}/api/admin_auth`;
+            const url = this.api;
             const data = {
                 login: this.login,
                 password: this.password,
@@ -26,7 +27,7 @@ class FetchAuth {
         }
         catch(err) {
             console.log(err);
-            alert("Ошибка соединения с API");
+            alert("Ошибка c сервером API");
         }
     }
 }

@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import FetchProducts from "./../../scripts/FetchProducts";
+import FetchCrudProducts from "./../../scripts/AbstractFetchCrud/FetchCrudProducts";
 import HomeButton from "../../components/HomeButton/HomeButton";
 import styles from "./products.module.css";
 import DeleteButton from "../../components/DeleteButton/DeleteButton";
@@ -18,7 +18,7 @@ function ProductsRead() {
   const [productFormSignal, setProductFormSignal] = useState(0);
 
   async function products_read() {
-    const products_object = new FetchProducts();
+    const products_object = new FetchCrudProducts();
     const response = await products_object.read();
 
     if (response.length === 0) {
@@ -32,19 +32,19 @@ function ProductsRead() {
     <div className={styles.window}>
       <div className='depaby_toolbar'>
         <HomeButton />
-        <UploadJsonButton FetchClass={FetchProducts} />
+        <UploadJsonButton FetchClass={FetchCrudProducts} />
         <FormButton
           id_html_table={indexEditProduct === 'new' ? 'new' : productsArray[indexEditProduct].depaby_id}
           data={productsArray[indexEditProduct] ? productsArray[indexEditProduct] : {}}
           signal={productFormSignal}
           destructor={() => {setIndexEditProduct('new')}}
           FormTable={ProductForm}
-          FetchClass={FetchProducts}
+          FetchClass={FetchCrudProducts}
         />
         <LoadTableButton read={products_read} />
         <SaveAsJsonButton array={productsArray} table_name="depaby_products" />
         <SaveAsCsvButton array={productsArray} table_name="depaby_products" />
-        <DeleteTableButton read={products_read} FetchClass={FetchProducts} />
+        <DeleteTableButton read={products_read} FetchClass={FetchCrudProducts} />
       </div>
       <table className='depaby_table'>
         <thead>
@@ -92,7 +92,7 @@ function ProductsRead() {
                 <DeleteButton
                   id={value.depaby_id}
                   read={products_read}
-                  FetchClass={FetchProducts}
+                  FetchClass={FetchCrudProducts}
                 />
               </td>
             </tr>

@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-class FetchProducts {
+class AbstractFetchCrud {
     constructor() {
         this.api = process.env.REACT_APP_api_url;
         this.login = localStorage.getItem("login");
@@ -9,14 +9,14 @@ class FetchProducts {
 
     async read(params = {}) {
         try {
-            let url = `${this.api}/api/products`;
+            let url = this.api;
 
             if (params.id) {
-                url = `${this.api}/api/products?id=${params.id}`;
+                url = `${this.api}?id=${params.id}`;
             }
 
             else if (params.sort) {
-                url = `${this.api}/api/products?sort=${params.sort}`;
+                url = `${this.api}?sort=${params.sort}`;
             }
             
             const response = await axios.get(url);
@@ -30,7 +30,7 @@ class FetchProducts {
         }
         catch(err) {
             console.log(err);
-            alert("Error connect to API");
+            alert("Ошибка c сервером API");
             return [];
         }
     }
@@ -38,7 +38,7 @@ class FetchProducts {
     // Метод, который удаляет продукт по ид
     async delete(params = {}) {
         try {
-            const url = `${this.api}/api/products`;
+            const url = this.api;
             let data = {
                 "login": this.login,
                 "password": this.password,
@@ -62,14 +62,14 @@ class FetchProducts {
         }
         catch(err) {
             console.log(err);
-            alert("Error connect to API");
+            alert("Ошибка c сервером API");
             return false;
         }
     }
 
     async create(array) {
         try {
-            const url = `${this.api}/api/products`;
+            const url = this.api;
             const data = {
                 "login": this.login,
                 "password": this.password,
@@ -83,14 +83,14 @@ class FetchProducts {
         }
         catch(err) {
             console.log(err);
-            alert("Error connect to API");
+            alert("Ошибка c сервером API");
             return false;
         }
     }
 
     async update(product_data, product_id) {
         try {
-            const url = `${this.api}/api/products`;
+            const url = this.api;
             const data = {
                 "login": this.login,
                 "password": this.password,
@@ -105,10 +105,10 @@ class FetchProducts {
         }
         catch(err) {
             console.log(err);
-            alert("Error connect to API");
+            alert("Ошибка c сервером API");
             return false;
         }
     }
 }
 
-export default FetchProducts;
+export default AbstractFetchCrud;
