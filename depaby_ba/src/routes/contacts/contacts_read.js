@@ -8,18 +8,13 @@ const QueryContacts = require('../../scripts/AbstractQueryCrud/QueryCrudContacts
  *  get:
  *    tags:
  *      - contacts
- *    description: Получаем все контакты из таблицы базы данных
+ *    description: Получаем все записи из таблицы БД
  *    parameters:
  *      - in: query
  *        name: id
- *        description: Вывод массива со структурой продукта (нашли по ИД)
+ *        description: Вывод массива записи (нашли по ИД)
  *        required: false
  *        type: integer
- *      - in: query
- *        name: category
- *        description: вывод записей по категории
- *        required: false
- *        type: string
  *    responses:
  *      '200':
  *        description: Успешный ответ

@@ -8,7 +8,7 @@ const QueryContacts = require('../../scripts/AbstractQueryCrud/QueryCrudContacts
  *  post:
  *    tags:
  *      - contacts
- *    description: Добавляем массив контактов
+ *    description: Добавляем массив записи\записей
  *    parameters:
  *      - in: body
  *        description: Тело запроса
@@ -26,7 +26,7 @@ const QueryContacts = require('../../scripts/AbstractQueryCrud/QueryCrudContacts
  *                $ref: '#/definitions/depaby_contact'
  *    responses:
  *      '200':
- *        description: Успешное добавление контакта
+ *        description: Успешное добавление записи\записей
  *        schema:
  *          type: object
  *          properties:

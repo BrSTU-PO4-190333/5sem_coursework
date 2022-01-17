@@ -8,7 +8,7 @@ const QueryProducts = require('../../scripts/AbstractQueryCrud/QueryCrudProducts
  *  put:
  *    tags:
  *      - products
- *    description: Обновляем продукт по ид
+ *    description: Обновляем данные по ид
  *    parameters:
  *      - in: body
  *        description: Тело запроса

@@ -8,7 +8,7 @@ const QueryProductCategories = require('../../scripts/AbstractQueryCrud/QueryCru
  *  post:
  *    tags:
  *      - productCategories
- *    description: Добавляем массив категории продуктов
+ *    description: Добавляем массив записи\записей
  *    parameters:
  *      - in: body
  *        description: Тело запроса
@@ -23,10 +23,10 @@ const QueryProductCategories = require('../../scripts/AbstractQueryCrud/QueryCru
  *            data:
  *              type: array
  *              items:
- *                $ref: '#/definitions/depaby_productCategories'
+ *                $ref: '#/definitions/depaby_productCategory'
  *    responses:
  *      '200':
- *        description: Успешное добавление категории продукта
+ *        description: Успешное добавление записи\записей
  *        schema:
  *          type: object
  *          properties:

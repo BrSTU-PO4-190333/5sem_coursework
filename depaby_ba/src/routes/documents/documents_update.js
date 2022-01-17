@@ -8,7 +8,7 @@ const QueryDocuments = require('./../../scripts/AbstractQueryCrud/QueryCrudDocum
  *  put:
  *    tags:
  *      - documents
- *    description: Обновляем документ по ид
+ *    description: Обновляем данные по ид
  *    parameters:
  *      - in: body
  *        description: Тело запроса

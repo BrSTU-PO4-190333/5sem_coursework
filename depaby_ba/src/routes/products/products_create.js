@@ -8,7 +8,7 @@ const QueryProducts = require('../../scripts/AbstractQueryCrud/QueryCrudProducts
  *  post:
  *    tags:
  *      - products
- *    description: Добавляем массив продуктов
+ *    description: Добавляем массив записи\записей
  *    parameters:
  *      - in: body
  *        description: Тело запроса
@@ -26,7 +26,7 @@ const QueryProducts = require('../../scripts/AbstractQueryCrud/QueryCrudProducts
  *                $ref: '#/definitions/depaby_product'
  *    responses:
  *      '200':
- *        description: Успешное добавление товара
+ *        description: Успешное добавление записи\записей
  *        schema:
  *          type: object
  *          properties:

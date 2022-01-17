@@ -8,7 +8,7 @@ const QueryProductCategories = require('../../scripts/AbstractQueryCrud/QueryCru
  *  put:
  *    tags:
  *      - productCategories
- *    description: Обновляем категорию продукта по ид
+ *    description: Обновляем данные по ид
  *    parameters:
  *      - in: body
  *        description: Тело запроса
@@ -23,7 +23,7 @@ const QueryProductCategories = require('../../scripts/AbstractQueryCrud/QueryCru
  *            id:
  *              type: integer
  *            data:
- *              $ref: '#/definitions/depaby_productCategories'
+ *              $ref: '#/definitions/depaby_productCategory'
 *    responses:
  *      '200':
  *        description: Успешное обновление

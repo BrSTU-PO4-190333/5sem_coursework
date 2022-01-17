@@ -8,13 +8,8 @@ const QueryProducts = require('../../scripts/AbstractQueryCrud/QueryCrudProducts
  *  delete:
  *    tags:
  *      - products
- *    description: Удаляем продукт по ид, либо очищаем таблицу продуктов
+ *    description: Очищаем таблицу записей, либо удаляем запись по ид
  *    parameters:
- *      - in: query
- *        name: id
- *        description: Ид продукта, который нужно удалить. В противном случае очистится вся таблица
- *        required: false
- *        type: integer
  *      - in: body
  *        description: Тело запроса
  *        required: true
@@ -25,9 +20,11 @@ const QueryProducts = require('../../scripts/AbstractQueryCrud/QueryCrudProducts
  *              type: string
  *            password:
  *              type: string
-*    responses:
+ *            id:
+ *              type: integer
+ *    responses:
  *      '200':
- *        description: Успешное удаление
+ *        description: Успешная очистка таблицы, либо успешное удаление по ид
  *        schema:
  *          type: object
  *          properties:

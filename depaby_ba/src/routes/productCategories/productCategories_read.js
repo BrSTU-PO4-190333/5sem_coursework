@@ -8,16 +8,16 @@ const QueryProductCategories = require('../../scripts/AbstractQueryCrud/QueryCru
  *  get:
  *    tags:
  *      - productCategories
- *    description: Получаем все категории продукта из таблицы базы данных
+ *    description: Получаем все записи из таблицы БД
  *    parameters:
  *      - in: query
  *        name: id
- *        description: Вывод массива категории продукта по ИД
+ *        description: Вывод массива записи (нашли по ИД)
  *        required: false
  *        type: integer
  *      - in: query
- *        name: sort
- *        description: сортировка по полю (id) или массив отсортированный задом на перёд (invert_id)
+ *        name: category
+ *        description: Вывод массива записей по категории
  *        required: false
  *        type: string
  *    responses:
@@ -33,7 +33,7 @@ const QueryProductCategories = require('../../scripts/AbstractQueryCrud/QueryCru
  *            data:
  *              type: array
  *              items:
- *                $ref: '#/definitions/depaby_productCategories'
+ *                $ref: '#/definitions/depaby_productCategory'
  *      '418':
  *        description: Ошибка на сервере
  *        schema:

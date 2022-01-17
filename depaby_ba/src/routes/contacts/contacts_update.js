@@ -8,7 +8,7 @@ const QueryContacts = require('../../scripts/AbstractQueryCrud/QueryCrudContacts
  *  put:
  *    tags:
  *      - contacts
- *    description: Обновляем контакт по ид
+ *    description: Обновляем данные по ид
  *    parameters:
  *      - in: body
  *        description: Тело запроса

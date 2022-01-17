@@ -8,13 +8,8 @@ const QueryContacts = require('../../scripts/AbstractQueryCrud/QueryCrudContacts
  *  delete:
  *    tags:
  *      - contacts
- *    description: Удаляем контакт по ид, либо очищаем таблицу контактов
+ *    description: Очищаем таблицу записей, либо удаляем запись по ид
  *    parameters:
- *      - in: query
- *        name: id
- *        description: Ид контакта, который нужно удалить. В противном случае очистится вся таблица
- *        required: false
- *        type: integer
  *      - in: body
  *        description: Тело запроса
  *        required: true
@@ -25,9 +20,11 @@ const QueryContacts = require('../../scripts/AbstractQueryCrud/QueryCrudContacts
  *              type: string
  *            password:
  *              type: string
-*    responses:
+ *            id:
+ *              type: integer
+ *    responses:
  *      '200':
- *        description: Успешное удаление
+ *        description: Успешная очистка таблицы, либо успешное удаление по ид
  *        schema:
  *          type: object
  *          properties:

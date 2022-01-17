@@ -8,16 +8,16 @@ const QueryProducts = require('../../scripts/AbstractQueryCrud/QueryCrudProducts
  *  get:
  *    tags:
  *      - products
- *    description: Получаем все продукты из таблицы базы данных
+ *    description: Получаем все записи из таблицы БД
  *    parameters:
  *      - in: query
  *        name: id
- *        description: Вывод массива продукта по ИД
+ *        description: Вывод массива записи (нашли по ИД)
  *        required: false
  *        type: integer
  *      - in: query
- *        name: sort
- *        description: сортировка по полю (id, model, name, ...) или массив отсортированный задом на перёд (invert_id, invert_model, invert_name)
+ *        name: category
+ *        description: Вывод массива записей по категории
  *        required: false
  *        type: string
  *    responses:

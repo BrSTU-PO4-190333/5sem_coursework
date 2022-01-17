@@ -8,13 +8,8 @@ const QueryDocuments = require('./../../scripts/AbstractQueryCrud/QueryCrudDocum
  *  delete:
  *    tags:
  *      - documents
- *    description: Удаляем документ по ид, либо очищаем таблицу документов
+ *    description: Очищаем таблицу записей, либо удаляем запись по ид
  *    parameters:
- *      - in: query
- *        name: id
- *        description: Ид документа, который нужно удалить. В противном случае очистится вся таблица
- *        required: false
- *        type: integer
  *      - in: body
  *        description: Тело запроса
  *        required: true
@@ -25,9 +20,11 @@ const QueryDocuments = require('./../../scripts/AbstractQueryCrud/QueryCrudDocum
  *              type: string
  *            password:
  *              type: string
-*    responses:
+ *            id:
+ *              type: integer
+ *    responses:
  *      '200':
- *        description: Успешное удаление
+ *        description: Успешная очистка таблицы, либо успешное удаление по ид
  *        schema:
  *          type: object
  *          properties:

@@ -8,7 +8,7 @@ const QueryDocuments = require('./../../scripts/AbstractQueryCrud/QueryCrudDocum
  *  post:
  *    tags:
  *      - documents
- *    description: Добавляем массив документов
+ *    description: Добавляем массив записи\записей
  *    parameters:
  *      - in: body
  *        description: Тело запроса
@@ -26,7 +26,7 @@ const QueryDocuments = require('./../../scripts/AbstractQueryCrud/QueryCrudDocum
  *                $ref: '#/definitions/depaby_document'
  *    responses:
  *      '200':
- *        description: Успешное добавление документа
+ *        description: Успешное добавление записи\записей
  *        schema:
  *          type: object
  *          properties:
