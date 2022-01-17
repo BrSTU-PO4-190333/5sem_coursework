@@ -1,7 +1,6 @@
 import { useState } from "react";
 
 import FetchDocuments from "./../../scripts/FetchDocuments";
-import DocumentsDeleteButton from "../../components/documents/DocumentsDeleteButton/DocumentsDeleteButton";
 import DocumentsDownloadCsvButton from "../../components/documents/DocumentsDownloadCsvButton/DocumentsDownloadCsvButton";
 import DocumentsDownloadJsonButton from "../../components/documents/DocumentsDownloadJsonButton/DocumentsDownloadJsonButton";
 import DocumentsUpdateTableButton from "../../components/documents/DocumentsUpdateTableButton/DocumentsUpdateTableButton";
@@ -10,6 +9,7 @@ import DocumentsLoadButton from "../../components/documents/DocumentsLoadButton/
 import ToolbarHomeButton from "../../components/Toolbar/ToolbarHomeButton/ToolbarHomeButton";
 import styles from "./documents.module.css";
 import DeleteButton from "../../components/DeleteButton/DeleteButton";
+import DeleteTableButton from "../../components/DeleteTableButton/DeleteTableButton";
 
 function Documents() {
   const [documentsArray, setDocumentsArray] = useState([]);
@@ -41,7 +41,7 @@ function Documents() {
         <DocumentsUpdateTableButton documents_read={documents_read} />
         <DocumentsDownloadJsonButton documents_array={documentsArray} />
         <DocumentsDownloadCsvButton documents_array={documentsArray} />
-        <DocumentsDeleteButton documents_read={documents_read} />
+        <DeleteTableButton read={documents_read} FetchClass={FetchDocuments} />
       </div>
       <table className='depaby_table'>
         <thead>
