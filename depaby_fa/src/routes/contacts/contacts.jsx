@@ -1,7 +1,6 @@
 import { useState } from "react";
 
 import FetchContacts from "./../../scripts/FetchContacts";
-import ContactFormButton from "../../components/contacts/ContactFormButton/ContactFormButton";
 import HomeButton from "../../components/HomeButton/HomeButton";
 import styles from "./contacts.module.css";
 import DeleteButton from "../../components/DeleteButton/DeleteButton";
@@ -10,6 +9,8 @@ import LoadTableButton from "../../components/LoadTableButton/LoadTableButton";
 import SaveAsJsonButton from "../../components/SaveAsJsonButton/SaveAsJsonButton";
 import SaveAsCsvButton from "../../components/SaveAsCsvButton/SaveAsCsvButton";
 import UploadJsonButton from "../../components/UploadJsonButton/UploadJsonButton";
+import FormButton from "../../components/FormButton/FormButton";
+import ContactForm from "../../components/ContactForm/ContactForm";
 
 function Contacts() {
   const [contactsArray, setContactsArray] = useState([]);
@@ -32,11 +33,13 @@ function Contacts() {
       <div className='depaby_toolbar'>
         <HomeButton />
         <UploadJsonButton FetchClass={FetchContacts} />
-        <ContactFormButton
-          table_id={indexEditContact === 'new' ? 'new' : contactsArray[indexEditContact].depaby_id}
-          contact_data={contactsArray[indexEditContact] ? contactsArray[indexEditContact] : {}}
+        <FormButton
+          id_html_table={indexEditContact === 'new' ? 'new' : contactsArray[indexEditContact].depaby_id}
+          data={contactsArray[indexEditContact] ? contactsArray[indexEditContact] : {}}
           signal={contactFormSignal}
           destructor={() => {setIndexEditContact('new')}}
+          FormTable={ContactForm}
+          FetchClass={FetchContacts}
         />
         <LoadTableButton read={contacts_read} />
         <SaveAsJsonButton array={contactsArray} table_name="depaby_contacts" />

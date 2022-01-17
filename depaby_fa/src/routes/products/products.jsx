@@ -1,7 +1,6 @@
 import { useState } from "react";
 
 import FetchProducts from "./../../scripts/FetchProducts";
-import ProductFormButton from "../../components/products/ProductFormButton/ProductFormButton";
 import HomeButton from "../../components/HomeButton/HomeButton";
 import styles from "./products.module.css";
 import DeleteButton from "../../components/DeleteButton/DeleteButton";
@@ -10,6 +9,8 @@ import LoadTableButton from "../../components/LoadTableButton/LoadTableButton";
 import SaveAsJsonButton from "../../components/SaveAsJsonButton/SaveAsJsonButton";
 import SaveAsCsvButton from "../../components/SaveAsCsvButton/SaveAsCsvButton";
 import UploadJsonButton from "../../components/UploadJsonButton/UploadJsonButton";
+import FormButton from "../../components/FormButton/FormButton";
+import ProductForm from "../../components/ProductForm/ProductForm";
 
 function ProductsRead() {
   const [productsArray, setProductsArray] = useState([]);
@@ -32,11 +33,13 @@ function ProductsRead() {
       <div className='depaby_toolbar'>
         <HomeButton />
         <UploadJsonButton FetchClass={FetchProducts} />
-        <ProductFormButton
-          table_id={indexEditProduct === 'new' ? 'new' : productsArray[indexEditProduct].depaby_id}
-          product_data={productsArray[indexEditProduct] ? productsArray[indexEditProduct] : {}}
+        <FormButton
+          id_html_table={indexEditProduct === 'new' ? 'new' : productsArray[indexEditProduct].depaby_id}
+          data={productsArray[indexEditProduct] ? productsArray[indexEditProduct] : {}}
           signal={productFormSignal}
           destructor={() => {setIndexEditProduct('new')}}
+          FormTable={ProductForm}
+          FetchClass={FetchProducts}
         />
         <LoadTableButton read={products_read} />
         <SaveAsJsonButton array={productsArray} table_name="depaby_products" />

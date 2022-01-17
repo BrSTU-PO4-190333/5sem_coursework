@@ -1,7 +1,6 @@
 import { useState } from "react";
 
 import FetchDocuments from "./../../scripts/FetchDocuments";
-import DocumentFormButton from "../../components/documents/DocumentFormButton/DocumentFormButton";
 import HomeButton from "../../components/HomeButton/HomeButton";
 import styles from "./documents.module.css";
 import DeleteButton from "../../components/DeleteButton/DeleteButton";
@@ -10,6 +9,8 @@ import LoadTableButton from "../../components/LoadTableButton/LoadTableButton";
 import SaveAsJsonButton from "../../components/SaveAsJsonButton/SaveAsJsonButton";
 import SaveAsCsvButton from "../../components/SaveAsCsvButton/SaveAsCsvButton";
 import UploadJsonButton from "../../components/UploadJsonButton/UploadJsonButton";
+import FormButton from "../../components/FormButton/FormButton";
+import DocumentForm from "../../components/DocumentForm/DocumentForm";
 
 function Documents() {
   const [documentsArray, setDocumentsArray] = useState([]);
@@ -32,11 +33,13 @@ function Documents() {
       <div className='depaby_toolbar'>
         <HomeButton />
         <UploadJsonButton FetchClass={FetchDocuments} />
-        <DocumentFormButton
-          table_id={indexEditDocument === 'new' ? 'new' : documentsArray[indexEditDocument].depaby_id}
-          document_data={documentsArray[indexEditDocument] ? documentsArray[indexEditDocument] : {}}
+        <FormButton
+          id_html_table={indexEditDocument === 'new' ? 'new' : documentsArray[indexEditDocument].depaby_id}
+          data={documentsArray[indexEditDocument] ? documentsArray[indexEditDocument] : {}}
           signal={documentFormSignal}
           destructor={() => {setIndexEditDocument('new')}}
+          FormTable={DocumentForm}
+          FetchClass={FetchDocuments}
         />
         <LoadTableButton read={documents_read} />
         <SaveAsJsonButton array={documentsArray} table_name="depaby_documents" />
