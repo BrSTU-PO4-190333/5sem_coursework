@@ -1,7 +1,6 @@
 import { useState } from "react";
 
 import FetchProducts from "./../../scripts/FetchProducts";
-import ProductsDownloadCsvButton from "../../components/products/ProductsDownloadCsvButton/ProductsDownloadCsvButton";
 import ProductFormButton from "../../components/products/ProductFormButton/ProductFormButton";
 import ProductsLoadButton from "../../components/products/ProductsLoadButton/ProductsLoadButton";
 import ToolbarHomeButton from "../../components/Toolbar/ToolbarHomeButton/ToolbarHomeButton";
@@ -10,6 +9,7 @@ import DeleteButton from "../../components/DeleteButton/DeleteButton";
 import DeleteTableButton from "../../components/DeleteTableButton/DeleteTableButton";
 import LoadTableButton from "../../components/LoadTableButton/LoadTableButton";
 import SaveAsJsonButton from "../../components/SaveAsJsonButton/SaveAsJsonButton";
+import SaveAsCsvButton from "../../components/SaveAsCsvButton/SaveAsCsvButton";
 
 function ProductsRead() {
   const [productsArray, setProductsArray] = useState([]);
@@ -40,7 +40,7 @@ function ProductsRead() {
         />
         <LoadTableButton read={products_read} />
         <SaveAsJsonButton array={productsArray} table_name="depaby_products" />
-        <ProductsDownloadCsvButton products_array={productsArray} />
+        <SaveAsCsvButton array={productsArray} table_name="depaby_products" />
         <DeleteTableButton read={products_read} FetchClass={FetchProducts} />
       </div>
       <table className='depaby_table'>

@@ -1,7 +1,6 @@
 import { useState } from "react";
 
 import FetchDocuments from "./../../scripts/FetchDocuments";
-import DocumentsDownloadCsvButton from "../../components/documents/DocumentsDownloadCsvButton/DocumentsDownloadCsvButton";
 import DocumentFormButton from "../../components/documents/DocumentFormButton/DocumentFormButton";
 import DocumentsLoadButton from "../../components/documents/DocumentsLoadButton/DocumentsLoadButton";
 import ToolbarHomeButton from "../../components/Toolbar/ToolbarHomeButton/ToolbarHomeButton";
@@ -10,6 +9,7 @@ import DeleteButton from "../../components/DeleteButton/DeleteButton";
 import DeleteTableButton from "../../components/DeleteTableButton/DeleteTableButton";
 import LoadTableButton from "../../components/LoadTableButton/LoadTableButton";
 import SaveAsJsonButton from "../../components/SaveAsJsonButton/SaveAsJsonButton";
+import SaveAsCsvButton from "../../components/SaveAsCsvButton/SaveAsCsvButton";
 
 function Documents() {
   const [documentsArray, setDocumentsArray] = useState([]);
@@ -40,7 +40,7 @@ function Documents() {
         />
         <LoadTableButton read={documents_read} />
         <SaveAsJsonButton array={documentsArray} table_name="depaby_documents" />
-        <DocumentsDownloadCsvButton documents_array={documentsArray} />
+        <SaveAsCsvButton array={documentsArray} table_name="depaby_documents" />
         <DeleteTableButton read={documents_read} FetchClass={FetchDocuments} />
       </div>
       <table className='depaby_table'>

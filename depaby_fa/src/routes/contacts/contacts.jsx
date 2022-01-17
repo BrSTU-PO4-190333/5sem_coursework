@@ -1,7 +1,6 @@
 import { useState } from "react";
 
 import FetchContacts from "./../../scripts/FetchContacts";
-import ContactsDownloadCsvButton from "../../components/contacts/ContactsDownloadCsvButton/ContactsDownloadCsvButton";
 import ContactFormButton from "../../components/contacts/ContactFormButton/ContactFormButton";
 import ContactsLoadButton from "../../components/contacts/ContactsLoadButton/ContactsLoadButton";
 import ToolbarHomeButton from "../../components/Toolbar/ToolbarHomeButton/ToolbarHomeButton";
@@ -10,6 +9,7 @@ import DeleteButton from "../../components/DeleteButton/DeleteButton";
 import DeleteTableButton from "../../components/DeleteTableButton/DeleteTableButton";
 import LoadTableButton from "../../components/LoadTableButton/LoadTableButton";
 import SaveAsJsonButton from "../../components/SaveAsJsonButton/SaveAsJsonButton";
+import SaveAsCsvButton from "../../components/SaveAsCsvButton/SaveAsCsvButton";
 
 function Contacts() {
   const [contactsArray, setContactsArray] = useState([]);
@@ -40,7 +40,7 @@ function Contacts() {
         />
         <LoadTableButton read={contacts_read} />
         <SaveAsJsonButton array={contactsArray} table_name="depaby_contacts" />
-        <ContactsDownloadCsvButton contacts_array={contactsArray} />
+        <SaveAsCsvButton array={contactsArray} table_name="depaby_contacts" />
         <DeleteTableButton read={contacts_read} FetchClass={FetchContacts} />
       </div>
       <table className='depaby_table'>
