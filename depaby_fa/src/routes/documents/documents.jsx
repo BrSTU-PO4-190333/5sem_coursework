@@ -2,7 +2,6 @@ import { useState } from "react";
 
 import FetchDocuments from "./../../scripts/FetchDocuments";
 import DocumentFormButton from "../../components/documents/DocumentFormButton/DocumentFormButton";
-import DocumentsLoadButton from "../../components/documents/DocumentsLoadButton/DocumentsLoadButton";
 import ToolbarHomeButton from "../../components/Toolbar/ToolbarHomeButton/ToolbarHomeButton";
 import styles from "./documents.module.css";
 import DeleteButton from "../../components/DeleteButton/DeleteButton";
@@ -10,6 +9,7 @@ import DeleteTableButton from "../../components/DeleteTableButton/DeleteTableBut
 import LoadTableButton from "../../components/LoadTableButton/LoadTableButton";
 import SaveAsJsonButton from "../../components/SaveAsJsonButton/SaveAsJsonButton";
 import SaveAsCsvButton from "../../components/SaveAsCsvButton/SaveAsCsvButton";
+import UploadJsonButton from "../../components/UploadJsonButton/UploadJsonButton";
 
 function Documents() {
   const [documentsArray, setDocumentsArray] = useState([]);
@@ -31,7 +31,7 @@ function Documents() {
     <div className={styles.window}>
       <div className='depaby_toolbar'>
         <ToolbarHomeButton />
-        <DocumentsLoadButton />
+        <UploadJsonButton FetchClass={FetchDocuments} />
         <DocumentFormButton
           table_id={indexEditDocument === 'new' ? 'new' : documentsArray[indexEditDocument].depaby_id}
           document_data={documentsArray[indexEditDocument] ? documentsArray[indexEditDocument] : {}}

@@ -2,7 +2,6 @@ import { useState } from "react";
 
 import FetchContacts from "./../../scripts/FetchContacts";
 import ContactFormButton from "../../components/contacts/ContactFormButton/ContactFormButton";
-import ContactsLoadButton from "../../components/contacts/ContactsLoadButton/ContactsLoadButton";
 import ToolbarHomeButton from "../../components/Toolbar/ToolbarHomeButton/ToolbarHomeButton";
 import styles from "./contacts.module.css";
 import DeleteButton from "../../components/DeleteButton/DeleteButton";
@@ -10,6 +9,7 @@ import DeleteTableButton from "../../components/DeleteTableButton/DeleteTableBut
 import LoadTableButton from "../../components/LoadTableButton/LoadTableButton";
 import SaveAsJsonButton from "../../components/SaveAsJsonButton/SaveAsJsonButton";
 import SaveAsCsvButton from "../../components/SaveAsCsvButton/SaveAsCsvButton";
+import UploadJsonButton from "../../components/UploadJsonButton/UploadJsonButton";
 
 function Contacts() {
   const [contactsArray, setContactsArray] = useState([]);
@@ -31,7 +31,7 @@ function Contacts() {
     <div className={styles.window}>
       <div className='depaby_toolbar'>
         <ToolbarHomeButton />
-        <ContactsLoadButton />
+        <UploadJsonButton FetchClass={FetchContacts} />
         <ContactFormButton
           table_id={indexEditContact === 'new' ? 'new' : contactsArray[indexEditContact].depaby_id}
           contact_data={contactsArray[indexEditContact] ? contactsArray[indexEditContact] : {}}
