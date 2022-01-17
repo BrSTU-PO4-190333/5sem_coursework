@@ -1,12 +1,39 @@
-.b_products
+/* footer */
+.wrapper
+{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.content
+{
+  width: 100%;
+  flex: 1 0 auto;
+}
+
+.footer
+{
+  width: 100%;
+  flex: 0 0 auto;
+}
+/* end footer */
+
+
+/* block for cards */
+.products__block
 {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 }
+/* end block for cards */
 
-.products_img
+
+/* image */
+.ProductCardImg
 {
     height: 120px;
     display: flex;
@@ -14,8 +41,19 @@
     border: 1px solid rgba(0,0,0,0.1);
     overflow: hidden;
 }
+/* end image */
 
-.products__product
+
+/* model */
+.ProductCardModel
+{
+    font-weight: bolder;
+}
+/* end model */
+
+
+/* product card */
+.ProductCard
 {
     width: 300px;
     border: 1px solid lightgray;
@@ -24,30 +62,20 @@
     padding: 8px;
     border-radius: 4px;
 }
+/* end product card */
 
-.products__model
-{
-    font-weight: bolder;
-}
 
-.products__button_and_cost
-{
-    display: flex;
-    margin-top: 8px;
-}
-
-.products__button_and_cost > div
-{
-    width: 50%;
-}
-
-.products__cost
+/* cost byn */
+.ProductCardCostByn
 {
     text-align: right;
     font-weight: bolder;
 }
+/* end cost byn */
 
-.products__more_button button
+
+/* info button */
+.ProductCardInfoButton button
 {
     display: block;
     text-align: center;
@@ -59,56 +87,23 @@
     padding: 8px;
 }
 
-.products__more_button button:hover
+.ProductCardInfoButton button:hover
 {
     background-color: transparent;
     color: #06c;
 }
+/* end info button */
 
-.gpi_products_info__b_counter
-{
-    width: 100%;
-    display: flex;
-    padding: 0 8px;
-}
-
-.gpi_products_info__b_counter>input
-{
-    width: 100%;
-    height: 100%;
-    margin: 6px;
-}
-
-.gpi_products_info__b_counter>button
-{
-    width: 48px;
-    margin: 0 6px;
-}
 
 /* product info */
-
-.product_info
+.ProductInfo
 {
     position: fixed;
-    top: 0;
-    left: 0;
+    background-color: white;
     width: 100%;
     height: 100%;
-    background-color: white;
+    left: 0;
+    top: 0;
     overflow-y: auto;
 }
-
-.product_info__close_button
-{
-    width: 64px;
-    height: 64px;
-    background-color: #06c;
-    color: white;
-    border: 1px solid #06c;
-}
-
-.product_info__close_button:hover
-{
-    background-color: transparent;
-    color: #06c;
-}
+/* end products info */
