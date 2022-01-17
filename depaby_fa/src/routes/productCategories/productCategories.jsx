@@ -53,7 +53,7 @@ function ProductCategories() {
                         <th>id</th>
                         <th>caption</th>
                         <th>product_category</th>
-                        <th>img_href</th>
+                        <th colSpan={2}>img_href</th>
                         <th>edit</th>
                         <th>delete</th>
                     </tr>
@@ -65,6 +65,7 @@ function ProductCategories() {
                             <td>{value.depaby_id}</td>
                             <td>{value.depaby_caption}</td>
                             <td>{value.depaby_product_category}</td>
+                            <td><img src={value.depaby_img_href} alt="" width={64} /></td>
                             <td>{value.depaby_img_href}</td>
                             <td className='depaby_editButton'>
                                 <button onClick={event => {
