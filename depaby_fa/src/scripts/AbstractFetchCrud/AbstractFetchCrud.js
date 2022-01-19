@@ -54,6 +54,11 @@ class AbstractFetchCrud {
             });
             console.log(response);
 
+            if (response.data.code === 202) {
+                window.location.href="/";
+                return false;
+            }
+
             if (response.data.code !== 200) {
                 return false;
             }
@@ -79,6 +84,15 @@ class AbstractFetchCrud {
             const response = await axios.post(url, data);
             console.log(response);
 
+            if (response.data.code === 202) {
+                window.location.href="/";
+                return false;
+            }
+
+            if (response.data.code !== 200) {
+                return false;
+            }
+
             return true;
         }
         catch(err) {
@@ -100,6 +114,15 @@ class AbstractFetchCrud {
 
             const response = await axios.put(url, data);
             console.log(response);
+
+            if (response.data.code === 202) {
+                window.location.href="/";
+                return false;
+            }
+
+            if (response.data.code !== 200) {
+                return false;
+            }
 
             return true;
         }

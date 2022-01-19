@@ -1,0 +1,43 @@
+.wrapper
+{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login
+{
+    background-color: #fff;
+    box-shadow: 0 0 8px lightgrey;
+    padding: 16px;
+    border-radius: 8px;
+    width: 300px;
+}
+
+.login input
+{
+    width: calc(100% - 2*1px - 2*8px - 2*8px);
+    border: 1px solid var(--depaby_color);
+    padding: 8px;
+    margin: 8px;
+    border-radius: 8px;
+}
+
+.login button
+{
+    width: calc(100% - 2*1px - 2*8px);
+    border: 1px solid var(--depaby_color);
+    padding: 8px;
+    margin: 8px;
+    border-radius: 8px;
+    background-color: var(--depaby_color);
+    color: white;
+}
+
+.login button:hover
+{
+    color: var(--depaby_color);
+    background-color: white;
+}

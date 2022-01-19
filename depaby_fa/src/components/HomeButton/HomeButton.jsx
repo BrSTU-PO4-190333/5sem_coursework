@@ -5,7 +5,7 @@ import { faHome } from '@fortawesome/free-solid-svg-icons';
 function HomeButton() {
     return (
         <button title="Вернуться в главное меню">
-            <Link to="/">
+            <Link to="/menu">
                 <FontAwesomeIcon icon={faHome} />
             </Link>
         </button>

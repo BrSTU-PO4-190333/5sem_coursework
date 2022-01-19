@@ -19,7 +19,6 @@ class FetchAuth {
             console.log(response);
 
             if (response.data.code === 202) {
-                alert("Не найден в БД логин и пароль");
                 return false;
             }
            
