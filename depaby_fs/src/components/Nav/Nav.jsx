@@ -6,41 +6,6 @@ import { useState } from 'react';
 
 import styles from "./Nav.module.css";
 
-const pages = [
-    {
-        caption: 'Главная',
-        href: '/',
-    },
-    {
-        caption: 'О нас',
-        href: '/about',
-    },
-    {
-        caption: 'Продукты',
-        href: '/products',
-    },
-    {
-        caption: 'Прайсы',
-        href: '/prices',
-    },
-    {
-        caption: 'Каталоги',
-        href: '/catalogs',
-    },
-    {
-        caption: 'Сертификаты',
-        href: '/certificates',
-    },
-    {
-        caption: 'Контакты',
-        href: '/contacts',
-    },
-    {
-        caption: 'Корзина',
-        href: '/basket',
-    },
-];
-
 function Nav(props) {
     const [navIsOpen, setNavIsOpen] = useState(false);
     return (
@@ -70,8 +35,8 @@ function Nav(props) {
                 >
                     <ul>
                         {
-                            pages.map(function(value, index) {
-                                return (
+                            props.pages.map(function (value, index) {
+                                return value.onMenu ? (
                                     <li key={index}>
                                         <Link
                                             onClick={event => setNavIsOpen(!navIsOpen)}
@@ -80,7 +45,7 @@ function Nav(props) {
                                             {value.caption}
                                         </Link>
                                     </li>
-                                );
+                                ) : <></>;
                             })
                         }
                     </ul>
