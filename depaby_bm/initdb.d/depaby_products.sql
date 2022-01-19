@@ -10,4 +10,4 @@ CREATE TABLE `depaby_products` (
   `depaby_company` VARCHAR(64) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL ,
   `depaby_category` VARCHAR(64) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL ,
   UNIQUE (`depaby_id`)
-) ENGINE = MyISAM;
+) ENGINE = MyISAM CHARSET=utf8 COLLATE utf8_general_ci;
