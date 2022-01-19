@@ -10,7 +10,7 @@ import BreadCrumbs from '../../BreadCrumbs/BreadCrumbs';
 function Products() {
     const { productCategory } = useParams();
     const [categoryObject, setCategoryObject] = useState({});
-    const [productsArray, setProductsArray] = useState([{}]);
+    const [productsArray, setProductsArray] = useState([]);
     const [isOpenProductDataWindow, setIsOpenProductDataWindow] = useState(false);
     const [currentProductIndex, setCurrentProductIndex] = useState(0);
 
@@ -25,12 +25,15 @@ function Products() {
             category: productCategory,
         });
 
+        if (response.length === 0) {
+            setCategoryObject({});
+            return;
+        }
+
         if (response[0]) {
             setCategoryObject(response[0]);
             return;
         }
-
-        setCategoryObject({});
     }
 
     async function readProducts() {
@@ -40,10 +43,6 @@ function Products() {
         });
 
         setProductsArray(response);
-
-        if (response.length === 0) {
-            alert("Таблица товаров пуста");
-        }
     }
 
     function openWindow(id = '') {
@@ -136,11 +135,11 @@ function ProductInfo(props) {
     const [count, setCount] = useState(get());
 
     useEffect(function () {
-        setCount(ProductBasket.getCount(props.data.depaby_model));
+        setCount(ProductBasket.getCount(props.data?.depaby_model));
     }, [props]);
 
     function get() {
-        return ProductBasket.getCount(props.data.depaby_model);
+        return ProductBasket.getCount(props.data?.depaby_model);
     }
 
     function plus() {
@@ -180,35 +179,35 @@ function ProductInfo(props) {
                 <tbody>
                     <tr>
                         <td>Модель</td>
-                        <td>{props.data.depaby_model}</td>
+                        <td>{props.data?.depaby_model}</td>
                     </tr>
                     <tr>
                         <td>Наименование</td>
-                        <td>{props.data.depaby_name}</td>
+                        <td>{props.data?.depaby_name}</td>
                     </tr>
                     <tr>
                         <td>Стоимость</td>
-                        <td>{props.data.depaby_cost_byn}</td>
+                        <td>{props.data?.depaby_cost_byn}</td>
                     </tr>
                     <tr>
                         <td>В коробке</td>
-                        <td>{props.data.depaby_on_box}</td>
+                        <td>{props.data?.depaby_on_box}</td>
                     </tr>
                     <tr>
                         <td>Вес</td>
-                        <td>{props.data.depaby_kg}</td>
+                        <td>{props.data?.depaby_kg}</td>
                     </tr>
                     <tr>
                         <td>Размер</td>
-                        <td>{props.data.depaby_m3}</td>
+                        <td>{props.data?.depaby_m3}</td>
                     </tr>
                     <tr>
                         <td>Компания</td>
-                        <td>{props.data.depaby_company}</td>
+                        <td>{props.data?.depaby_company}</td>
                     </tr>
                     <tr>
                         <td>Категория</td>
-                        <td>{props.data.depaby_category}</td>
+                        <td>{props.data?.depaby_category}</td>
                     </tr>
                 </tbody>
             </table>

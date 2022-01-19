@@ -23,7 +23,7 @@ class AbstractFetchRead {
         }
         catch(err) {
             alert("Ошибка с сервером API")
-            return undefined;
+            return [];
         }
     }
 }

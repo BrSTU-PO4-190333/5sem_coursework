@@ -5,7 +5,7 @@ import DocumentCard from "../../DocumentCard/DocumentCard";
 import BreadCrumbs from "../../BreadCrumbs/BreadCrumbs";
 
 function Catalogs() {
-    const [documentsArray, setDocumentsArray] = useState([{}]);
+    const [documentsArray, setDocumentsArray] = useState([]);
 
     useEffect(() => {
         documents_read();

@@ -15,11 +15,6 @@ function ProductCategories() {
     async function read() {
         const class_istance = new FetchReadProductCategories();
         const response = await class_istance.read();
-
-        if (response.length === 0) {
-            alert("Нет категорий в таблице категорий");
-        }
-
         setArray(response);
     }
 
