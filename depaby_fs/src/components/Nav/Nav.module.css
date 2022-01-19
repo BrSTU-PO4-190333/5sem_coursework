@@ -1,75 +1,136 @@
-.Header
+.menu
 {
-  width: 100%;
-  border-bottom: 1px solid lightgray;
+    border-bottom: 1px solid lightgrey;
 }
 
-.Nav_header
+.menu__wrapper
 {
-  width: 100%;
-  height: 64px;
-  display: flex;
-  justify-content: space-between;
+    display: flex;
+    flex-wrap: wrap;
 }
 
-.Nav_header__bar
+/* кнопки в режиме mobile */
+.menu__empty_block,
+.menu__bar_block
 {
-  width: 64px;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #06c;
+    width: var(--menu_height);
+    height: var(--menu_height);
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--depaby_color);
 }
 
-.Nav_header__bar:hover
+.menu__bar_block:hover
 {
-  background-color: #06c;
-  color: white
+   background-color: var(--depaby_color);
+   color: white;
+}
+/* end кнопки в режиме mobile */
+
+/* logo */
+.menu__link_logo
+{
+    float: left;
+    width: calc(100% - 2 * var(--menu_height));
+    height: var(--menu_height);
+    display: flex;
+    justify-content: center;
 }
 
-.Nav_header__logo
+.menu__link_logo img
 {
-  padding: 8px;
-  height: calc(100% - 2 * 8px);
+    padding: 8px;
 }
 
-.Nav_header__logo a,
-.Nav_header__logo img
+/* end logo */
+
+/* ul */
+.menu__ul_block
 {
-  display: block;
-  height: 100%;
+    width: 100%;
+    border-top: 1px solid lightgrey;
 }
 
-/* menu */
-
-.Nav
+.menu__ul_block ul
 {
-  border-top: 1px solid lightgray;
+    margin: 0;
+    padding: 0;
 }
 
-.Nav ul
+.menu__ul_block ul li
 {
-  margin: 0;
-  padding: 0;
+    list-style-type: none;
 }
 
-.Nav li
+.menu__ul_block ul li a
 {
-  list-style-type: none;
+    text-decoration: none;
+    text-align: center;
+    color: var(--depaby_color);
+    text-align: center;
+    display: block;
+    padding: 8px;
 }
 
-.Nav li a
+.menu__ul_block ul li a:hover
 {
-  display: block;
-  padding: 8px;
-  text-decoration: none;
-  text-align: center;
-  color: #06c;
+    background-color: var(--depaby_color);
+    color: white;
 }
+/* end ul */
 
-.Nav li a:hover
+@media (min-width: 1024px)
 {
-  background-color: #06c;
-  color: white;
+    .menu__wrapper
+    {
+        max-width: 1024px;
+        margin: 0 auto;
+    }
+
+    /* кнопки в режиме mobile */
+    .menu__empty_block,
+    .menu__bar_block
+    {
+        display: none;
+    }
+    /* end кнопки в режиме mobile */
+
+    .menu__ul_block
+    {
+        display: block!important;
+    }
+
+    /* logo */
+    .menu__link_logo
+    {
+        width: auto;
+    }
+    /* end logo */
+
+    .menu__ul_block
+    {
+        width: auto;
+        border: none;
+    }
+
+    .menu__ul_block ul
+    {
+        height: 100%;
+    }
+
+    .menu__ul_block li
+    {
+        display: inline-block;
+        height: 100%;
+    }
+
+    .menu__ul_block ul li a
+    {
+        height: 100%;
+        padding: 0 8px;
+        display: flex;
+        align-items: center;
+    }
 }

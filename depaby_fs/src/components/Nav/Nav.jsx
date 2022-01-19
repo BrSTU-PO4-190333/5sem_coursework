@@ -3,46 +3,91 @@ import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
+
 import styles from "./Nav.module.css";
 
+const pages = [
+    {
+        caption: 'Главная',
+        href: '/',
+    },
+    {
+        caption: 'О нас',
+        href: '/about',
+    },
+    {
+        caption: 'Продукты',
+        href: '/products',
+    },
+    {
+        caption: 'Прайсы',
+        href: '/prices',
+    },
+    {
+        caption: 'Каталоги',
+        href: '/catalogs',
+    },
+    {
+        caption: 'Сертификаты',
+        href: '/certificates',
+    },
+    {
+        caption: 'Контакты',
+        href: '/contacts',
+    },
+    {
+        caption: 'Корзина',
+        href: '/basket',
+    },
+];
+
 function Nav(props) {
-  const [navIsOpen, setNavIsOpen] = useState(false);
-  return (
-    <header className={styles.Header}>
-      <div className='container'>
-        <div className={styles.Nav_header}>
-          <div className={styles.Nav_header__bar}>
-            {/* <FontAwesomeIcon icon={faBars} /> */}
-          </div>
-          <div className={styles.Nav_header__logo}>
-            <Link to="/">
-              <img src={logo} alt="" />
-            </Link>
-          </div>
-          <div className={styles.Nav_header__bar} onClick={event => setNavIsOpen(!navIsOpen)}>
-            <FontAwesomeIcon icon={faBars} />
-          </div>
-        </div>
-      </div>
-      <nav
-        className={styles.Nav}
-        style={{
-          display: navIsOpen ? "block" : "none",
-        }}
-      >
-        <ul>
-          <li><Link onClick={event => setNavIsOpen(!navIsOpen)} to="/">Главная</Link></li>
-          <li><Link onClick={event => setNavIsOpen(!navIsOpen)} to="/about">О нас</Link></li>
-          <li><Link onClick={event => setNavIsOpen(!navIsOpen)} to="/products">Продукты</Link></li>
-          <li><Link onClick={event => setNavIsOpen(!navIsOpen)} to="/prices">Прайсы</Link></li>
-          <li><Link onClick={event => setNavIsOpen(!navIsOpen)} to="/catalogs">Каталоги</Link></li>
-          <li><Link onClick={event => setNavIsOpen(!navIsOpen)} to="/certificates">Сертификаты</Link></li>
-          <li><Link onClick={event => setNavIsOpen(!navIsOpen)} to="/contacts">Контакты</Link></li>
-          <li><Link onClick={event => setNavIsOpen(!navIsOpen)} to="/basket">Корзина</Link></li>
-        </ul>
-      </nav>
-    </header>
-  );
+    const [navIsOpen, setNavIsOpen] = useState(false);
+    return (
+        <header className={styles.menu}>
+            <div className={styles.menu__wrapper}>
+                <div className={styles.menu__empty_block}>
+                    {/* <FontAwesomeIcon icon={faBars} /> */}
+                </div>
+                <Link
+                    className={styles.menu__link_logo}
+                    to="/"
+                    onClick={event => setNavIsOpen(!navIsOpen)}
+                >
+                    <img src={logo} alt="" />
+                </Link>
+                <div
+                    className={styles.menu__bar_block}
+                    onClick={event => setNavIsOpen(!navIsOpen)}
+                >
+                    <FontAwesomeIcon icon={faBars} />
+                </div>
+                <nav
+                    className={styles.menu__ul_block}
+                    style={{
+                        display: navIsOpen ? "block" : "none",
+                    }}
+                >
+                    <ul>
+                        {
+                            pages.map(function(value, index) {
+                                return (
+                                    <li key={index}>
+                                        <Link
+                                            onClick={event => setNavIsOpen(!navIsOpen)}
+                                            to={value.href}
+                                        >
+                                            {value.caption}
+                                        </Link>
+                                    </li>
+                                );
+                            })
+                        }
+                    </ul>
+                </nav>
+            </div>
+        </header>
+    );
 }
 
 export default Nav;
