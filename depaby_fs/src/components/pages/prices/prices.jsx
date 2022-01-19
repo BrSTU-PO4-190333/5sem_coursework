@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
+
 import FetchReadDocuments from "../../../scripts/AbstractFetchRead/FetchReadDocuments";
 import DocumentCard from "../../DocumentCard/DocumentCard";
+import BreadCrumbs from "../../BreadCrumbs/BreadCrumbs";
 
 function Prices() {
     const [documentsArray, setDocumentsArray] = useState([{}]);
@@ -19,21 +21,24 @@ function Prices() {
     }
 
     return (
-        <div className="container">
-            <h1>Прайсы</h1>
-            <div className="depaby_documents">
-                {
-                    documentsArray.map(function (value, index) {
-                        return (
-                            <DocumentCard
-                                key={index}
-                                data={value}
-                            />
-                        )
-                    }) 
-                }
+        <>
+            <BreadCrumbs />
+            <div className="container">
+                <h1>Прайсы</h1>
+                <div className="depaby_documents">
+                    {
+                        documentsArray.map(function (value, index) {
+                            return (
+                                <DocumentCard
+                                    key={index}
+                                    data={value}
+                                />
+                            )
+                        })
+                    }
+                </div>
             </div>
-        </div>
+        </>
     );
 }
 

@@ -5,10 +5,11 @@ import FetchReadProducts from "./../../../scripts/AbstractFetchRead/FetchReadPro
 import FetchReadProductCategories from "../../../scripts/AbstractFetchRead/FetchReadProductCategories";
 import styles from "./products.module.css";
 import ProductBasket from '../../../scripts/ProductBasket';
+import BreadCrumbs from '../../BreadCrumbs/BreadCrumbs';
 
 function Products() {
     const { productCategory } = useParams();
-    const [ categoryObject, setCategoryObject ] = useState({});
+    const [categoryObject, setCategoryObject] = useState({});
     const [productsArray, setProductsArray] = useState([{}]);
     const [isOpenProductDataWindow, setIsOpenProductDataWindow] = useState(false);
     const [currentProductIndex, setCurrentProductIndex] = useState(0);
@@ -28,7 +29,7 @@ function Products() {
             setCategoryObject(response[0]);
             return;
         }
-       
+
         setCategoryObject({});
     }
 
@@ -37,7 +38,7 @@ function Products() {
         const response = await class_istance.read({
             category: productCategory,
         });
-     
+
         setProductsArray(response);
 
         if (response.length === 0) {
@@ -47,7 +48,7 @@ function Products() {
 
     function openWindow(id = '') {
         setIsOpenProductDataWindow(!isOpenProductDataWindow);
-        
+
         if (id === '') {
             return;
         }
@@ -56,33 +57,36 @@ function Products() {
     }
 
     return (
-        <div className='container'>
-            <ProductInfo
-                isOpenProductDataWindow={isOpenProductDataWindow}
-                openWindow={openWindow}
-                data={productsArray[currentProductIndex]}
-            />
-            <h1>{categoryObject.depaby_caption}</h1>
-            <div className={styles.products__block}>
-                {
-                    productsArray.map(function (value, index) {
-                        return (
-                            <div key={index} className={`${styles.ProductCard} ${styles.wrapper}`}>
-                                <div className={styles.content}>
-                                    <ProductCardImg data={value} />
-                                    <ProductCardModel data={value} />
-                                    <ProductCardName data={value} />
+        <>
+            <BreadCrumbs />
+            <div className='container'>
+                <ProductInfo
+                    isOpenProductDataWindow={isOpenProductDataWindow}
+                    openWindow={openWindow}
+                    data={productsArray[currentProductIndex]}
+                />
+                <h1>{categoryObject.depaby_caption}</h1>
+                <div className={styles.products__block}>
+                    {
+                        productsArray.map(function (value, index) {
+                            return (
+                                <div key={index} className={`${styles.ProductCard} ${styles.wrapper}`}>
+                                    <div className={styles.content}>
+                                        <ProductCardImg data={value} />
+                                        <ProductCardModel data={value} />
+                                        <ProductCardName data={value} />
+                                    </div>
+                                    <div className={styles.footer}>
+                                        <ProductCardCostByn data={value} />
+                                        <ProductCardInfoButton openWindow={event => openWindow(index)} />
+                                    </div>
                                 </div>
-                                <div className={styles.footer}>
-                                    <ProductCardCostByn data={value} />
-                                    <ProductCardInfoButton openWindow={event => openWindow(index)} />
-                                </div>
-                            </div>
-                        );
-                    })
-                }
+                            );
+                        })
+                    }
+                </div>
             </div>
-        </div>
+        </>
     );
 }
 
@@ -150,7 +154,7 @@ function ProductInfo(props) {
     }
 
     return (
-        <div style={{display: props.isOpenProductDataWindow ? 'block' : 'none'}} className={styles.ProductInfo}>
+        <div style={{ display: props.isOpenProductDataWindow ? 'block' : 'none' }} className={styles.ProductInfo}>
             <div>
                 <button onClick={event => props.openWindow()}>x</button>
             </div>
@@ -209,7 +213,7 @@ function ProductInfo(props) {
                 </tbody>
             </table>
         </div>
-    )    
+    )
 }
 
 export default Products;
