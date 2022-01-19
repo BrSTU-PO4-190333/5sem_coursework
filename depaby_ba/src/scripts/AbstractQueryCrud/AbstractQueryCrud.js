@@ -8,23 +8,21 @@ class AbstractQueryCrud {
         this.password = password;
         this.pObjectClass = AbstractObject;
         this.table = "depaby_someTable";
-    }
-
-    async connect() {
-        return await mysql_promise.createConnection({
+        this.database_settings = {
             host: process.env.depaby_mysql_host,
             user: process.env.depaby_mysql_username,
             password: process.env.depaby_mysql_password,
             database: process.env.depaby_mysql_database,
-        })
+        };
     }
 
     async auth() {
         try {
-            const connect = await this.connect();
+            const connect = await mysql_promise.createConnection(this.database_settings);
             const sql = `SELECT * FROM \`depaby_admins\` WHERE \`depaby_login\` = '${this.login}' AND \`depaby_password\` = '${this.password}';`;
             console.log(sql);
             const [rows] = await connect.execute(sql);
+            await connect.end();
 
             // Если записи не найдено, то неверный логин или пароль
             if (rows.length == 0) {
@@ -84,8 +82,9 @@ class AbstractQueryCrud {
             console.log(sql);
 
             // Выполняю SQL запрос
-            const connect = await this.connect();
+            const connect = await mysql_promise.createConnection(this.database_settings);
             const [rows, fields] = await connect.execute(sql);
+            await connect.end();
             return {
                 "code": 200,
                 "message": "Added data in database with success",
@@ -117,8 +116,9 @@ class AbstractQueryCrud {
             console.log(sql);
 
             // Выполняю SQL запрос
-            const connect = await this.connect();
+            const connect = await mysql_promise.createConnection(this.database_settings);
             const [rows] = await connect.execute(sql);
+            await connect.end();
             return {
                 code: 200,
                 message: "Success get data",
@@ -170,8 +170,9 @@ class AbstractQueryCrud {
             console.log(sql);
 
             // Выполняю SQL запрос
-            const connect = await this.connect();
+            const connect = await mysql_promise.createConnection(this.database_settings);
             const [rows, fields] = await connect.execute(sql);
+            await connect.end();
             return {
                 code: 200,
                 message: `Data updated on id = ${id}`,
@@ -204,8 +205,9 @@ class AbstractQueryCrud {
             console.log(sql);
 
             // Выполняю SQL запрос
-            const connect = await this.connect();
+            const connect = await mysql_promise.createConnection(this.database_settings);
             const [rows, fields] = await connect.execute(sql);
+            await connect.end();
             return {
                 "code": 200,
                 "message": "Deleted with success",
