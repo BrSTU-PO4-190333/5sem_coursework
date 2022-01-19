@@ -35,6 +35,11 @@ function Nav(props) {
                     }}
                 >
                     <ul>
+                        <li>
+                            <Link onClick={event => setNavIsOpen(!navIsOpen)} to="/">
+                                Главная
+                            </Link>
+                        </li>
                         {
                             props.pages.map(function (value, index) {
                                 return value.onMenu ? (
