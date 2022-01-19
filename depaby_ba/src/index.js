@@ -85,8 +85,7 @@ app.listen(process.env.depaby_nodejs_port);
 console.log(`Open ${process.env.depaby_nodejs_protocol}//${process.env.depaby_nodejs_host}:${process.env.depaby_nodejs_port}/`);
 
 app.get('/', (req, res) => {
-  const depaby_ba_url = `${process.env.depaby_nodejs_protocol}//${process.env.depaby_nodejs_host}:${process.env.depaby_nodejs_port}/docs`;
-  res.send(`Read documentation: <a href="${depaby_ba_url}">${depaby_ba_url}</a>`);
+  res.send(`Read documentation: <a href="/docs">/docs</a>`);
 })
 
 // auth
