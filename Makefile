@@ -19,20 +19,24 @@ depaby_cmc:
 	cd depaby_bm & copy .env.txt .env
 	cd depaby_fa & copy .env.txt .env
 	cd depaby_fs & copy .env.txt .env
+	cd depaby_fa & copy .env.production.txt .env.production
+	cd depaby_fs & copy .env.production.txt .env.production
 
 depaby_bmc:
 	cd depaby_ba; cp .env.txt .env
 	cd depaby_bm; cp .env.txt .env
 	cd depaby_fa; cp .env.txt .env
 	cd depaby_fs; cp .env.txt .env
+	cd depaby_fa; cp .env.production.txt .env.production
+	cd depaby_fs; cp .env.production.txt .env.production
 
 # = = = = = = = = backend api
 
 depaby_cba:
-	cd depaby_ba & npm run start
+	cd depaby_ba & npm run dev
 
 depaby_bba:
-	cd depaby_ba; npm run start
+	cd depaby_ba; npm run dev
 
 # = = = = = = = = backend mysql
 
