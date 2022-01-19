@@ -1,9 +1,10 @@
-import logo from "./logo.png";
+import { useState } from 'react';
+import React from "react";
+import { Link } from 'react-router-dom';
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Link } from 'react-router-dom';
-import { useState } from 'react';
 
+import logo from "./logo.png";
 import styles from "./Nav.module.css";
 
 function Nav(props) {
@@ -45,7 +46,9 @@ function Nav(props) {
                                             {value.caption}
                                         </Link>
                                     </li>
-                                ) : <></>;
+                                ) : (
+                                    <React.Fragment key={index}></React.Fragment>
+                                );
                             })
                         }
                     </ul>
