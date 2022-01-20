@@ -39,6 +39,8 @@ body
   --menu_height: 64px;
   --bootstrap_danger: #dc3545;
   --bootstrap_success: #198754;
+  --botstrap_dark: #212529;
+  --bootstrap_warning: #ffc107;
 }
 
 h1,h2,h3,h4,h5,h6

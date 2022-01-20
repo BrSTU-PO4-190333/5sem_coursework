@@ -1,0 +1,73 @@
+.table
+{
+    width: 100%;
+    overflow-x: auto;
+}
+
+.table table
+{
+    width: 100%;
+}
+
+.table button
+{
+    background-color: var(--depaby_color);
+    color: white;
+    border: 1px solid var(--depaby_color);
+    padding: 4px 16px;
+}
+
+.table button:hover
+{
+    background-color: transparent;
+    color: var(--depaby_color);
+}
+
+.table .plus
+{
+    background-color: var(--bootstrap_success);
+    border: 1px solid var(--bootstrap_success);
+}
+
+.table .plus:hover
+{
+    background-color: transparent;
+    color: var(--bootstrap_success);
+}
+
+.table .minus
+{
+    background-color: var(--bootstrap_danger);
+    border: 1px solid var(--bootstrap_danger);
+}
+
+.table .minus:hover
+{
+    background-color: transparent;
+    color: var(--bootstrap_danger);
+}
+
+.table .minus
+{
+    background-color: var(--bootstrap_danger);
+    border: 1px solid var(--bootstrap_danger);
+}
+
+.table .minus:hover
+{
+    background-color: transparent;
+    color: var(--bootstrap_danger);
+}
+
+.table .delete
+{
+    background-color: var(--bootstrap_warning);
+    border: 1px solid var(--bootstrap_warning);
+    color: black;
+}
+
+.table .delete:hover
+{
+    background-color: transparent;
+    color: var(--bootstrap_warning);
+}

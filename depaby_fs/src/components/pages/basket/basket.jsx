@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 
 import ProductBasket from "../../../scripts/ProductBasket";
 import BreadCrumbs from "../../BreadCrumbs/BreadCrumbs";
+import styles from "./basket.module.css";
 
 function Basket() {
     const [basket, setBasket] = useState({});
@@ -33,35 +34,43 @@ function Basket() {
         <>
             <BreadCrumbs />
             <div className="container">
-                <h1>Корзина продуктов</h1>
-                <table className="table">
-                    <thead>
-                        <tr>
-                            <th></th>
-                            <th>Модель</th>
-                            <th>Количество</th>
-                            <th>Отнять</th>
-                            <th>Добавить</th>
-                            <th>Убрать</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {
-                            Object.keys(basket).map(
-                                (model, index) => (
-                                    <tr key={index}>
-                                        <th>{index + 1}</th>
-                                        <td>{model}</td>
-                                        <td>{basket[model]}</td>
-                                        <td><button onClick={event => basket_minus(model)}>-</button></td>
-                                        <td><button onClick={event => basket_plus(model)}>+</button></td>
-                                        <td><button onClick={event => basket_delete(model)}>delete</button></td>
-                                    </tr>
+                <h1>Список желаемых товаров</h1>
+                <div className={styles.table}>
+                    <table>
+                        <tbody>
+                            {
+                                Object.keys(basket).map(
+                                    (model, index) => (
+                                        <tr key={index}>
+                                            <th>{index + 1}</th>
+                                            <td>{model}</td>
+                                            <td>{basket[model]} шт.</td>
+                                            <td>
+                                                <button
+                                                    onClick={event => basket_minus(model)}
+                                                    className={styles.minus}
+                                                >-</button>
+                                            </td>
+                                            <td>
+                                                <button
+                                                    onClick={event => basket_plus(model)}
+                                                    className={styles.plus}
+                                                >+</button>
+                                            </td>
+                                            <td>
+                                                <button
+                                                    onClick={event => basket_delete(model)}
+                                                    className={styles.delete}
+                                                >УДАЛИТЬ</button>
+                                            </td>
+                                        </tr>
+                                    )
                                 )
-                            )
-                        }
-                    </tbody>
-                </table>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+
             </div>
         </>
     );
