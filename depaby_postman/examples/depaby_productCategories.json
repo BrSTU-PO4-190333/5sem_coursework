@@ -2,66 +2,71 @@
     {
         "depaby_caption": "DE-PA Electric Аксессуары",
         "depaby_product_category": "accessories",
-        "depaby_img_href": "https://raw.githubusercontent.com/ooodepa/ooodepa-products/gh-pages/de-pa-electric/accessories/10012-1.png"
+        "depaby_img_href": "https://ooodepa.github.io/ooodepa_imgs/products/de-pa-electric/accessories/10012-1.png"
     },
     {
         "depaby_caption": "DE-PA Electric Английская серия ",
         "depaby_product_category": "british-system-series",
-        "depaby_img_href": "https://raw.githubusercontent.com/ooodepa/ooodepa-products/gh-pages/de-pa-electric/british-system-series/41400.png"
+        "depaby_img_href": "https://ooodepa.github.io/ooodepa_imgs/products/de-pa-electric/british-system-series/41400.png"
     },
     {
         "depaby_caption": "DE-PA Electric Кабельные каналы",
         "depaby_product_category": "cable-trunking",
-        "depaby_img_href": "https://raw.githubusercontent.com/ooodepa/ooodepa-products/gh-pages/de-pa-electric/cable-trunking/01201210.png"
+        "depaby_img_href": "https://ooodepa.github.io/ooodepa_imgs/products/de-pa-electric/cable-trunking/01201210.png"
     },
     {
         "depaby_caption": "DE-PA Electric Коробки под автомать",
         "depaby_product_category": "fuse-boxes",
-        "depaby_img_href": "https://raw.githubusercontent.com/ooodepa/ooodepa-products/gh-pages/de-pa-electric/fuse-boxes/91136.png"
+        "depaby_img_href": "https://ooodepa.github.io/ooodepa_imgs/products/de-pa-electric/fuse-boxes/91136.png"
     },
     {
         "depaby_caption": "DE-PA Electric Глоп (потолочные светильники)",
         "depaby_product_category": "glop",
-        "depaby_img_href": "https://raw.githubusercontent.com/ooodepa/ooodepa-products/gh-pages/de-pa-electric/glop/95015-1-3.jpg"
+        "depaby_img_href": "https://ooodepa.github.io/ooodepa_imgs/products/de-pa-electric/glop/95015-1-3.jpg"
     },
     {
         "depaby_caption": "DE-PA Electric Разветлители. Тройники ",
         "depaby_product_category": "group-socket-and-plug",
-        "depaby_img_href": "https://raw.githubusercontent.com/ooodepa/ooodepa-products/gh-pages/de-pa-electric/group-socket-and-plug/10009-white.png"
+        "depaby_img_href": "https://ooodepa.github.io/ooodepa_imgs/products/de-pa-electric/group-socket-and-plug/10009-white.png"
     },
     {
         "depaby_caption": "DE-PA Electric IP44 вагозащищенных накладных изделий ",
         "depaby_product_category": "ip44-moisture-proof-series",
-        "depaby_img_href": "https://raw.githubusercontent.com/ooodepa/ooodepa-products/gh-pages/de-pa-electric/ip44-moisture-proof-series/80101.png"
+        "depaby_img_href": "https://ooodepa.github.io/ooodepa_imgs/products/de-pa-electric/ip44-moisture-proof-series/80101.png"
     },
     {
         "depaby_caption": "DE-PA Electric Серия Жемчужина",
         "depaby_product_category": "pearl-series",
-        "depaby_img_href": "https://raw.githubusercontent.com/ooodepa/ooodepa-products/gh-pages/de-pa-electric/pearl-series/61100.png"
+        "depaby_img_href": "https://ooodepa.github.io/ooodepa_imgs/products/de-pa-electric/pearl-series/61100.png"
     },
     {
         "depaby_caption": "DE-PA Electric Потолочные светильники",
         "depaby_product_category": "plastic-lighting-fixtures",
-        "depaby_img_href": "https://raw.githubusercontent.com/ooodepa/ooodepa-products/gh-pages/de-pa-electric/plastic-lighting-fixtures/95001.png"
+        "depaby_img_href": "https://ooodepa.github.io/ooodepa_imgs/products/de-pa-electric/plastic-lighting-fixtures/95001.png"
     },
     {
         "depaby_caption": "DE-PA Electric Резиновая серия",
         "depaby_product_category": "rubber-series",
-        "depaby_img_href": "https://raw.githubusercontent.com/ooodepa/ooodepa-products/gh-pages/de-pa-electric/rubber-series/338027.png"
+        "depaby_img_href": "https://ooodepa.github.io/ooodepa_imgs/products/de-pa-electric/rubber-series/338027.png"
     },
     {
         "depaby_caption": "DE-PA Electric Серия Звезда",
         "depaby_product_category": "star-series",
-        "depaby_img_href": "https://raw.githubusercontent.com/ooodepa/ooodepa-products/gh-pages/de-pa-electric/star-series/961100.png"
+        "depaby_img_href": "https://ooodepa.github.io/ooodepa_imgs/products/de-pa-electric/star-series/961100.png"
     },
     {
         "depaby_caption": "DE-PA Electric Серия розеток накладных с заземлением",
         "depaby_product_category": "surfase-mounted-socket-series",
-        "depaby_img_href": "https://raw.githubusercontent.com/ooodepa/ooodepa-products/gh-pages/de-pa-electric/surfase-mounted-socket-series/81301.png"
+        "depaby_img_href": "https://ooodepa.github.io/ooodepa_imgs/products/de-pa-electric/surfase-mounted-socket-series/81301.png"
     },
     {
         "depaby_caption": "DE-PA Electric Влагозащищеные потолочные светильники",
         "depaby_product_category": "waterproof",
-        "depaby_img_href": "https://raw.githubusercontent.com/ooodepa/ooodepa-products/gh-pages/de-pa-electric/waterproof/95021.jpg"
+        "depaby_img_href": "https://ooodepa.github.io/ooodepa_imgs/products/de-pa-electric/waterproof/95021.jpg"
+    },
+    {
+        "depaby_caption": "MONO ELECTRIC",
+        "depaby_product_category": "mono-electric",
+        "depaby_img_href": "https://ooodepa.github.io/ooodepa_imgs/productCategories/mono-electric-logo.png"
     }
 ]
