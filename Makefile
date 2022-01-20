@@ -72,3 +72,15 @@ depaby_cfs:
 
 depaby_bfs:
 	cd depaby_fs; npm run start
+
+# = = = = = = = = build
+
+depaby_cgh:
+	cd depaby_fa & npm run build
+	cd depaby_fs & npm run build
+	cd depaby_gh_pages & npm run deploy
+
+depaby_bgh:
+	cd depaby_fa; npm run build
+	cd depaby_fs; npm run build
+	cd depaby_gh_pages;npm run deploy

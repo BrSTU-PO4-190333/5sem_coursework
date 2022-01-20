@@ -4,6 +4,7 @@
 - `depaby_bm` - backend mysql (База данных MySQL через Docker)
 - `depaby_fa` - frontend adminpanel (React JS админка)
 - `depaby_fs` - frontend store (React JS сайт клиенту)
+- `depaby_gh_pages` - npm скрипт для залития проектов на github pages
 - `depaby_postman` - открыть запросы CRUD через программу Postman
 - `gpi_latex` - курсовая с рамкой
 
@@ -13,6 +14,7 @@
 | ----------------- | ----------------- | ---------------------------------------------------------- |
 | `make depaby_cmi` | `make depaby_bmi` | Копирует .env.txt файлы в .env, и устанавливает npm пакеты |
 | `make depaby_cmc` | `make depaby_bmc` | Копирует .env.txt файлы в .env                             |
+| `make depaby_cgh` | `make depaby_bgh` | Заливаем проекты на GitHub pages                           |
 
 | Команда cmd       | Команда bash      | Что делает                                                 |
 | ----------------- | ----------------- | ---------------------------------------------------------- |
