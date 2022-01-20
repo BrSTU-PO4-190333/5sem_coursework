@@ -21,7 +21,7 @@ const swagger_data = {
       email: "Pavel.Innokentevich.Galanin@gmail.com"
     },
   },
-  host: `${process.env.depaby_nodejs_host}:${process.env.depaby_nodejs_port}`,
+  host: `${process.env.depaby_swagger_host}`,
   tags: [
     {
       name: "admin",
@@ -45,7 +45,7 @@ const swagger_data = {
     },
   ],
   schemes: [
-    "http"
+    "https"
   ],
 };
 
@@ -83,6 +83,10 @@ app.use("/api/docs", swagger_ui_express.serve, swagger_ui_express.setup(depaby_s
 // Start server
 app.listen(process.env.depaby_nodejs_port);
 console.log(`Open ${process.env.depaby_nodejs_protocol}//${process.env.depaby_nodejs_host}:${process.env.depaby_nodejs_port}/`);
+
+app.get('/api', (req, res) => {
+  res.send(`Read documentation: <a href="/api/docs">/api/docs</a>`);
+})
 
 // auth
 app.use("/api", require('./routes/auth/auth'));
