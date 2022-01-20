@@ -7,8 +7,23 @@
 .table table
 {
     width: 100%;
+    border-collapse: collapse; 
 }
 
+.table table th
+{
+    background: #efefef;
+}
+
+.table table th,
+.table table td
+{
+    border: 1px solid #dddddd;
+    padding: 2px;
+}
+
+
+/* table buttons */
 .table button
 {
     background-color: var(--depaby_color);
@@ -72,3 +87,13 @@
     background-color: transparent;
     color: var(--bootstrap_warning);
 }
+/* end table buttons */
+
+
+/* table width */
+.table table td img
+{
+    max-width: 64px;
+    max-height: 64px;
+}
+/* end table width */

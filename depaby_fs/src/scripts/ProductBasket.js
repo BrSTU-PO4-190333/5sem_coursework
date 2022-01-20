@@ -78,6 +78,17 @@ class ProductBasket
 
         return 0;
     }
+
+    static getModels() {
+        let str = localStorage.getItem("depaby_products_basket");
+        if (str == null) {
+            return [];
+        }
+
+        let object = JSON.parse(str);
+        let array_models = Object.keys(object);
+        return array_models;
+    }
 }
 
 export default ProductBasket;

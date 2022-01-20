@@ -25,6 +25,11 @@ const QueryProducts = require('../../scripts/AbstractQueryCrud/QueryCrudProducts
  *        description: Получить запись по модели
  *        required: false
  *        type: string
+ *      - in: query
+ *        name: array_models
+ *        description: Получить запись/записи по массиву модели/моделей
+ *        required: false
+ *        type: string
  *    responses:
  *      '200':
  *        description: Успешный ответ

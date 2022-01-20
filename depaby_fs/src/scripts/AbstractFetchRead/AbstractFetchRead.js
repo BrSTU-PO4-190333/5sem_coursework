@@ -4,7 +4,13 @@ function get_url_params(params = {}) {
     let url = "?";
     let keys = Object.keys(params);
     keys.forEach(function (value, index) {
-        url += `${value}=${params[value]}&`;
+        if (Array.isArray(params[value]) === true) {
+            let str = params[value].join(`","`);
+            url += `${value}=["${str}"]&`;
+        }
+        else {
+            url += `${value}=${params[value]}&`;
+        }
     });
     return url;
 }
