@@ -14,7 +14,6 @@ function ProductsCategoriesModel() {
         async function get() {
             const class_instance = new FetchReadProducts();
             const response = await class_instance.read({
-                category: category,
                 model: model
             });
             if (response.length === 0) {

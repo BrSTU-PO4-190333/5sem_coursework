@@ -17,11 +17,7 @@ class QueryCrudProducts extends AbstractQueryCrud
             sql = `SELECT * FROM \`${this.table}\` WHERE \`depaby_id\` = '${params.id}';`;
         }
 
-        // Получаем по категории
-        else if (params.category && params.model) {
-            sql = `SELECT * FROM \`${this.table}\` WHERE \`depaby_category\` = '${params.category}' AND \`depaby_model\` = '${params.model}';`;
-        }
-
+        // Получаем по модели
         else if (params.model) {
             sql = `SELECT * FROM \`${this.table}\` WHERE \`depaby_model\` = '${params.model}';`;
         }
