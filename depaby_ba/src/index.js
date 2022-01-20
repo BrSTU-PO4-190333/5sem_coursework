@@ -77,16 +77,12 @@ const depaby_swagger_options = {
   ],
 };
 const depaby_swagger_docs = swagger_jsdoc(depaby_swagger_options);
-app.use("/docs", swagger_ui_express.serve, swagger_ui_express.setup(depaby_swagger_docs));
+app.use("/api/docs", swagger_ui_express.serve, swagger_ui_express.setup(depaby_swagger_docs));
 // = = = = = = = = end swagger
 
 // Start server
 app.listen(process.env.depaby_nodejs_port);
 console.log(`Open ${process.env.depaby_nodejs_protocol}//${process.env.depaby_nodejs_host}:${process.env.depaby_nodejs_port}/`);
-
-app.get('/', (req, res) => {
-  res.send(`Read documentation: <a href="/docs">/docs</a>`);
-})
 
 // auth
 app.use("/api", require('./routes/auth/auth'));
