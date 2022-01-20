@@ -15,6 +15,7 @@
     color: white;
     border: 1px solid var(--depaby_color);
     padding: 4px 16px;
+    border-radius: 4px;
 }
 
 .table button:hover
