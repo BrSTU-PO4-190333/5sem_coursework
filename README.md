@@ -1,3 +1,9 @@
+## Demo
+
+- module ba - [API](https://de-pa.by/api/docs/)
+- module fa - [Admin](https://pavel-innokentevich-galanin.github.io/gpi_4coursework/admin)
+- module fs - [Site](https://pavel-innokentevich-galanin.github.io/gpi_4coursework/site)
+
 ## Расшифровка сокращений модулей
 
 - `depaby_ba` - backend api (Node JS express сервер, который возвращает JSON и работает с MySQL)
