@@ -37,6 +37,8 @@ body
   --skype: #00b9f0;
   --telegram: #27a7e7;
   --menu_height: 64px;
+  --bootstrap_danger: #dc3545;
+  --bootstrap_success: #198754;
 }
 
 h1,h2,h3,h4,h5,h6

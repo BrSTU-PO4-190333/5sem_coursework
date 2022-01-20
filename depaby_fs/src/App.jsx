@@ -6,13 +6,14 @@ import './App.css';
 // pages
 import Home from './components/pages/home/home';
 import About from './components/pages/about/about';
+import ProductsCategoryModel from './components/pages/products-category-model/products-category-model' 
+import ProductsCategory from './components/pages/products-category/products-category';
 import Products from './components/pages/products/products';
 import Prices from './components/pages/prices/prices';
 import Catalogs from './components/pages/catalogs/catalogs';
 import Certificates from './components/pages/certificates/certificates';
 import Contacts from './components/pages/contacts/contacts';
 import Basket from './components/pages/basket/basket';
-import ProductCategories from './components/pages/products/productCategories';
 
 const pages = [
     {
@@ -22,15 +23,21 @@ const pages = [
         onMenu: true,
     },
     {
-        href: '/products/:productCategory',
+        href: '/products/:category/:model',
         caption: 'Продукты',
-        component: Products,
+        component: ProductsCategoryModel,
+        onMenu: false,
+    },
+    {
+        href: '/products/:category',
+        caption: 'Продукты',
+        component: ProductsCategory,
         onMenu: false,
     },
     {
         href: '/products',
         caption: 'Продукты',
-        component: ProductCategories,
+        component: Products,
         onMenu: true,
     },
     {

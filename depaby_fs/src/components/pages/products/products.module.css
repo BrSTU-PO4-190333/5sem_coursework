@@ -1,109 +1,43 @@
-/* footer */
-.wrapper
+.cards
 {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-}
-
-.content
-{
-  width: 100%;
-  flex: 1 0 auto;
-}
-
-.footer
-{
-  width: 100%;
-  flex: 0 0 auto;
-}
-/* end footer */
-
-
-/* block for cards */
-.products__block
-{
-    width: 100%;
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
-    justify-content: center;
 }
-/* end block for cards */
 
-
-/* image */
-.ProductCardImg
+.card
 {
-    height: 120px;
-    display: flex;
-    justify-content: center;
-    border: 1px solid rgba(0,0,0,0.1);
-    overflow: hidden;
-}
-/* end image */
-
-
-/* model */
-.ProductCardModel
-{
-    font-weight: bolder;
-}
-/* end model */
-
-
-/* product card */
-.ProductCard
-{
-    width: 300px;
     border: 1px solid lightgray;
-    box-shadow: 1px 1px 2px lightgray;
     margin: 8px;
     padding: 8px;
-    border-radius: 4px;
-}
-/* end product card */
-
-
-/* cost byn */
-.ProductCardCostByn
-{
-    text-align: right;
-    font-weight: bolder;
-}
-/* end cost byn */
-
-
-/* info button */
-.ProductCardInfoButton button
-{
+    width: 220px;
+    border-radius: 8px;
     display: block;
+    text-decoration: none;
+}
+
+.card:hover
+{
+    box-shadow: 0 0 8px lightgray;
+    background-color: lightgray;
+}
+
+.card__image
+{
     text-align: center;
-    width: 100%;
-    background-color: #06c;
-    color: white;
-    border: 1px solid #06c;
-    border-radius: 4px;
-    padding: 8px;
+    height: 72px;
 }
 
-.ProductCardInfoButton button:hover
+.card__image img
 {
-    background-color: transparent;
-    color: #06c;
+
+    max-width: 220px;
+    max-height: 72px;
 }
-/* end info button */
 
-
-/* product info */
-.ProductInfo
+.card__caption
 {
-    position: fixed;
-    background-color: white;
-    width: 100%;
-    height: 100%;
-    left: 0;
-    top: 0;
-    overflow-y: auto;
+    color: var(--depaby_color);
+    font-weight: bolder;
+    text-align: center;
 }
-/* end products info */
