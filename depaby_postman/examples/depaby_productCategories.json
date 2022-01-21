@@ -2,7 +2,7 @@
     {
         "depaby_caption": "DE-PA Electric Аксессуары",
         "depaby_product_category": "accessories",
-        "depaby_img_href": "https://ooodepa.github.io/ooodepa_imgs/products/de-pa-electric/accessories/10012-1.png"
+        "depaby_img_href": "https://ooodepa.github.io/ooodepa_imgs/products/de-pa-electric/accessories/11202.png"
     },
     {
         "depaby_caption": "DE-PA Electric Английская серия ",
@@ -27,7 +27,7 @@
     {
         "depaby_caption": "DE-PA Electric Разветлители. Тройники ",
         "depaby_product_category": "group-socket-and-plug",
-        "depaby_img_href": "https://ooodepa.github.io/ooodepa_imgs/products/de-pa-electric/group-socket-and-plug/10009-white.png"
+        "depaby_img_href": "https://ooodepa.github.io/ooodepa_imgs/products/de-pa-electric/group-socket-and-plug/10011.png"
     },
     {
         "depaby_caption": "DE-PA Electric IP44 вагозащищенных накладных изделий ",
@@ -68,5 +68,10 @@
         "depaby_caption": "MONO ELECTRIC",
         "depaby_product_category": "mono-electric",
         "depaby_img_href": "https://ooodepa.github.io/ooodepa_imgs/productCategories/mono-electric-logo.png"
+    },
+    {
+        "depaby_caption": "Листы EVA, EPDM, полиэтилена",
+        "depaby_product_category": "eva",
+        "depaby_img_href": "https://ooodepa.github.io/ooodepa_imgs/products/eva/eva-sheets.jpg"
     }
 ]
