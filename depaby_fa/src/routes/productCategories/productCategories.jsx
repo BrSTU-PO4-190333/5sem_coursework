@@ -42,6 +42,7 @@ function ProductCategories() {
                     destructor={() => { setIndexEdit('new') }}
                     FormTable={ProductCategoriesForm}
                     FetchClass={FetchCrudProductCategories}
+                    read={read}
                 />
                 <LoadTableButton read={read} />
                 <SaveAsJsonButton array={array} table_name="depaby_productCategories" />

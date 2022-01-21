@@ -58,6 +58,10 @@ function Form(props) {
             }
             alert("Данные изменены в БД");
         }
+
+        if (props.read) {
+            props.read();
+        }
     }
 
     return (

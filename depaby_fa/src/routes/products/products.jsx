@@ -43,6 +43,7 @@ function Products(props) {
           destructor={() => {setIndexEditProduct('new')}}
           FormTable={ProductForm}
           FetchClass={FetchCrudProducts}
+          read={products_read}
         />
         <LoadTableButton read={products_read} />
         <SaveAsJsonButton array={productsArray} table_name="depaby_products" />

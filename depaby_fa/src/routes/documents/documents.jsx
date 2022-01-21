@@ -42,6 +42,7 @@ function Documents() {
           destructor={() => {setIndexEditDocument('new')}}
           FormTable={DocumentForm}
           FetchClass={FetchCrudDocuments}
+          read={documents_read}
         />
         <LoadTableButton read={documents_read} />
         <SaveAsJsonButton array={documentsArray} table_name="depaby_documents" />

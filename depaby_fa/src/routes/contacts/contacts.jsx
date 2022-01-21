@@ -42,6 +42,7 @@ function Contacts() {
           destructor={() => {setIndexEditContact('new')}}
           FormTable={ContactForm}
           FetchClass={FetchCrudContacts}
+          read={contacts_read}
         />
         <LoadTableButton read={contacts_read} />
         <SaveAsJsonButton array={contactsArray} table_name="depaby_contacts" />
