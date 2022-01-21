@@ -6008,7 +6008,7 @@
     {
         "depaby_model": "92005",
         "depaby_name": "пяти винтовой зажим (Jelezo)",
-        "depaby_img_href": "https://ooodepa.github.io/ooodepa_imgs/products/mono-electric/",
+        "depaby_img_href": "",
         "depaby_cost_byn": "3.03",
         "depaby_on_box": 500,
         "depaby_kg": "0.000",
@@ -6019,7 +6019,7 @@
     {
         "depaby_model": "92004",
         "depaby_name": "четырех винтовой зажим (Jelezo)",
-        "depaby_img_href": "https://ooodepa.github.io/ooodepa_imgs/products/mono-electric/",
+        "depaby_img_href": "",
         "depaby_cost_byn": "2.34",
         "depaby_on_box": 500,
         "depaby_kg": "0.000",
@@ -6030,7 +6030,7 @@
     {
         "depaby_model": "92003",
         "depaby_name": "трех винтовой зажим (Jelezo)",
-        "depaby_img_href": "https://ooodepa.github.io/ooodepa_imgs/products/mono-electric/",
+        "depaby_img_href": "",
         "depaby_cost_byn": "1.49",
         "depaby_on_box": 750,
         "depaby_kg": "0.000",
@@ -6041,7 +6041,7 @@
     {
         "depaby_model": "92002",
         "depaby_name": "двух винтовой зажим (Jelezo)",
-        "depaby_img_href": "https://ooodepa.github.io/ooodepa_imgs/products/mono-electric/",
+        "depaby_img_href": "",
         "depaby_cost_byn": "1.14",
         "depaby_on_box": 1000,
         "depaby_kg": "0.000",
@@ -6052,8 +6052,8 @@
     {
         "depaby_model": "48350",
         "depaby_name": "Кабельные стяжки черные/белые",
-        "depaby_img_href": "",
-        "depaby_cost_byn": "0.00",
+        "depaby_img_href": "https://de-pa.by/products/de-pa-electric/cable-trunking/80300.png",
+        "depaby_cost_byn": "0.10",
         "depaby_on_box": 0,
         "depaby_kg": "0.000",
         "depaby_m3": "0.0000",
@@ -6063,8 +6063,8 @@
     {
         "depaby_model": "48300",
         "depaby_name": "Кабельные стяжки черные/белые",
-        "depaby_img_href": "",
-        "depaby_cost_byn": "0.00",
+        "depaby_img_href": "https://de-pa.by/products/de-pa-electric/cable-trunking/80300.png",
+        "depaby_cost_byn": "0.10",
         "depaby_on_box": 0,
         "depaby_kg": "0.000",
         "depaby_m3": "0.0000",
@@ -6074,8 +6074,8 @@
     {
         "depaby_model": "80300",
         "depaby_name": "Кабельные стяжки черные/белые",
-        "depaby_img_href": "",
-        "depaby_cost_byn": "0.00",
+        "depaby_img_href": "https://de-pa.by/products/de-pa-electric/cable-trunking/80300.png",
+        "depaby_cost_byn": "0.18",
         "depaby_on_box": 0,
         "depaby_kg": "0.000",
         "depaby_m3": "0.0000",
@@ -6085,8 +6085,8 @@
     {
         "depaby_model": "9002013",
         "depaby_name": "Кабельный канал напольный",
-        "depaby_img_href": "",
-        "depaby_cost_byn": "0.00",
+        "depaby_img_href": "https://de-pa.by/products/de-pa-electric/cable-trunking/05001212.png",
+        "depaby_cost_byn": "18.05",
         "depaby_on_box": 0,
         "depaby_kg": "0.000",
         "depaby_m3": "0.0000",
@@ -6096,8 +6096,8 @@
     {
         "depaby_model": "7002013",
         "depaby_name": "Кабельный канал напольный",
-        "depaby_img_href": "",
-        "depaby_cost_byn": "0.00",
+        "depaby_img_href": "https://de-pa.by/products/de-pa-electric/cable-trunking/05001212.png",
+        "depaby_cost_byn": "12.75",
         "depaby_on_box": 0,
         "depaby_kg": "0.000",
         "depaby_m3": "0.0000",
@@ -6107,8 +6107,8 @@
     {
         "depaby_model": "5001213",
         "depaby_name": "Кабельный канал напольный",
-        "depaby_img_href": "",
-        "depaby_cost_byn": "0.00",
+        "depaby_img_href": "https://de-pa.by/products/de-pa-electric/cable-trunking/05001212.png",
+        "depaby_cost_byn": "8.79",
         "depaby_on_box": 0,
         "depaby_kg": "0.000",
         "depaby_m3": "0.0000",
