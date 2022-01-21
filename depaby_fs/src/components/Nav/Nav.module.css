@@ -41,7 +41,8 @@
 
 .menu__link_logo img
 {
-    padding: 8px;
+    padding: 4px;
+    height: calc(100% - 2*4px);
 }
 
 /* end logo */
@@ -71,7 +72,7 @@
     color: var(--depaby_color);
     text-align: center;
     display: block;
-    padding: 8px;
+    padding: 16px;
 }
 
 .menu__ul_block ul li a:hover
