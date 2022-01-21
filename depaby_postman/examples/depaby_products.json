@@ -4159,14 +4159,14 @@
     },
     {
         "depaby_model": "40200",
-        "depaby_name": "\"Колодка 4 гнезда с заземлением с терминалом",
-        "depaby_img_href": "https://ooodepa.github.io/ooodepa_imgs/products/mono-electric/pearl-series",
+        "depaby_name": "Колодка 4 гнезда с заземлением c UPS",
+        "depaby_img_href": "https://ooodepa.github.io/ooodepa_imgs/products/de-pa-electric/pearl-series/40100.png",
         "depaby_cost_byn": "0.00",
-        "depaby_on_box": 9,
-        "depaby_kg": "0.000",
-        "depaby_m3": "0.0000",
-        "depaby_company": "0",
-        "depaby_category": "24"
+        "depaby_on_box": 24,
+        "depaby_kg": "4.200",
+        "depaby_m3": "0.0127",
+        "depaby_company": "de-pa-electric",
+        "depaby_category": "pearl-series"
     },
     {
         "depaby_model": "40105",
@@ -4280,12 +4280,12 @@
     },
     {
         "depaby_model": "31200",
-        "depaby_name": "Колодка 3 гнезда c зазе��лен. с выкл. - UPS",
+        "depaby_name": "Колодка 3 гнезда c заземлением с выключателем с UPS",
         "depaby_img_href": "https://ooodepa.github.io/ooodepa_imgs/products/de-pa-electric/pearl-series/31100.png",
         "depaby_cost_byn": "11.18",
         "depaby_on_box": 24,
-        "depaby_kg": "0.000",
-        "depaby_m3": "0.0000",
+        "depaby_kg": "3.600",
+        "depaby_m3": "0.0127",
         "depaby_company": "de-pa-electric",
         "depaby_category": "pearl-series"
     },
@@ -4511,25 +4511,25 @@
     },
     {
         "depaby_model": "20202",
-        "depaby_name": "\"Удлинитель 2/2м. с заземлением выключателем",
-        "depaby_img_href": "https://ooodepa.github.io/ooodepa_imgs/products/mono-electric/pearl-series",
+        "depaby_name": "Удлинитель 2/2м с заземлением с UPS",
+        "depaby_img_href": "https://ooodepa.github.io/ooodepa_imgs/products/de-pa-electric/pearl-series/20100.png",
         "depaby_cost_byn": "0.00",
-        "depaby_on_box": 14,
-        "depaby_kg": "0.000",
-        "depaby_m3": "0.0000",
-        "depaby_company": "0",
-        "depaby_category": "12"
+        "depaby_on_box": 12,
+        "depaby_kg": "3.650",
+        "depaby_m3": "0.0127",
+        "depaby_company": "de-pa-electric",
+        "depaby_category": "pearl-series"
     },
     {
         "depaby_model": "20200",
-        "depaby_name": "\"Удлинитель 2 гнезда с заземлением выключателем",
-        "depaby_img_href": "https://ooodepa.github.io/ooodepa_imgs/products/mono-electric/pearl-series",
+        "depaby_name": "Колодка 2 гнезда с заземлением с UPS",
+        "depaby_img_href": "https://ooodepa.github.io/ooodepa_imgs/products/de-pa-electric/pearl-series/20100.png",
         "depaby_cost_byn": "0.00",
-        "depaby_on_box": 5,
-        "depaby_kg": "0.000",
-        "depaby_m3": "0.0000",
-        "depaby_company": "0",
-        "depaby_category": "24"
+        "depaby_on_box": 24,
+        "depaby_kg": "2.100",
+        "depaby_m3": "0.0092",
+        "depaby_company": "de-pa-electric",
+        "depaby_category": "pearl-series"
     },
     {
         "depaby_model": "20105",
@@ -6051,69 +6051,69 @@
     },
     {
         "depaby_model": "48350",
-        "depaby_name": "\"Кабельные стяжки черные/белые 4",
-        "depaby_img_href": "https://ooodepa.github.io/ooodepa_imgs/products/mono-electric/cable-trunking",
+        "depaby_name": "Кабельные стяжки черные/белые",
+        "depaby_img_href": "",
         "depaby_cost_byn": "0.00",
         "depaby_on_box": 0,
         "depaby_kg": "0.000",
         "depaby_m3": "0.0000",
-        "depaby_company": "0",
-        "depaby_category": "300"
+        "depaby_company": "de-pa-electric",
+        "depaby_category": "cable-trunking"
     },
     {
         "depaby_model": "48300",
-        "depaby_name": "\"Кабельные стяжки черные/белые 4",
-        "depaby_img_href": "https://ooodepa.github.io/ooodepa_imgs/products/mono-electric/cable-trunking",
+        "depaby_name": "Кабельные стяжки черные/белые",
+        "depaby_img_href": "",
         "depaby_cost_byn": "0.00",
         "depaby_on_box": 0,
         "depaby_kg": "0.000",
         "depaby_m3": "0.0000",
-        "depaby_company": "0",
-        "depaby_category": "300"
+        "depaby_company": "de-pa-electric",
+        "depaby_category": "cable-trunking"
     },
     {
         "depaby_model": "80300",
-        "depaby_name": "\"Кабельные стяжки черные/белые 8",
-        "depaby_img_href": "https://ooodepa.github.io/ooodepa_imgs/products/mono-electric/cable-trunking",
+        "depaby_name": "Кабельные стяжки черные/белые",
+        "depaby_img_href": "",
         "depaby_cost_byn": "0.00",
         "depaby_on_box": 0,
         "depaby_kg": "0.000",
         "depaby_m3": "0.0000",
-        "depaby_company": "0",
-        "depaby_category": "300"
+        "depaby_company": "de-pa-electric",
+        "depaby_category": "cable-trunking"
     },
     {
         "depaby_model": "9002013",
-        "depaby_name": "\"Кабельный канал напольный",
-        "depaby_img_href": "https://ooodepa.github.io/ooodepa_imgs/products/mono-electric/20",
+        "depaby_name": "Кабельный канал напольный",
+        "depaby_img_href": "",
         "depaby_cost_byn": "0.00",
         "depaby_on_box": 0,
         "depaby_kg": "0.000",
         "depaby_m3": "0.0000",
-        "depaby_company": "0",
-        "depaby_category": "18.05"
+        "depaby_company": "de-pa-electric",
+        "depaby_category": "cable-trunking"
     },
     {
         "depaby_model": "7002013",
-        "depaby_name": "\"Кабельный канал напольный",
-        "depaby_img_href": "https://ooodepa.github.io/ooodepa_imgs/products/mono-electric/28",
+        "depaby_name": "Кабельный канал напольный",
+        "depaby_img_href": "",
         "depaby_cost_byn": "0.00",
         "depaby_on_box": 0,
         "depaby_kg": "0.000",
         "depaby_m3": "0.0000",
-        "depaby_company": "0",
-        "depaby_category": "12.75"
+        "depaby_company": "de-pa-electric",
+        "depaby_category": "cable-trunking"
     },
     {
         "depaby_model": "5001213",
-        "depaby_name": "\"Кабельный канал напольный",
-        "depaby_img_href": "https://ooodepa.github.io/ooodepa_imgs/products/mono-electric/54",
+        "depaby_name": "Кабельный канал напольный",
+        "depaby_img_href": "",
         "depaby_cost_byn": "0.00",
         "depaby_on_box": 0,
         "depaby_kg": "0.000",
         "depaby_m3": "0.0000",
-        "depaby_company": "0",
-        "depaby_category": "8.79"
+        "depaby_company": "de-pa-electric",
+        "depaby_category": "cable-trunking"
     },
     {
         "depaby_model": "9002012",
