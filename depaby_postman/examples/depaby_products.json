@@ -6920,14 +6920,14 @@
     },
     {
         "depaby_model": "11202",
-        "depaby_name": "\"Переключатель к удленителю",
-        "depaby_img_href": "https://ooodepa.github.io/ooodepa_imgs/products/mono-electric/accessories",
+        "depaby_name": "Переключатель к удленителю с подсветкой",
+        "depaby_img_href": "https://ooodepa.github.io/ooodepa_imgs/products/de-pa-electric/accessories/11202.png",
         "depaby_cost_byn": "0.00",
-        "depaby_on_box": 2,
-        "depaby_kg": "0.000",
-        "depaby_m3": "0.0000",
-        "depaby_company": "0",
-        "depaby_category": "1000"
+        "depaby_on_box": 1000,
+        "depaby_kg": "17.460",
+        "depaby_m3": "0.0383",
+        "depaby_company": "de-pa-electric",
+        "depaby_category": "accessories"
     },
     {
         "depaby_model": "11201-black-red",
