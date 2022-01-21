@@ -1,5 +1,20 @@
 import axios from 'axios';
 
+function get_url_params(params = {}) {
+    let url = "?";
+    let keys = Object.keys(params);
+    keys.forEach(function (value, index) {
+        if (Array.isArray(params[value]) === true) {
+            let str = params[value].join(`","`);
+            url += `${value}=["${str}"]&`;
+        }
+        else {
+            url += `${value}=${params[value]}&`;
+        }
+    });
+    return url;
+}
+
 class AbstractFetchCrud {
     constructor() {
         this.api = process.env.REACT_APP_api_url;
@@ -9,23 +24,9 @@ class AbstractFetchCrud {
 
     async read(params = {}) {
         try {
-            let url = this.api;
-
-            if (params.id) {
-                url = `${this.api}?id=${params.id}`;
-            }
-
-            else if (params.sort) {
-                url = `${this.api}?sort=${params.sort}`;
-            }
-            
+            const url = this.api + get_url_params(params);
             const response = await axios.get(url);
             console.log(response);
-
-            if (response.data.data.length === 0) {
-                return [];
-            }
-
             return response.data.data;
         }
         catch(err) {

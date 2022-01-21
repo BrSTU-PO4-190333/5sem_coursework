@@ -11,6 +11,7 @@ import SaveAsCsvButton from "../../components/SaveAsCsvButton/SaveAsCsvButton";
 import UploadJsonButton from "../../components/UploadJsonButton/UploadJsonButton";
 import FormButton from "../../components/FormButton/FormButton";
 import DocumentForm from "../../components/DocumentForm/DocumentForm";
+import BreadCrumbs from "../../components/BreadCrumbs/BreadCrumbs";
 
 function Documents() {
   const [documentsArray, setDocumentsArray] = useState([]);
@@ -30,6 +31,7 @@ function Documents() {
 
   return (
     <div className={styles.window}>
+      <BreadCrumbs />
       <div className='depaby_toolbar'>
         <HomeButton />
         <UploadJsonButton FetchClass={FetchCrudDocuments} />

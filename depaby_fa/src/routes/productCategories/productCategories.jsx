@@ -11,6 +11,7 @@ import SaveAsCsvButton from "../../components/SaveAsCsvButton/SaveAsCsvButton";
 import UploadJsonButton from "../../components/UploadJsonButton/UploadJsonButton";
 import FormButton from "../../components/FormButton/FormButton";
 import ProductCategoriesForm from "../../components/ProductCategoriesForm/ProductCategoriesForm";
+import BreadCrumbs from "../../components/BreadCrumbs/BreadCrumbs";
 
 function ProductCategories() {
     const [array, setArray] = useState([]);
@@ -30,6 +31,7 @@ function ProductCategories() {
 
     return (
         <div className={styles.window}>
+            <BreadCrumbs />
             <div className='depaby_toolbar'>
                 <HomeButton />
                 <UploadJsonButton FetchClass={FetchCrudProductCategories} />

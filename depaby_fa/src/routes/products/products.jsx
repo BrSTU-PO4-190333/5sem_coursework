@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 import FetchCrudProducts from "./../../scripts/AbstractFetchCrud/FetchCrudProducts";
 import HomeButton from "../../components/HomeButton/HomeButton";
@@ -11,15 +12,16 @@ import SaveAsCsvButton from "../../components/SaveAsCsvButton/SaveAsCsvButton";
 import UploadJsonButton from "../../components/UploadJsonButton/UploadJsonButton";
 import FormButton from "../../components/FormButton/FormButton";
 import ProductForm from "../../components/ProductForm/ProductForm";
+import BreadCrumbs from "../../components/BreadCrumbs/BreadCrumbs";
 
-function ProductsRead() {
+function Products(props) {
   const [productsArray, setProductsArray] = useState([]);
   const [indexEditProduct, setIndexEditProduct] = useState('new');
   const [productFormSignal, setProductFormSignal] = useState(0);
 
   async function products_read() {
     const products_object = new FetchCrudProducts();
-    const response = await products_object.read();
+    const response = await products_object.read(props.params);
 
     if (response.length === 0) {
       alert("В таблице продуктов нет записей");
@@ -30,6 +32,7 @@ function ProductsRead() {
 
   return (
     <div className={styles.window}>
+      <BreadCrumbs />
       <div className='depaby_toolbar'>
         <HomeButton />
         <UploadJsonButton FetchClass={FetchCrudProducts} />
@@ -81,7 +84,7 @@ function ProductsRead() {
               <td>{value.depaby_m3}</td>
               <td>{value.depaby_cost_byn}</td>
               <td>{value.depaby_company}</td>
-              <td>{value.depaby_category}</td>
+              <td><Link to={`/products/${value.depaby_category}`}>{value.depaby_category}</Link></td>
               <td className='depaby_editButton'>
                 <button onClick={event => {
                   setIndexEditProduct(index);
@@ -103,4 +106,4 @@ function ProductsRead() {
   );
 }
 
-export default ProductsRead;
+export default Products;

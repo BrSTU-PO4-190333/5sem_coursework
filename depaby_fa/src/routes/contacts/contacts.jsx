@@ -11,6 +11,7 @@ import SaveAsCsvButton from "../../components/SaveAsCsvButton/SaveAsCsvButton";
 import UploadJsonButton from "../../components/UploadJsonButton/UploadJsonButton";
 import FormButton from "../../components/FormButton/FormButton";
 import ContactForm from "../../components/ContactForm/ContactForm";
+import BreadCrumbs from "../../components/BreadCrumbs/BreadCrumbs";
 
 function Contacts() {
   const [contactsArray, setContactsArray] = useState([]);
@@ -30,6 +31,7 @@ function Contacts() {
 
   return (
     <div className={styles.window}>
+      <BreadCrumbs />
       <div className='depaby_toolbar'>
         <HomeButton />
         <UploadJsonButton FetchClass={FetchCrudContacts} />

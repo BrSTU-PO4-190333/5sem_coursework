@@ -1,0 +1,37 @@
+.Breadcrumbs
+{
+    background-color: #f3f2f1;
+    padding: 8px;
+}
+
+.Breadcrumbs span
+{
+    text-decoration: none;
+    color: var(--depaby_color);
+}
+
+.Breadcrumbs span:hover
+{
+    cursor: pointer;
+}
+
+.Breadcrumbs span::after
+{
+    color: black;
+    content: ' / ';
+}
+
+.Breadcrumbs span:last-child
+{
+    color: grey
+}
+
+.Breadcrumbs span:last-child::after
+{
+    content: '';
+}
+
+.Breadcrumbs span:last-child:hover
+{
+    cursor:default
+}

@@ -2,6 +2,7 @@ import { Switch, Route } from "react-router";
 import "./App.css";
 
 import Home from './routes/home/home';
+import ProductsCategory from './routes/products-category/product-category';
 import Products from './routes/products/products';
 import Documents from './routes/documents/documents';
 import Contacts from './routes/contacts/contacts';
@@ -16,6 +17,7 @@ function App() {
             <Route exact path="/" component={LogIn} />
             <Route path="/logout" component={LogOut} />
             <Route path="/menu" component={Home} />
+            <Route path="/products/:category" component={ProductsCategory} />
             <Route path="/products" component={Products} />
             <Route path="/documents" component={Documents} />
             <Route path="/contacts" component={Contacts} />
