@@ -540,7 +540,7 @@
     },
     {
         "depaby_model": "81301",
-        "depaby_name": "Розетка мебельная сзаземлен.",
+        "depaby_name": "Розетка мебельная с заземлением",
         "depaby_img_href": "https://ooodepa.github.io/ooodepa_imgs/products/de-pa-electric/surfase-mounted-socket-series/81301.png",
         "depaby_cost_byn": "5.54",
         "depaby_on_box": 150,
@@ -583,8 +583,8 @@
         "depaby_category": "surfase-mounted-socket-series"
     },
     {
-        "depaby_model": "70101 black",
-        "depaby_name": "Розетка круглая накладная с заземлен. (Черная)",
+        "depaby_model": "70101-black",
+        "depaby_name": "Розетка круглая накладная с заземлением (Черная)",
         "depaby_img_href": "https://ooodepa.github.io/ooodepa_imgs/products/de-pa-electric/surfase-mounted-socket-series/70101-white.png",
         "depaby_cost_byn": "2.43",
         "depaby_on_box": 150,
@@ -594,8 +594,8 @@
         "depaby_category": "surfase-mounted-socket-series"
     },
     {
-        "depaby_model": "70101 white",
-        "depaby_name": "Розетка круглая накладная с заземлением",
+        "depaby_model": "70101-white",
+        "depaby_name": "Розетка круглая накладная с заземлением (Белая)",
         "depaby_img_href": "https://ooodepa.github.io/ooodepa_imgs/products/de-pa-electric/surfase-mounted-socket-series/70101-white.png",
         "depaby_cost_byn": "2.43",
         "depaby_on_box": 150,
@@ -605,7 +605,7 @@
         "depaby_category": "surfase-mounted-socket-series"
     },
     {
-        "depaby_model": "70001 black",
+        "depaby_model": "70001-black",
         "depaby_name": "Розетка круглая накладная без заземления (Черная)",
         "depaby_img_href": "https://ooodepa.github.io/ooodepa_imgs/products/de-pa-electric/surfase-mounted-socket-series/70001-white.png",
         "depaby_cost_byn": "2.16",
@@ -616,7 +616,7 @@
         "depaby_category": "surfase-mounted-socket-series"
     },
     {
-        "depaby_model": "70001 white",
+        "depaby_model": "70001-white",
         "depaby_name": "Розетка круглая накладная без заземления",
         "depaby_img_href": "https://ooodepa.github.io/ooodepa_imgs/products/de-pa-electric/surfase-mounted-socket-series/70001-white.png",
         "depaby_cost_byn": "2.16",
