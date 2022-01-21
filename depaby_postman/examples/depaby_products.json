@@ -6732,8 +6732,8 @@
         "depaby_category": "cable-trunking"
     },
     {
-        "depaby_model": "41405-ENG",
-        "depaby_name": "Удлинитель английский 4/5м с заземлением С АНГЛИЙСКОЙ ВИЛКОЙ с выключателем",
+        "depaby_model": "41405-eng",
+        "depaby_name": "Удлинитель английский 4/5м с заземлением с выключателем С АНГЛИЙСКОЙ ВИЛКОЙ",
         "depaby_img_href": "https://ooodepa.github.io/ooodepa_imgs/products/de-pa-electric/british-system-series/41400.png",
         "depaby_cost_byn": "33.99",
         "depaby_on_box": 12,
@@ -6754,8 +6754,8 @@
         "depaby_category": "british-system-series"
     },
     {
-        "depaby_model": "41403-ENG",
-        "depaby_name": "Удлинитель английский 4/3м с заземлением С АНГЛИЙСКОЙ ВИЛКОЙ с выключателем",
+        "depaby_model": "41403-eng",
+        "depaby_name": "Удлинитель английский 4/3м с заземлением с выключателем С АНГЛИЙСКОЙ ВИЛКОЙ",
         "depaby_img_href": "https://ooodepa.github.io/ooodepa_imgs/products/de-pa-electric/british-system-series/41400.png",
         "depaby_cost_byn": "27.81",
         "depaby_on_box": 12,
@@ -6776,8 +6776,8 @@
         "depaby_category": "british-system-series"
     },
     {
-        "depaby_model": "41402-ENG",
-        "depaby_name": "Удлинитель английский 4/2м с заземлением С АНГЛИЙСКОЙ ВИЛКОЙ с выключателем",
+        "depaby_model": "41402-eng",
+        "depaby_name": "Удлинитель английский 4/2м с заземлением с выключателем С АНГЛИЙСКОЙ ВИЛКОЙ",
         "depaby_img_href": "https://ooodepa.github.io/ooodepa_imgs/products/de-pa-electric/british-system-series/41400.png",
         "depaby_cost_byn": "24.89",
         "depaby_on_box": 12,
@@ -6798,8 +6798,8 @@
         "depaby_category": "british-system-series"
     },
     {
-        "depaby_model": "41400-ENG",
-        "depaby_name": "Колодка английская 4 гнезда с заземлением с выключателем",
+        "depaby_model": "41400-eng",
+        "depaby_name": "Колодка английская 4 гнезда с заземлением с выключателем С АНГЛИЙСКОЙ ВИЛКОЙ",
         "depaby_img_href": "https://ooodepa.github.io/ooodepa_imgs/products/de-pa-electric/british-system-series/41400.png",
         "depaby_cost_byn": "12.50",
         "depaby_on_box": 24,
@@ -6820,7 +6820,7 @@
         "depaby_category": "british-system-series"
     },
     {
-        "depaby_model": "40405-ENG",
+        "depaby_model": "40405-eng",
         "depaby_name": "Удлинитель английский 4/5м с заземлением С АНГЛИЙСКОЙ ВИЛКОЙ",
         "depaby_img_href": "https://ooodepa.github.io/ooodepa_imgs/products/de-pa-electric/british-system-series/40400.png",
         "depaby_cost_byn": "30.23",
@@ -6842,7 +6842,7 @@
         "depaby_category": "british-system-series"
     },
     {
-        "depaby_model": "40403-ENG",
+        "depaby_model": "40403-eng",
         "depaby_name": "Удлинитель английский 4/3м с заземлением С АНГЛИЙСКОЙ ВИЛКОЙ",
         "depaby_img_href": "https://ooodepa.github.io/ooodepa_imgs/products/de-pa-electric/british-system-series/40400.png",
         "depaby_cost_byn": "23.88",
@@ -6864,7 +6864,7 @@
         "depaby_category": "british-system-series"
     },
     {
-        "depaby_model": "40402-ENG",
+        "depaby_model": "40402-eng",
         "depaby_name": "Удлинитель английский 4/2м с заземлением С АНГЛИЙСКОЙ ВИЛКОЙ",
         "depaby_img_href": "https://ooodepa.github.io/ooodepa_imgs/products/de-pa-electric/british-system-series/40400.png",
         "depaby_cost_byn": "21.39",
@@ -6886,8 +6886,8 @@
         "depaby_category": "british-system-series"
     },
     {
-        "depaby_model": "40400-ENG",
-        "depaby_name": "Колодка английская 4 гнезда с заземлением",
+        "depaby_model": "40400-eng",
+        "depaby_name": "Колодка английская 4 гнезда с заземлением С АНГЛИЙСКОЙ ВИЛКОЙ",
         "depaby_img_href": "https://ooodepa.github.io/ooodepa_imgs/products/de-pa-electric/british-system-series/40400.png",
         "depaby_cost_byn": "9.01",
         "depaby_on_box": 24,
