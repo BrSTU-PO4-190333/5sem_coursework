@@ -80,9 +80,9 @@ function Basket() {
                                 <th>Цена за 1 шт. без НДС (BYN)</th>
                                 <th>Количество (штуки)</th>
                                 <th>Общая цена (BYN)</th>
-                                <th>-</th>
-                                <th>+</th>
-                                <th>УДАЛИТЬ</th>
+                                <th>-1 штука</th>
+                                <th>+1 штука</th>
+                                <th>УДАЛИТЬ ИЗ СПИСКА</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -101,29 +101,41 @@ function Basket() {
                                                 <button
                                                     className={styles.minus}
                                                     onClick={event => basket_minus(value.depaby_model)}
-                                                >-</button>
+                                                >-1 штука</button>
                                             </td>
                                             <td>
                                                 <button
                                                     className={styles.plus}
                                                     onClick={event => basket_plus(value.depaby_model)}
-                                                >+</button>
+                                                >+1 штука</button>
                                             </td>
                                             <td>
                                                 <button
                                                     className={styles.delete}
                                                     onClick={event => basket_delete(value.depaby_model)}
-                                                >УДАЛИТЬ</button>
+                                                >УДАЛИТЬ ИЗ СПИСКА</button>
                                             </td>
                                         </tr>
                                     )
                                 })
                             }
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td><b>{sum} BYN</b></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>
                 <div>
-                    <p>Итого: {sum} BYN</p>
+                    <p><b>Итого: {sum} BYN</b></p>
                 </div>
             </div>
         </>

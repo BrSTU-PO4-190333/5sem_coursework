@@ -83,9 +83,9 @@ function ProductBasket(props) {
 
     return props.data.depaby_model && props.data.depaby_model !== '' ? (
         <div className={styles.product__basket}>
-            <button className={styles.minus} onClick={minus}>-</button>
+            <button className={styles.minus} onClick={minus}>-1 штука</button>
             В корзине {count} шт.
-            <button className={styles.plus} onClick={plus}>+</button>
+            <button className={styles.plus} onClick={plus}>+1 штука</button>
         </div>
     ) : <></>;
 }
