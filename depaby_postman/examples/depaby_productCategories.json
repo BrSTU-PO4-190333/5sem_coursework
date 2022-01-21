@@ -65,9 +65,19 @@
         "depaby_img_href": "https://ooodepa.github.io/ooodepa_imgs/products/de-pa-electric/waterproof/95021.jpg"
     },
     {
-        "depaby_caption": "MONO ELECTRIC",
-        "depaby_product_category": "mono-electric",
-        "depaby_img_href": "https://ooodepa.github.io/ooodepa_imgs/productCategories/mono-electric-logo.png"
+        "depaby_caption": "MONO ELECTRIC ECO",
+        "depaby_product_category": "mono-electric-eco",
+        "depaby_img_href": "https://ooodepa.github.io/ooodepa_imgs/products/mono-electric/101-010207-118.png"
+    },
+    {
+        "depaby_caption": "MONO ELECTRIC DESPINA",
+        "depaby_product_category": "mono-electric-despina",
+        "depaby_img_href": "https://ooodepa.github.io/ooodepa_imgs/products/mono-electric/102-190021-118.jpg"
+    },
+    {
+        "depaby_caption": "MONO ELECTRIC MONTE",
+        "depaby_product_category": "mono-electric-monte",
+        "depaby_img_href": "https://ooodepa.github.io/ooodepa_imgs/products/mono-electric/105-010207-118.jpg"
     },
     {
         "depaby_caption": "Листы EVA, EPDM, полиэтилена",
