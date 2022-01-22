@@ -5,12 +5,12 @@ const nodemailer = require('nodemailer');
 
 router.post('/email', async function (req, res) {
     try {
-        // Список еэлектронных почт
-        let receivers = [req.body.email, process.env.depaby_nodemailer_user];
-        if (process.env.depaby_nodemailer_user2) {
-            receivers.push(process.env.depaby_nodemailer_user2);
-        }
-        
+        // Список электронных почт для получения сообщения, отправлленным сервером
+        let receivers = [
+            req.body.email,
+            process.env.depaby_nodemailer_MANAGER,
+        ];
+
         let html = '';
 
         // = = = = = = = = HTML шапка письма
@@ -100,13 +100,13 @@ router.post('/email', async function (req, res) {
             port: process.env.depaby_nodemailer_port,
             secure: process.env.depaby_nodemailer_secure,
             auth: {
-                user: process.env.depaby_nodemailer_user,
+                user: process.env.depaby_nodemailer_SERVER,
                 pass: process.env.depaby_nodemailer_pass,
             },
         });
 
         let info = await transporter.sendMail({
-            from: `"Server" <${process.env.depaby_nodemailer_user}>`,
+            from: `"Server" <${process.env.depaby_nodemailer_SERVER}>`,
             to: receivers.join(", "),
             subject: 'Заявка на поставку',
             text: 'Заявка на поставку"',
