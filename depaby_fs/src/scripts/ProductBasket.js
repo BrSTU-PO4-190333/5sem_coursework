@@ -84,8 +84,14 @@ class ProductBasket
         if (str !== null) {
             object = JSON.parse(str);
         }
-        // Если количество меньше или равно нулю, то записываем 0, иначе значение count
-        object[model] = count <= 0 ? 0 : count;
+        // Если количество меньше или равно нулю, то удаляем ключ
+        if (count <= 0) {
+            delete object[model];
+        }
+        // Если количество больше 0, то записываем значение count
+        else {
+            object[model] = count;
+        }
         // Преобразуем объект в строку
         str = JSON.stringify(object);
         // Записываем данные в БД
