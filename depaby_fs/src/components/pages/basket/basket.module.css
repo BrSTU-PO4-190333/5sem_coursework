@@ -1,3 +1,5 @@
+/* = = = = = = = = table */
+
 .table
 {
     width: 100%;
@@ -23,78 +25,92 @@
     padding: 2px;
 }
 
-
-/* table buttons */
-.table button
-{
-    background-color: var(--depaby_color);
-    color: white;
-    border: 1px solid var(--depaby_color);
-    padding: 4px 16px;
-    border-radius: 4px;
-}
-
-.table button:hover
-{
-    background-color: transparent;
-    color: var(--depaby_color);
-}
-
-.table .plus
-{
-    background-color: var(--bootstrap_success);
-    border: 1px solid var(--bootstrap_success);
-}
-
-.table .plus:hover
-{
-    background-color: transparent;
-    color: var(--bootstrap_success);
-}
-
-.table .minus
-{
-    background-color: var(--bootstrap_danger);
-    border: 1px solid var(--bootstrap_danger);
-}
-
-.table .minus:hover
-{
-    background-color: transparent;
-    color: var(--bootstrap_danger);
-}
-
-.table .minus
-{
-    background-color: var(--bootstrap_danger);
-    border: 1px solid var(--bootstrap_danger);
-}
-
-.table .minus:hover
-{
-    background-color: transparent;
-    color: var(--bootstrap_danger);
-}
-
-.table .delete
-{
-    background-color: var(--bootstrap_warning);
-    border: 1px solid var(--bootstrap_warning);
-    color: black;
-}
-
-.table .delete:hover
-{
-    background-color: transparent;
-    color: var(--bootstrap_warning);
-}
-/* end table buttons */
-
-
-/* table width */
+/* картинка в таблице */
 .table table td img
 {
     max-width: 64px;
     max-height: 64px;
 }
-/* end table width */
+
+/* input number в таблице */
+.table table td input[type="number"]
+{
+    width: 100%;
+    height: 100%;
+    display: block;
+    border: none;
+    font-weight: bolder;
+}
+
+.table table td input[type="number"]::selection
+{
+    border: none;
+}
+
+/* = = = = = = = = end table */
+
+
+/* = = = = = = = = кнопка удаления */
+.table td.delete
+{
+    text-align: center;
+}
+
+.table td.delete button
+{
+    background-color: var(--bootstrap_danger);
+    border: 1px solid var(--bootstrap_danger);
+    color: white;
+    padding: 16px;
+    border-radius: 4px;
+}
+
+.table td.delete button:hover
+{
+    background-color: transparent;
+    color: var(--bootstrap_danger);
+}
+/* end кнопка удаления */
+
+
+/* = = = = = = = = Элемент формы input */
+.input_block
+{
+    margin-bottom: 16px;
+}
+
+.input_block label
+{
+    color: var(--depaby_color);
+    font-weight: bolder;
+}
+
+.input_block input
+{
+    border: 1px solid var(--depaby_color);
+    display: block;
+    width: calc(100% - 2 * 8px);
+    padding: 8px;
+    border-radius: 4px;
+}
+
+.input_block input[type='submit']
+{
+    background-color: var(--depaby_color);
+    color: white;
+    width: 100%;
+}
+
+.input_block input[type='submit']:hover
+{
+    background-color: transparent;
+    color: var(--depaby_color);
+}
+
+.input_block input[readonly]
+{
+    background-color: #e9ecef;
+    color: black;
+    font-weight: bolder;
+}
+/* end Элемент формы input */

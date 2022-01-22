@@ -66,7 +66,7 @@ const pages = [
     },
     {
         href: '/basket',
-        caption: 'Корзина',
+        caption: 'Заявка на поставку',
         component: Basket,
         onMenu: true,
     },

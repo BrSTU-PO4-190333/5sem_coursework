@@ -5,8 +5,8 @@ const swagger_jsdoc = require('swagger-jsdoc');
 const swagger_ui_express = require('swagger-ui-express');
 
 const app = express();
-app.use(express.json({limit: '50mb'}))
-app.use(express.urlencoded({extended: true}))
+app.use(express.json({ limit: '50mb' }))
+app.use(express.urlencoded({ extended: true }))
 app.use(cors());
 
 // = = = = = = = = Swagger
@@ -114,3 +114,6 @@ app.use("/api", require('./routes/productCategories/productCategories_create'));
 app.use("/api", require('./routes/productCategories/productCategories_read'));
 app.use("/api", require('./routes/productCategories/productCategories_update'));
 app.use("/api", require('./routes/productCategories/productCategories_delete'));
+
+// send email
+app.use("/api", require('./routes/email/email'));

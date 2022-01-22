@@ -71,21 +71,19 @@ function ProductBasket(props) {
         setCount(ProductBacket.getCount(props.data.depaby_model));
     }, [props]);
 
-    function plus() {
-        ProductBacket.plus(props.data.depaby_model);
-        setCount(ProductBacket.getCount(props.data.depaby_model));
-    }
-
-    function minus() {
-        ProductBacket.minus(props.data.depaby_model);
-        setCount(ProductBacket.getCount(props.data.depaby_model));
+    function basket__setCount(model, count) {
+        ProductBacket.setCount(model, count);
+        setCount(ProductBacket.getCount(model));
     }
 
     return props.data.depaby_model && props.data.depaby_model !== '' ? (
         <div className={styles.product__basket}>
-            <button className={styles.minus} onClick={minus}>-1 штука</button>
-            В корзине {count} шт.
-            <button className={styles.plus} onClick={plus}>+1 штука</button>
+            В корзине <input
+                type="number"
+                value={count}
+                onChange={event => basket__setCount(props.data.depaby_model, event.target.value)}
+                min="0"
+            /> шт.
         </div>
     ) : <></>;
 }

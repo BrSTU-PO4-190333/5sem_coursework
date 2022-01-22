@@ -30,13 +30,7 @@ class QueryCrudProducts extends AbstractQueryCrud
         // Получаем по масиву моделей
         else if (params.array_models) {
             sql = `SELECT * FROM \`${this.table}\` WHERE \`depaby_model\` = '`;
-            console.log(params.array_models);
-            console.log(params.array_models);
-            console.log(params.array_models);
             let arr = JSON.parse(params.array_models);
-            console.log(arr);
-            console.log(arr);
-            console.log(arr);
             sql += arr.join(`' OR \`depaby_model\` = '`);
             sql += `';`;
         }
