@@ -1,3 +1,7 @@
+# Ignore folder /api/
+RewriteRule ^(admin|api)($|/) - [L]
+
+# For SPA react 
 Options -MultiViews
 RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} !-f
