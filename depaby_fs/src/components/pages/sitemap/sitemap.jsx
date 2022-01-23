@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 
 import pages from "../../../pages";
-import FetchReadDocuments from "../../../scripts/AbstractFetchRead/FetchReadDocuments";
+import FetchReadProductCategories from "../../../scripts/AbstractFetchRead/FetchReadProductCategories";
 import FetchReadProducts from "../../../scripts/AbstractFetchRead/FetchReadProducts";
+import FetchReadDocuments from "../../../scripts/AbstractFetchRead/FetchReadDocuments";
 import download_file from "../../../scripts/download_file";
 
 function Sitemap(props) {
@@ -11,27 +12,10 @@ function Sitemap(props) {
     useEffect(function () {
         async function constructor() {
             let arr = [];
-
-            pages.forEach(function (value, index) {
-                if (value.onMenu === true) {
-                    arr.push(`https://de-pa.by${value.href}`);
-                }
-            });
-
-            const class_instance_products = new FetchReadProducts();
-            const products = await class_instance_products.read();
-            // console.log(products);
-            products.forEach(function (value, index) {
-                arr.push(`https://de-pa.by/products/${value.depaby_category}/${value.depaby_model}`);
-            });
-
-            const class_instance_documents = new FetchReadDocuments();
-            const documents = await class_instance_documents.read();
-            // console.log(documents);
-            documents.forEach(function (value, index) {
-                arr.push(`${value.depaby_href}`);
-            });
-       
+            arr = arr.concat(get_Routes_pages());
+            arr = arr.concat(await get_Products_pages());
+            arr = arr.concat(await get_ProductCategories_pages());
+            arr = arr.concat(await get_Documents_pages());
 
             setPagesArray(arr);
         }
@@ -58,7 +42,7 @@ function Sitemap(props) {
         pagesArray.forEach(function (value, index) {
             text += `
     <url>
-        <loc>${value}</loc>
+        <loc>${value.href}</loc>
         <lastmod>${year}-${month}-${day}</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.5</priority>
@@ -79,22 +63,74 @@ function Sitemap(props) {
             <p>
                 <button onClick={download_sitemap}>Скачать sitemap.xml</button>
             </p>
-            <p>Количество: {pagesArray.length}</p>
+            <p>Количество страниц: {pagesArray.length}</p>
             <p>Список страниц:</p>
             <ul>
                 {
                     pagesArray.map(function (value, index) {
                         return (
                             <li key={index}>
-                                <a href={value}>{value}</a>
+                                <a href={value.href}>{value.caption}</a>
                             </li>
                         );
                     })
                 }
             </ul>
-            <p>Количество: {pagesArray.length}</p>
+            <p>Количество страниц: {pagesArray.length}</p>
         </div>
     )
+}
+
+function get_Routes_pages() {
+    let arr = [];
+    pages.forEach(function (value, index) {
+        if (value.onMenu === true) {
+            arr.push({
+                caption: value.caption,
+                href: `https://de-pa.by${value.href}`,
+            });
+        }
+    });
+    return arr;
+}
+
+async function get_Products_pages() {
+    let arr = [];
+    const class_instance = new FetchReadProductCategories();
+    const response = await class_instance.read();
+    response.forEach(function (value, index) {
+        arr.push({
+            caption: value.depaby_caption,
+            href: `https://de-pa.by/products/${value.depaby_product_category}`,
+        });
+    });
+    return arr;
+}
+
+async function get_ProductCategories_pages() {
+    let arr = [];
+    const class_instance = new FetchReadProducts();
+    const response = await class_instance.read();
+    response.forEach(function (value, index) {
+        arr.push({
+            caption: value.depaby_name,
+            href: `https://de-pa.by/products/${value.depaby_category}/${value.depaby_model}`,
+        });
+    });
+    return arr;
+}
+
+async function get_Documents_pages() {
+    let arr = [];
+    const class_instance = new FetchReadDocuments();
+    const response = await class_instance.read();
+    response.forEach(function (value, index) {
+        arr.push({
+            caption: value.depaby_caption,
+            href: value.depaby_href,
+        });
+    });
+    return arr;
 }
 
 export default Sitemap;
