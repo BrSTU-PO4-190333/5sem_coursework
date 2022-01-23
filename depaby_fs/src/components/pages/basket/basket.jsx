@@ -10,7 +10,7 @@ import FetchEmail from "../../../scripts/FetchEmail";
 import get_form_data from "../../../scripts/get_form_data";
 
 function Basket() {
-    const [productArray, setProductArray] = useState([{}]);
+    const [productArray, setProductArray] = useState([]);
     const [sum, setSum] = useState(0);
 
     // Получаем массив продуктов, которые есть в корзине
@@ -46,6 +46,10 @@ function Basket() {
             newArr.push(value);
         }
 
+        if (newArr.length === 0) {
+            alert("Нет продуктов в корзине. Добавьте продуктов, чтобы оставить заявку.");
+        }
+
         setProductArray(newArr);
 
         total_sum = Math.floor(total_sum * 100) / 100;
@@ -78,10 +82,16 @@ function Basket() {
         event.preventDefault();
         // Получаем данные с формы
         let params = get_form_data(event);
-        // ДОбавляет свой параметр
+        // Добавляет свой параметр
         // params.models = ProductBasket.getBasket();
         params.array = productArray;
         params.sum = sum;
+
+        if(productArray.length === 0) {
+            alert("Заявка не отправлена, так как в корзине продуктов нет товаров.");
+            return;
+        }
+
         // Отправляем данные на сервер
         const class_instance = new FetchEmail();
         class_instance.send(params);
