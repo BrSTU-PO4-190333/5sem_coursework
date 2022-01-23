@@ -11,9 +11,16 @@ router.post('/email', async function (req, res) {
             process.env.depaby_nodemailer_MANAGER,
         ];
 
+        let text = `;;;;;; \n`;
         let html = '';
 
         // = = = = = = = = HTML шапка письма
+        text += `Организация:;${req.body.company};;;;; \n`;
+        text += `Контактное лицо:;${req.body.contact};;;;; \n`;
+        text += `E-mail:;${req.body.email};;;;; \n`;
+        text += `Телефон:;${req.body.phone};;;;; \n`;
+        text += `Адрес:;${req.body.address};;;;; \n`;
+        text += `;;;;;; \n`;
         html += `
 <table>
     <tr>
@@ -40,6 +47,7 @@ router.post('/email', async function (req, res) {
 `;
 
         // = = = = = = = = HTML таблица с заказом (шапка таблицы)
+        text += `№;Картинка;Модель;Наименование;Цена за 1 шт. без НДС (BYN); Количество (штуки); Общая цена (BYN) \n`;
         html += `
 <table style="border-collapse: collapse; margin-bottom: 8px;">
     <thead>
@@ -57,6 +65,7 @@ router.post('/email', async function (req, res) {
 `;
         // = = = = = = = = HTML таблица с заказом (тело таблицы)
         req.body.array.forEach(function(value, index) {
+            text += `${index + 1};${value.depaby_img_href};${value.depaby_model};${value.depaby_name};${value.depaby_cost_byn};${value.count};${value.product_sum} \n`;
             html += "<tr>";
             html += `<td style="border: 1px solid #eaecef; padding: 8px;">${index + 1}</td>`;
             html += `<td style="border: 1px solid #eaecef; padding: 8px;"><img src="${value.depaby_img_href}" alt="" style="max-width: 64px; max-height: 64px;" /></td>`;
@@ -69,6 +78,8 @@ router.post('/email', async function (req, res) {
         });
 
         // = = = = = = = = HTML таблица с заказом (подвал таблицы)
+        text += `;;;;;;${req.body.sum} BYN \n`;
+        text += `;;;;;; \n`;
         html += `
         <tr style="background-color: #f2f2f2;">
             <td style="border: 1px solid #eaecef; padding: 8px;"></td>
@@ -83,6 +94,7 @@ router.post('/email', async function (req, res) {
 </table>`;
 
         // = = = = = = = = HTML конец письма
+        text += `Итого;${req.body.sum} BYN;;;;;`;
         html += `
 <table>
     <tr>
@@ -92,6 +104,7 @@ router.post('/email', async function (req, res) {
 </table>
 `; 
 
+        console.log(text);
         console.log(html);
 
         // = = = = = = = = Функция, которая отправляет сообщение
@@ -105,12 +118,30 @@ router.post('/email', async function (req, res) {
             },
         });
 
+        let date = new Date();
+        let year = date.getFullYear();
+        let month = date.getMonth();
+        month = month < 10 ? "0" + month : month;
+        let day = date.getDay();
+        day = day < 10 ? "0" + day : day;
+
+        let hours = date.getHours();
+        hours = hours < 10 ? "0" + hours: hours;
+        let minutes = date.getMinutes();
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+
         let info = await transporter.sendMail({
             from: `"Server" <${process.env.depaby_nodemailer_SERVER}>`,
             to: receivers.join(", "),
             subject: 'Заявка на поставку',
-            text: 'Заявка на поставку"',
             html: html,
+            text: 'Заявка на поставку"',
+            attachments: [
+                {
+                    filename: `Заявка_${req.body.company}_${req.body.contact}_${year}-${month}-${day}_${hours}-${minutes}.csv`,
+                    content: text,
+                },
+            ],
         });
 
         console.log("Message sent: %s", info.messageId);
