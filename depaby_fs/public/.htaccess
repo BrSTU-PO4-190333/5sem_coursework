@@ -1,3 +1,11 @@
+# https
+RewriteCond %{HTTPS} =off
+RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [QSA,L]
+
+# www to not www
+RewriteCond %{HTTP_HOST} ^www.de-pa\.by$ [NC]
+RewriteRule ^(.*)$ https://de-pa.by/$1 [R=301,L]
+
 # Ignore folder /api/
 RewriteRule ^(admin|api)($|/) - [L]
 
