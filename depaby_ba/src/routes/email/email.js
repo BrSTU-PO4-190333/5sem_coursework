@@ -11,16 +11,33 @@ router.post('/email', async function (req, res) {
             process.env.depaby_nodemailer_MANAGER,
         ];
 
-        let text = `;;;;;; \n`;
+        // = = = = = = = = Для CSV файла/Для html сообщения
+        let csvArray = [];
         let html = '';
 
-        // = = = = = = = = HTML шапка письма
-        text += `Организация:;${req.body.company};;;;; \n`;
-        text += `Контактное лицо:;${req.body.contact};;;;; \n`;
-        text += `E-mail:;${req.body.email};;;;; \n`;
-        text += `Телефон:;${req.body.phone};;;;; \n`;
-        text += `Адрес:;${req.body.address};;;;; \n`;
-        text += `;;;;;; \n`;
+        // = = = = = = = = CSV/HTML шапка письма
+        csvArray.push([]);
+        csvArray.push([
+            'Организация:',
+            req.body.company
+        ]);
+        csvArray.push([
+            'Контактное лицо:',
+            req.body.contact
+        ]);
+        csvArray.push([
+            'E-mail:',
+            req.body.email
+        ]);
+        csvArray.push([
+            'Телефон:',
+            req.body.phone
+        ]);
+        csvArray.push([
+            'Адрес:',
+            req.body.address
+        ]);
+        csvArray.push([]);
         html += `
 <table>
     <tr>
@@ -46,8 +63,16 @@ router.post('/email', async function (req, res) {
 </table>
 `;
 
-        // = = = = = = = = HTML таблица с заказом (шапка таблицы)
-        text += `№;Картинка;Модель;Наименование;Цена за 1 шт. без НДС (BYN); Количество (штуки); Общая цена (BYN) \n`;
+        // = = = = = = = = CSV/HTML таблица с заказом (шапка таблицы)
+        csvArray.push([
+            "№",
+            "Картинка",
+            "Модель",
+            "Наименование",
+            "Цена за 1 шт. без НДС (BYN)",
+            "Количество (штуки)",
+            "Общая цена (BYN)",
+        ]);
         html += `
 <table style="border-collapse: collapse; margin-bottom: 8px;">
     <thead>
@@ -63,9 +88,17 @@ router.post('/email', async function (req, res) {
     </thead>
     <tbody>
 `;
-        // = = = = = = = = HTML таблица с заказом (тело таблицы)
+        // = = = = = = = = CSV/HTML таблица с заказом (тело таблицы)
         req.body.array.forEach(function(value, index) {
-            text += `${index + 1};${value.depaby_img_href};${value.depaby_model};${value.depaby_name};${value.depaby_cost_byn};${value.count};${value.product_sum} \n`;
+            csvArray.push([
+                index + 1,
+                value.depaby_img_href,
+                value.depaby_model,
+                value.depaby_name,
+                value.depaby_cost_byn,
+                value.count,
+                value.product_sum,
+            ]);
             html += "<tr>";
             html += `<td style="border: 1px solid #eaecef; padding: 8px;">${index + 1}</td>`;
             html += `<td style="border: 1px solid #eaecef; padding: 8px;"><img src="${value.depaby_img_href}" alt="" style="max-width: 64px; max-height: 64px;" /></td>`;
@@ -77,9 +110,17 @@ router.post('/email', async function (req, res) {
             html += "</tr>";
         });
 
-        // = = = = = = = = HTML таблица с заказом (подвал таблицы)
-        text += `;;;;;;${req.body.sum} BYN \n`;
-        text += `;;;;;; \n`;
+        // = = = = = = = = CSV/HTML таблица с заказом (подвал таблицы)
+        csvArray.push([
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            `${req.body.sum} BYN`,
+        ]);
+        csvArray.push([]);
         html += `
         <tr style="background-color: #f2f2f2;">
             <td style="border: 1px solid #eaecef; padding: 8px;"></td>
@@ -93,8 +134,11 @@ router.post('/email', async function (req, res) {
     </tbody>
 </table>`;
 
-        // = = = = = = = = HTML конец письма
-        text += `Итого;${req.body.sum} BYN;;;;;`;
+        // = = = = = = = = CSV/HTML конец письма
+        csvArray.push([
+            "Итого:",
+            `${req.body.sum} BYN`,
+        ]);
         html += `
 <table>
     <tr>
@@ -103,8 +147,12 @@ router.post('/email', async function (req, res) {
     </tr>
 </table>
 `; 
-
-        console.log(text);
+        let tsv_text = '';
+        csvArray.forEach(function(value, index) {
+            tsv_text += value.join('\t');
+            tsv_text += '\n';
+        });
+        console.log(tsv_text);
         console.log(html);
 
         // = = = = = = = = Функция, которая отправляет сообщение
@@ -138,8 +186,8 @@ router.post('/email', async function (req, res) {
             text: 'Заявка на поставку"',
             attachments: [
                 {
-                    filename: `Заявка_${req.body.company}_${req.body.contact}_${year}-${month}-${day}_${hours}-${minutes}.csv`,
-                    content: text,
+                    filename: `Заявка_${req.body.company}_${req.body.contact}_${year}-${month}-${day}_${hours}-${minutes}.tsv.csv`,
+                    content: tsv_text,
                 },
             ],
         });
