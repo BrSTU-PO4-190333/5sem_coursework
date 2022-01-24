@@ -6,6 +6,13 @@
         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 
     <url>
+        <loc>https://de-pa.by/</loc>
+        <lastmod>2022-01-23</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.5</priority>
+    </url>            
+
+    <url>
         <loc>https://de-pa.by/about</loc>
         <lastmod>2022-01-23</lastmod>
         <changefreq>daily</changefreq>

@@ -8,16 +8,24 @@ import download_file from "../../../scripts/download_file";
 
 function Sitemap(props) {
     const [pagesArray, setPagesArray] = useState([]);
+    const [pagesDict, setPagesDict] = useState({});
 
     useEffect(function () {
         async function constructor() {
-            let arr = [];
+            let arr = [
+                {
+                    caption: 'Главная',
+                    href: 'https://de-pa.by/',
+                },
+            ];
             arr = arr.concat(get_Routes_pages());
             arr = arr.concat(await get_Products_pages());
             arr = arr.concat(await get_ProductCategories_pages());
             arr = arr.concat(await get_Documents_pages());
+            // console.log(arr);
 
             setPagesArray(arr);
+            setPagesDict(get_dict_pages(arr));
         }
         constructor();
     }, [props]);
@@ -60,22 +68,9 @@ function Sitemap(props) {
     return (
         <div className="container">
             <h1>Карта сайта</h1>
-            <p>
-                <button onClick={download_sitemap}>Скачать sitemap.xml</button>
-            </p>
             <p>Количество страниц: {pagesArray.length}</p>
-            <p>Список страниц:</p>
-            <ul>
-                {
-                    pagesArray.map(function (value, index) {
-                        return (
-                            <li key={index}>
-                                <a href={value.href}>{value.caption}</a>
-                            </li>
-                        );
-                    })
-                }
-            </ul>
+            <p><button onClick={download_sitemap}>Скачать sitemap.xml</button></p>
+            <ul><SitemapLi dict={pagesDict} /></ul>
             <p>Количество страниц: {pagesArray.length}</p>
         </div>
     )
@@ -131,6 +126,85 @@ async function get_Documents_pages() {
         });
     });
     return arr;
+}
+
+function get_dict_pages(arr) {
+    let s = [];
+    arr.forEach(function (value, index) {
+        s.push(value.href.split("/"));
+    });
+    // console.log(s);
+
+    let pages_dict = {};
+    s.forEach(function(value, index) {
+        if (value.length === 4 && value[2] === 'de-pa.by') {
+            pages_dict[value[3]] = {
+                caption: arr[index].caption,
+                hash: `/${value[3]}`,
+                href: arr[index].href,
+                pages: {},
+            }
+        }
+    });
+    s.forEach(function(value, index) {
+        if (value.length === 5 && value[2] === 'de-pa.by') {
+            if (!pages_dict[value[3]]) {
+                pages_dict[value[3]] = {
+                    caption: value[3],
+                    // href: `${value[0]}/${value[1]}/${value[2]}/${value[3]}`,
+                    pages: {},
+                }
+            }
+            pages_dict[value[3]].pages[value[4]] = {
+                caption: arr[index].caption,
+                hash: `/${value[4]}`,
+                href: arr[index].href,
+                pages: {},
+            }
+        }
+    });
+    s.forEach(function(value, index) {
+        if (value.length === 6 && value[2] === 'de-pa.by') {
+            if (!pages_dict[value[3]]) {
+                pages_dict[value[3]] = {
+                    caption: value[3],
+                    // href: `${value[0]}/${value[1]}/${value[2]}/${value[3]}`,
+                    pages: {},
+                }
+            }
+            if (!pages_dict[value[3]].pages[value[4]]) {
+                pages_dict[value[3]].pages[value[4]] = {
+                    caption: value[4],
+                    // href: `${value[0]}/${value[1]}/${value[2]}/${value[3]}/${value[4]}`,
+                    pages: {},
+                }
+            }
+            pages_dict[value[3]].pages[value[4]].pages[value[5]] = {
+                caption: arr[index].caption,
+                hash: `/${value[5]}`,
+                href: arr[index].href,
+                pages: {},
+            }
+        }
+    });
+    // console.log(pages_dict);
+    return pages_dict;
+}
+
+function SitemapLi(props) {
+    return props.dict ? Object.keys(props.dict).map(function(key, index) {
+        return (
+            <li key={`${index} ${props.dict[key].href}`}>
+                <span>{props.dict[key].hash} </span>
+                <a href={props.dict[key].href}>{props.dict[key].caption}</a>
+                <ul>
+                    <SitemapLi dict={props.dict[key].pages} />
+                </ul>
+            </li>
+        );
+    }) : (
+        <li>Err</li>
+    )
 }
 
 export default Sitemap;
