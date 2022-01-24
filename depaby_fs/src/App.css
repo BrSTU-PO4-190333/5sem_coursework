@@ -32,6 +32,7 @@ body
 :root
 {
   --depaby_color: #06c;
+  --depaby_color_hover: #3dd5f3;
   --viber: #574e92;
   --whatsapp: #4bc959;
   --skype: #00b9f0;
@@ -49,6 +50,31 @@ h1,h2,h3,h4,h5,h6
   text-align: center;
 }
 
+a
+{
+  color: var(--depaby_color);
+  text-decoration: none;
+}
+
+a:hover 
+{
+  color: var(--depaby_color_hover);
+}
+
+button
+{
+  color: white;
+  background-color: var(--depaby_color);
+  border: 1px solid var(--depaby_color);
+  padding: 8px;
+  border-radius: 4px;
+}
+
+button:hover
+{
+  color: var(--depaby_color);
+  background-color: transparent;
+}
 
 /* make footer */
 .gpi_wrapper
