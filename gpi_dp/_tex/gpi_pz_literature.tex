@@ -1,22 +1,39 @@
 \newpage
 
-\section*{Список использованных источников}
-\addcontentsline{toc}{section}{Список использованных источников}
+\begingroup
+  \section*{Список использованных источников}
+  \phantomsection
+  \addcontentsline{toc}{section}{Список использованных источников}
 
-\begin{enumerate}
-    \item Получение GET и POST запросов на Node.js \\
-    \url{https://youtu.be/YMJDUHUccvA}
+  \renewcommand{\addcontentsline}[3]{}% Remove functionality of \addcontentsline
+  \renewcommand{\section}[2]{}% Remove functionality of \section
 
-    \item Подключение к базе данных MySQL в Node.js \\
-    \url{https://youtu.be/YhuozY-qplI}
+  \begin{thebibliography}{}
+    \bibitem{youtube_get_post}
+    Получение GET и POST запросов на Node.js - YouTube
+    [Электронный ресурс].
+    Режим доступа: \url{https://youtu.be/YMJDUHUccvA}
 
-    \item Модули Node.js, require \\
-    \url{https://youtu.be/1PkarXC-9TQ}
+    \bibitem{youtube_mysql_nodejs}
+    Подключение к базе данных MySQL в Node.js - YouTube
+    [Электронный ресурс].
+    Режим доступа: \url{https://youtu.be/YhuozY-qplI}
 
-    \item Manual installation steps for older versions of WSL | Microsoft Docs - Инструкция по установке WSL2 \\
-    \url{https://aka.ms/wsl2kernel}
+    \bibitem{youtube_nodejs_require}
+    Модули Node.js, require - YouTube
+    [Электронный ресурс].
+    Режим доступа: \url{https://youtu.be/1PkarXC-9TQ}
 
-    \item Chocolatey Software | Installing Chocolatey - Инструкция по установке choco \\
-    \url{https://chocolatey.org/install}
+    \bibitem{windows10_wsl}
+    Manual installation steps for older versions of WSL | Microsoft Learn
+    [Electronic resource].
+    Mode of access: \url{https://aka.ms/wsl2kernel}
 
-\end{enumerate}
+    \bibitem{chocolatey}
+    Chocolatey Software | Installing Chocolatey
+    [Electronic resource].
+    Mode of access: \url{https://chocolatey.org/install}
+  \end{thebibliography}
+\endgroup
+
+\newpage
